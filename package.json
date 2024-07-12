@@ -1,0 +1,17 @@
+{
+  "name": "comission-theme",
+  "version": "1.0.0",
+  "description": "Theme developed for CoMission Art",
+  "main": "index.js",
+  "scripts": {
+    "start": "shopify theme dev --environment comission",
+    "dev": "yarn tw &  yarn --cwd theme start",
+    "tw": "npx tailwindcss -i ./style.css -o ./theme/assets/style.css --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "tailwindcss": "^3.4.4"
+  }
+}
