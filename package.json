@@ -5,13 +5,31 @@
   "main": "index.js",
   "scripts": {
     "start": "shopify theme dev --environment comission",
-    "dev": "yarn tw &  yarn --cwd theme start",
+    "dev": "yarn tw & yarn --cwd theme start",
+    "scripts:watch": "rollup -c --watch --bundleConfigAsCjs",
+    "scripts:build": "rollup -c",
     "tw": "npx tailwindcss -i ./style.css -o ./theme/assets/style.css --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "html-react-parser": "^4.0.0",
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-code-blocks": "^0.1.6",
+    "react-dom": "^18.2.0",
     "tailwindcss": "^3.4.4"
+  },
+  "devDependencies": {
+    "@rollup/plugin-babel": "^5.3.1",
+    "@rollup/plugin-commonjs": "^24.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.0",
+    "@rollup/plugin-replace": "^4.0.0",
+    "@rollup/plugin-terser": "^0.4.0",
+    "@svgr/rollup": "^6.5.0",
+    "autoprefixer": "^10.4.13",
+    "babel-loader": "^8.2.5",
+    "rollup": "^2.79.1"
   }
 }
