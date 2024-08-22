@@ -10,7 +10,7 @@ export default {
   output: {
     dir: 'theme/assets',
     // entryFileNames: '[name].js', // Dynamic script names base on input file name
-    entryFileNames: 'scripts.js',
+    entryFileNames: 'comission.js',
     // format: 'iife', TODO: Determine if/when this is needed.
     sourcemap: false,
   },

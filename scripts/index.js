@@ -1,9 +1,11 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import HelloWorld from './HelloWorld';
+import DABSelector from './DABSelector';
 
 const COMPONENTS = {
   HelloWorld,
+  DABSelector,
 };
 
 function renderComponentInElement(el) {

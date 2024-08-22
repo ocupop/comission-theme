@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* @import "./animate.css"; */
+
+/* Tokens */
+:root {
+  --color-primary: 55 55 243;
+  --color-secondary: 91 33 182;
+  --color-accent: 217 70 239;
+  --color-success: 16 185 129;
+  --color-info: 6 182 212;
+  --color-warning: 251 150 0;
+  --color-danger: 191 72 0;
+
+  --font-size-fine: 0.75rem; /* text-xs */
+  --font-size-copy: 1rem; /* text-base */
+  --font-size-lead: 1.5rem; /* text-lg */
+  --font-size-heading: 2rem; /* text-2xl */
+  --font-size-display: 3rem; /* text-4xl */
+
+  --height-nav: 3rem;
+  --height-header: 3rem;
+  --screen-height: 100vh;
+
+  --color-shop-pay: #5a31f4;
+  --shop-pay-button--width: 100%; /* Sets the width for the shop-pay-button web component */
+
+  @media (min-width: 1024px) {
+    --height-nav: 4rem;
+    --height-header: calc(var(--height-nav) + 44px);
+    --font-size-heading: 2.25rem; /* text-4xl */
+    --font-size-display: 3.75rem; /* text-6xl */
+  }
+  @supports (height: 100lvh) {
+    --screen-height: 100lvh;
+  }
+}
+
+@supports (font: -apple-system-body) and (-webkit-appearance: none) {
+  img[loading="lazy"] {
+    clip-path: inset(0.6px);
+  }
+}
+
+html,
+body {
+  @apply font-light;
+  font-size: 100%;
+}
+
+a,
+input,
+button {
+  @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2;
+}
+
+h1,
+.h1 {
+  @apply text-5xl font-normal;
+}
+h2,
+.h2 {
+  @apply text-3xl font-medium;
+}
+h3,
+.h3 {
+  @apply text-2xl font-normal;
+}
+h4,
+.h4 {
+  @apply text-xl;
+}
+h5,
+.h5 {
+  @apply text-lg;
+}
+h6,
+.h6 {
+  @apply text-base;
+}
+
+@layer components {
+  .brand-logo {
+    background-image: url("/images/comission-color-logo-nav.png");
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: contain;
+  }
+  .primary-nav {
+    @apply flex justify-end h-full gap-2 grow lg:gap-4 xl:gap-8;
+    li {
+      @apply flex items-center justify-center h-full;
+      .nav-link {
+        position: relative;
+        font-weight: 100;
+        text-decoration: none;
+        @apply flex items-center h-full text-lg lg:px-3 xl:px-5;
+      }
+      .nav-link:before {
+        content: "";
+        display: block;
+        position: absolute;
+        opacity: 0;
+        bottom: 0;
+        left: 0;
+        height: 0;
+        width: 100%;
+        background-color: #3737f3;
+        transition: all 0.5s ease-in-out;
+      }
+
+      .nav-link:hover:before {
+        /* left: 0; */
+        height: 8px;
+        opacity: 1;
+      }
+
+      .nav-link.active:before {
+        height: 8px;
+        opacity: 1;
+      }
+    }
+    li:last-of-type {
+      background-color: #3737f3;
+      .nav-link {
+        color: #fff;
+      }
+    }
+  }
+}

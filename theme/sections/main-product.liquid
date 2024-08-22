@@ -74,6 +74,15 @@
 
   {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
   <div class="page-width">
+      <h3>DAB SELECTOR</h3>
+      {% capture variants %}[{% for variant in product.variants %}{"id": "{{ variant.id }}","title": "{{ variant.title }}"}{% unless forloop.last %},{% endunless %}{% endfor %}]{% endcapture %}
+      {% comment %} {% assign meta = "howdy"  %} {% endcomment %}
+      <div
+        class="__react-component"
+        data-component="DABSelector"
+        data-product='{{ variants | json }}'
+        data-note='{{ product.metafields.comission.note | escape }}'
+      ></div>
     <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
       <div class="grid__item product__media-wrapper">
         {% render 'product-media-gallery', variant_images: variant_images %}
@@ -549,7 +558,7 @@
                           -%}
                           <div
                             id="Slider-{{ block.id }}"
-                            class="contains-card contains-card--product complementary-slider grid grid--1-col slider slider--everywhere"
+                            class="grid contains-card contains-card--product complementary-slider grid--1-col slider slider--everywhere"
                             role="list"
                             {% if number_of_slides > 1 %}
                               aria-label="{{ 'general.slider.name' | t }}"
