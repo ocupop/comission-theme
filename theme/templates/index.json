@@ -29,7 +29,7 @@
         "desktop_content_position": "middle-left",
         "show_text_box": false,
         "desktop_content_alignment": "left",
-        "color_scheme": "scheme-5",
+        "color_scheme": "light-scheme",
         "image_behavior": "none",
         "mobile_content_alignment": "center",
         "stack_images_on_mobile": false,
@@ -53,7 +53,7 @@
       "settings": {
         "desktop_content_position": "left",
         "content_alignment": "left",
-        "color_scheme": "scheme-4",
+        "color_scheme": "dark-scheme",
         "full_width": true,
         "padding_top": 0,
         "padding_bottom": 20
@@ -104,7 +104,7 @@
         "show_view_all": false,
         "view_all_style": "solid",
         "enable_desktop_slider": false,
-        "color_scheme": "scheme-1",
+        "color_scheme": "light-scheme",
         "image_ratio": "adapt",
         "image_shape": "default",
         "show_secondary_image": true,
@@ -141,7 +141,7 @@
       "settings": {
         "desktop_content_position": "left",
         "content_alignment": "left",
-        "color_scheme": "scheme-4",
+        "color_scheme": "dark-scheme",
         "full_width": true,
         "padding_top": 0,
         "padding_bottom": 20
@@ -162,7 +162,7 @@
         "show_view_all": false,
         "view_all_style": "solid",
         "enable_desktop_slider": false,
-        "color_scheme": "scheme-1",
+        "color_scheme": "light-scheme",
         "image_ratio": "adapt",
         "image_shape": "default",
         "show_secondary_image": true,
@@ -230,7 +230,7 @@
         "background_style": "none",
         "button_label": "",
         "button_link": "",
-        "color_scheme": "scheme-5",
+        "color_scheme": "light-scheme",
         "columns_mobile": "1",
         "swipe_on_mobile": false,
         "padding_top": 36,

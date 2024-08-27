@@ -35,7 +35,7 @@
     "card_style": "standard",
     "card_image_padding": 0,
     "card_text_alignment": "left",
-    "card_color_scheme": "scheme-2",
+    "card_color_scheme": "mid-scheme",
     "card_border_thickness": 0,
     "card_border_opacity": 10,
     "card_corner_radius": 0,
@@ -46,7 +46,7 @@
     "collection_card_style": "standard",
     "collection_card_image_padding": 0,
     "collection_card_text_alignment": "left",
-    "collection_card_color_scheme": "scheme-2",
+    "collection_card_color_scheme": "mid-scheme",
     "collection_card_border_thickness": 0,
     "collection_card_border_opacity": 10,
     "collection_card_corner_radius": 0,
@@ -57,7 +57,7 @@
     "blog_card_style": "standard",
     "blog_card_image_padding": 0,
     "blog_card_text_alignment": "left",
-    "blog_card_color_scheme": "scheme-2",
+    "blog_card_color_scheme": "mid-scheme",
     "blog_card_border_thickness": 0,
     "blog_card_border_opacity": 10,
     "blog_card_corner_radius": 0,
@@ -94,8 +94,8 @@
     "drawer_shadow_blur": 5,
     "badge_position": "bottom left",
     "badge_corner_radius": 40,
-    "sale_badge_color_scheme": "scheme-5",
-    "sold_out_badge_color_scheme": "scheme-3",
+    "sale_badge_color_scheme": "light-scheme",
+    "sold_out_badge_color_scheme": "dark-scheme",
     "social_facebook_link": "",
     "social_instagram_link": "",
     "social_youtube_link": "",
@@ -117,13 +117,13 @@
       "main-password-header": {
         "type": "main-password-header",
         "settings": {
-          "color_scheme": "scheme-1"
+          "color_scheme": "light-scheme"
         }
       },
       "main-password-footer": {
         "type": "main-password-footer",
         "settings": {
-          "color_scheme": "scheme-1"
+          "color_scheme": "light-scheme"
         }
       }
     },
@@ -131,58 +131,36 @@
 
     ],
     "color_schemes": {
-      "scheme-1": {
+      "light-scheme": {
         "settings": {
-          "background": "#ffffff",
+          "background": "#FFFFFF",
           "background_gradient": "",
           "text": "#121212",
-          "button": "#121212",
-          "button_label": "#ffffff",
+          "button": "#3737F3",
+          "button_label": "#F3F3F3",
           "secondary_button_label": "#121212",
           "shadow": "#121212"
         }
       },
-      "scheme-2": {
+      "mid-scheme": {
         "settings": {
-          "background": "#f3f3f3",
+          "background": "#707070",
           "background_gradient": "",
           "text": "#121212",
-          "button": "#121212",
-          "button_label": "#f3f3f3",
+          "button": "#3737F3",
+          "button_label": "#F3F3F3",
           "secondary_button_label": "#121212",
           "shadow": "#121212"
         }
       },
-      "scheme-3": {
-        "settings": {
-          "background": "#242833",
-          "background_gradient": "",
-          "text": "#ffffff",
-          "button": "#ffffff",
-          "button_label": "#000000",
-          "secondary_button_label": "#ffffff",
-          "shadow": "#121212"
-        }
-      },
-      "scheme-4": {
+      "dark-scheme": {
         "settings": {
           "background": "#000000",
           "background_gradient": "",
-          "text": "#ffffff",
-          "button": "#ffffff",
+          "text": "#FFFFFF",
+          "button": "#3737F3",
           "button_label": "#000000",
-          "secondary_button_label": "#ffffff",
-          "shadow": "#121212"
-        }
-      },
-      "scheme-5": {
-        "settings": {
-          "background": "#000000",
-          "background_gradient": "",
-          "text": "#ffffff",
-          "button": "#3737f3",
-          "button_label": "#ffffff",
-          "secondary_button_label": "#ffffff",
+          "secondary_button_label": "#FFFFFF",
           "shadow": "#121212"
         }
       }
@@ -192,7 +170,7 @@
     "Default": {
       "logo_width": 90,
       "color_schemes": {
-        "scheme-1": {
+        "light-scheme": {
           "settings": {
             "background": "#FFFFFF",
             "background_gradient": "",
@@ -203,46 +181,24 @@
             "shadow": "#121212"
           }
         },
-        "scheme-2": {
+        "mid-scheme": {
           "settings": {
-            "background": "#F3F3F3",
+            "background": "#707070",
             "background_gradient": "",
             "text": "#121212",
-            "button": "#121212",
+            "button": "#3737F3",
             "button_label": "#F3F3F3",
             "secondary_button_label": "#121212",
             "shadow": "#121212"
           }
         },
-        "scheme-3": {
+        "dark-scheme": {
           "settings": {
-            "background": "#242833",
+            "background": "#000000",
             "background_gradient": "",
             "text": "#FFFFFF",
             "button": "#FFFFFF",
             "button_label": "#000000",
-            "secondary_button_label": "#FFFFFF",
-            "shadow": "#121212"
-          }
-        },
-        "scheme-4": {
-          "settings": {
-            "background": "#121212",
-            "background_gradient": "",
-            "text": "#FFFFFF",
-            "button": "#FFFFFF",
-            "button_label": "#121212",
-            "secondary_button_label": "#FFFFFF",
-            "shadow": "#121212"
-          }
-        },
-        "scheme-5": {
-          "settings": {
-            "background": "#334FB4",
-            "background_gradient": "",
-            "text": "#FFFFFF",
-            "button": "#5a31f4",
-            "button_label": "#FFFFFF",
             "secondary_button_label": "#FFFFFF",
             "shadow": "#121212"
           }
@@ -280,7 +236,7 @@
       "card_style": "standard",
       "card_image_padding": 0,
       "card_text_alignment": "left",
-      "card_color_scheme": "scheme-2",
+      "card_color_scheme": "mid-scheme",
       "card_border_thickness": 0,
       "card_border_opacity": 10,
       "card_corner_radius": 0,
@@ -291,7 +247,7 @@
       "collection_card_style": "standard",
       "collection_card_image_padding": 0,
       "collection_card_text_alignment": "left",
-      "collection_card_color_scheme": "scheme-2",
+      "collection_card_color_scheme": "mid-scheme",
       "collection_card_border_thickness": 0,
       "collection_card_border_opacity": 10,
       "collection_card_corner_radius": 0,
@@ -302,7 +258,7 @@
       "blog_card_style": "standard",
       "blog_card_image_padding": 0,
       "blog_card_text_alignment": "left",
-      "blog_card_color_scheme": "scheme-2",
+      "blog_card_color_scheme": "mid-scheme",
       "blog_card_border_thickness": 0,
       "blog_card_border_opacity": 10,
       "blog_card_corner_radius": 0,
@@ -339,8 +295,8 @@
       "drawer_shadow_blur": 5,
       "badge_position": "bottom left",
       "badge_corner_radius": 40,
-      "sale_badge_color_scheme": "scheme-5",
-      "sold_out_badge_color_scheme": "scheme-3",
+      "sale_badge_color_scheme": "light-scheme",
+      "sold_out_badge_color_scheme": "dark-scheme",
       "social_twitter_link": "",
       "social_facebook_link": "",
       "social_pinterest_link": "",
@@ -362,13 +318,13 @@
         "main-password-header": {
           "type": "main-password-header",
           "settings": {
-            "color_scheme": "scheme-1"
+            "color_scheme": "light-scheme"
           }
         },
         "main-password-footer": {
           "type": "main-password-footer",
           "settings": {
-            "color_scheme": "scheme-1"
+            "color_scheme": "light-scheme"
           }
         }
       }
