@@ -2,10 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @import "./animate.css"; */
 
 /* Tokens */
 :root {
+  --golden-ratio: 1.618;
+  --golden-ratio-inverse: 0.618;
+
   --color-primary: 55 55 243;
   --color-secondary: 91 33 182;
   --color-accent: 217 70 239;
@@ -20,19 +22,23 @@
   --font-size-heading: 2rem; /* text-2xl */
   --font-size-display: 3rem; /* text-4xl */
 
-  --height-nav: 3rem;
-  --height-header: 3rem;
+  --height-header: 5rem;
   --screen-height: 100vh;
 
   --color-shop-pay: #5a31f4;
   --shop-pay-button--width: 100%; /* Sets the width for the shop-pay-button web component */
 
   @media (min-width: 1024px) {
-    --height-nav: 4rem;
-    --height-header: calc(var(--height-nav) + 44px);
+    --height-header: 6rem;
     --font-size-heading: 2.25rem; /* text-4xl */
     --font-size-display: 3.75rem; /* text-6xl */
   }
+  @media (min-width: 1280) {
+    --height-header: 7rem;
+    --font-size-heading: 2.25rem; /* text-4xl */
+    --font-size-display: 3.75rem; /* text-6xl */
+  }
+
   @supports (height: 100lvh) {
     --screen-height: 100lvh;
   }
@@ -47,7 +53,7 @@
 html,
 body {
   @apply font-light;
-  font-size: 100%;
+  font-size: 16px;
 }
 
 a,
@@ -82,13 +88,11 @@ h6,
 }
 
 @layer components {
-  .brand-logo {
-    background-image: url("/images/comission-color-logo-nav.png");
-    background-repeat: no-repeat;
-    background-position: left center;
-    background-size: contain;
+  /* Menus */
+  .menu-top {
+    @apply flex justify-end w-full h-full px-10 text-white bg-black;
   }
-  .primary-nav {
+  .menu-primary {
     @apply flex justify-end h-full gap-2 grow lg:gap-4 xl:gap-8;
     li {
       @apply flex items-center justify-center h-full;
@@ -96,7 +100,7 @@ h6,
         position: relative;
         font-weight: 100;
         text-decoration: none;
-        @apply flex items-center h-full text-lg lg:px-3 xl:px-5;
+        @apply flex items-center h-full text-lg lg:px-4 xl:px-5;
       }
       .nav-link:before {
         content: "";
@@ -107,7 +111,7 @@ h6,
         left: 0;
         height: 0;
         width: 100%;
-        background-color: #3737f3;
+        background-color: rgb(var(--color-primary));
         transition: all 0.5s ease-in-out;
       }
 
@@ -122,11 +126,24 @@ h6,
         opacity: 1;
       }
     }
-    li:last-of-type {
-      background-color: #3737f3;
+    >li:last-of-type {
+      background-color: rgb(var(--color-primary));
       .nav-link {
         color: #fff;
       }
     }
+    .dropdown-menu {
+      @apply absolute left-0 z-10 hidden pb-3 text-left transition-all duration-300 ease-in-out bg-white border top-full border-light;
+      a {
+        @apply block w-full px-6 py-2 text-lg whitespace-nowrap;
+        @apply hover:text-primary;
+      }
+    }
+  }
+
+  /* Drawers */
+  .drawer {
+    /* @apply fixed top-0 left-0 z-50 w-full h-full overflow-y-auto transition-all duration-300 ease-in-out bg-white; */
+    @apply absolute top-0 left-0 right-0 w-full p-4 transition-transform -translate-y-full;
   }
 }

@@ -8,7 +8,7 @@
     "dev": "yarn tw & yarn --cwd theme start",
     "scripts:watch": "rollup -c --watch",
     "scripts:build": "rollup -c",
-    "tw": "npx tailwindcss -i ./styles/index.css -o ./theme/assets/style.css --watch",
+    "tw": "npx tailwindcss -i ./styles/index.css -o ./theme/assets/base.css --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -16,6 +16,7 @@
   "dependencies": {
     "@tailwindcss/container-queries": "^0.1.1",
     "@tailwindcss/typography": "^0.5.14",
+    "flowbite": "^2.5.1",
     "html-react-parser": "^4.0.0",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",

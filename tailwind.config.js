@@ -5,7 +5,7 @@ const themeMidColor = colors.gray;
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./**/*.{liquid, json}'],
+  content: ['./**/*.{liquid, json}', './node_modules/flowbite/**/*.js'],
   theme: {
     extend: {
       colors: {
@@ -35,26 +35,30 @@ module.exports = {
         danger: 'rgb(var(--color-danger) / <alpha-value>)',
       },
       screens: {
-        //   sm: '32em',
-        //   md: '48em',
-        //   lg: '64em',
-        //   xl: '80em',
-        //   '2xl': '96em',
-        //   'sm-max': { max: '48em' },
-        //   'sm-only': { min: '32em', max: '48em' },
-        //   'md-only': { min: '48em', max: '64em' },
-        //   'lg-only': { min: '64em', max: '80em' },
-        //   'xl-only': { min: '80em', max: '96em' },
-        //   '2xl-only': { min: '96em' },
+        // sm: '32em',
+        // md: '48em',
+        // lg: '64em',
+        // xl: '80em',
+        // '2xl': '96em',
+        // 'sm-max': { max: '48em' },
+        // 'sm-only': { min: '32em', max: '48em' },
+        // 'md-only': { min: '48em', max: '64em' },
+        // 'lg-only': { min: '64em', max: '80em' },
+        // 'xl-only': { min: '80em', max: '96em' },
+        // '2xl-only': { min: '96em' },
+        desktop: { min: '1024px' },
+        tablet: { max: '1023px' },
+        mobile: { max: '1023px' },
       },
       spacing: {
-        nav: 'var(--height-nav)',
         header: 'var(--height-header)',
         screen: 'var(--screen-height, 100vh)',
       },
       height: {
+        mainMenu: 'calc(var(--height-header) * var(--golden-ratio) / (1 + var(--golden-ratio)))',
+        topMenu: 'calc(var(--height-header) / (1 + var(--golden-ratio)))',
         screen: 'var(--screen-height, 100vh)',
-        'screen-no-nav': 'calc(var(--screen-height, 100vh) - var(--height-nav))',
+        'screen-no-nav': 'calc(var(--screen-height, 100vh) - var(--height-header))',
       },
       width: {
         mobileGallery: 'calc(100vw - 3rem)',
@@ -111,6 +115,7 @@ module.exports = {
   plugins: [
     require('@tailwindcss/container-queries'),
     require('@tailwindcss/typography'),
+    require('flowbite/plugin'),
     plugin(({ matchUtilities, theme }) => {
       matchUtilities(
         {

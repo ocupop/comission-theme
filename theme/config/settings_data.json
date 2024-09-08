@@ -3,9 +3,9 @@
     "logo": "shopify:\/\/shop_images\/comission-color-logo-nav_61503bee-b993-4e65-a093-1eaaa196760c.png",
     "logo_width": 300,
     "favicon": "shopify:\/\/shop_images\/favicon.svg",
-    "type_header_font": "assistant_n4",
+    "type_header_font": "sans-serif",
     "heading_scale": 100,
-    "type_body_font": "assistant_n4",
+    "type_body_font": "sans-serif",
     "body_scale": 100,
     "page_width": 1200,
     "spacing_sections": 0,
@@ -35,7 +35,7 @@
     "card_style": "standard",
     "card_image_padding": 0,
     "card_text_alignment": "left",
-    "card_color_scheme": "mid-scheme",
+    "card_color_scheme": "scheme-2",
     "card_border_thickness": 0,
     "card_border_opacity": 10,
     "card_corner_radius": 0,
@@ -46,7 +46,7 @@
     "collection_card_style": "standard",
     "collection_card_image_padding": 0,
     "collection_card_text_alignment": "left",
-    "collection_card_color_scheme": "mid-scheme",
+    "collection_card_color_scheme": "scheme-2",
     "collection_card_border_thickness": 0,
     "collection_card_border_opacity": 10,
     "collection_card_corner_radius": 0,
@@ -57,7 +57,7 @@
     "blog_card_style": "standard",
     "blog_card_image_padding": 0,
     "blog_card_text_alignment": "left",
-    "blog_card_color_scheme": "mid-scheme",
+    "blog_card_color_scheme": "scheme-2",
     "blog_card_border_thickness": 0,
     "blog_card_border_opacity": 10,
     "blog_card_corner_radius": 0,
@@ -94,8 +94,8 @@
     "drawer_shadow_blur": 5,
     "badge_position": "bottom left",
     "badge_corner_radius": 40,
-    "sale_badge_color_scheme": "light-scheme",
-    "sold_out_badge_color_scheme": "dark-scheme",
+    "sale_badge_color_scheme": "scheme-1",
+    "sold_out_badge_color_scheme": "scheme-3",
     "social_facebook_link": "",
     "social_instagram_link": "",
     "social_youtube_link": "",
@@ -117,13 +117,13 @@
       "main-password-header": {
         "type": "main-password-header",
         "settings": {
-          "color_scheme": "light-scheme"
+          "color_scheme": "scheme-1"
         }
       },
       "main-password-footer": {
         "type": "main-password-footer",
         "settings": {
-          "color_scheme": "light-scheme"
+          "color_scheme": "scheme-1"
         }
       }
     },
@@ -131,36 +131,36 @@
 
     ],
     "color_schemes": {
-      "light-scheme": {
+      "scheme-1": {
         "settings": {
-          "background": "#FFFFFF",
+          "background": "#ffffff",
           "background_gradient": "",
           "text": "#121212",
-          "button": "#3737F3",
-          "button_label": "#F3F3F3",
+          "button": "#3737f3",
+          "button_label": "#f3f3f3",
           "secondary_button_label": "#121212",
           "shadow": "#121212"
         }
       },
-      "mid-scheme": {
+      "scheme-2": {
         "settings": {
           "background": "#707070",
           "background_gradient": "",
           "text": "#121212",
-          "button": "#3737F3",
-          "button_label": "#F3F3F3",
+          "button": "#3737f3",
+          "button_label": "#f3f3f3",
           "secondary_button_label": "#121212",
           "shadow": "#121212"
         }
       },
-      "dark-scheme": {
+      "scheme-3": {
         "settings": {
           "background": "#000000",
           "background_gradient": "",
-          "text": "#FFFFFF",
-          "button": "#3737F3",
+          "text": "#ffffff",
+          "button": "#3737f3",
           "button_label": "#000000",
-          "secondary_button_label": "#FFFFFF",
+          "secondary_button_label": "#ffffff",
           "shadow": "#121212"
         }
       }
@@ -170,7 +170,7 @@
     "Default": {
       "logo_width": 90,
       "color_schemes": {
-        "light-scheme": {
+        "scheme-1": {
           "settings": {
             "background": "#FFFFFF",
             "background_gradient": "",
@@ -181,7 +181,7 @@
             "shadow": "#121212"
           }
         },
-        "mid-scheme": {
+        "scheme-2": {
           "settings": {
             "background": "#707070",
             "background_gradient": "",
@@ -192,7 +192,7 @@
             "shadow": "#121212"
           }
         },
-        "dark-scheme": {
+        "scheme-3": {
           "settings": {
             "background": "#000000",
             "background_gradient": "",
@@ -236,7 +236,7 @@
       "card_style": "standard",
       "card_image_padding": 0,
       "card_text_alignment": "left",
-      "card_color_scheme": "mid-scheme",
+      "card_color_scheme": "scheme-2",
       "card_border_thickness": 0,
       "card_border_opacity": 10,
       "card_corner_radius": 0,
@@ -247,7 +247,7 @@
       "collection_card_style": "standard",
       "collection_card_image_padding": 0,
       "collection_card_text_alignment": "left",
-      "collection_card_color_scheme": "mid-scheme",
+      "collection_card_color_scheme": "scheme-2",
       "collection_card_border_thickness": 0,
       "collection_card_border_opacity": 10,
       "collection_card_corner_radius": 0,
@@ -258,7 +258,7 @@
       "blog_card_style": "standard",
       "blog_card_image_padding": 0,
       "blog_card_text_alignment": "left",
-      "blog_card_color_scheme": "mid-scheme",
+      "blog_card_color_scheme": "scheme-2",
       "blog_card_border_thickness": 0,
       "blog_card_border_opacity": 10,
       "blog_card_corner_radius": 0,
@@ -295,8 +295,8 @@
       "drawer_shadow_blur": 5,
       "badge_position": "bottom left",
       "badge_corner_radius": 40,
-      "sale_badge_color_scheme": "light-scheme",
-      "sold_out_badge_color_scheme": "dark-scheme",
+      "sale_badge_color_scheme": "scheme-1",
+      "sold_out_badge_color_scheme": "scheme-3",
       "social_twitter_link": "",
       "social_facebook_link": "",
       "social_pinterest_link": "",
@@ -318,13 +318,13 @@
         "main-password-header": {
           "type": "main-password-header",
           "settings": {
-            "color_scheme": "light-scheme"
+            "color_scheme": "scheme-1"
           }
         },
         "main-password-footer": {
           "type": "main-password-footer",
           "settings": {
-            "color_scheme": "light-scheme"
+            "color_scheme": "scheme-1"
           }
         }
       }
