@@ -13,25 +13,25 @@
 <button
   type="button"
   class=""
-  data-drawer-target="search-drawer"
-  data-drawer-show="search-drawer"
+  data-drawer-target="SearchDrawer"
+  data-drawer-show="SearchDrawer"
   data-drawer-placement="top"
-  aria-controls="search-drawer"
+  aria-controls="SearchDrawer"
 >
   {%- render 'heroicons' name: 'search' %}
 </button>
 <!-- drawer component -->
 <div
-  id="search-drawer"
+  id="SearchDrawer"
   class="drawer drawer-top"
   tabindex="-1"
-  aria-labelledby="search-drawer-label"
+  aria-labelledby="SearchDrawer-label"
 >
     <button
       type="button"
-      class=""
-      data-drawer-hide="search-drawer"
-      aria-controls="search-drawer"
+      class="drawer__close"
+      data-drawer-hide="SearchDrawer"
+      aria-controls="SearchDrawer"
     >
       {%- render 'heroicons' name: 'close' %}
       <span class="sr-only">Close menu</span>

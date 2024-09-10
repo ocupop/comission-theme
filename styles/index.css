@@ -143,7 +143,26 @@ h6,
 
   /* Drawers */
   .drawer {
-    /* @apply fixed top-0 left-0 z-50 w-full h-full overflow-y-auto transition-all duration-300 ease-in-out bg-white; */
-    @apply absolute top-0 left-0 right-0 w-full p-4 transition-transform -translate-y-full;
+    @apply fixed z-50 transition-all duration-700 ease-in-out bg-white text-dark;
+    .drawer__header {
+      @apply relative w-full px-8 py-4 border-b shadow-sm;
+    }
+    .drawer__close {
+      @apply absolute top-0 right-0 p-4 text-2xl text-dark;
+    }
+    .drawer__content {
+      @apply px-8;
+    }
+  }
+  .drawer-top {
+    @apply top-0 left-0 right-0 w-full transition-transform -translate-y-full;
+  }
+  .drawer-right {
+    @apply top-0 right-0 h-screen p-4 overflow-y-auto translate-x-full bg-white w-fit-content;
+  }
+
+  /* Buttons */
+  .btn {
+    @apply inline-block w-auto px-6 py-3 text-center text-white bg-primary whitespace-nowrap;
   }
 }

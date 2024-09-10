@@ -290,14 +290,15 @@
     <a class="sr-only" href="#MainContent">
       {{ 'accessibility.skip_to_text' | t }}
     </a>
+    {%- render 'cart-drawer' -%}
 
-    {% comment %} {%- if settings.cart_type == 'drawer' -%}
-      {%- render 'cart-drawer' -%}
-    {%- endif -%} {% endcomment %}
 
     {% sections 'header-group' %}
 
     <main id="MainContent" class="flex flex-col h-screen pt-[var(--height-header)]" role="main" tabindex="-1">
+
+
+
       {% comment %} {{ content_for_layout }} {% endcomment %}
     </main>
 
