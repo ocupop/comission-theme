@@ -53,7 +53,7 @@
 html,
 body {
   @apply font-light;
-  font-size: 16px;
+  font-size: 100%;
 }
 
 a,
@@ -85,6 +85,10 @@ h5,
 h6,
 .h6 {
   @apply text-base;
+}
+
+.hxxl {
+  @apply mb-4 text-6xl font-light lg:text-7xl xl:text-8xl;
 }
 
 @layer components {
@@ -158,11 +162,16 @@ h6,
     @apply top-0 left-0 right-0 w-full transition-transform -translate-y-full;
   }
   .drawer-right {
-    @apply top-0 right-0 h-screen p-4 overflow-y-auto translate-x-full bg-white w-fit-content;
+    @apply top-0 right-0 h-screen p-4 overflow-y-auto translate-x-full bg-white min-w-fit;
   }
 
   /* Buttons */
   .btn {
     @apply inline-block w-auto px-6 py-3 text-center text-white bg-primary whitespace-nowrap;
+  }
+
+  /* Hero */
+  .hero {
+    @apply relative;
   }
 }

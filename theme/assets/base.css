@@ -1233,7 +1233,7 @@ input:checked + .toggle-bg {
   --tw-text-opacity: 1;
   color: rgb(31 41 55 / var(--tw-text-opacity));
   transition-property: all;
-  transition-duration: 300ms;
+  transition-duration: 700ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   .drawer__header {
     position: relative;
@@ -1296,27 +1296,17 @@ input:checked + .toggle-bg {
 }
 
 .drawer-right {
-  position: fixed;
   top: 0px;
   right: 0px;
-  z-index: 50;
   height: var(--screen-height, 100vh);
-  width: -moz-fit-content;
-  width: fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
   --tw-translate-x: 100%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   overflow-y: auto;
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   padding: 1rem;
-  transition-property: transform;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.drawer-right:is(.dark *) {
-  --tw-bg-opacity: 1;
-  background-color: rgb(31 41 55 / var(--tw-bg-opacity));
 }
 
 /* Buttons */
@@ -1334,6 +1324,12 @@ input:checked + .toggle-bg {
   text-align: center;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+/* Hero */
+
+.hero {
+  position: relative;
 }
 
 .sr-only {
@@ -1821,6 +1817,11 @@ input:checked + .toggle-bg {
   background-color: rgb(255 255 255 / 0.5);
 }
 
+.object-cover {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .p-1 {
   padding: 0.25rem;
 }
@@ -1831,6 +1832,10 @@ input:checked + .toggle-bg {
 
 .p-2\.5 {
   padding: 0.625rem;
+}
+
+.p-20 {
+  padding: 5rem;
 }
 
 .p-4 {
@@ -1992,6 +1997,10 @@ input:checked + .toggle-bg {
   opacity: 1;
 }
 
+.opacity-40 {
+  opacity: 0.4;
+}
+
 .shadow {
   --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
@@ -2109,7 +2118,7 @@ input:checked + .toggle-bg {
 html,
 body {
   font-weight: 300;
-  font-size: 16px;
+  font-size: 100%;
 }
 
 a:focus-visible,
@@ -2160,6 +2169,27 @@ h6,
 .h6 {
   font-size: 1rem;
   line-height: 1.5rem;
+}
+
+.hxxl {
+  margin-bottom: 1rem;
+  font-size: 3.75rem;
+  line-height: 1;
+  font-weight: 300;
+}
+
+@media (min-width: 1024px) {
+  .hxxl {
+    font-size: 4.5rem;
+    line-height: 1;
+  }
+}
+
+@media (min-width: 1280px) {
+  .hxxl {
+    font-size: 6rem;
+    line-height: 1;
+  }
 }
 
 .last\:bg-primary:last-child {
