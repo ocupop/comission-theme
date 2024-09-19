@@ -1,33 +1,3 @@
-  {% comment %}
-    hero-{{ section.settings.image_height }}
-    hero-{{ section.settings.desktop_content_alignment }}
-    hero-mobile-{{ section.settings.mobile_content_alignment }}
-    hero-{{ section.settings.image_height }}
-    {% if section.settings.stack_images_on_mobile and section.settings.image != blank and section.settings.image_2 != blank %} hero-stacked{% endif %}
-    {% if section.settings.image_height == 'adapt' and section.settings.image != blank %} hero-adapt{% endif %}
-    {% if section.settings.show_text_below %} hero-mobile-bottom{%- endif -%}
-    {% if section.settings.show_text_box == false %} hero-desktop-transparent{% endif %}
-    {% if settings.animations_reveal_on_scroll %} scroll-trigger animate-fadein{% endif %}
-
-    {%- liquid
-      assign image_height = section.settings.image.width | divided_by: section.settings.image.aspect_ratio
-      assign image_class = 'object-cover w-full opacity-40'
-      assign sizes = '100vw'
-    -%}
-
-    {{
-      section.settings.image
-      | image_url: width: 3840
-      | image_tag:
-        width: section.settings.image.width,
-        height: image_height,
-        class: image_class,
-        sizes: sizes,
-        widths: widths,
-        fetchpriority: fetch_priority
-    }}
-  {% endcomment %}
-
 {%- liquid
   assign fetch_priority = 'auto'
   if section.index == 1
@@ -37,57 +7,94 @@
 
 <div
   id="hero-{{ section.id }}"
-  class="bg-black hero"
-  style="background-image: url('{{ section.settings.image | image_url: width: 3840 }}');"
+  class="pt-20 text-white bg-black lg:pt-48"
+  style="background-image: url('{{ section.settings.background_image | image_url: width: 3840 }}');"
 >
-  <div class="p-20 text-white">
-    {%- for block in section.blocks -%}
-      {%- case block.type -%}
-        {%- when 'heading' -%}
-          <h2
-            class="{{ block.settings.heading_size }}"
-            {{ block.shopify_attributes }}>
-            {{ block.settings.heading }}
-          </h2>
-        {%- when 'text' -%}
-          <div
-            class="{{ block.settings.text_style }}"
-            {{ block.shopify_attributes }}>
-            <p>{{ block.settings.text }}</p>
-          </div>
-        {%- when 'buttons' -%}
-          <div
-            class="banner__buttons{% if block.settings.button_label_1 != blank and block.settings.button_label_2 != blank %} banner__buttons--multiple{% endif %}"
-            {{ block.shopify_attributes }}
-          >
-            {%- if block.settings.button_label_1 != blank -%}
-              <a
-                {% if block.settings.button_link_1 == blank %}
-                  role="link" aria-disabled="true"
-                {% else %}
-                  href="{{ block.settings.button_link_1 }}"
-                {% endif %}
-                class="button{% if block.settings.button_style_secondary_1 %} button--secondary{% else %} button--primary{% endif %}"
+  <div class="container">
+    <div class="items-end justify-between lg:flex">
+      <div class="pb-10 pt-14 lg:w-3/4 xl:w-3/5">
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when 'heading' -%}
+              <h2
+                class="{{ block.settings.heading_size }} animate-slideup"
+                {{ block.shopify_attributes }}>
+                {{ block.settings.heading }}
+              </h2>
+            {%- when 'text' -%}
+              <div
+                class="{{ block.settings.text_style }}"
+                {{ block.shopify_attributes }}>
+                <p>{{ block.settings.text }}</p>
+              </div>
+            {%- when 'buttons' -%}
+              <div
+                class="banner__buttons{% if block.settings.button_label_1 != blank and block.settings.button_label_2 != blank %} banner__buttons--multiple{% endif %}"
+                {{ block.shopify_attributes }}
               >
-                {{- block.settings.button_label_1 | escape -}}
-              </a>
-            {%- endif -%}
-            {%- if block.settings.button_label_2 != blank -%}
-              <a
-                {% if block.settings.button_link_2 == blank %}
-                  role="link" aria-disabled="true"
-                {% else %}
-                  href="{{ block.settings.button_link_2 }}"
-                {% endif %}
-                class="button{% if block.settings.button_style_secondary_2 %} button--secondary{% else %} button--primary{% endif %}"
-              >
-                {{- block.settings.button_label_2 | escape -}}
-              </a>
-            {%- endif -%}
-          </div>
-      {%- endcase -%}
-    {%- endfor -%}
+                {%- if block.settings.button_label_1 != blank -%}
+                  <a
+                    {% if block.settings.button_link_1 == blank %}
+                      role="link" aria-disabled="true"
+                    {% else %}
+                      href="{{ block.settings.button_link_1 }}"
+                    {% endif %}
+                    class="button{% if block.settings.button_style_secondary_1 %} button--secondary{% else %} button--primary{% endif %}"
+                  >
+                    {{- block.settings.button_label_1 | escape -}}
+                  </a>
+                {%- endif -%}
+                {%- if block.settings.button_label_2 != blank -%}
+                  <a
+                    {% if block.settings.button_link_2 == blank %}
+                      role="link" aria-disabled="true"
+                    {% else %}
+                      href="{{ block.settings.button_link_2 }}"
+                    {% endif %}
+                    class="button{% if block.settings.button_style_secondary_2 %} button--secondary{% else %} button--primary{% endif %}"
+                  >
+                    {{- block.settings.button_label_2 | escape -}}
+                  </a>
+                {%- endif -%}
+              </div>
+          {%- endcase -%}
+        {%- endfor -%}
+      </div>
+      <div class="pb-10 animate-slideleft animate-delay-mid lg:w-1/4">
+        <img class="max-w-full ml-auto" src="{{ section.settings.image | image_url: '300x100' }}" width="300" height="100" alt="Art on your terms">
+      </div>
+    </div>
   </div>
+  <!-- TODO: Start editable -->
+  <div class="pt-10 pb-10 lg:pb-0">
+    <div class="grid justify-between grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+      <a href="#collect" class="flex justify-center px-5 py-12 text-center duration-500 ease-in-out animate-slide lg:pt-20 lg:pb-32 hover:bg-primary/80">
+        <div class="text-center">
+          <h3 class="mb-4 text-3xl font-bold lg:text-4xl xl:text-5xl">Collect</h3>
+          <p class="text-xl">Classic artworks for your screens and spaces</p>
+        </div>
+      </a>
+      <a href="#experience" class="flex justify-center px-5 py-12 text-center duration-500 ease-in-out animate-slide lg:pt-20 lg:pb-32 hover:bg-primary/80">
+        <div class="text-center">
+          <h3 class="mb-4 text-3xl font-bold lg:text-4xl xl:text-5xl">Experience</h3>
+          <p class="text-xl">Exclusive features for CoMission collectors</p>
+        </div>
+      </a>
+      <a href="#foster" class="flex justify-center px-5 py-12 text-center duration-500 ease-in-out animate-slide lg:pt-20 lg:pb-32 hover:bg-primary/80">
+        <div class="text-center">
+          <h3 class="mb-4 text-3xl font-bold lg:text-4xl xl:text-5xl">Foster</h3>
+          <p class="text-xl">Make a social impact</p>
+        </div>
+      </a>
+      <a href="#connect" class="flex justify-center px-5 py-12 text-center duration-500 ease-in-out animate-slide lg:pt-20 lg:pb-32 hover:bg-primary/80">
+        <div class="text-center">
+          <h3 class="mb-4 text-3xl font-bold lg:text-4xl xl:text-5xl">Connect</h3>
+          <p class="text-xl">A growing community</p>
+        </div>
+      </a>
+    </div>
+  </div>
+  <!-- TODO: End editable -->
 </div>
 
 
@@ -97,10 +104,18 @@
   "name": "t:sections.hero.name",
   "tag": "section",
   "class": "section",
+  "enabled_on": {
+    "templates": ["index"]
+  },
   "disabled_on": {
     "groups": ["header", "footer"]
   },
   "settings": [
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "t:sections.hero.settings.image.label"
+    },
     {
       "type": "image_picker",
       "id": "image",
@@ -115,143 +130,6 @@
       "unit": "%",
       "label": "t:sections.hero.settings.image_overlay_opacity.label",
       "default": 0
-    },
-    {
-      "type": "select",
-      "id": "image_height",
-      "options": [
-        {
-          "value": "adapt",
-          "label": "t:sections.hero.settings.image_height.options__1.label"
-        },
-        {
-          "value": "small",
-          "label": "t:sections.hero.settings.image_height.options__2.label"
-        },
-        {
-          "value": "medium",
-          "label": "t:sections.hero.settings.image_height.options__3.label"
-        },
-        {
-          "value": "large",
-          "label": "t:sections.hero.settings.image_height.options__4.label"
-        }
-      ],
-      "default": "medium",
-      "label": "t:sections.hero.settings.image_height.label",
-      "info": "t:sections.hero.settings.image_height.info"
-    },
-    {
-      "type": "select",
-      "id": "desktop_content_position",
-      "options": [
-        {
-          "value": "top-left",
-          "label": "t:sections.hero.settings.desktop_content_position.options__1.label"
-        },
-        {
-          "value": "top-center",
-          "label": "t:sections.hero.settings.desktop_content_position.options__2.label"
-        },
-        {
-          "value": "top-right",
-          "label": "t:sections.hero.settings.desktop_content_position.options__3.label"
-        },
-        {
-          "value": "middle-left",
-          "label": "t:sections.hero.settings.desktop_content_position.options__4.label"
-        },
-        {
-          "value": "middle-center",
-          "label": "t:sections.hero.settings.desktop_content_position.options__5.label"
-        },
-        {
-          "value": "middle-right",
-          "label": "t:sections.hero.settings.desktop_content_position.options__6.label"
-        },
-        {
-          "value": "bottom-left",
-          "label": "t:sections.hero.settings.desktop_content_position.options__7.label"
-        },
-        {
-          "value": "bottom-center",
-          "label": "t:sections.hero.settings.desktop_content_position.options__8.label"
-        },
-        {
-          "value": "bottom-right",
-          "label": "t:sections.hero.settings.desktop_content_position.options__9.label"
-        }
-      ],
-      "default": "middle-center",
-      "label": "t:sections.hero.settings.desktop_content_position.label"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_text_box",
-      "default": true,
-      "label": "t:sections.hero.settings.show_text_box.label"
-    },
-    {
-      "type": "select",
-      "id": "desktop_content_alignment",
-      "options": [
-        {
-          "value": "left",
-          "label": "t:sections.hero.settings.desktop_content_alignment.options__1.label"
-        },
-        {
-          "value": "center",
-          "label": "t:sections.hero.settings.desktop_content_alignment.options__2.label"
-        },
-        {
-          "value": "right",
-          "label": "t:sections.hero.settings.desktop_content_alignment.options__3.label"
-        }
-      ],
-      "default": "center",
-      "label": "t:sections.hero.settings.desktop_content_alignment.label"
-    },
-    {
-      "type": "color_scheme",
-      "id": "color_scheme",
-      "label": "t:sections.all.colors.label",
-      "default": "scheme-1"
-    },
-    {
-      "type": "header",
-      "content": "t:sections.hero.settings.mobile.content"
-    },
-    {
-      "type": "select",
-      "id": "mobile_content_alignment",
-      "options": [
-        {
-          "value": "left",
-          "label": "t:sections.hero.settings.mobile_content_alignment.options__1.label"
-        },
-        {
-          "value": "center",
-          "label": "t:sections.hero.settings.mobile_content_alignment.options__2.label"
-        },
-        {
-          "value": "right",
-          "label": "t:sections.hero.settings.mobile_content_alignment.options__3.label"
-        }
-      ],
-      "default": "center",
-      "label": "t:sections.hero.settings.mobile_content_alignment.label"
-    },
-    {
-      "type": "checkbox",
-      "id": "stack_images_on_mobile",
-      "default": true,
-      "label": "t:sections.hero.settings.stack_images_on_mobile.label"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_text_below",
-      "default": true,
-      "label": "t:sections.hero.settings.show_text_below.label"
     }
   ],
   "blocks": [
