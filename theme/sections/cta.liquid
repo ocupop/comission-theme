@@ -1,0 +1,38 @@
+<section
+  class="relative py-10 bg-center bg-cover lg:py-20"
+  style="background-image:url('{{ section.settings.background_image | image_url: width: 1500 }}')">
+  <div class="absolute top-0 left-0 z-0 w-full h-full bg-black/60"></div>
+  <div class="container relative">
+    <div class="flex items-center justify-center text-center animate-slide animate-delay">
+      <a
+        class="p-4 text-3xl text-white border border-white lg:text-4xl md:p-8 lg:py-12 lg:px-20"
+        href="{{ section.settings.button_link }}">
+        {{ section.settings.button_label }}
+      </a>
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "t:sections.cta.name",
+  "tag": "section",
+  "class": "cta",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "t:sections.cta.settings.background_image.label"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "t:sections.cta.settings.button_label.label"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "t:sections.cta.settings.button_link.label"
+    }
+  ]
+}
+{% endschema %}

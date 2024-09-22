@@ -16,11 +16,11 @@
   --color-warning: 251 150 0;
   --color-danger: 191 72 0;
 
-  --font-size-fine: 0.75rem; /* text-xs */
-  --font-size-copy: 1rem; /* text-base */
+  --font-size-small: 0.75rem; /* text-xs */
+  --font-size-body: 1rem; /* text-base */
   --font-size-lead: 1.5rem; /* text-lg */
-  --font-size-heading: 2rem; /* text-2xl */
-  --font-size-display: 3rem; /* text-4xl */
+  --font-size-heading: 1.75rem; /* text-2xl */
+  --font-size-display: 4rem; /* text-7xl */
 
   --height-header: 5rem;
   --screen-height: 100vh;
@@ -30,13 +30,15 @@
 
   @media (min-width: 1024px) {
     --height-header: 6rem;
-    --font-size-heading: 2.25rem; /* text-4xl */
-    --font-size-display: 3.75rem; /* text-6xl */
+    --font-size-lead: 1.75rem; /* text-lg */
+    --font-size-heading: 2rem; /* text-4xl */
+    --font-size-display: 5rem; /* text-6xl */
   }
   @media (min-width: 1280) {
     --height-header: 7rem;
-    --font-size-heading: 2.25rem; /* text-4xl */
-    --font-size-display: 3.75rem; /* text-6xl */
+    --font-size-lead: 2rem; /* text-lg */
+    --font-size-heading: 2.5rem; /* text-4xl */
+    --font-size-display: 7rem; /* text-6xl */
   }
 
   @supports (height: 100lvh) {
@@ -90,8 +92,21 @@ h6,
 .hxxl {
   @apply text-6xl font-light lg:text-7xl xl:text-8xl;
 }
-.subtitle {
-  @apply text-2xl;
+
+.text-small {
+  @apply text-[var(--font-size-small)];
+}
+.text-body {
+  @apply text-[var(--font-size-body)];
+}
+.text-lead {
+  @apply text-[var(--font-size-lead)];
+}
+.text-heading {
+  @apply text-[var(--font-size-heading)];
+}
+.text-display {
+  @apply text-[var(--font-size-display)];
 }
 
 @layer components {
@@ -171,6 +186,25 @@ h6,
   /* Buttons */
   .btn {
     @apply inline-block w-auto px-6 py-3 text-center text-white bg-primary whitespace-nowrap;
+  }
+
+  /* Home Page */
+  .section-header {
+    @apply w-full h-32 text-white bg-black;
+    h2 {
+      @apply mb-4 font-normal text-7xl lg:text-8xl;
+    }
+  }
+
+  /* Color Schemes */
+  .color-scheme-1 {
+    @apply bg-white text-dark;
+  }
+  .color-scheme-2 {
+    @apply text-white bg-gray-800;
+  }
+  .color-scheme-3 {
+    @apply text-white bg-black;
   }
 
 }

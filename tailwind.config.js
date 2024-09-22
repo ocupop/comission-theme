@@ -71,8 +71,8 @@ module.exports = {
         display: ['var(--font-size-display)', '1.1'],
         heading: ['var(--font-size-heading)', '1.25'],
         lead: ['var(--font-size-lead)', '1.333'],
-        copy: ['var(--font-size-copy)', '1.5'],
-        fine: ['var(--font-size-fine)', '1.333'],
+        body: ['var(--font-size-body)', '1.5'],
+        small: ['var(--font-size-small)', '1.333'],
       },
       // maxWidth: {
       //   "prose-narrow": "45ch",

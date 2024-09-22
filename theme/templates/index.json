@@ -27,9 +27,72 @@
         "image": "shopify:\/\/shop_images\/comission-illustration-artterms.svg",
         "image_overlay_opacity": 40
       }
+    },
+    "home-collect": {
+      "type": "home-collect",
+      "settings": {
+        "title": "Collect",
+        "subtitle": "Acquire pieces of iconic artworks, from some of today’s most desirable artists, housed in the world’s leading institutions."
+
+      }
+    },
+    "section-header-collect": {
+      "type": "section-header",
+      "settings": {
+        "title": "Collect"
+      }
+    },
+    "cta-collect": {
+      "type": "cta",
+      "settings": {
+        "background_image": "shopify:\/\/shop_images\/comission-homepage-painting-background-image.jpg",
+        "button_label": "See all available artwork",
+        "button_link": "https:\/\/www.comission.art\/collections\/all"
+      }
+    },
+    "section-header-experience": {
+      "type": "section-header",
+      "settings": {
+        "title": "Experience"
+      }
+    },
+    "cta-experience": {
+      "type": "cta",
+      "settings": {
+        "background_image": "shopify:\/\/shop_images\/comission-homepage-painting-background-image.jpg",
+        "button_label": "Explore the features",
+        "button_link": "https:\/\/www.comission.art\/collections\/all"
+      }
+    },
+    "section-header-foster": {
+      "type": "section-header",
+      "settings": {
+        "title": "Foster"
+      }
+    },
+    "cta-foster": {
+      "type": "cta",
+      "settings": {
+        "background_image": "shopify:\/\/shop_images\/comission-homepage-painting-background-image.jpg",
+        "button_label": "Learn about our mission",
+        "button_link": "https:\/\/www.comission.art\/collections\/all"
+      }
+    },
+    "section-header-connect": {
+      "type": "section-header",
+      "settings": {
+        "title": "Connect"
+      }
     }
   },
   "order": [
-    "hero"
+    "hero",
+    "section-header-collect",
+    "cta-collect",
+    "section-header-experience",
+    "cta-experience",
+    "section-header-foster",
+    "cta-foster",
+    "section-header-connect"
   ]
 }

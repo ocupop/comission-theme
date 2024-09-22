@@ -1,0 +1,19 @@
+<div id="{{ section.settings.title | handle }}" class="container relative -mt-4 lg:-mt-8">
+  <h2>{{ section.settings.title }}</h2>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.section-header.name",
+  "tag": "header",
+  "class": "section-header",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "default": "t:sections.section-header.settings.title.default",
+      "label": "t:sections.section-header.settings.title.label"
+    }
+  ]
+}
+{% endschema %}
