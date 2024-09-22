@@ -1,31 +1,32 @@
 {% render 'section-header',
   title: section.settings.title,
   subtitle: section.settings.subtitle,
+  class: 'text-center mx-auto text-heading',
   color_scheme: section.settings.color_scheme
 %}
 <div class="color-{{ section.settings.color_scheme }}">
   <div class="container">
-    {% comment %} {% render 'home-slider' %} {% endcomment %}
+    {% render 'menu-social' %}
   </div>
 </div>
 
 {% schema %}
 {
-  "name": "t:sections.home-collect.name",
+  "name": "t:sections.home-connect.name",
   "tag": "section",
   "class": "section",
   "settings": [
     {
       "type": "text",
       "id": "title",
-      "default": "t:sections.home-collect.settings.title.default",
-      "label": "t:sections.home-collect.settings.title.label"
+      "default": "t:sections.home-connect.settings.title.default",
+      "label": "t:sections.home-connect.settings.title.label"
     },
     {
       "type": "text",
       "id": "subtitle",
-      "default": "t:sections.home-collect.settings.subtitle.default",
-      "label": "t:sections.home-collect.settings.subtitle.label"
+      "default": "t:sections.home-connect.settings.subtitle.default",
+      "label": "t:sections.home-connect.settings.subtitle.label"
     },
     {
       "type": "color_scheme",

@@ -32,14 +32,8 @@
       "type": "home-collect",
       "settings": {
         "title": "Collect",
-        "subtitle": "Acquire pieces of iconic artworks, from some of today’s most desirable artists, housed in the world’s leading institutions."
-
-      }
-    },
-    "section-header-collect": {
-      "type": "section-header",
-      "settings": {
-        "title": "Collect"
+        "subtitle": "Acquire pieces of iconic artworks, from some of today’s most desirable artists, housed in the world’s leading institutions.",
+        "color_scheme": "scheme-1"
       }
     },
     "cta-collect": {
@@ -50,10 +44,14 @@
         "button_link": "https:\/\/www.comission.art\/collections\/all"
       }
     },
-    "section-header-experience": {
-      "type": "section-header",
+    "home-experience": {
+      "type": "home-experience",
       "settings": {
-        "title": "Experience"
+        "title": "Experience",
+        "subtitle": "Exclusive features for collectors",
+        "image": "shopify:\/\/shop_images\/comission-features.png",
+        "description": "Each CoMission artwork is made up of a number of unique pieces - Digital Art Blocks (DABs) from which you choose your own and buy a membership in the artwork. Your purchase is a charitable donation, supporting the cause represented by the artwork.\r\n\r\nYour DAB is then your passport in to our community, letting you view the artwork on your own devices, show it off to friends, connect with fellow fans, and enjoy other exclusive features related to the artwork.",
+        "color_scheme": "scheme-3"
       }
     },
     "cta-experience": {
@@ -64,10 +62,14 @@
         "button_link": "https:\/\/www.comission.art\/collections\/all"
       }
     },
-    "section-header-foster": {
-      "type": "section-header",
+    "home-foster": {
+      "type": "home-foster",
       "settings": {
-        "title": "Foster"
+        "title": "Foster",
+        "subtitle": "Funding social change through art",
+        "image": "shopify:\/\/shop_images\/comission-illustration-artterms.svg",
+        "description": "Because every purchase on the CoMission website generates a charitable donation supporting a specific cause, we’re using the power of art to affect change in our society.",
+        "color_scheme": "scheme-1"
       }
     },
     "cta-foster": {
@@ -78,21 +80,32 @@
         "button_link": "https:\/\/www.comission.art\/collections\/all"
       }
     },
-    "section-header-connect": {
-      "type": "section-header",
+    "home-connect": {
+      "type": "home-connect",
       "settings": {
-        "title": "Connect"
+        "title": "Connect",
+        "subtitle": "Community and conversation around the artworks that move us.",
+        "color_scheme": "scheme-1"
+      }
+    },
+    "cta-connect": {
+      "type": "cta",
+      "settings": {
+        "background_image": "",
+        "button_label": "Explore our Artwork",
+        "button_link": "https:\/\/www.comission.art\/collections\/all"
       }
     }
   },
   "order": [
     "hero",
-    "section-header-collect",
+    "home-collect",
     "cta-collect",
-    "section-header-experience",
+    "home-experience",
     "cta-experience",
-    "section-header-foster",
+    "home-foster",
     "cta-foster",
-    "section-header-connect"
+    "home-connect",
+    "cta-connect"
   ]
 }

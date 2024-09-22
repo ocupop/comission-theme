@@ -1,7 +1,9 @@
 <section
   class="relative py-10 bg-center bg-cover lg:py-20"
   style="background-image:url('{{ section.settings.background_image | image_url: width: 1500 }}')">
-  <div class="absolute top-0 left-0 z-0 w-full h-full bg-black/60"></div>
+  {%- if section.settings.background_image != blank -%}
+    <div class="absolute top-0 left-0 z-0 w-full h-full bg-black/60"></div>
+  {%- endif -%}
   <div class="container relative">
     <div class="flex items-center justify-center text-center animate-slide animate-delay">
       <a

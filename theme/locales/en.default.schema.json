@@ -850,12 +850,44 @@
         "name": "Homepage Hero"
       }
     },
-    "section-header": {
-      "name": "Section header",
+    "home-collect": {
+      "name": "Collect",
       "settings": {
         "title": {
           "label": "Title",
-          "default": "Section title"
+          "default": "Collect"
+        },
+        "subtitle": {
+          "label": "Subtitle",
+          "default": "Enter a subtitle"
+        },
+        "color_scheme": {
+          "label": "Color scheme",
+          "default": "scheme-1"
+        }
+      }
+    },
+    "home-experience": {
+      "name": "Experience",
+      "settings": {
+        "title": {
+          "label": "Title",
+          "default": "Experience"
+        },
+        "subtitle": {
+          "label": "Subtitle",
+          "default": ""
+        },
+        "image": {
+          "label": "Image"
+        },
+        "text": {
+          "label": "Description",
+          "default": "Enter a description"
+        },
+        "color_scheme": {
+          "label": "Color scheme",
+          "default": "scheme-1"
         }
       }
     },

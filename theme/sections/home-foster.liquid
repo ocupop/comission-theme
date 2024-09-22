@@ -1,0 +1,57 @@
+{% render 'section-header',
+  title: section.settings.title,
+  subtitle: section.settings.subtitle,
+  color_scheme: section.settings.color_scheme
+%}
+<div class="color-{{ section.settings.color_scheme }}">
+  <div class="container">
+    <div class="grid items-center grid-cols-1 gap-20 py-20 lg:grid-cols-2 lg:gap-40">
+      <div>
+        <img src="{{ section.settings.image | image_url: width: 1000 }}" alt="">
+      </div>
+      <div class="text-body">
+        {{ section.settings.description }}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.home-foster.name",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "default": "t:sections.home-foster.settings.title.default",
+      "label": "t:sections.home-foster.settings.title.label"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "default": "t:sections.home-foster.settings.subtitle.default",
+      "label": "t:sections.home-foster.settings.subtitle.label"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:sections.home-foster.settings.image.label"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "default": "t:sections.home-foster.settings.text.default",
+      "label": "t:sections.home-foster.settings.text.label"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    }
+  ]
+}
+{% endschema %}
+

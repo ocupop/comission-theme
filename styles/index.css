@@ -190,21 +190,21 @@ h6,
 
   /* Home Page */
   .section-header {
-    @apply w-full h-32 text-white bg-black;
+    @apply relative w-full h-20 text-white bg-black;
     h2 {
-      @apply mb-4 font-normal text-7xl lg:text-8xl;
+      @apply absolute font-normal text-7xl lg:text-8xl -top-4 lg:-top-8;
     }
   }
 
   /* Color Schemes */
   .color-scheme-1 {
-    @apply bg-white text-dark;
+    @apply text-black bg-white;
   }
   .color-scheme-2 {
-    @apply text-white bg-gray-800;
+    @apply text-white bg-black;
   }
   .color-scheme-3 {
-    @apply text-white bg-black;
+    @apply text-white bg-red-500;
   }
 
 }
