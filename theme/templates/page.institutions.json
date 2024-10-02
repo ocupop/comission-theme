@@ -1,0 +1,15 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-list-collections",
+      "settings": {
+        "title": "Our Institution Partners",
+        "sort": "alphabetical",
+        "type": "institution"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

@@ -8,6 +8,7 @@
   - columns: {Number}
   - extend_height: {Boolean} Card height extends to available container space. Default: false (optional)
   - wrapper_class: {String} Wrapper class for card (optional)
+  - image_class: {String} Wrapper class for image (optional)
   - placeholder_image: {String} Placeholder image when collection is empty (optional)
 
   Usage:
@@ -16,23 +17,21 @@
 
 
 <div class="{{ wrapper_class }}">
-  {%- if card_collection.featured_image -%}
-    <div class="media media--transparent media--hover-effect">
-      <img
-        src="{{ card_collection.featured_image | image_url: width: 500 }}"
-        alt="{{ card_collection.featured_image.alt | escape }}"
-        height="{{ card_collection.featured_image.height }}"
-        width="{{ card_collection.featured_image.width }}"
-        loading="lazy"
-        class="rounded-full"
-      >
-    </div>
-  {%- endif -%}
-    <div class="col-span-2">
-      <h4 class="mb-4 text-3xl">{{- card_collection.title | escape -}}</h4>
-      <p class="mb-4">{{- card_collection.metafields.comission.excerpt -}}</p>
-      <a class="flex items-center text-xl font-normal text-primary" href="{{ collection.url }}">See {{ collection_type }} bio {% render 'icons' name: 'arrow-right' %}</a>
-    </div>
+  <div class="media media--transparent media--hover-effect">
+    <img
+      src="{{ card_collection.featured_image | image_url: width: 500 }}"
+      alt="{{ card_collection.featured_image.alt | escape }}"
+      height="{{ card_collection.featured_image.height }}"
+      width="{{ card_collection.featured_image.width }}"
+      loading="lazy"
+      class="{{ image_class }}"
+    >
+  </div>
+
+  <div class="col-span-2">
+    <h4 class="mb-4 text-3xl">{{- card_collection.title | escape -}}</h4>
+    <p class="mb-4">{{- card_collection.metafields.comission.excerpt -}}</p>
+    <a class="flex items-center text-xl font-normal text-primary" href="{{ collection.url }}">See {{ collection_type }} bio {% render 'icons' name: 'arrow-right' %}</a>
   </div>
 </div>
 

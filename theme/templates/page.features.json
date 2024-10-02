@@ -1,0 +1,36 @@
+{
+  "sections": {
+    "image-with-text": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Features to enrich your art experience",
+            "heading_size": "h1"
+          }
+        },
+        "copy": {
+          "type": "copy",
+          "settings": {
+            "copy": "<p>We have created a new and unique doorway into the fine art world. Now you can connect with your art wherever and whenever you choose, share it with your friends, and connect with your tribe; those who have a shared love and passion for the art and causes that you do.<\/p>",
+            "text_style": "text-default"
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "copy"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/comission-benefits-hero-01-graphics.png",
+        "order": "order-last",
+        "layout": "layout_3",
+        "color_scheme": "scheme-2"
+      }
+    }
+  },
+  "order": [
+    "image-with-text"
+  ]
+}
