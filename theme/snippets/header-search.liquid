@@ -18,7 +18,7 @@
   data-drawer-placement="top"
   aria-controls="SearchDrawer"
 >
-  {%- render 'heroicons' name: 'search' %}
+  {%- render 'icons' name: 'search' %}
 </button>
 <!-- drawer component -->
 <div
@@ -33,7 +33,7 @@
       data-drawer-hide="SearchDrawer"
       aria-controls="SearchDrawer"
     >
-      {%- render 'heroicons' name: 'close' %}
+      {%- render 'icons' name: 'close' %}
       <span class="sr-only">Close menu</span>
     </button>
     <form
@@ -69,10 +69,10 @@
         class="btn {% if search.terms == blank %} hidden{% endif %}"
         aria-label="{{ 'general.search.reset' | t }}"
       >
-        {%- render 'heroicons' name: 'close' %}
+        {%- render 'icons' name: 'close' %}
       </button>
       <button class="btn" aria-label="{{ 'general.search.search' | t }}">
-        {%- render 'heroicons' name: 'search' %}
+        {%- render 'icons' name: 'search' %}
       </button>
     </form>
 </div>

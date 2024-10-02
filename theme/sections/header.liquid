@@ -6,39 +6,38 @@
   endfor
 -%}
 
-<header class="fixed top-0 z-10 w-full drop-shadow-md h-header">
-  <!-- Mobile Menu -->
-  <div class="block lg:hidden">
-    <div class="flex items-center justify-between w-full py-2">
-      {%- render 'menu-drawer' -%}
-      {% comment %} {%- render 'header-search' input_id: 'mobile-search-input' -%} {% endcomment %}
-      {%- render 'menu-brand' -%}
-      {%- render 'menu-user' -%}
-    </div>
+<!-- Mobile Menu -->
+<div class="block lg:hidden">
+  <div class="flex items-center justify-between w-full py-2">
+    {%- render 'menu-drawer' -%}
+    {% comment %} {%- render 'header-search' input_id: 'mobile-search-input' -%} {% endcomment %}
+    {%- render 'menu-brand' -%}
+    {%- render 'menu-user' -%}
   </div>
+</div>
 
-  <!-- Desktop Menu -->
-  <div class="hidden lg:block">
-    <div class="flex items-center justify-end text-white bg-black h-topMenu">
-      {% comment %} {%- render 'header-search' input_id: 'desktop-search-input'-%} {% endcomment %}
-      {%- render 'menu-user' -%}
-    </div>
-    <div class="flex text-black bg-white h-mainMenu">
-      {%- render 'menu-brand' -%}
-      {%- render 'menu-primary' -%}
-    </div>
+<!-- Desktop Menu -->
+<div class="hidden lg:block h-header">
+  <div class="flex items-center justify-end text-white bg-black h-topMenu">
+    {% comment %} {%- render 'header-search' input_id: 'desktop-search-input'-%} {% endcomment %}
+    {%- render 'menu-user' -%}
   </div>
+  <div class="flex text-black bg-white h-mainMenu">
+    {%- render 'menu-brand' -%}
+    {%- render 'menu-primary' -%}
+  </div>
+</div>
 
-  <!-- App Blocks -->
-  <div class="invisible">
-    {%- for block in section.blocks -%}
-      {%- case block.type -%}
-        {%- when '@app' -%}
-          {% render block %}
-      {%- endcase -%}
-    {%- endfor -%}
-  </div>
-</header>
+<!-- App Blocks -->
+<div class="invisible">
+  {%- for block in section.blocks -%}
+    {%- case block.type -%}
+      {%- when '@app' -%}
+        {% render block %}
+    {%- endcase -%}
+  {%- endfor -%}
+</div>
+
 
 <script type="application/ld+json">
   {
@@ -83,25 +82,14 @@
 {% schema %}
 {
   "name": "t:sections.header.name",
-  "class": "section-header",
+  "tag": "header",
+  "class": "fixed top-0 z-10 w-full drop-shadow-md h-header",
   "settings": [
     {
       "type": "link_list",
       "id": "menu",
       "default": "main-menu",
       "label": "t:sections.header.settings.menu.label"
-    },
-    {
-      "type": "header",
-      "content": "t:sections.header.settings.header__7.content",
-      "info": "t:sections.header.settings.header__7.info"
-    },
-    {
-      "type": "checkbox",
-      "id": "enable_customer_avatar",
-      "default": true,
-      "label": "t:sections.header.settings.enable_customer_avatar.label",
-      "info": "t:sections.header.settings.enable_customer_avatar.info"
     }
   ]
 }

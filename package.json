@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Theme developed for CoMission Art",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "start": "shopify theme dev --environment comission",
     "dev": "yarn tw & yarn --cwd theme start",
@@ -27,12 +28,15 @@
   "devDependencies": {
     "@rollup/plugin-babel": "^5.3.1",
     "@rollup/plugin-commonjs": "^24.0.0",
+    "@rollup/plugin-json": "^6.1.0",
     "@rollup/plugin-node-resolve": "^15.0.0",
     "@rollup/plugin-replace": "^4.0.0",
     "@rollup/plugin-terser": "^0.4.0",
     "@svgr/rollup": "^6.5.0",
     "autoprefixer": "^10.4.13",
     "babel-loader": "^8.2.5",
+    "fluid-tailwind": "^1.0.3",
+    "lottie-react": "^2.4.0",
     "rollup": "^2.79.1"
   }
 }

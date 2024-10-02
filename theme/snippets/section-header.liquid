@@ -1,11 +1,11 @@
-<header id="{{ section.settings.title | handle }}" class="section-header">
+<header id="{{ title | handle }}" class="section-header">
   <div class="container">
-    <h2>{{ section.settings.title }}</h2>
+    <h2>{{ title }}</h2>
   </div>
 </header>
 
-<div class="color-{{ section.settings.color_scheme }}">
+<div class="color-{{ color_scheme }}">
   <div class="container py-10">
-    <p class="mb-10 text-2xl lg:max-w-[50%] {{ class | default: 'text-lead' }}">{{ section.settings.subtitle }}</p>
+    <p class="mb-10 text-2xl lg:max-w-[50%] {{ class | default: 'text-lead' }}">{{ subtitle }}</p>
   </div>
 </div>

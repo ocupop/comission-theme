@@ -1,0 +1,277 @@
+{%- liquid
+  assign fetch_priority = 'auto'
+  if section.index == 1
+    assign fetch_priority = 'high'
+  endif
+  if section.settings.image_bleed
+    if section.settings.order == 'order-first'
+      assign bleed = ' lg:-ml-40'
+    else
+      assign bleed = ' lg:-mr-40'
+    endif
+  endif
+  case section.settings.layout
+    when 'layout_1'
+      assign wrapper_class = 'items-center grid-cols-12 gap-20 lg:grid'
+      assign text_column_class = 'image-with-text__textcolumn col-span-7 px-3'
+      assign image_column_class = 'image-with-text__imagecolumn col-span-5'
+    when 'layout_2'
+      assign wrapper_class = 'grid grid-cols-1 gap-4 lg:grid-cols-10'
+      assign text_column_class = 'image-with-text__textcolumn col-span-7 px-4'
+      assign image_column_class = 'image-with-text__imagecolumn md:col-span-2 lg:col-span-3'
+    when 'layout_3'
+      assign wrapper_class = 'items-center grid-cols-12 gap-20 lg:grid'
+      assign text_column_class = 'image-with-text__textcolumn col-span-5'
+      assign image_column_class = 'image-with-text__imagecolumn col-span-7'
+  endcase
+
+  assign image_column_class = image_column_class | append: ' ' | append: section.settings.order | append: bleed
+-%}
+
+<div class="color-{{ section.settings.color_scheme }}">
+  <div class="container">
+    <div class="{{ wrapper_class }}">
+      <div class="{{ text_column_class }}">
+        {%- for block in section.blocks -%}
+          {% case block.type %}
+            {%- when 'heading' -%}
+              <h2
+                class="image-with-text__heading inline-richtext {{ block.settings.heading_size }}"
+                {{ block.shopify_attributes }}
+              >
+                {{ block.settings.heading }}
+              </h2>
+            {%- when 'copy' -%}
+              <div class="image-with-text__copy rte {{ block.settings.text_style }}" {{ block.shopify_attributes }}>
+                {{ block.settings.copy }}
+              </div>
+            {%- when 'button_group' -%}
+              {%- if block.settings.button_label != blank -%}
+                <a
+                  {% if block.settings.button_link == blank %}
+                    role="link" aria-disabled="true"
+                  {% else %}
+                    href="{{ block.settings.button_link }}"
+                  {% endif %}
+                  class="btn{% if block.settings.outline_button %} btn-outline{% else %} btn-primary{% endif %} my-5 mr-5"
+                  {{ block.shopify_attributes }}
+                >
+                  {{ block.settings.button_label | escape }}
+                </a>
+              {%- endif -%}
+          {%- endcase -%}
+        {%- endfor -%}
+      </div>
+      <div class="{{ image_column_class }}">
+        {{ section.settings.image | image_url: width: 1000 | image_tag: fetch_priority: fetch_priority }}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.image-with-text.name",
+  "tag": "section",
+  "class": "py-20",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:sections.image-with-text.settings.image.label"
+    },
+    {
+      "type": "select",
+      "id": "order",
+      "label": "Column order",
+      "default": "order-first",
+      "options": [
+        {
+          "value": "order-first",
+          "label": "Place image first"
+        },
+        {
+          "value": "order-last",
+          "label": "Place text first"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Layout",
+      "default": "layout_1",
+      "options": [
+        {
+          "value": "layout_1",
+          "label": "Layout 1"
+        },
+        {
+          "value": "layout_2",
+          "label": "Layout 2"
+        },
+        {
+          "value": "layout_3",
+          "label": "Layout 3"
+        }
+      ]
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "t:sections.image-with-text.blocks.image.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:sections.image-with-text.blocks.image.settings.image.label"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "name": "t:sections.image-with-text.blocks.heading.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "heading",
+          "default": "t:sections.image-with-text.blocks.heading.settings.default",
+          "label": "t:sections.image-with-text.blocks.heading.settings.label"
+        },
+        {
+          "type": "select",
+          "id": "heading_size",
+          "default": "text-heading",
+          "label": "t:sections.all.heading_size.label",
+          "options": [
+            {
+              "value": "text-small",
+              "label": "t:sections.all.heading_size.options__1.label"
+            },
+            {
+              "value": "text-body",
+              "label": "t:sections.all.heading_size.options__2.label"
+            },
+            {
+              "value": "text-lead",
+              "label": "t:sections.all.heading_size.options__3.label"
+            },
+            {
+              "value": "text-heading",
+              "label": "t:sections.all.heading_size.options__4.label"
+            },
+            {
+              "value": "text-display",
+              "label": "t:sections.all.heading_size.options__5.label"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "copy",
+      "name": "t:sections.image-with-text.blocks.copy.name",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "copy",
+          "default": "t:sections.image-with-text.blocks.copy.settings.default",
+          "label": "t:sections.image-with-text.blocks.copy.settings.label"
+        },
+        {
+          "type": "select",
+          "id": "text_style",
+          "default": "text-default",
+          "label": "t:sections.image-with-text.blocks.copy.settings.text_style.label",
+          "options": [
+            {
+              "value": "text-default",
+              "label": "t:sections.all.text_style.options__1.label"
+            },
+            {
+              "value": "uppercase",
+              "label": "t:sections.all.text_style.options__2.label"
+            },
+            {
+              "value": "text-highlight",
+              "label": "t:sections.all.text_style.options__3.label"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "button_group",
+      "name": "t:sections.image-with-text.blocks.button_group.name",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "text",
+          "id": "button_label_1",
+          "default": "t:sections.image-with-text.blocks.button_group.settings.button_label.default",
+          "label": "t:sections.image-with-text.blocks.button_group.settings.button_label.label",
+          "info": "t:sections.image-with-text.blocks.button_group.settings.button_label.info"
+        },
+        {
+          "type": "url",
+          "id": "button_link_1",
+          "label": "t:sections.image-with-text.blocks.button_group.settings.button_link.label"
+        },
+        {
+          "type": "checkbox",
+          "id": "outline_button_1",
+          "default": false,
+          "label": "t:sections.image-with-text.blocks.button_group.settings.outline_button.label"
+        },
+        {
+          "type": "text",
+          "id": "button_label_2",
+          "default": "t:sections.image-with-text.blocks.button_group.settings.button_label.default",
+          "label": "t:sections.image-with-text.blocks.button_group.settings.button_label.label",
+          "info": "t:sections.image-with-text.blocks.button_group.settings.button_label.info"
+        },
+        {
+          "type": "url",
+          "id": "button_link_2",
+          "label": "t:sections.image-with-text.blocks.button_group.settings.button_link.label"
+        },
+        {
+          "type": "checkbox",
+          "id": "outline_button_2",
+          "default": false,
+          "label": "t:sections.image-with-text.blocks.button_group.settings.outline_button.label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.image-with-text.presets.name",
+      "blocks": [
+        {
+          "type": "heading"
+        },
+        {
+          "type": "copy"
+        },
+        {
+          "type": "button_group"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -12,11 +12,11 @@
           {%- if customer and customer.has_avatar? -%}
             {{ customer | avatar }}
           {%- else -%}
-            {% render 'heroicons' name: 'user' %}
+            {% render 'icons' name: 'user' %}
           {%- endif -%}
         </account-icon>
       {%- else -%}
-        {% render 'heroicons' name: 'user' %}
+        {% render 'icons' name: 'user' %}
       {%- endif -%}
       <span class="invisible">
         {%- liquid

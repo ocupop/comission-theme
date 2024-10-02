@@ -1,0 +1,51 @@
+{% liquid
+  assign wrapper_class = 'items-center grid-cols-12 gap-20 lg:grid'
+  assign text_column_class = 'image-with-text__textcolumn col-span-7 px-3'
+  assign image_column_class = 'image-with-text__imagecolumn col-span-5'
+%}
+
+<div class="color-{{ section.settings.color_scheme }}">
+  <div class="container">
+    <div class="{{ wrapper_class }}">
+      <div class="{{ image_column_class }}">
+        <div class="__react-component" data-component="HowItWorksAnimation"></div>
+      </div>
+      <div class="{{ text_column_class }}">
+        {% if section.settings.copy != blank %}
+          {{ section.settings.copy }}
+        {% endif %}
+      </div>
+
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "How It Works Animation",
+  "tag": "section",
+  "class": "py-20",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "copy",
+      "label": "Content",
+      "default": "<h3>Importing the work</h3><p>We upload an ultra-high resolution digital scan of the artwork onto CoMission's proprietary platform, and convert it in to unique Digital Art Blocks (DAB's) which are then listed for sale on the CoMission marketplace.</p>"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    }
+  ],
+  "presets": [
+    {
+      "name": "How It Works Animation"
+    }
+  ]
+}
+{% endschema %}

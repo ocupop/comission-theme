@@ -16,11 +16,11 @@
   --color-warning: 251 150 0;
   --color-danger: 191 72 0;
 
-  --font-size-small: 0.75rem; /* text-xs */
-  --font-size-body: 1rem; /* text-base */
-  --font-size-lead: 1.5rem; /* text-lg */
-  --font-size-heading: 1.75rem; /* text-2xl */
-  --font-size-display: 4rem; /* text-7xl */
+  --font-size-display: 3rem; /* text-5xl */
+  --font-size-heading: 1.85rem; /* text-2xl */
+  --font-size-lead: 1.5rem; /* text-2xl */
+  --font-size-body: 1.25rem; /* text-xl */
+  --font-size-small: 0.875rem; /* text-sm */
 
   --height-header: 5rem;
   --screen-height: 100vh;
@@ -28,17 +28,12 @@
   --color-shop-pay: #5a31f4;
   --shop-pay-button--width: 100%; /* Sets the width for the shop-pay-button web component */
 
+  /* media queries for responsive design */
   @media (min-width: 1024px) {
     --height-header: 6rem;
-    --font-size-lead: 1.75rem; /* text-lg */
-    --font-size-heading: 2rem; /* text-4xl */
-    --font-size-display: 5rem; /* text-6xl */
   }
   @media (min-width: 1280) {
     --height-header: 7rem;
-    --font-size-lead: 2rem; /* text-lg */
-    --font-size-heading: 2.5rem; /* text-4xl */
-    --font-size-display: 7rem; /* text-6xl */
   }
 
   @supports (height: 100lvh) {
@@ -49,6 +44,15 @@
 @supports (font: -apple-system-body) and (-webkit-appearance: none) {
   img[loading="lazy"] {
     clip-path: inset(0.6px);
+  }
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
@@ -66,47 +70,60 @@ button {
 
 h1,
 .h1 {
-  @apply text-5xl font-normal;
+  @apply text-6xl font-light lg:text-7xl;
 }
 h2,
 .h2 {
-  @apply text-3xl font-medium;
+  @apply text-4xl font-light lg:mb-10;
 }
 h3,
 .h3 {
-  @apply text-2xl font-normal;
+  @apply mb-4 text-3xl font-light;
 }
 h4,
 .h4 {
-  @apply text-xl;
+  @apply text-2xl;
 }
 h5,
 .h5 {
-  @apply text-lg;
+  @apply text-xl;
 }
 h6,
 .h6 {
   @apply text-base;
 }
 
-.hxxl {
-  @apply text-6xl font-light lg:text-7xl xl:text-8xl;
+.text-display {}
+.text-heading {}
+.text-lead {}
+.text-body {
+  @apply text-xl;
+}
+.text-small {}
+
+.rte {
+  @apply text-body;
+  p {
+    @apply mb-8;
+  }
 }
 
-.text-small {
-  @apply text-[var(--font-size-small)];
-}
-.text-body {
-  @apply text-[var(--font-size-body)];
-}
-.text-lead {
-  @apply text-[var(--font-size-lead)];
-}
-.text-heading {
-  @apply text-[var(--font-size-heading)];
-}
-.text-display {
-  @apply text-[var(--font-size-display)];
+@layer base {
+  * {
+    font-variant-ligatures: none;
+  }
+
+  body {
+    @apply antialiased;
+  }
+
+  html {
+    scroll-padding-top: 10rem;
+    scroll-behavior: smooth;
+  }
+  p {
+    @apply mb-4;
+  }
 }
 
 @layer components {
@@ -185,8 +202,18 @@ h6,
 
   /* Buttons */
   .btn {
-    @apply inline-block w-auto px-6 py-3 text-center text-white bg-primary whitespace-nowrap;
+    @apply inline-block w-auto px-6 py-3 text-center text-white bg-black whitespace-nowrap;
   }
+  .btn-primary {
+    @apply text-white bg-primary;
+  }
+  .btn-secondary {
+    @apply text-white bg-secondary;
+  }
+  .btn-outline {
+    @apply  text-white bg-transparent border border-white;
+  }
+
 
   /* Home Page */
   .section-header {
@@ -205,6 +232,22 @@ h6,
   }
   .color-scheme-3 {
     @apply text-white bg-red-500;
+  }
+
+  /* Text with Image */
+  .image-with-text {
+    /* @apply relative w-full h-full; */
+    .image-with-text__textcolumn {
+      /* @apply relative flex-1 w-full h-full; */
+    }
+    .image-with-text__imagecolumn {
+      /* @apply relative flex-none w-full h-full; */
+    }
+  }
+
+  /* Icons */
+  .icon {
+    @apply inline-flex items-center justify-center mx-2;
   }
 
 }

@@ -1,8 +1,9 @@
 import babel from '@rollup/plugin-babel';
-import terser from '@rollup/plugin-terser';
+import commonjs from '@rollup/plugin-commonjs';
+import json from '@rollup/plugin-json';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import replace from '@rollup/plugin-replace';
-import commonjs from '@rollup/plugin-commonjs';
+import terser from '@rollup/plugin-terser';
 import svgr from '@svgr/rollup';
 
 export default {
@@ -30,5 +31,6 @@ export default {
     }),
     svgr(),
     commonjs(),
+    json(),
   ],
 };

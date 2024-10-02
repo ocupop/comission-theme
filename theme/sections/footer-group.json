@@ -8,42 +8,45 @@
         "footer-0": {
           "type": "link_list",
           "settings": {
-            "heading": "Quick links",
-            "menu": "footer"
+            "heading": "Product",
+            "menu": "footer-product-menu"
           }
         },
         "footer-1": {
           "type": "link_list",
           "settings": {
-            "heading": "Info",
-            "menu": "footer"
+            "heading": "Resources",
+            "menu": "footer-resources-menu"
           }
         },
         "footer-2": {
-          "type": "text",
+          "type": "link_list",
           "settings": {
-            "heading": "Our mission",
-            "subtext": "<p>Share contact information, store details, and brand content with your customers.<\/p>"
+            "heading": "Support",
+            "menu": "footer-support-menu"
+          }
+        },
+        "footer-3": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Company",
+            "menu": "footer-company-menu"
           }
         }
       },
       "block_order": [
         "footer-0",
         "footer-1",
-        "footer-2"
+        "footer-2",
+        "footer-3"
       ],
       "settings": {
-        "color_scheme": "scheme-1",
-        "newsletter_enable": true,
+        "logo": "shopify:\/\/shop_images\/comission-blue-logo.svg",
+        "show_newsletter": true,
         "newsletter_heading": "Subscribe to our emails",
         "show_social": true,
-        "enable_country_selector": false,
-        "enable_language_selector": false,
-        "payment_enable": true,
-        "show_policy": false,
-        "margin_top": 48,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "show_policy": true,
+        "enable_follow_on_shop": true
       }
     }
   },

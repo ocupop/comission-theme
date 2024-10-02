@@ -1,0 +1,39 @@
+<!-- Menu Footer -->
+<ul class="menu-footer">
+  {%- for link in menu.links -%}
+    <li class="relative group">
+      {%- if link.links != blank -%}
+        <button class="nav-link animate-slideright">
+          {{ link.title | escape }}
+        </button>
+        <ul class="dropdown-menu group-hover:block" role="list" tabindex="-1">
+          {%- for childlink in link.links -%}
+            <li>
+              {%- if childlink.links == blank -%}
+                <a
+                  href="{{ childlink.url }}"
+                  class=""
+                  {% if childlink.current %}
+                    aria-current="page"
+                  {% endif %}
+                >
+                  {{ childlink.title | escape }}
+                </a>
+              {%- endif -%}
+            </li>
+          {%- endfor -%}
+        </ul>
+      {%- else -%}
+        <a
+          href="{{ link.url }}"
+          class="nav-link animate-slideright{% if link.current %} active{% endif %}"
+          {% if link.current %}
+            aria-current="page"
+          {% endif %}
+        >
+          {{ link.title | escape }}
+        </a>
+      {%- endif -%}
+    </li>
+  {%- endfor -%}
+</ul>

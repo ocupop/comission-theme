@@ -1,36 +1,17 @@
-{{ 'component-card.css' | asset_url | stylesheet_tag }}
-{{ 'section-collection-list.css' | asset_url | stylesheet_tag }}
+{%- liquid
+  assign collection_list = collections | where: "template_suffix", section.settings.type
+  assign collection_list = collection_list | sort: section.settings.sort
 
-<div class="page-width">
-  <h1 class="title title--primary inline-richtext{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
-    {{ section.settings.title }}
-  </h1>
-  {%- liquid
-    case section.settings.sort
-      when 'products_high', 'products_low'
-        assign collections = collections | sort: 'all_products_count'
-      when 'date', 'date_reversed'
-        assign collections = collections | sort: 'published_at'
-    endcase
+-%}
 
-    if section.settings.sort == 'products_high' or section.settings.sort == 'date_reversed' or section.settings.sort == 'alphabetical_reversed'
-      assign collections = collections | reverse
-    endif
 
-    assign moduloResult = 28 | modulo: section.settings.columns_desktop
-    assign paginate_by = 30
-    if moduloResult == 0
-      assign paginate_by = 28
-    endif
-  -%}
-  {%- paginate collections by paginate_by -%}
-    <ul
-      class="collection-list grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down"
-      role="list"
-    >
-      {%- for collection in collections -%}
+<div class="container">
+  <h1 class="text-6xl font-light lg:text-7xl animate-fadein">{{ section.settings.title }}</h1>
+  <ul class="grid grid-cols-1 gap-20 mt-20 lg:grid-cols-2">
+
+      {%- for collection in collection_list -%}
         <li
-          class="collection-list__item grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+          class="mb-4 lg:mb-0{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
           {% if settings.animations_reveal_on_scroll %}
             data-cascade
             style="--animation-order: {{ forloop.index }};"
@@ -38,19 +19,23 @@
         >
           {% render 'card-collection',
             card_collection: collection,
-            media_aspect_ratio: section.settings.image_ratio,
-            columns: 3
+            wrapper_class: 'grid md:grid-cols-3 gap-4',
+            collection_type: section.settings.type
           %}
         </li>
       {%- endfor -%}
     </ul>
-    {% render 'pagination', paginate: paginate %}
-  {%- endpaginate -%}
+
+  {% render 'pagination', paginate: paginate %}
 </div>
+
+
+
 {% schema %}
 {
   "name": "t:sections.main-list-collections.name",
-  "class": "section",
+  "class": "py-20",
+  "tag": "section",
   "settings": [
     {
       "type": "inline_richtext",
@@ -92,53 +77,20 @@
     },
     {
       "type": "select",
-      "id": "image_ratio",
+      "id": "type",
       "options": [
         {
-          "value": "adapt",
-          "label": "t:sections.main-list-collections.settings.image_ratio.options__1.label"
+          "value": "artist",
+          "label": "Artists"
         },
         {
-          "value": "portrait",
-          "label": "t:sections.main-list-collections.settings.image_ratio.options__2.label"
-        },
-        {
-          "value": "square",
-          "label": "t:sections.main-list-collections.settings.image_ratio.options__3.label"
+          "value": "institution",
+          "label": "Institutions"
         }
       ],
-      "default": "adapt",
-      "label": "t:sections.main-list-collections.settings.image_ratio.label",
-      "info": "t:sections.main-list-collections.settings.image_ratio.info"
-    },
-    {
-      "type": "range",
-      "id": "columns_desktop",
-      "min": 1,
-      "max": 6,
-      "step": 1,
-      "default": 3,
-      "label": "t:sections.main-list-collections.settings.columns_desktop.label"
-    },
-    {
-      "type": "header",
-      "content": "t:sections.main-list-collections.settings.header_mobile.content"
-    },
-    {
-      "type": "select",
-      "id": "columns_mobile",
-      "options": [
-        {
-          "value": "1",
-          "label": "t:sections.main-list-collections.settings.columns_mobile.options__1.label"
-        },
-        {
-          "value": "2",
-          "label": "t:sections.main-list-collections.settings.columns_mobile.options__2.label"
-        }
-      ],
-      "default": "2",
-      "label": "t:sections.main-list-collections.settings.columns_mobile.label"
+      "default": "artist",
+      "label": "Choose the type of collection to display",
+      "info": "This is used to filter the collections to display by template type."
     }
   ]
 }

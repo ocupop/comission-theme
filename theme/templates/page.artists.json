@@ -3,8 +3,9 @@
     "main": {
       "type": "main-list-collections",
       "settings": {
-        "title": "Collections",
-        "sort": "alphabetical"
+        "title": "Our Artist Partners",
+        "sort": "alphabetical",
+        "type": "artist"
       }
     }
   },

@@ -17,9 +17,9 @@
   class="relative flex items-center justify-center w-8 h-8">
   {%- liquid
     if cart == empty
-      render 'heroicons' name: 'cart-empty'
+      render 'icons' name: 'cart-empty'
     else
-      render 'heroicons' name: 'cart'
+      render 'icons' name: 'cart'
     endif
   -%}
   <span class="invisible">{{ 'templates.cart.cart' | t }}</span>
@@ -43,7 +43,7 @@
       class="drawer__close"
       data-drawer-hide="cart-drawer"
       aria-controls="cart-drawer">
-      {%- render 'heroicons' name: 'close' %}
+      {%- render 'icons' name: 'close' %}
       <span class="sr-only">Close menu</span>
     </button>
   </div>
