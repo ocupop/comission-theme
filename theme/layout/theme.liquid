@@ -27,6 +27,7 @@
     {% endif %}
 
     {% render 'meta-tags' %}
+
     <script src="{{ 'constants.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'pubsub.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
@@ -61,10 +62,10 @@
   </head>
 
   <body>
-    {% comment %} {%- render 'cart-drawer' -%} {% endcomment %}
+    {%- render 'cart-drawer' -%}
     {% sections 'header-group' %}
 
-    <main id="MainContent" class="flex flex-col pt-[4rem]" role="main" tabindex="-1">
+    <main id="MainContent" class="flex flex-col pt-[var(--height-header)]" role="main" tabindex="-1">
       {{ content_for_layout }}
     </main>
 

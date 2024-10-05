@@ -24,6 +24,7 @@ if (!customElements.get('product-form')) {
         this.handleErrorMessage();
 
         this.submitButton.setAttribute('aria-disabled', true);
+
         this.submitButton.classList.add('loading');
         this.querySelector('.loading__spinner').classList.remove('hidden');
 
@@ -32,14 +33,14 @@ if (!customElements.get('product-form')) {
         delete config.headers['Content-Type'];
 
         const formData = new FormData(this.form);
-        if (this.cart) {
-          formData.append(
-            'sections',
-            this.cart.getSectionsToRender().map((section) => section.id)
-          );
-          formData.append('sections_url', window.location.pathname);
-          this.cart.setActiveElement(document.activeElement);
-        }
+        // if (this.cart) {
+        //   formData.append(
+        //     'sections',
+        //     this.cart.getSectionsToRender().map((section) => section.id)
+        //   );
+        //   formData.append('sections_url', window.location.pathname);
+        //   this.cart.setActiveElement(document.activeElement);
+        // }
         config.body = formData;
 
         fetch(`${routes.cart_add_url}`, config)

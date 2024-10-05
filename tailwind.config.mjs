@@ -10,6 +10,7 @@ module.exports = {
     files: ['./**/*.{liquid, json}', './node_modules/flowbite/**/*.js'],
     extract,
   },
+  safelist: [{ pattern: /pt-+/ }, { pattern: /pb-+/ }],
   theme: {
     extend: {
       colors: {

@@ -1227,7 +1227,10 @@
           }
         },
         "title": {
-          "name": "Title"
+          "name": "Artwork Title"
+        },
+        "artist": {
+          "name": "Artist Name"
         },
         "price": {
           "name": "Price"
@@ -1241,18 +1244,15 @@
                 "label": "Body"
               },
               "options__2": {
-                "label": "Subtitle"
-              },
-              "options__3": {
-                "label": "Uppercase"
+                "label": "Fineprint"
               }
             },
             "inventory_threshold": {
               "label": "Low inventory threshold",
-              "info": "Choose 0 to always show in stock if available."
+              "info": "Choose 0 to always highlight if stock is available."
             },
             "show_inventory_quantity": {
-              "label": "Show inventory count"
+              "label": "Show inventory count (#DABs)"
             }
           }
         },

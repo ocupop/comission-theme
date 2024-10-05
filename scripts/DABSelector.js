@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 function replaceNewLines(str) {
   return str.replace(/\r/g, '\\r');
@@ -9,9 +9,15 @@ export default function DABSelector(props) {
   const str = replaceNewLines(props.product);
   const product = JSON.parse(str);
 
-  console.log(JSON.parse(product));
-  console.log(props.note);
+  console.log('product', JSON.parse(product));
+  // console.log(props.note);
   // const meta = JSON.parse(metafields);
-  // console.log(meta);
-  return <h3>DAB</h3>;
+  const unavailableTiles = product.unavailable ? JSON.parse(product.unavailable.value) : [];
+  // console.log(unavailableTiles);
+  return (
+    <>
+      <h3>DAB</h3>
+      <p>{props.note}</p>
+    </>
+  );
 }

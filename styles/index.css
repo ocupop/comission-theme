@@ -69,43 +69,55 @@ button {
 }
 
 h1,
-.h1 {
-  @apply text-6xl font-light lg:text-7xl;
+.h1,
+.text-display {
+  @apply text-6xl lg:text-7xl;
 }
 h2,
-.h2 {
-  @apply text-4xl font-light lg:mb-10;
+.h2
+.text-heading {
+  @apply text-4xl;
 }
 h3,
 .h3 {
-  @apply mb-4 text-3xl font-light;
+  @apply text-3xl;
 }
 h4,
-.h4 {
+.h4,
+.text-lead {
   @apply text-2xl;
 }
 h5,
-.h5 {
-  @apply text-xl;
-}
-h6,
-.h6 {
-  @apply text-base;
-}
-
-.text-display {}
-.text-heading {}
-.text-lead {}
+.h5,
 .text-body {
   @apply text-xl;
 }
-.text-small {}
+h6,
+.h6,
+.text-fineprint {
+  @apply text-base;
+}
+
+small {
+  @apply text-sm;
+}
 
 .rte {
   @apply text-body;
   p {
     @apply mb-8;
   }
+}
+
+/* Color Schemes */
+.color-scheme-1 {
+  @apply text-black bg-white;
+}
+.color-scheme-2 {
+  @apply text-white bg-black;
+}
+.color-scheme-3 {
+  @apply text-white bg-red-500;
 }
 
 @layer base {
@@ -168,7 +180,7 @@ h6,
     >li:last-of-type {
       background-color: rgb(var(--color-primary));
       .nav-link {
-        color: #fff;
+        @apply font-normal text-white;
       }
     }
     .dropdown-menu {
@@ -197,12 +209,13 @@ h6,
     @apply top-0 left-0 right-0 w-full transition-transform -translate-y-full;
   }
   .drawer-right {
-    @apply top-0 right-0 h-screen p-4 overflow-y-auto translate-x-full bg-white min-w-fit;
+    @apply top-0 right-0 h-screen p-4 overflow-y-auto translate-x-full bg-white max-w-[600px];
   }
 
   /* Buttons */
   .btn {
-    @apply inline-block w-auto px-6 py-3 text-center text-white bg-black whitespace-nowrap;
+    /* @apply inline-block w-auto px-6 py-3 text-center text-white bg-black ; */
+    @apply block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 whitespace-nowrap;
   }
   .btn-primary {
     @apply text-white bg-primary;
@@ -223,16 +236,6 @@ h6,
     }
   }
 
-  /* Color Schemes */
-  .color-scheme-1 {
-    @apply text-black bg-white;
-  }
-  .color-scheme-2 {
-    @apply text-white bg-black;
-  }
-  .color-scheme-3 {
-    @apply text-white bg-red-500;
-  }
 
   /* Text with Image */
   .image-with-text {

@@ -14,15 +14,12 @@
   {% render 'card-product', show_vendor: section.settings.show_vendor %}
 {% endcomment %}
 
+{%- liquid
+  assign meta = card_product.metafields.comission
+  assign artist = collections[meta.artist]
+-%}
+
 {%- if card_product and card_product != empty -%}
-  {%- liquid
-    assign meta = card_product.metafields.comission
-    assign artist = collections[meta.artist]
-    assign year = meta.year
-    assign sold = meta.unavailable | split: ',' | size
-    assign dabs = meta.cols | to_i | times: meta.rows | to_i
-    assign membership = meta.endDate | date: '%m / %d / %y'
-  -%}
   <div class="grid items-center grid-cols-1 gap-20 mb-20 lg:grid-cols-2 lg:gap-28 lg:mb-38">
     <div>
       {%- if card_product.featured_media -%}
@@ -57,16 +54,7 @@
     </div>
     <div>
       <h2 class="mb-0 font-normal"><a href="{{ card_product.url }}">{{ card_product.title | escape }}</a></h2>
-      <h2 class="mb-2 h4"><a href={{ artist.url }} title="{{ artist.title }}">{{ artist.title }}</a></h2>
-      <p>
-        {%- if meta.year -%}<span>{{ meta.year }}</span><br/>{%- endif -%}
-        {%- if meta.medium -%}<span>{{ meta.medium }}</span><br/>{%- endif -%}
-        {%- if meta.museum -%}<span>{{ meta.museum }}</span><br/>{%- endif -%}
-      </p>
-      <p>
-        <span class="font-normal">{{ sold }} of {{ dabs }} DABs available</span><br/>
-        <span class="text-sm text-muted">Membership Expires: {{ membership }}</span>
-      </p>
+      {% render 'art-meta' meta: meta %}
       <a
         href="{{ card_product.url }}"
         title="{{ card_product.title }} details"
