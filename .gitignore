@@ -12,6 +12,10 @@ Thumbs.db
 ######################
 node_modules/
 
+# Log files #
+######################
+*.log
+
 # Theme Environment #
 ######################
 shopify.theme.toml
