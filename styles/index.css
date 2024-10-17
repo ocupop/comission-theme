@@ -16,22 +16,29 @@
   --color-warning: 251 150 0;
   --color-danger: 191 72 0;
 
-  --font-size-display: 3rem; /* text-5xl */
-  --font-size-heading: 1.85rem; /* text-2xl */
-  --font-size-lead: 1.5rem; /* text-2xl */
-  --font-size-body: 1.25rem; /* text-xl */
-  --font-size-small: 0.875rem; /* text-sm */
+  --font-size-display: 3rem;
+  /* text-5xl */
+  --font-size-heading: 1.85rem;
+  /* text-2xl */
+  --font-size-lead: 1.5rem;
+  /* text-2xl */
+  --font-size-body: 1.25rem;
+  /* text-xl */
+  --font-size-small: 0.875rem;
+  /* text-sm */
 
   --height-header: 5rem;
   --screen-height: 100vh;
 
   --color-shop-pay: #5a31f4;
-  --shop-pay-button--width: 100%; /* Sets the width for the shop-pay-button web component */
+  --shop-pay-button--width: 100%;
+  /* Sets the width for the shop-pay-button web component */
 
   /* media queries for responsive design */
   @media (min-width: 1024px) {
     --height-header: 6rem;
   }
+
   @media (min-width: 1280) {
     --height-header: 7rem;
   }
@@ -51,6 +58,7 @@
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
@@ -72,26 +80,32 @@ h1,
 .h1,
 .text-display {
   @apply text-6xl lg:text-7xl;
+  @apply mb-4 font-light;
 }
+
 h2,
-.h2
-.text-heading {
-  @apply text-4xl;
+.h2 .text-heading {
+  @apply text-4xl mb-4;
 }
+
 h3,
 .h3 {
   @apply text-3xl;
+  @apply mb-4;
 }
+
 h4,
 .h4,
 .text-lead {
-  @apply text-2xl;
+  @apply text-2xl mb-3;
 }
+
 h5,
 .h5,
 .text-body {
   @apply text-xl;
 }
+
 h6,
 .h6,
 .text-fineprint {
@@ -104,6 +118,7 @@ small {
 
 .rte {
   @apply text-body;
+
   p {
     @apply mb-8;
   }
@@ -113,9 +128,11 @@ small {
 .color-scheme-1 {
   @apply text-black bg-white;
 }
+
 .color-scheme-2 {
   @apply text-white bg-black;
 }
+
 .color-scheme-3 {
   @apply text-white bg-red-500;
 }
@@ -133,26 +150,32 @@ small {
     scroll-padding-top: 10rem;
     scroll-behavior: smooth;
   }
+
   p {
     @apply mb-4;
   }
 }
 
 @layer components {
+
   /* Menus */
   .menu-top {
     @apply flex justify-end w-full h-full px-10 text-white bg-black;
   }
+
   .menu-primary {
     @apply flex justify-end h-full gap-2 grow lg:gap-4 xl:gap-8;
+
     li {
       @apply flex items-center justify-center h-full;
+
       .nav-link {
         position: relative;
         font-weight: 100;
         text-decoration: none;
         @apply flex items-center h-full text-lg lg:px-4 xl:px-5;
       }
+
       .nav-link:before {
         content: "";
         display: block;
@@ -177,14 +200,18 @@ small {
         opacity: 1;
       }
     }
+
     >li:last-of-type {
       background-color: rgb(var(--color-primary));
+
       .nav-link {
         @apply font-normal text-white;
       }
     }
+
     .dropdown-menu {
       @apply absolute left-0 z-10 hidden pb-3 text-left transition-all duration-300 ease-in-out bg-white border top-full border-light;
+
       a {
         @apply block w-full px-6 py-2 text-lg whitespace-nowrap;
         @apply hover:text-primary;
@@ -195,19 +222,24 @@ small {
   /* Drawers */
   .drawer {
     @apply fixed z-50 transition-all duration-700 ease-in-out bg-white text-dark;
+
     .drawer__header {
       @apply relative w-full px-8 py-4 border-b shadow-sm;
     }
+
     .drawer__close {
       @apply absolute top-0 right-0 p-4 text-2xl text-dark;
     }
+
     .drawer__content {
       @apply px-8;
     }
   }
+
   .drawer-top {
     @apply top-0 left-0 right-0 w-full transition-transform -translate-y-full;
   }
+
   .drawer-right {
     @apply top-0 right-0 h-screen p-4 overflow-y-auto translate-x-full bg-white max-w-[600px];
   }
@@ -217,20 +249,24 @@ small {
     /* @apply inline-block w-auto px-6 py-3 text-center text-white bg-black ; */
     @apply block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 whitespace-nowrap;
   }
+
   .btn-primary {
     @apply text-white bg-primary;
   }
+
   .btn-secondary {
     @apply text-white bg-secondary;
   }
+
   .btn-outline {
-    @apply  text-white bg-transparent border border-white;
+    @apply text-white bg-transparent border border-white;
   }
 
 
   /* Home Page */
   .section-header {
     @apply relative w-full h-20 text-white bg-black;
+
     h2 {
       @apply absolute font-normal text-7xl lg:text-8xl -top-4 lg:-top-8;
     }
@@ -239,10 +275,12 @@ small {
 
   /* Text with Image */
   .image-with-text {
+
     /* @apply relative w-full h-full; */
     .image-with-text__textcolumn {
       /* @apply relative flex-1 w-full h-full; */
     }
+
     .image-with-text__imagecolumn {
       /* @apply relative flex-none w-full h-full; */
     }
