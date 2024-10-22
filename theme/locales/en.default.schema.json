@@ -825,6 +825,23 @@
         }
       }
     },
+    "home-connect": {
+      "name": "Connect",
+      "settings": {
+        "title": {
+          "label": "Title",
+          "default": "Connect"
+        },
+        "subtitle": {
+          "label": "Subtitle",
+          "default": ""
+        },
+        "color_scheme": {
+          "label": "Color scheme",
+          "default": "scheme-1"
+        }
+      }
+    },
     "image-with-text": {
       "name": "Text with image",
       "settings": {
