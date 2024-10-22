@@ -11,14 +11,14 @@
 <script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'quantity-popover.js' | asset_url }}" defer="defer"></script>
 
-
+<!-- this button was rendering outside of the nav and pushing main block down, set position to absolute for now -->
 <button
   type="button"
   data-drawer-target="CartDrawer"
   data-drawer-show="CartDrawer"
   data-drawer-placement="right"
   aria-controls="CartDrawer"
-  class="relative flex items-center justify-center w-8 h-8">
+  class="flex items-center justify-center w-8 h-8 bg-red z-100 absolute top-0 right-0">
   {%- liquid
     if cart == empty
       render 'icons' name: 'cart-empty'
@@ -36,6 +36,8 @@
     </div>
   {%- endif -%}
 </button>
+
+
 
 <cart-drawer>
   <div

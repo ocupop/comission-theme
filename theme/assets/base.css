@@ -1616,7 +1616,7 @@ p {
   li {
     .nav-link {
       position: relative;
-      font-weight: 100;
+      font-weight: 200;
       text-decoration: none;
     }
     .nav-link {
@@ -1634,14 +1634,12 @@ p {
     }
     @media (min-width: 1024px) {
       .nav-link {
-        padding-left: 1rem;
-        padding-right: 1rem;
+        padding: 0.75rem;
       }
     }
     @media (min-width: 1280px) {
       .nav-link {
-        padding-left: 1.25rem;
-        padding-right: 1.25rem;
+        padding: 1.25rem;
       }
     }
     .nav-link:before {
@@ -4114,8 +4112,8 @@ p {
   @media (min-width: 1024px) {
     --height-header: 6rem;
   }
-  @media (min-width: 1280) {
-    --height-header: 7rem;
+  @media (min-width: 1280px) {
+    --height-header: 6rem;
   }
   @supports (height: 100lvh) {
     --screen-height: 100lvh;
@@ -4136,6 +4134,11 @@ p {
   100% {
     opacity: 1;
   }
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 html,
