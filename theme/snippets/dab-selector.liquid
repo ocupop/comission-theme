@@ -111,12 +111,8 @@
           </button>
 
           <p>{{ cart.item_count }}</p>
-          <div
-            class="__react-component"
-            data-component="DABSelector"
-            data-product="{{ variants | json }}"
-            data-note="{{ meta.note | escape }}"
-          ></div>
+          <!-- prettier-ignore -->
+          <div class="__react-component" data-component="DABSelector" data-product='{{ variants | json | remove_first: '"' | remove_last: '"' }}' data-note="{{ meta.note | escape }}"></div>
         {%- endform -%}
       </product-form>
     </div>

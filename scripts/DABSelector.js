@@ -5,15 +5,14 @@ function replaceNewLines(str) {
   // return str.replace(/[\r\n]/g, (char) => JSON.stringify(char).slice(1,-1))
 }
 export default function DABSelector(props) {
-  console.log(props);
-  const str = replaceNewLines(props.product);
-  const product = JSON.parse(str);
+  const productJsonString = props.product.replace(/\\/g, '');
+  const product = JSON.parse(replaceNewLines(productJsonString));
 
-  console.log('product', JSON.parse(product));
-  // console.log(props.note);
-  // const meta = JSON.parse(metafields);
-  const unavailableTiles = product.unavailable ? JSON.parse(product.unavailable.value) : [];
-  // console.log(unavailableTiles);
+  console.log('product', product);
+  // // console.log(props.note);
+  // // const meta = JSON.parse(metafields);
+  // const unavailableTiles = product.unavailable ? JSON.parse(product.unavailable.value) : [];
+  // // console.log(unavailableTiles);
   return (
     <>
       <h3>DAB</h3>
