@@ -13,6 +13,7 @@
         {{ section.settings.description }}
       </div>
     </div>
+
     {% render 'feature-grid' %}
   </div>
 </div>
@@ -51,6 +52,30 @@
       "id": "color_scheme",
       "label": "t:sections.all.colors.label",
       "default": "scheme-2"
+    }
+  ],
+  "max_blocks": 8,
+  "blocks": [
+    {
+      "name": "Features",
+      "type": "slide",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "alt",
+          "label": "Image alt text"
+        }
+      ]
     }
   ]
 }
