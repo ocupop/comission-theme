@@ -781,6 +781,26 @@
         }
       }
     },
+    "home-foster": {
+      "name": "Foster",
+      "settings": {
+       "title": {
+          "label": "Title",
+          "default": "Foster"
+        },
+        "subtitle": {
+          "label": "Subtitle",
+          "default": ""
+        },
+        "image": {
+          "label": "Image"
+        },
+        "text": {
+          "label": "Description",
+          "default": "Enter Copy Here"
+        }
+      }
+    },
     "home-experience": {
       "name": "Experience",
       "settings": {
