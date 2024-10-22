@@ -15,19 +15,23 @@
 
 {% capture variants %}[{% for variant in product.variants %}{"id": "{{ variant.id }}","title": "{{ variant.title }}"}{% unless forloop.last %},{% endunless %}{% endfor %}]{% endcapture %}
 
-
-
 <!-- Modal toggle -->
 <button
   data-modal-target="dab-modal"
   data-modal-toggle="dab-modal"
   class="btn btn-primary"
-  type="button">
-  {{ 'products.product.add_to_cart' | t }}
+  type="button"
+>
+  {{ 'products.product.select_dab' | t }}
 </button>
 
 <!-- Main modal -->
-<div id="dab-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+<div
+  id="dab-modal"
+  tabindex="-1"
+  aria-hidden="true"
+  class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full"
+>
   <div class="relative w-full max-w-md max-h-full p-4">
     <!-- Modal content -->
     <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
@@ -37,7 +41,8 @@
         <button
           type="button"
           class="inline-flex items-center justify-center w-8 h-8 text-sm text-gray-400 bg-transparent rounded-lg hover:bg-gray-200 hover:text-gray-900 ms-auto"
-          data-modal-toggle="dab-modal">
+          data-modal-toggle="dab-modal"
+        >
           <!-- Icon -->
           <span class="sr-only">Close modal</span>
           {% render 'icons', name: 'close' %}
@@ -49,7 +54,6 @@
         data-hide-errors="{{ gift_card_recipient_feature_active }}"
         data-section-id="{{ section_id }}"
       >
-
         {%- form 'product',
           product,
           id: product_form_id,
@@ -74,7 +78,7 @@
             class="product-variant-id"
             {% if product.selected_or_first_available_variant.available == false
               or quantity_rule_soldout
-              or product.selected_or_first_available_variant == nil
+              or product.selected_or_first_available_variant == null
             %}
               disabled
             {% endif %}
@@ -89,13 +93,13 @@
             class="btn btn-primary"
             {% if product.selected_or_first_available_variant.available == false
               or quantity_rule_soldout
-              or product.selected_or_first_available_variant == nil
+              or product.selected_or_first_available_variant == null
             %}
               disabled
             {% endif %}
           >
             <span>
-              {%- if product.selected_or_first_available_variant == nil -%}
+              {%- if product.selected_or_first_available_variant == null -%}
                 {{ 'products.product.unavailable' | t }}
               {%- elsif product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
                 {{ 'products.product.sold_out' | t }}
@@ -110,8 +114,8 @@
           <div
             class="__react-component"
             data-component="DABSelector"
-            data-product='{{ variants | json }}'
-            data-note='{{ meta.note | escape }}'
+            data-product="{{ variants | json }}"
+            data-note="{{ meta.note | escape }}"
           ></div>
         {%- endform -%}
       </product-form>
@@ -119,18 +123,9 @@
   </div>
 </div>
 
-{% comment %} <button type="submit" class="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-  <svg class="w-5 h-5 me-1 -ms-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path></svg>
-  Add new product
-</button> {% endcomment %}
-
-
-
-
-
-
-
-
-
-
-
+{% comment %}
+  <button type="submit" class="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+    <svg class="w-5 h-5 me-1 -ms-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path></svg>
+    Add new product
+  </button>
+{% endcomment %}
