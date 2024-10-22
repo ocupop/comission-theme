@@ -8,9 +8,8 @@
 {{ 'quantity-popover.css' | asset_url | stylesheet_tag }}
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 
-<script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>
+{% comment %} <script src="{{ 'cart.js' | asset_url }}" defer="defer"></script> {% endcomment %}
 <script src="{{ 'quantity-popover.js' | asset_url }}" defer="defer"></script>
-
 
 <button
   type="button"
@@ -18,12 +17,13 @@
   data-drawer-show="CartDrawer"
   data-drawer-placement="right"
   aria-controls="CartDrawer"
-  class="relative flex items-center justify-center w-8 h-8">
+  class="relative flex items-center justify-center w-8 h-8"
+>
   {%- liquid
     if cart == empty
-      render 'icons' name: 'cart-empty'
+      render 'icons', name: 'cart-empty'
     else
-      render 'icons' name: 'cart'
+      render 'icons', name: 'cart'
     endif
   -%}
   <span class="invisible">{{ 'templates.cart.cart' | t }}</span>
@@ -57,8 +57,9 @@
             type="button"
             class="drawer__close"
             data-drawer-hide="CartDrawer"
-            aria-controls="CartDrawer">
-            {%- render 'icons' name: 'close' %}
+            aria-controls="CartDrawer"
+          >
+            {%- render 'icons', name: 'close' %}
             <span class="sr-only">Close menu</span>
           </button>
         </div>
@@ -75,16 +76,14 @@
         class="drawer__close"
         onclick="console.log('close')"
         data-drawer-hide="CartDrawer"
-        aria-controls="CartDrawer">
-        {%- render 'icons' name: 'close' %}
+        aria-controls="CartDrawer"
+      >
+        {%- render 'icons', name: 'close' %}
         <span class="sr-only">Close menu</span>
       </button>
     </div>
     <!-- Drawer Items -->
-    {%- render 'cart-drawer-items'
-      cart: cart,
-
-    %}
+    {%- render 'cart-drawer-items', cart: cart %}
 
     <!-- Drawer Footer -->
     <div class="drawer__footer">
@@ -117,7 +116,7 @@
             <ul role="list" aria-label="{{ 'customer.order.discount' | t }}">
               {%- for discount in cart.cart_level_discount_applications -%}
                 <li>
-                  {%- render 'icons' name: 'discount' -%}
+                  {%- render 'icons', name: 'discount' -%}
                   {{ discount.title | escape }}
                   (-{{ discount.total_allocated_amount | money }})
                 </li>
@@ -205,65 +204,68 @@
 </cart-drawer>
 
 <!-- Drawer Init / Toggle -->
-{% comment %} <button
-  type="button"
-  data-drawer-target="cart-drawer"
-  data-drawer-show="cart-drawer"
-  data-drawer-placement="right"
-  aria-controls="cart-drawer"
-  class="relative flex items-center justify-center w-8 h-8">
-  {%- liquid
-    if cart == empty
-      render 'icons' name: 'cart-empty'
-    else
-      render 'icons' name: 'cart'
-    endif
-  -%}
-  <span class="invisible">{{ 'templates.cart.cart' | t }}</span>
-  {%- if cart != empty -%}
-    <div class="absolute top-0 flex items-center justify-center w-4 h-4 px-2 pb-px text-sm subpixel-antialiased font-medium leading-none text-center text-white rounded-full -right-1 lg:relative lg:top-auto lg:right-auto bg-primary lg:text-base lg:h-5 lg:w-5">
-      {%- if cart.item_count < 100 -%}
-        <span aria-hidden="true">{{ cart.item_count }}</span>
-      {%- endif -%}
-      <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
-    </div>
-  {%- endif -%}
-</button> {% endcomment %}
-
-<!-- Drawer Component -->
-{% comment %} <div id="cart-drawer" class="drawer drawer-right" tabindex="-1" aria-labelledby="cart-drawer-label">
-  <!-- Drawer Header -->
-  <div class="drawer__header">
-    <h3>Your Cart</h3>
-    <button
-      type="button"
-      class="drawer__close"
-      data-drawer-hide="cart-drawer"
-      aria-controls="cart-drawer">
-      {%- render 'icons' name: 'close' %}
-      <span class="sr-only">Close menu</span>
-    </button>
-  </div>
-  <!-- Drawer Content -->
-  <div class="drawer__content">
-    {%- if cart == empty -%}
-      <div class="p-8">
-        <p>{{ 'sections.cart.empty' | t }}</p>
-        <a
-          href="{{ routes.all_products_collection_url }}"
-          class="btn btn-primary"
-          data-drawer-hide="cart-drawer"
-        >
-          {{ 'general.continue_shopping' | t }}
-        </a>
-        {%- if settings.cart_drawer_collection != blank -%}
-          <div class="">
-            {% render 'card-collection', card_collection: settings.cart_drawer_collection, columns: 1 %}
-          </div>
+{% comment %}
+  <button
+    type="button"
+    data-drawer-target="cart-drawer"
+    data-drawer-show="cart-drawer"
+    data-drawer-placement="right"
+    aria-controls="cart-drawer"
+    class="relative flex items-center justify-center w-8 h-8">
+    {%- liquid
+      if cart == empty
+        render 'icons' name: 'cart-empty'
+      else
+        render 'icons' name: 'cart'
+      endif
+    -%}
+    <span class="invisible">{{ 'templates.cart.cart' | t }}</span>
+    {%- if cart != empty -%}
+      <div class="absolute top-0 flex items-center justify-center w-4 h-4 px-2 pb-px text-sm subpixel-antialiased font-medium leading-none text-center text-white rounded-full -right-1 lg:relative lg:top-auto lg:right-auto bg-primary lg:text-base lg:h-5 lg:w-5">
+        {%- if cart.item_count < 100 -%}
+          <span aria-hidden="true">{{ cart.item_count }}</span>
         {%- endif -%}
+        <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
       </div>
     {%- endif -%}
+  </button>
+{% endcomment %}
+
+<!-- Drawer Component -->
+{% comment %}
+  <div id="cart-drawer" class="drawer drawer-right" tabindex="-1" aria-labelledby="cart-drawer-label">
+    <!-- Drawer Header -->
+    <div class="drawer__header">
+      <h3>Your Cart</h3>
+      <button
+        type="button"
+        class="drawer__close"
+        data-drawer-hide="cart-drawer"
+        aria-controls="cart-drawer">
+        {%- render 'icons' name: 'close' %}
+        <span class="sr-only">Close menu</span>
+      </button>
+    </div>
+    <!-- Drawer Content -->
+    <div class="drawer__content">
+      {%- if cart == empty -%}
+        <div class="p-8">
+          <p>{{ 'sections.cart.empty' | t }}</p>
+          <a
+            href="{{ routes.all_products_collection_url }}"
+            class="btn btn-primary"
+            data-drawer-hide="cart-drawer"
+          >
+            {{ 'general.continue_shopping' | t }}
+          </a>
+          {%- if settings.cart_drawer_collection != blank -%}
+            <div class="">
+              {% render 'card-collection', card_collection: settings.cart_drawer_collection, columns: 1 %}
+            </div>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+    </div>
+
   </div>
-
-</div> {% endcomment %}
-
+{% endcomment %}
