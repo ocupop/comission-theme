@@ -688,6 +688,18 @@
         }
       }
     },
+    "announcement-bar": {
+      "name": "Announcement bar",
+      "settings": {
+        "color_scheme": "Color scheme",
+        "enable_sticky_bar": "Enable sticky bar",
+        "auto_rotate_between_messages": "Auto rotate between messages",
+        "cycle_speed": "Cycle speed",
+        "desktop_text_size": "Desktop text size",
+        "mobile_text_size": "Mobile text size"
+
+      }
+    },
     "hero": {
       "name": "Hero",
       "settings": {
