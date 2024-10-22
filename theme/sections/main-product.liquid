@@ -1,7 +1,7 @@
 {%- liquid
-  assign section_color_scheme = "color-" | append: section.settings.color_scheme
-  assign section_padding_top = "pt-" | append: section.settings.padding_top
-  assign section_padding_bottom = "pb-" | append: section.settings.padding_bottom
+  assign section_color_scheme = 'color-' | append: section.settings.color_scheme
+  assign section_padding_top = 'pt-' | append: section.settings.padding_top
+  assign section_padding_bottom = 'pb-' | append: section.settings.padding_bottom
   assign artist = product.metafields.comission.artist
   assign meta = product.metafields.comission
   assign product_form_id = 'product-form-' | append: section.id
@@ -36,12 +36,9 @@
       <div class="">
         {% comment %} {%- assign product_form_id = 'product-form-' | append: section.id -%} {% endcomment %}
         <h1 class="font-normal h3">{{ product.title | escape }}</h1>
-        {% render 'art-meta' meta: product.metafields.comission %}
-        {%- render 'dab-selector',
-          product: product,
-          product_form_id: product_form_id,
-          section_id: section.id
-        -%}
+        {% render 'art-meta', meta: product.metafields.comission %}
+        {%- render 'dab-selector', product: product, product_form_id: product_form_id, section_id: section.id -%}
+
         <small class="text-sm">DAB's starting from: {{ product.price | money_with_currency }}</small>
 
         <div class="my-5">
@@ -107,7 +104,6 @@
 
 {% comment %} TODO: Add buy buttons for gift certificates in schema (line 119) {% endcomment %}
 {% schema %}
-
 {
   "name": "t:sections.main-product.name",
   "tag": "section",

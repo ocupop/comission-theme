@@ -43,9 +43,18 @@
         </button>
       {%- endif -%}
 
-      <announcement-bar-carousel allow-swipe {% if section.settings.autoplay %}autoplay="{{ section.settings.cycle_speed }}"{% endif %} id="{{ carousel_id }}" class="announcement-bar__carousel">
+      <announcement-bar-carousel
+        allow-swipe
+        {% if section.settings.autoplay %}
+          autoplay="{{ section.settings.cycle_speed }}"
+        {% endif %}
+        id="{{ carousel_id }}"
+        class="announcement-bar__carousel"
+      >
         {%- for block in section.blocks -%}
-          <p class="prose heading {% if forloop.first %}is-selected{% endif %}" {{ block.shopify_attributes }}>{{- block.settings.text -}}</p>
+          <p class="prose heading {% if forloop.first %}is-selected{% endif %}" {{ block.shopify_attributes }}>
+            {{- block.settings.text -}}
+          </p>
         {%- endfor -%}
       </announcement-bar-carousel>
 
@@ -59,25 +68,28 @@
   </height-observer>
 
   <script>
-    document.documentElement.style.setProperty('--announcement-bar-height', `${document.getElementById('shopify-section-{{ section.id }}').clientHeight.toFixed(2)}px`);
+    document.documentElement.style.setProperty(
+      '--announcement-bar-height',
+      `${document.getElementById('shopify-section-{{ section.id }}').clientHeight.toFixed(2)}px`
+    );
   </script>
 {%- endif -%}
 
 {% schema %}
 {
-  "name": "t:sections.announcement_bar.name",
+  "name": "t:sections.announcement-bar.name",
   "class": "shopify-section--announcement-bar",
   "tag": "aside",
   "max_blocks": 5,
   "blocks": [
     {
       "type": "message",
-      "name": "t:sections.announcement_bar.blocks.message.name",
+      "name": "t:sections.announcement-bar.blocks.message.name",
       "settings": [
         {
           "type": "inline_richtext",
           "id": "text",
-          "label": "t:sections.announcement_bar.blocks.message.text",
+          "label": "t:sections.announcement-bar.blocks.message.text",
           "default": "Announce something here"
         }
       ]
@@ -87,18 +99,18 @@
     {
       "type": "color_scheme",
       "id": "color_scheme",
-      "label": "t:global.colors.scheme",
+      "label": "t:sections.announcement-bar.settings.color_scheme",
       "default": "scheme-3"
     },
     {
       "type": "checkbox",
       "id": "enable_sticky",
-      "label": "t:sections.announcement_bar.enable_sticky_bar"
+      "label": "t:sections.announcement-bar.settings.enable_sticky_bar"
     },
     {
       "type": "checkbox",
       "id": "autoplay",
-      "label": "t:sections.announcement_bar.auto_rotate_between_messages",
+      "label": "t:sections.announcement-bar.settings.auto_rotate_between_messages",
       "default": true
     },
     {
@@ -108,7 +120,7 @@
       "max": 20,
       "step": 1,
       "unit": "sec",
-      "label": "t:sections.announcement_bar.cycle_speed",
+      "label": "t:sections.announcement-bar.settings.cycle_speed",
       "default": 5
     },
     {
@@ -117,7 +129,7 @@
       "min": 9,
       "max": 15,
       "unit": "px",
-      "label": "t:sections.announcement_bar.desktop_text_size",
+      "label": "t:sections.announcement-bar.settings.desktop_text_size",
       "default": 11
     },
     {
@@ -126,7 +138,7 @@
       "min": 9,
       "max": 15,
       "unit": "px",
-      "label": "t:sections.announcement_bar.mobile_text_size",
+      "label": "t:sections.announcement-bar.settings.mobile_text_size",
       "default": 10
     }
   ]

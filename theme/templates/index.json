@@ -55,6 +55,73 @@
     },
     "home-experience": {
       "type": "home-experience",
+      "blocks": {
+        "block1": {
+          "type": "slide",
+          "settings": {
+            "title": "Collector's Certificate",
+            "image": "shopify://shop_images/comission-illustration-benefit-certificate-02.svg",
+            "alt": "Collector's Certificate"
+          }
+        },
+        "slide_BCzeBP": {
+          "type": "slide",
+          "settings": {
+            "title": "Virtual Gallery",
+            "image": "shopify://shop_images/comission-illustration-benefit-virtuallyamazing.svg",
+            "alt": "Virtual Gallery"
+          }
+        },
+        "slide_zBptNM": {
+          "type": "slide",
+          "settings": {
+            "title": "Stream to your screen",
+            "image": "shopify://shop_images/comission-illustration-benefit-sharetoscreen.svg",
+            "alt": "Stream to your screen"
+          }
+        },
+        "slide_W9K7Qi": {
+          "type": "slide",
+          "settings": {
+            "title": "Augmented Reality",
+            "image": "shopify://shop_images/comission-illustration-benefit-forthewall.svg",
+            "alt": "Augmented Reality"
+          }
+        },
+        "slide_4RChYT": {
+          "type": "slide",
+          "settings": {
+            "title": "Exclusive Museum Perks",
+            "image": "shopify://shop_images/comission-illustration-benefit-exclusivemuseumnight.svg",
+            "alt": "Exclusive Museum Perks"
+          }
+        },
+        "slide_nnUnng": {
+          "type": "slide",
+          "settings": {
+            "title": "Connect with the Artist",
+            "image": "shopify://shop_images/comission-illustration-benefits-icon.svg",
+            "alt": "Connect with the Artist"
+          }
+        },
+        "slide_4TcBAe": {
+          "type": "slide",
+          "settings": {
+            "title": "Virtual Meetups",
+            "image": "shopify://shop_images/comission-illustration-benefit-metaverse-meet-ups.svg",
+            "alt": "Virtual Meetups"
+          }
+        }
+      },
+      "block_order": [
+        "block1",
+        "slide_BCzeBP",
+        "slide_zBptNM",
+        "slide_W9K7Qi",
+        "slide_4RChYT",
+        "slide_nnUnng",
+        "slide_4TcBAe"
+      ],
       "settings": {
         "title": "Experience",
         "subtitle": "Exclusive features for collectors",
@@ -76,7 +143,7 @@
       "settings": {
         "title": "Foster",
         "subtitle": "Funding social change through art",
-        "image": "shopify://shop_images/comission-illustration-artterms.svg",
+        "image": "shopify://shop_images/comission-illustration-fundingduture.svg",
         "description": "Because every purchase on the CoMission website generates a charitable donation supporting a specific cause, we’re using the power of art to affect change in our society.",
         "color_scheme": "scheme-1"
       }
