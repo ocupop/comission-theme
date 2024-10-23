@@ -133,7 +133,7 @@
     "cta-experience": {
       "type": "cta",
       "settings": {
-        "background_image": "shopify://shop_images/comission-homepage-painting-background-image.jpg",
+        "background_image": "shopify://shop_images/comission-homepage-background-03.jpg",
         "button_label": "Explore the features",
         "button_link": "https://www.comission.art/collections/all"
       }
@@ -151,7 +151,7 @@
     "cta-foster": {
       "type": "cta",
       "settings": {
-        "background_image": "shopify://shop_images/comission-homepage-painting-background-image.jpg",
+        "background_image": "shopify://shop_images/comission-homepage-background-04.jpg",
         "button_label": "Learn about our mission",
         "button_link": "https://www.comission.art/collections/all"
       }
