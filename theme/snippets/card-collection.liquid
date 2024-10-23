@@ -15,7 +15,6 @@
   {% render 'card-collection' %}
 {% endcomment %}
 
-
 <div class="{{ wrapper_class }}">
   <div class="media media--transparent media--hover-effect">
     <img
@@ -31,7 +30,8 @@
   <div class="col-span-2">
     <h4 class="mb-4 text-3xl">{{- card_collection.title | escape -}}</h4>
     <p class="mb-4">{{- card_collection.metafields.comission.excerpt -}}</p>
-    <a class="flex items-center text-xl font-normal text-primary" href="{{ collection.url }}">See {{ collection_type }} bio {% render 'icons' name: 'arrow-right' %}</a>
+    <a class="flex items-center text-xl font-normal text-primary" href="{{ card_collection.url }}"
+      >See {{ collection_type }} bio {% render 'icons', name: 'arrow-right' -%}
+    </a>
   </div>
 </div>
-
