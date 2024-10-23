@@ -2202,6 +2202,14 @@ p {
   margin-top: 1.5rem;
 }
 
+.-ml-10 {
+  margin-left: -2.5rem;
+}
+
+.-mr-10 {
+  margin-right: -2.5rem;
+}
+
 .block {
   display: block;
 }
@@ -2236,6 +2244,10 @@ p {
 
 .aspect-\[2\/1\] {
   aspect-ratio: 2/1;
+}
+
+.aspect-\[1\/4\] {
+  aspect-ratio: 1/4;
 }
 
 .size-10 {
@@ -2330,6 +2342,14 @@ p {
 
 .w-full {
   width: 100%;
+}
+
+.w-11\/12 {
+  width: 91.666667%;
+}
+
+.w-16 {
+  width: 4rem;
 }
 
 .max-w-\[200px\] {
@@ -3037,6 +3057,10 @@ p {
 
 .p-8 {
   padding: 2rem;
+}
+
+.p-5 {
+  padding: 1.25rem;
 }
 
 .px-0 {
@@ -4576,6 +4600,14 @@ small {
     grid-column: span 2 / span 2;
   }
 
+  .md\:ml-0 {
+    margin-left: 0px;
+  }
+
+  .md\:mr-0 {
+    margin-right: 0px;
+  }
+
   .md\:max-w-\[300px\] {
     max-width: 300px;
   }
@@ -4681,6 +4713,14 @@ small {
 
   .lg\:w-72 {
     width: 18rem;
+  }
+
+  .lg\:w-1\/2 {
+    width: 50%;
+  }
+
+  .lg\:w-32 {
+    width: 8rem;
   }
 
   .lg\:max-w-\[50\%\] {
