@@ -13,7 +13,24 @@
   assign meta = product.metafields.comission
 -%}
 
-{% capture variants %}[{% for variant in product.variants %}{"id": "{{ variant.id }}","title": "{{ variant.title }}"}{% unless forloop.last %},{% endunless %}{% endfor %}]{% endcapture %}
+{% capture variants %}[{% for variant in product.variants %}{"id": "{{ variant.id }}","price": "{{ variant.price | divided_by: 100 }}","title": "{{ variant.title }}","tiles": "{{ variant.metafields.comission.tiles }}"}{% unless forloop.last %},{% endunless %}{% endfor %}]{% endcapture %}
+{% comment %}
+  {% capture museum %}{"id": "123456789012345","handle": "museum-handle","title": "Museum Title","museumAttributes": "xxx"}{% endcapture %}
+  {% capture artist %}{"handle": "artist-handle","title": "Artist Title"}{% endcapture %}
+{% endcomment %}
+
+{% assign artist_id = product.metafields.comission.artist | split: '/' | last | plus: 0 %}
+{% assign museum_id = product.metafields.comission.institution | split: '/' | last | plus: 0 %}
+
+<br>
+{% for coll in collections %}
+  {% if artist_id == coll.id %}
+    {% assign artist = coll %}
+  {% endif %}
+  {% if museum_id == coll.id %}
+    {% assign museum = coll %}
+  {% endif %}
+{% endfor -%}
 
 <!-- Modal toggle -->
 <button
@@ -32,7 +49,7 @@
   aria-hidden="true"
   class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full"
 >
-  <div class="relative w-full max-w-md max-h-full p-4">
+  <div class="relative w-full max-w-4xl max-h-full  p-4">
     <!-- Modal content -->
     <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
       <!-- Modal header -->
@@ -71,54 +88,62 @@
             endif
           -%}
 
-          <input
-            type="text"
-            name="id"
-            value="{{ product.selected_or_first_available_variant.id }}"
-            class="product-variant-id"
-            {% if product.selected_or_first_available_variant.available == false
-              or quantity_rule_soldout
-              or product.selected_or_first_available_variant == null
-            %}
-              disabled
-            {% endif %}
-          >
-          <!-- Product ID: {{ product.id }} -->
-          <!-- Variant ID: {{ product.selected_or_first_available_variant.id }} -->
+          {% comment %}
+            <input
+              type="text"
+              name="id"
+              value="{{ product.selected_or_first_available_variant.id }}"
+              class="product-variant-id"
+              {% if product.selected_or_first_available_variant.available == false
+                or quantity_rule_soldout
+                or product.selected_or_first_available_variant == null
+              %}
+                disabled
+              {% endif %}
+            >
 
-          <button
-            id="ProductSubmitButton-{{ section_id }}"
-            type="submit"
-            name="add"
-            class="btn btn-primary"
-            {% if product.selected_or_first_available_variant.available == false
-              or quantity_rule_soldout
-              or product.selected_or_first_available_variant == null
-            %}
-              disabled
-            {% endif %}
-          >
-            <span>
-              {%- if product.selected_or_first_available_variant == null -%}
-                {{ 'products.product.unavailable' | t }}
-              {%- elsif product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
-                {{ 'products.product.sold_out' | t }}
-              {%- else -%}
-                {{ 'products.product.add_to_cart' | t }}
-              {%- endif -%}
-            </span>
-            {%- render 'loading-spinner' -%}
-          </button>
+            <button
+              id="ProductSubmitButton-{{ section_id }}"
+              type="submit"
+              name="add"
+              class="btn btn-primary"
+              {% if product.selected_or_first_available_variant.available == false
+                or quantity_rule_soldout
+                or product.selected_or_first_available_variant == null
+              %}
+                disabled
+              {% endif %}
+            >
+              <span>
+                {%- if product.selected_or_first_available_variant == null -%}
+                  {{ 'products.product.unavailable' | t }}
+                {%- elsif product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
+                  {{ 'products.product.sold_out' | t }}
+                {%- else -%}
+                  {{ 'products.product.add_to_cart' | t }}
+                {%- endif -%}
+              </span>
+              {%- render 'loading-spinner' -%}
+            </button>
 
-          <p>{{ cart.item_count }}</p>
+            <p>{{ cart.item_count }}</p>
+          {% endcomment %}
+
           <!-- prettier-ignore -->
-          <div class="__react-component" data-component="DABSelector" data-product='{{ variants | json | remove_first: '"' | remove_last: '"' }}' data-note="{{ meta.note | escape }}"></div>
+          <div class="__react-component"
+            data-component="DABSelector"
+            data-cart='{{ cart.items | json | replace: "'", "&apos;" | escape }}'
+            data-product='{{ product | json | replace: "'", "&apos;" | escape }}'
+            data-variants='{{ variants | replace: "'", "&apos;" | escape }}'
+            data-museum='{{ museum | json | replace: "'", "&apos;" | escape }}'
+            data-artist='{{ artist | json | replace: "'", "&apos;" | escape }}'
+            data-productmetafields='{{ meta | json | replace: "'", "&apos;" | escape }}'
+            data-museumattributes='{{ museum.metafields.comission.museumAttributes | replace: "'", "&apos;" | escape }}'></div>
         {%- endform -%}
       </product-form>
     </div>
   </div>
 </div>
-
 {% comment %}
   <button type="submit" class="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
     <svg class="w-5 h-5 me-1 -ms-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path></svg>

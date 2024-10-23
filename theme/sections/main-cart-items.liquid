@@ -32,7 +32,7 @@
         <div class="js-contents">
           {%- if cart != empty -%}
             <table class="cart-items">
-              <caption class="visually-hidden">
+              <caption class="visually-hidden hidden">
                 {{ 'sections.cart.title' | t }}
               </caption>
               <thead>
@@ -85,13 +85,13 @@
 
                       {%- if item.original_price != item.final_price -%}
                         <div class="cart-item__discounted-prices">
-                          <span class="visually-hidden">
+                          <span class="visually-hidden hidden">
                             {{ 'products.product.price.regular_price' | t }}
                           </span>
                           <s class="cart-item__old-price product-option">
                             {{- item.original_price | money -}}
                           </s>
-                          <span class="visually-hidden">
+                          <span class="visually-hidden hidden">
                             {{ 'products.product.price.sale_price' | t }}
                           </span>
                           <strong class="cart-item__final-price product-option">
@@ -155,7 +155,7 @@
                       <div class="cart-item__price-wrapper">
                         {%- if item.original_line_price != item.final_line_price -%}
                           <dl class="cart-item__discounted-prices">
-                            <dt class="visually-hidden">
+                            <dt class="visually-hidden hidden">
                               {{ 'products.product.price.regular_price' | t }}
                             </dt>
                             <dd>
@@ -163,7 +163,7 @@
                                 {{ item.original_line_price | money }}
                               </s>
                             </dd>
-                            <dt class="visually-hidden">
+                            <dt class="visually-hidden hidden">
                               {{ 'products.product.price.sale_price' | t }}
                             </dt>
                             <dd class="price price--end">
@@ -178,10 +178,10 @@
 
                         {%- if item.variant.available and item.unit_price_measurement -%}
                           <div class="unit-price caption">
-                            <span class="visually-hidden">{{ 'products.product.price.unit_price' | t }}</span>
+                            <span class="visually-hidden hidden">{{ 'products.product.price.unit_price' | t }}</span>
                             {{ item.unit_price | money }}
                             <span aria-hidden="true">/</span>
-                            <span class="visually-hidden"
+                            <span class="visually-hidden hidden"
                               >&nbsp;{{ 'accessibility.unit_price_separator' | t }}&nbsp;</span
                             >
                             {%- if item.unit_price_measurement.reference_value != 1 -%}
@@ -206,7 +206,7 @@
                     <td class="cart-item__quantity{% if has_qty_rules or has_vol_pricing %} cart-item__quantity--info{% endif %}">
                       <quantity-popover>
                         <div class="cart-item__quantity-wrapper quantity-popover-wrapper">
-                          <label class="visually-hidden" for="Quantity-{{ item.index | plus: 1 }}">
+                          <label class="visually-hidden hidden" for="Quantity-{{ item.index | plus: 1 }}">
                             {{ 'products.product.quantity.label' | t }}
                           </label>
                           <div class="quantity-popover-container{% if has_qty_rules or has_vol_pricing %} quantity-popover-container--hover{% endif %}">
@@ -221,10 +221,10 @@
                             {%- endif -%}
                             <quantity-input class="quantity cart-quantity">
                               <button class="quantity__button" name="minus" type="button">
-                                <span class="visually-hidden">
+                                <span class="visually-hidden hidden">
                                   {{- 'products.product.quantity.decrease' | t: product: item.product.title | escape -}}
                                 </span>
-                                {% render 'icons' name: 'minus' %}
+                                {% render 'icons', name: 'minus' %}
                               </button>
                               <input
                                 class="quantity__input"
@@ -246,10 +246,10 @@
                                 data-index="{{ item.index | plus: 1 }}"
                               >
                               <button class="quantity__button" name="plus" type="button">
-                                <span class="visually-hidden">
+                                <span class="visually-hidden hidden">
                                   {{- 'products.product.quantity.increase' | t: product: item.product.title | escape -}}
                                 </span>
-                                {% render 'icons' name: 'plus' %}
+                                {% render 'icons', name: 'plus' %}
                               </button>
                             </quantity-input>
                           </div>
@@ -262,7 +262,7 @@
                               class="button button--tertiary"
                               aria-label="{{ 'sections.cart.remove_title' | t: title: item.title | escape }}"
                             >
-                              {% render 'icons' name: 'remove' %}
+                              Remove
                             </a>
                           </cart-remove-button>
                         </div>
@@ -349,7 +349,7 @@
                             {%- endif -%}
                           </div>
                         {%- endif -%}
-                        <div class="cart-item__error" id="Line-item-error-{{ item.index | plus: 1 }}" role="alert">
+                        <div class="cart-item__error w-12" id="Line-item-error-{{ item.index | plus: 1 }}" role="alert">
                           <small class="cart-item__error-text"></small>
                           <svg
                             aria-hidden="true"
@@ -371,7 +371,7 @@
                       <div class="cart-item__price-wrapper">
                         {%- if item.original_line_price != item.final_line_price -%}
                           <dl class="cart-item__discounted-prices">
-                            <dt class="visually-hidden">
+                            <dt class="visually-hidden hidden">
                               {{ 'products.product.price.regular_price' | t }}
                             </dt>
                             <dd>
@@ -379,7 +379,7 @@
                                 {{ item.original_line_price | money }}
                               </s>
                             </dd>
-                            <dt class="visually-hidden">
+                            <dt class="visually-hidden hidden">
                               {{ 'products.product.price.sale_price' | t }}
                             </dt>
                             <dd class="price price--end">
@@ -394,10 +394,10 @@
 
                         {%- if item.variant.available and item.unit_price_measurement -%}
                           <div class="unit-price caption">
-                            <span class="visually-hidden">{{ 'products.product.price.unit_price' | t }}</span>
+                            <span class="visually-hidden hidden">{{ 'products.product.price.unit_price' | t }}</span>
                             {{ item.unit_price | money }}
                             <span aria-hidden="true">/</span>
-                            <span class="visually-hidden"
+                            <span class="visually-hidden hidden"
                               >&nbsp;{{ 'accessibility.unit_price_separator' | t }}&nbsp;</span
                             >
                             {%- if item.unit_price_measurement.reference_value != 1 -%}
@@ -416,9 +416,9 @@
         </div>
       </div>
 
-      <p class="visually-hidden" id="cart-live-region-text" aria-live="polite" role="status"></p>
+      <p class="visually-hidden hidden" id="cart-live-region-text" aria-live="polite" role="status"></p>
       <p
-        class="visually-hidden"
+        class="visually-hidden hidden"
         id="shopping-cart-line-item-status"
         aria-live="polite"
         aria-hidden="true"

@@ -1,4 +1,8 @@
-<cart-drawer-items {% if cart == empty %}class="is-empty"{% endif %}>
+<cart-drawer-items
+  {% if cart == empty %}
+    class="is-empty"
+  {% endif %}
+>
   <form
     action="{{ routes.cart_url }}"
     id="CartDrawer-Form"
@@ -7,21 +11,25 @@
     <div id="CartDrawer-CartItems" class="js-contents">
       {%- if cart != empty -%}
         <div>
-          {% comment %} <script>
-            fetch('/cart.js')
-              .then(res => res.json())
-              .then(cart => {
-                cart.items.forEach(item => {
-                  console.log("HELLO",item); // Line item attributes (custom properties)
+          {% comment %}
+            <script>
+              fetch('/cart.js')
+                .then(res => res.json())
+                .then(cart => {
+                  cart.items.forEach(item => {
+                    console.log("HELLO",item); // Line item attributes (custom properties)
+                  });
                 });
-              });
-          </script> {% endcomment %}
+            </script>
+          {% endcomment %}
           <ul role="list" class="border-t border-b border-gray-200 divide-y divide-gray-200">
+            {% comment %}
+              <script>
+                console.log( "CART",{{ cart | json }} );
+              </script>
+            {% endcomment %}
             {%- for item in cart.items -%}
-
               <li class="flex py-6 sm:py-10">
-                {% comment %} <script>console.log( {{ cart | json }} );</script> {% endcomment %}
-                {% comment %} <script>console.log( {{ item | json }} );</script> {% endcomment %}
                 <div class="flex-shrink-0">
                   {% if item.image %}
                     <a href="{{ item.url }}" class="cart-item__link" tabindex="-1" aria-hidden="true">
@@ -32,7 +40,7 @@
                         loading="lazy"
                         width="150"
                         height="{{ 150 | divided_by: item.image.aspect_ratio | ceil }}"
-                      />
+                      >
                       <div
                         class="__react-component"
                         data-component="ImageCrosshairs"
@@ -53,15 +61,20 @@
                             {{- item.product.title | escape -}}
                           </a>
                         </h3>
-                        <p class="mt-1 text-sm text-gray-500">Unique DAB #{{ item.variant.title }}</p>
+                        <p class="mt-1 text-sm text-gray-500">Unique DAB #{{ item.properties.position }}</p>
                       </div>
 
-                      <p class="text-sm font-medium text-right text-gray-900">$35.00</p>
+                      <p class="text-sm font-medium text-right text-gray-900">{{ item.price | money }}</p>
                     </div>
 
                     <div class="flex items-center mt-4 sm:absolute sm:left-1/2 sm:top-0 sm:mt-0 sm:block">
-                      <label for="quantity-0" class="sr-only">Quantity, Nomad Tumbler</label>
-                      <select id="quantity-0" name="quantity-0" class="block max-w-full rounded-md border border-gray-300 py-1.5 text-left text-base font-medium leading-5 text-gray-700 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:text-sm">
+                      <label for="quantity-0" class="sr-only">Quantity</label>
+                      <select
+                        id="quantity-0"
+                        name="quantity-0"
+                        class="block max-w-full rounded-md border border-gray-300 py-1.5 text-left text-base font-medium leading-5 text-gray-700 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:text-sm"
+                      >
+                        <option value="0">0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -72,14 +85,23 @@
                         <option value="8">8</option>
                       </select>
 
-                      <button type="button" class="ml-4 text-sm font-medium text-indigo-600 hover:text-indigo-500 sm:ml-0 sm:mt-3">
+                      <button
+                        type="button"
+                        class="ml-4 text-sm font-medium text-indigo-600 hover:text-indigo-500 sm:ml-0 sm:mt-3"
+                      >
                         <span>Remove</span>
                       </button>
                     </div>
                   </div>
 
                   <p class="flex mt-4 space-x-2 text-sm text-gray-700">
-                    <svg class="flex-shrink-0 w-5 h-5 text-green-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+                    <svg
+                      class="flex-shrink-0 w-5 h-5 text-green-500"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true"
+                      data-slot="icon"
+                    >
                       <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" />
                     </svg>
                     <span>In stock</span>
@@ -284,13 +306,9 @@
                           <quantity-input class="quantity cart-quantity">
                             <button class="quantity__button" name="minus" type="button">
                               <span class="visually-hidden">
-                                {{-
-                                  'products.product.quantity.decrease'
-                                  | t: product: item.product.title
-                                  | escape
-                                -}}
+                                {{- 'products.product.quantity.decrease' | t: product: item.product.title | escape -}}
                               </span>
-                              {% render 'icons' name: 'minus' %}
+                              {% render 'icons', name: 'minus' %}
                             </button>
                             <input
                               class="quantity__input"
@@ -313,13 +331,9 @@
                             >
                             <button class="quantity__button" name="plus" type="button">
                               <span class="visually-hidden">
-                                {{-
-                                  'products.product.quantity.increase'
-                                  | t: product: item.product.title
-                                  | escape
-                                -}}
+                                {{- 'products.product.quantity.increase' | t: product: item.product.title | escape -}}
                               </span>
-                              {% render 'icons' name: 'plus' %}
+                              {% render 'icons', name: 'plus' %}
                             </button>
                           </quantity-input>
                         </div>
@@ -333,7 +347,7 @@
                             aria-label="{{ 'sections.cart.remove_title' | t: title: item.title | escape }}"
                             data-variant-id="{{ item.variant.id }}"
                           >
-                            {% render 'icons' name: 'trash' %}
+                            {% render 'icons', name: 'trash' %}
                           </button>
                         </cart-remove-button>
                       </div>
@@ -375,18 +389,12 @@
                             {%- endif -%}
                             {%- if item.variant.quantity_rule.min > 1 -%}
                               <span class="divider">
-                                {{-
-                                  'products.product.quantity.min_of'
-                                  | t: quantity: item.variant.quantity_rule.min
-                                -}}
+                                {{- 'products.product.quantity.min_of' | t: quantity: item.variant.quantity_rule.min -}}
                               </span>
                             {%- endif -%}
                             {%- if item.variant.quantity_rule.max != null -%}
                               <span class="divider">
-                                {{-
-                                  'products.product.quantity.max_of'
-                                  | t: quantity: item.variant.quantity_rule.max
-                                -}}
+                                {{- 'products.product.quantity.max_of' | t: quantity: item.variant.quantity_rule.max -}}
                               </span>
                             {%- endif -%}
                           </div>
@@ -424,7 +432,7 @@
                         role="alert"
                       >
                         <small class="cart-item__error-text"></small>
-                        {% render 'icons' name: 'error' %}
+                        {% render 'icons', name: 'error' %}
                       </div>
                     </quantity-popover>
                   </td>

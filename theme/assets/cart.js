@@ -15,6 +15,7 @@ customElements.define('cart-remove-button', CartRemoveButton);
 class CartItems extends HTMLElement {
   constructor() {
     super();
+    console.log('CartItems');
     this.lineItemStatusElement =
       document.getElementById('shopping-cart-line-item-status') || document.getElementById('CartDrawer-LineItemStatus');
 
@@ -263,7 +264,7 @@ class CartItems extends HTMLElement {
     cartDrawerItemElements.forEach((overlay) => overlay.classList.add('hidden'));
   }
 }
-
+console.log('Define CartItems');
 customElements.define('cart-items', CartItems);
 
 if (!customElements.get('cart-note')) {
