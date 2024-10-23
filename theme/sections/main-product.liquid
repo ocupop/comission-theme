@@ -30,6 +30,17 @@
   <div class="container">
     <div class="grid items-center grid-cols-1 gap-8 lg:grid-cols-2">
       <div class="lg:p-5 animate-slide">
+        <img src="{{ product.featured_image | image_url: width: 608 }}" width="608" height="auto" alt="{{ product.featured_image.alt | escape }}"">
+
+        {% comment %}
+          <img
+            class=""
+            style="{{ maxHeight: 'calc(100vh - 115px)' }}"
+            src="{{ product.media[0].src }}"
+            width="333"
+            height="333"
+          >
+        {% endcomment %}
         {% comment %} TODO: Account for Image zoom and pass along to dab selector {% endcomment %}
         {% comment %} {% render 'dab-selector' product: product %} {% endcomment %}
       </div>
