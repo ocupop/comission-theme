@@ -5,7 +5,8 @@
   endif
 -%}
 
-{% comment %} style="background-image: url('{{ section.settings.background_image | image_url: width: 3840 }}');" {% endcomment %}
+<div class="relative" style="background-image: url('{{ section.settings.background_image | image_url: width: 3840 }}');">
+
 <div
   style="background-image: url('{{ section.settings.background_image | image_url: width: 3840 }}');"
   id="hero-{{ section.id }}"

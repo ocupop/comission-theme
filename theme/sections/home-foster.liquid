@@ -1,21 +1,23 @@
 {% render 'section-header',
   title: section.settings.title,
   subtitle: section.settings.subtitle,
-  color_scheme: section.settings.color_scheme
+  color_scheme: section.settings.color_scheme,
+  class: 'text-3xl lg:text-5xl font-normal lg:text-center mb-10'
 %}
 <div class="color-{{ section.settings.color_scheme }}">
   <div class="container">
-    <div class="grid items-center grid-cols-1 gap-20 py-20 lg:grid-cols-2 lg:gap-40">
-      <div>
+    <div class="grid items-center py-10 lg:grid-cols-3 gap-20 lg:gap-30">
+      <div class="col-span-1">
         <img
-          src="{{ section.settings.image | image_url: width: 500 }}"
+          src="{{ section.settings.image | image_url: width: 400 }}"
           alt="funding graphic"
+          class="mx-auto"
           loading="lazy"
-          width="500"
-          height="500"
+          width="400"
+          height="400"
         >
       </div>
-      <div class="text-body">
+      <div class="text-body lg:text-2xl col-span-2">
         {{ section.settings.description }}
       </div>
     </div>
