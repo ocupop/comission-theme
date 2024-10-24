@@ -3076,11 +3076,6 @@ p {
   background-color: rgb(var(--color-primary) / var(--tw-bg-opacity));
 }
 
-.bg-sky-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(14 165 233 / var(--tw-bg-opacity));
-}
-
 .bg-transparent {
   background-color: transparent;
 }
@@ -3805,11 +3800,6 @@ p {
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 }
 
-.\~text-sm\/xl {
-  font-size: clamp(0.875rem,0.607rem + 0.67vw,1.25rem)/* fluid type from 0.875rem at 40rem to 1.25rem at 96rem */;
-  line-height: clamp(1.25rem,0.89rem + 0.89vw,1.75rem)/* fluid from 1.25rem at 40rem to 1.75rem at 96rem */;
-}
-
 .\~scroll-pt-0 /* error - Missing end value */ {
 }
 
@@ -4018,21 +4008,6 @@ p {
 }
 
 .\~scroll-pb-px /* error - Missing end value */ {
-}
-
-.\~px-4\/8 {
-  padding-left: clamp(1rem,0.29rem + 1.79vw,2rem)/* fluid from 1rem at 40rem to 2rem at 96rem */;
-  padding-right: clamp(1rem,0.29rem + 1.79vw,2rem)/* fluid from 1rem at 40rem to 2rem at 96rem */;
-}
-
-.\~px-1\/12 {
-  padding-left: clamp(0.25rem,-1.71rem + 4.91vw,3rem)/* fluid from 0.25rem at 40rem to 3rem at 96rem */;
-  padding-right: clamp(0.25rem,-1.71rem + 4.91vw,3rem)/* fluid from 0.25rem at 40rem to 3rem at 96rem */;
-}
-
-.\~py-2\/4 {
-  padding-top: clamp(0.5rem,0.14rem + 0.89vw,1rem)/* fluid from 0.5rem at 40rem to 1rem at 96rem */;
-  padding-bottom: clamp(0.5rem,0.14rem + 0.89vw,1rem)/* fluid from 0.5rem at 40rem to 1rem at 96rem */;
 }
 
 .\~pt-0 /* error - Missing end value */ {
