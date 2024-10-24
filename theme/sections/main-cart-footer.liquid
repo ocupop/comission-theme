@@ -22,7 +22,7 @@
   id="main-cart-footer"
   data-id="{{ section.id }}"
 >
-  <div class="page-width">
+  <div class="page-width container">
     <div class="cart__footer isolate section-{{ section.id }}-padding">
       {%- if settings.show_cart_note -%}
         <cart-note class="cart__note field">
@@ -104,11 +104,11 @@
                 </small>
               </div>
             {%- else -%}
-              <div {{ block.shopify_attributes }}>
+              <div {{ block.shopify_attributes }} class="text-right">
                 <button
                   type="submit"
                   id="checkout"
-                  class="cart__checkout-button button"
+                  class="cart__checkout-button button btn btn-primary inline-block"
                   name="checkout"
                   {% if cart == empty %}
                     disabled
