@@ -1,3 +1,27 @@
+# Shopify Starter
+
+Currently (Nov 2024), spinning up this theme locally requires three terminal windows
+1. Terminal Window 1: Start Tailwind CSS compiling
+```sh
+pnpm tw
+```
+2. Terminal Window 2: Start Tailwind CSS compiling
+```sh
+pnpm scripts:watch
+```
+
+1. Terminal Window 3: Start shopify CLI to connect to shopify:
+    * Make sure your theme/shopify.yml file is configured. You should be pointing to the correctly named store and theme
+    * Navigate to your local theme folder and run 'dev':
+```sh
+cd theme
+pnpm dev
+```
+
+
+### See the shopify [Best Practices](https://docs.google.com/document/d/1gIvSt5spNMnZOod3omKhvV9wjJq9tCNHKnE6FdJuyBU/edit?tab=t.0) documentation.
+
+All copy below is from the Dawn Theme readme file
 # Dawn
 
 [![Build status](https://github.com/shopify/dawn/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/Shopify/dawn/actions/workflows/ci.yml?query=branch%3Amain)
