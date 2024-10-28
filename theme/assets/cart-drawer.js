@@ -121,13 +121,11 @@ class CartDrawerItems extends CartItems {
         section: document.getElementById('main-cart-items')?.dataset.id,
         selector: '.js-contents',
       },
-
-      // {
-      // THIS REMOVE THE ENTIRE DRAWER
-      //   id: 'CartDrawer',
-      //   selector: '#CartDrawer',
-      //   section: 'cart-drawer',
-      // },
+      {
+        id: 'main-cart-footer',
+        section: document.getElementById('main-cart-footer').dataset.id,
+        selector: '.js-contents',
+      },
       {
         section: 'cart-drawer',
         id: 'CartDrawer',

@@ -48,6 +48,11 @@
     id="CartDrawer"
     class="drawer drawer-right{% if cart == empty %} is-empty{% endif %}"
   >
+    <button type="button" class="drawer__close z-10" data-drawer-hide="CartDrawer" aria-controls="CartDrawer">
+      {%- render 'icons', name: 'close' %}
+      <span class="sr-only">Close menu</span>
+    </button>
+
     <div
       class="drawer__inner color-{{ settings.cart_color_scheme }}"
       role="dialog"
@@ -59,15 +64,17 @@
         <!-- Drawer Empty -->
         <div class="drawer__inner-empty color-{{ settings.cart_color_scheme }}">
           <h3>{{ 'sections.cart.empty' | t }}</h3>
-          <button
-            type="button"
-            class="drawer__close"
-            data-drawer-hide="CartDrawer"
-            aria-controls="CartDrawer"
-          >
-            {%- render 'icons', name: 'close' %}
-            <span class="sr-only">Close menu</span>
-          </button>
+          {% comment %}
+            <button
+              type="button"
+              class="drawer__close"
+              data-drawer-hide="CartDrawer"
+              aria-controls="CartDrawer"
+            >
+              {%- render 'icons', name: 'close' %}
+              <span class="sr-only">Close menu</span>
+            </button>
+          {% endcomment %}
         </div>
         <a href="{{ routes.all_products_collection_url }}" class="button">
           {{ 'general.continue_shopping' | t }}
@@ -77,16 +84,18 @@
       <!-- Drawer Header -->
       <div class="drawer__header">
         <h3>{{ 'sections.cart.title' | t }}</h3>
-        <button
-          type="button"
-          class="drawer__close"
-          onclick="console.log('close')"
-          data-drawer-hide="CartDrawer"
-          aria-controls="CartDrawer"
-        >
-          {%- render 'icons', name: 'close' %}
-          <span class="sr-only">Close menu</span>
-        </button>
+        {% comment %}
+          <button
+            type="button"
+            class="drawer__close"
+            onclick="console.log('close')"
+            data-drawer-hide="CartDrawer"
+            aria-controls="CartDrawer"
+          >
+            {%- render 'icons', name: 'close' %}
+            <span class="sr-only">Close menu</span>
+          </button>
+        {% endcomment %}
       </div>
       <!-- Drawer Items -->
       {%- render 'cart-drawer-items', cart: cart %}
