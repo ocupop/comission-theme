@@ -2312,10 +2312,6 @@ p {
   height: var(--height-header);
 }
 
-.h-mainMenu {
-  height: calc(var(--height-header) - 44px);
-}
-
 .h-screen {
   height: var(--screen-height, 100vh);
 }
@@ -2356,6 +2352,10 @@ p {
   width: 1.25rem;
 }
 
+.w-6 {
+  width: 1.5rem;
+}
+
 .w-60 {
   width: 15rem;
 }
@@ -2378,10 +2378,6 @@ p {
 
 .w-full {
   width: 100%;
-}
-
-.w-6 {
-  width: 1.5rem;
 }
 
 .max-w-4xl {
@@ -2414,6 +2410,10 @@ p {
 
 .origin-top-left {
   transform-origin: top left;
+}
+
+.origin-top {
+  transform-origin: top;
 }
 
 .-translate-x-1\/2 {
@@ -3093,6 +3093,10 @@ p {
   fill: #1C64F2;
 }
 
+.p-0 {
+  padding: 0px;
+}
+
 .p-1 {
   padding: 0.25rem;
 }
@@ -3115,10 +3119,6 @@ p {
 
 .p-8 {
   padding: 2rem;
-}
-
-.p-0 {
-  padding: 0px;
 }
 
 .px-0 {
@@ -4351,6 +4351,26 @@ small {
   position: absolute;
   white-space: nowrap;
   width: 1px;
+}
+
+/* DAB SELECTOR */
+
+product-form .tooltip {
+  &:before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 12px solid white;
+    position: absolute;
+    transform: translate(-50%);
+    left: 50%;
+    top: -11px;
+  }
+  &.hover-tooltip:before {
+    border-bottom: 12px solid black;
+  }
 }
 
 .\*\:items-center > * {

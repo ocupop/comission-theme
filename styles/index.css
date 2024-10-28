@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 /* Tokens */
 :root {
   --golden-ratio: 1.618;
@@ -305,4 +304,24 @@ small {
   position: absolute;
   white-space: nowrap;
   width: 1px;
+}
+
+
+/* DAB SELECTOR */
+product-form .tooltip {
+  &:before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 12px solid white;
+  position: absolute;
+  transform: translate(-50%);
+  left: 50%;
+  top: -11px;
+  }
+  &.hover-tooltip:before {
+    border-bottom: 12px solid black;
+  }
 }

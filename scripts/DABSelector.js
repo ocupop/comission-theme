@@ -338,7 +338,7 @@ export default function DABSelector(props) {
                   <div
                     key={tile.position}
                     style={{ left: tile.pos.x, top: tile.pos.y, transform: tooltipTransform, ...tooltipMargin }}
-                    className={`tooltip absolute bg-white p-2 left-1/2 text-left z-50 ${tooltipOrientation.x} ${tooltipOrientation.y}`}
+                    className={`tooltip origin-top shadow-lg absolute bg-white p-2 left-1/2 text-left z-50 ${tooltipOrientation.x} ${tooltipOrientation.y}`}
                   >
                     {getToolTipContent(tile)}
                   </div>
