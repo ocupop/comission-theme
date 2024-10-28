@@ -123,7 +123,7 @@ class CartDrawerItems extends CartItems {
       },
       {
         id: 'main-cart-footer',
-        section: document.getElementById('main-cart-footer').dataset.id,
+        section: document.getElementById('main-cart-footer')?.dataset.id,
         selector: '.js-contents',
       },
       {
