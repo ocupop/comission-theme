@@ -1,8 +1,13 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import { HowItWorksAnimation } from './Animations';
-import DABSelector from './DABSelector';
-import HelloWorld from './HelloWorld';
+
+// Import vanilla javascript
+import './checkout-disclaimer.js';
+
+// Import Components
+import { HowItWorksAnimation } from './components/Animations';
+import DABSelector from './components/DABSelector';
+import HelloWorld from './components/HelloWorld';
 
 const COMPONENTS = {
   HelloWorld,

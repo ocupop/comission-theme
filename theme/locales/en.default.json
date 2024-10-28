@@ -312,7 +312,8 @@
       "login": {
         "title": "Have an account?",
         "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">Log in</a> to check out faster."
-      }
+      },
+      "disclaimer_html": "I have read and agree to Comission's <a href=\"/policies/privacy-policy\" class=\"underline modal-link\" target=\"_blank\">Privacy Policy</a> and <a href=\"/policies/terms-of-service\" target=\"_blank\" class=\"underline modal-link\">Terms of Service</a>.",
     },
     "footer": {
       "payment": "Payment methods"

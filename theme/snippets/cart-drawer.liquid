@@ -189,15 +189,15 @@
         <!-- CTAs -->
 
         <div {{ block.shopify_attributes }}>
+          {% render 'disclaimer' %}
+
           <button
             type="submit"
             id="CartDrawer-Checkout"
-            class="btn"
+            class="requires-disclaimer-input btn disabled:bg-gray-300"
             name="checkout"
             form="CartDrawer-Form"
-            {% if cart == empty %}
-              disabled
-            {% endif %}
+            disabled
           >
             {{ 'sections.cart.checkout' | t }}
           </button>
