@@ -6,17 +6,18 @@
   {%- if shop.customer_accounts_enabled -%}
     <a
       href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
-      class="relative flex items-center justify-center w-8 h-8">
+      class="relative flex items-center justify-center w-8 h-8"
+    >
       {%- if section.settings.enable_customer_avatar -%}
         <account-icon>
           {%- if customer and customer.has_avatar? -%}
             {{ customer | avatar }}
           {%- else -%}
-            {% render 'icons' name: 'user' %}
+            {% render 'icons', name: 'user' %}
           {%- endif -%}
         </account-icon>
       {%- else -%}
-        {% render 'icons' name: 'user' %}
+        {% render 'icons', name: 'user' %}
       {%- endif -%}
       <span class="invisible">
         {%- liquid
@@ -35,5 +36,34 @@
     To tap into existing JS, add the following attributes:
     id="cart-icon-bubble"
   {% endcomment %}
-  {%- render 'cart-drawer' -%}
+
+  <!-- this button was rendering outside of the nav and pushing main block down, set position to absolute for now -->
+  <div id="cart-icon-bubble" style="right:9rem;">
+    <button
+      type="button"
+      data-drawer-target="CartDrawer"
+      data-drawer-show="CartDrawer"
+      data-drawer-placement="right"
+      aria-controls="CartDrawer"
+      class="flex items-center justify-center w-8 h-8 bg-red z-100 absolute top-0 right-0"
+      id="cart-icon-bubble"
+    >
+      {%- liquid
+        if cart == empty
+          render 'icons', name: 'cart-empty'
+        else
+          render 'icons', name: 'cart'
+        endif
+      -%}
+      <span class="invisible">{{ 'templates.cart.cart' | t }}</span>
+      {%- if cart != empty -%}
+        <div class="absolute top-0 flex items-center justify-center w-4 h-4 px-2 pb-px text-sm subpixel-antialiased font-medium leading-none text-center text-white rounded-full -right-1 lg:relative lg:top-auto lg:right-auto bg-primary lg:text-base lg:h-5 lg:w-5">
+          {%- if cart.item_count < 100 -%}
+            <span aria-hidden="true">{{ cart.item_count }}</span>
+          {%- endif -%}
+          <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
+        </div>
+      {%- endif -%}
+    </button>
+  </div>
 </menu>

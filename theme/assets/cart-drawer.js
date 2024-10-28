@@ -3,12 +3,13 @@ class CartDrawer extends HTMLElement {
     super();
 
     this.addEventListener('keyup', (evt) => evt.code === 'Escape' && this.close());
-    this.querySelector('#CartDrawer-Overlay').addEventListener('click', this.close.bind(this));
+    this.querySelector('#CartDrawer-Overlay')?.addEventListener('click', this.close.bind(this));
     this.setHeaderCartIconAccessibility();
   }
 
   setHeaderCartIconAccessibility() {
     const cartLink = document.querySelector('#cart-icon-bubble');
+    if (!cartLink) return;
     cartLink.setAttribute('role', 'button');
     cartLink.setAttribute('aria-haspopup', 'dialog');
     cartLink.addEventListener('click', (event) => {
@@ -109,15 +110,27 @@ class CartDrawer extends HTMLElement {
     this.activeElement = element;
   }
 }
-
 customElements.define('cart-drawer', CartDrawer);
 
 class CartDrawerItems extends CartItems {
   getSectionsToRender() {
     return [
+      // the main list of items on the cart page ~pstroot
       {
-        id: 'CartDrawer',
+        id: 'main-cart-items',
+        section: document.getElementById('main-cart-items')?.dataset.id,
+        selector: '.js-contents',
+      },
+
+      // {
+      // THIS REMOVE THE ENTIRE DRAWER
+      //   id: 'CartDrawer',
+      //   selector: '#CartDrawer',
+      //   section: 'cart-drawer',
+      // },
+      {
         section: 'cart-drawer',
+        id: 'CartDrawer',
         selector: '.drawer__inner',
       },
       {
@@ -125,7 +138,7 @@ class CartDrawerItems extends CartItems {
         section: 'cart-icon-bubble',
         selector: '.shopify-section',
       },
-    ];
+    ].filter((item) => item.section !== undefined);
   }
 }
 

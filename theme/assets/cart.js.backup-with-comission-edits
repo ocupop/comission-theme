@@ -9,7 +9,6 @@ class CartRemoveButton extends HTMLElement {
     });
   }
 }
-
 customElements.define('cart-remove-button', CartRemoveButton);
 
 class CartItems extends HTMLElement {
@@ -144,6 +143,7 @@ class CartItems extends HTMLElement {
   }
 
   updateQuantity(line, quantity, name, variantId) {
+    console.log('Updating Quantity to ', quantity);
     this.enableLoading(line);
 
     const body = JSON.stringify({
@@ -160,6 +160,7 @@ class CartItems extends HTMLElement {
       .then((state) => {
         // Get the response from the API call that deleted the item from the cart
         const parsedState = JSON.parse(state);
+        console.log('Parsed State Sections', parsedState.sections);
 
         // get the form input elment for the updated line item
         const quantityElement =
@@ -179,23 +180,26 @@ class CartItems extends HTMLElement {
         this.classList.toggle('is-empty', parsedState.item_count === 0);
         const cartDrawerWrapper = document.querySelector('cart-drawer');
         const cartFooter = document.getElementById('main-cart-footer');
-
         if (cartFooter) cartFooter.classList.toggle('is-empty', parsedState.item_count === 0);
         if (cartDrawerWrapper) cartDrawerWrapper.classList.toggle('is-empty', parsedState.item_count === 0);
 
         // For each "sectionToRender"...  ( main-cart-items, cart-icon-bubble, cart-live-region-text, main-cart-footer)
-        // update some of the inner HTML (not sure if this is working properly?)
-        // THIS is the part that removes the element when it was deleted
         this.getSectionsToRender().forEach((section) => {
+          console.log('Section', section);
+          console.log('Section Element', document.getElementById(section.id));
           const elementToReplace =
             document.getElementById(section.id).querySelector(section.selector) || document.getElementById(section.id);
-
-          elementToReplace.innerHTML = this.getSectionInnerHTML(
-            parsedState.sections[section.section],
-            section.selector
-          );
+          if (parsedState.sections[section.section]) {
+            console.log('elementToReplace', elementToReplace);
+            elementToReplace.innerHTML = this.getSectionInnerHTML(
+              parsedState.sections[section.section],
+              section.selector
+            );
+            console.log('innerHTML', this.getSectionInnerHTML(parsedState.sections[section.section], section.selector));
+          }
         });
         const updatedValue = parsedState.items[line - 1] ? parsedState.items[line - 1].quantity : undefined;
+        console.log('updatedValue', updatedValue);
         let message = '';
         if (items.length === parsedState.items.length && updatedValue !== parseInt(quantityElement.value)) {
           if (typeof updatedValue === 'undefined') {
@@ -204,8 +208,10 @@ class CartItems extends HTMLElement {
             message = window.cartStrings.quantityError.replace('[quantity]', updatedValue);
           }
         }
+        console.log('message', message);
         this.updateLiveRegions(line, message);
 
+        console.log('name', name);
         const lineItem =
           document.getElementById(`CartItem-${line}`) || document.getElementById(`CartDrawer-Item-${line}`);
         if (lineItem && lineItem.querySelector(`[name="${name}"]`)) {
