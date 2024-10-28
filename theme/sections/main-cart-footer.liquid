@@ -22,8 +22,8 @@
   id="main-cart-footer"
   data-id="{{ section.id }}"
 >
-  <div class="page-width">
-    <div class="cart__footer isolate section-{{ section.id }}-padding">
+  <div class="page-width container">
+    <div class="cart__footer isolate section-{{ section.id }}-padding border-t-gray-400 border-t">
       {%- if settings.show_cart_note -%}
         <cart-note class="cart__note field">
           <label for="Cart-note">{{ 'sections.cart.note' | t }}</label>
@@ -104,20 +104,39 @@
                 </small>
               </div>
             {%- else -%}
-              <div {{ block.shopify_attributes }}>
-                <button
-                  type="submit"
-                  id="checkout"
-                  class="cart__checkout-button button"
-                  name="checkout"
-                  {% if cart == empty %}
+              {% unless cart == empty %}
+                <div {{ block.shopify_attributes }} class="text-right">
+                  <div class="disclaimer text-xs mb-4">
+                    <input type="checkbox" id="agree" name="agree" required class="mr-3">I have read and agree to
+                    Comission's Privacy Policy and Terms of Service
+                  </div>
+
+                  <button
+                    type="submit"
+                    id="checkout"
+                    class="cart__checkout-button button btn btn-primary inline-block disabled:bg-gray-300"
+                    name="checkout"
                     disabled
-                  {% endif %}
-                  form="cart"
-                >
-                  {{ 'sections.cart.checkout' | t }}
-                </button>
-              </div>
+                    form="cart"
+                  >
+                    {{ 'sections.cart.checkout' | t }}
+                  </button>
+                </div>
+              {% endunless %}
+
+              <script>
+                const checkbox = document.getElementById('agree');
+                const submitButton = document.getElementById('checkout');
+                if (checkbox && submitButton) {
+                  function setSubmitDiabledState(checkbox) {
+                    submitButton.disabled = !checkbox.checked;
+                  }
+                  checkbox.addEventListener('click', function () {
+                    setSubmitDiabledState(this);
+                  });
+                  setSubmitDiabledState(checkbox);
+                }
+              </script>
 
               {%- if additional_checkout_buttons -%}
                 <div class="cart__dynamic-checkout-buttons additional-checkout-buttons">

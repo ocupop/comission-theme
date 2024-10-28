@@ -27,7 +27,7 @@
   --font-size-small: 0.875rem;
   /* text-sm */
 
-  --height-header: 5rem;
+  --height-header: 3rem;
   --screen-height: 100vh;
 
   --color-shop-pay: #5a31f4;
@@ -296,4 +296,13 @@ small {
     @apply inline-flex items-center justify-center mx-2;
   }
 
+}
+.visually-hidden{
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }

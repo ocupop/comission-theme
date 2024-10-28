@@ -88,20 +88,19 @@
             endif
           -%}
 
+          <input
+            type="hidden"
+            name="id"
+            value="{{ product.selected_or_first_available_variant.id }}"
+            class="product-variant-id"
+            {% if product.selected_or_first_available_variant.available == false
+              or quantity_rule_soldout
+              or product.selected_or_first_available_variant == null
+            %}
+              disabled
+            {% endif %}
+          >
           {% comment %}
-            <input
-              type="text"
-              name="id"
-              value="{{ product.selected_or_first_available_variant.id }}"
-              class="product-variant-id"
-              {% if product.selected_or_first_available_variant.available == false
-                or quantity_rule_soldout
-                or product.selected_or_first_available_variant == null
-              %}
-                disabled
-              {% endif %}
-            >
-
             <button
               id="ProductSubmitButton-{{ section_id }}"
               type="submit"

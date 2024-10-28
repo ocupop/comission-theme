@@ -1,21 +1,24 @@
 <!-- Menu Brand -->
-<div class="flex items-center justify-center transition grow duration-400">
+<div class="transition grow duration-400">
   <a
     href="{{ routes.root_url }}"
-    class="lg:w-72 xl:w-96 animate-slideright"
+    class="lg:w-80 xl:w-96 animate-slideright"
   >
     {%- assign logo_alt = settings.logo.alt | default: shop.name | escape -%}
     {%- assign logo_height = settings.logo_width | divided_by: settings.logo.aspect_ratio -%}
     {% capture sizes %}(max-width: {{ settings.logo_width | times: 2 }}px) 50vw, {{ settings.logo_width }}px{% endcapture %}
     {% capture widths %}{{ settings.logo_width }}, {{ settings.logo_width | times: 1.5 | round }}, {{ settings.logo_width | times: 2 }}{% endcapture %}
-    {{ settings.logo | image_url: width: 600 | image_tag:
-      widths: widths,
-      height: logo_height,
-      width: settings.logo_width,
-      alt: logo_alt,
-      sizes: sizes,
-      class: 'max-w-[200px] md:max-w-[300px]',
-      preload: true
+    {{
+      settings.logo
+      | image_url: width: 600
+      | image_tag:
+        widths: widths,
+        height: logo_height,
+        width: settings.logo_width,
+        alt: logo_alt,
+        sizes: sizes,
+        class: 'max-w-[200px] md:max-w-[300px]',
+        preload: true
     }}
     <span class="{% if settings.logo == 'blank' %}h2{% else %}sr-only{% endif %}">{{ shop.name }}</span>
   </a>

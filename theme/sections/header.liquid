@@ -7,29 +7,31 @@
 -%}
 
 <!-- Mobile Menu -->
-<div class="block lg:hidden">
-  <div class="flex items-center justify-between w-full py-2">
-    {%- render 'menu-drawer' -%}
-    {% comment %} {%- render 'header-search' input_id: 'mobile-search-input' -%} {% endcomment %}
-    {%- render 'menu-brand' -%}
-    {%- render 'menu-user' -%}
-  </div>
+<div class="lg:order-3 lg:hidden flex items-center">
+  {%- render 'menu-drawer' -%}
+  {% comment %} {%- render 'header-search' input_id: 'mobile-search-input' -%} {% endcomment %}
 </div>
 
 <!-- Desktop Menu -->
-<div class="hidden lg:block h-header">
-  <div class="flex items-center justify-end text-white bg-black h-topMenu">
-    {% comment %} {%- render 'header-search' input_id: 'desktop-search-input'-%} {% endcomment %}
-    {%- render 'menu-user' -%}
-  </div>
-  <div class="flex text-black bg-white h-mainMenu">
-    {%- render 'menu-brand' -%}
+<div class="lg:order-3 hidden lg:block">
+  {% comment %} {%- render 'header-search' input_id: 'desktop-search-input'-%} {% endcomment %}
+  <div class="flex text-black lg:h-full">
     {%- render 'menu-primary' -%}
   </div>
 </div>
 
+<!-- Logo -->
+<div class="brand lg:order-2 flex items-center">
+  {%- render 'menu-brand' -%}
+</div>
+
+<!-- User Menu -->
+<div class="bg-white lg:h-auto lg:order-1 lg:w-full flex items-center justify-end text-black lg:bg-black lg:text-white">
+  {%- render 'menu-user' -%}
+</div>
+
 <!-- App Blocks -->
-<div class="invisible">
+<div class="invisible visually-hidden">
   {%- for block in section.blocks -%}
     {%- case block.type -%}
       {%- when '@app' -%}
@@ -37,7 +39,6 @@
     {%- endcase -%}
   {%- endfor -%}
 </div>
-
 
 <script type="application/ld+json">
   {
@@ -63,7 +64,7 @@
 </script>
 
 {%- if request.page_type == 'index' -%}
-  {% assign potential_action_target = request.origin | append: routes.search_url | append: "?q={search_term_string}" %}
+  {% assign potential_action_target = request.origin | append: routes.search_url | append: '?q={search_term_string}' %}
   <script type="application/ld+json">
     {
       "@context": "http://schema.org",
@@ -83,7 +84,7 @@
 {
   "name": "t:sections.header.name",
   "tag": "header",
-  "class": "fixed top-0 z-10 w-full drop-shadow-md h-header",
+  "class": "fixed top-0 z-10 w-full shadow-md h-header flex flex-wrap justify-between flex-row",
   "settings": [
     {
       "type": "link_list",
