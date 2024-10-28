@@ -4,9 +4,11 @@
 {% endcomment %}
 <menu class="flex items-center justify-center mr-2">
   {%- if shop.customer_accounts_enabled -%}
-    <a
-      href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
-      class="relative w-8 h-8 flex *:items-center justify-center"
+    <button
+      id="dropdownDefaultButton"
+      data-dropdown-toggle="account-dropdown"
+      class="relative w-8 h-8 flex items-center justify-center"
+      type="button"
     >
       {%- if section.settings.enable_customer_avatar -%}
         <account-icon>
@@ -19,16 +21,67 @@
       {%- else -%}
         {% render 'icons', name: 'user' %}
       {%- endif -%}
-      <span class="visually-hidden">
-        {%- liquid
-          if customer
-            echo 'customer.account_fallback' | t
-          else
-            echo 'customer.log_in' | t
-          endif
-        -%}
-      </span>
-    </a>
+    </button>
+
+    <!-- Dropdown menu -->
+    <div
+      id="account-dropdown"
+      class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
+    >
+      <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
+        {%- if customer -%}
+          <li>
+            <div class="px-4 py-2 font-bold">Welcome {{ customer.first_name }}!</div>
+          </li>
+          <li>
+            <a
+              href="/pages/account"
+              class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+              >My Orders</a
+            >
+          </li>
+          <li>
+            <a
+              href="{{ routes.account_url }}"
+              class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+              >Dashboard</a
+            >
+          </li>
+          <li>
+            <a
+              href="{{ routes.account_logout_url }}"
+              class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+              >Sign out</a
+            >
+          </li>
+        {% else %}
+          <li>
+            <a
+              href="{{ routes.account_register_url }}"
+              class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+              >Create Account</a
+            >
+          </li>
+          <li>
+            <a
+              href="{{ routes.account_login_url }}"
+              class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+              >Sign in</a
+            >
+          </li>
+        {% endif %}
+      </ul>
+    </div>
+
+    <span class="visually-hidden">
+      {%- liquid
+        if customer
+          echo 'customer.account_fallback' | t
+        else
+          echo 'customer.log_in' | t
+        endif
+      -%}
+    </span>
   {%- endif -%}
 
   {% render 'cart-icon-bubble' %}

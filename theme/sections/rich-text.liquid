@@ -1,9 +1,9 @@
 <div class="color-{{ section.settings.color_scheme }}{% unless section.settings.full_width %} container{% endunless %}">
   {%- for block in section.blocks -%}
     {%- case block.type -%}
-      {%- when 'display' -%}
+      {%- when 'heading' -%}
         <h2
-          class="rich-text__heading rte inline-richtext {{ block.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+          class="rich-text__heading inline-richtext {{ block.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
           {{ block.shopify_attributes }}
           {% if settings.animations_reveal_on_scroll %}
             data-cascade
