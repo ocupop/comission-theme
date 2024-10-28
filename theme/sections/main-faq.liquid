@@ -13,7 +13,46 @@
 {%- endstyle -%}
 
 <div class="container section-{{ section.id }}-padding">
-  <div>Here is the hardcoded content of the faq page.</div>
+  <h1 class="mb-8">{{ section.settings.title }}</h1>
+  <div id="accordion-collapse" data-accordion="collapse">
+    {%- for block in section.blocks -%}
+      {%- case block.type -%}
+        {%- when 'faqs' -%}
+          <div class="border-b  border-gray-200  text-gray-500 focus-within:ring-4 focus-within:ring-gray-200 dark:focus-within:ring-gray-800 hover:bg-gray-100 dark:hover:bg-gray-800 ">
+            <h2 class=" text-lead !mb-0" id="accordion-collapse-heading-{{ forloop.index }}">
+              <button
+                type="button"
+                class="flex items-center justify-between w-full p-5 text-left text-black  dark:border-gray-700 dark:text-gray-400 gap-3"
+                data-accordion-target="#accordion-collapse-body-{{ forloop.index }}"
+                aria-expanded="true"
+                aria-controls="accordion-collapse-body-{{ forloop.index }}"
+              >
+                <span>{{ block.settings.question }}</span>
+                <svg
+                  data-accordion-icon
+                  class="w-3 h-3 rotate-180 shrink-0"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 10 6"
+                >
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+                </svg>
+              </button>
+            </h2>
+            <div
+              id="accordion-collapse-body-{{ forloop.index }}"
+              class="hidden "
+              aria-labelledby="accordion-collapse-heading-{{ forloop.index }}"
+            >
+              <div class="p-5 border-t border-gray-200 dark:border-gray-700 dark:bg-gray-900">
+                {{ block.settings.answer }}
+              </div>
+            </div>
+          </div>
+      {%- endcase -%}
+    {%- endfor -%}
+  </div>
 </div>
 
 {% schema %}
@@ -22,6 +61,12 @@
   "tag": "section",
   "class": "section",
   "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "default": "FAQ",
+      "label": "Page Title"
+    },
     {
       "type": "header",
       "content": "t:sections.all.padding.section_padding_heading"
@@ -45,6 +90,26 @@
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
       "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faqs",
+      "name": "FAQ",
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "question",
+          "default": "Enter your question here",
+          "label": "Question"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "answer",
+          "default": "Enter your answer here",
+          "label": "Answer"
+        }
+      ]
     }
   ]
 }

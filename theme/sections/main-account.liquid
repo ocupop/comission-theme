@@ -18,7 +18,7 @@
   {% if customer %}
     <div class="customer account">
       <div class="mb-8">
-        <h1 class="customer__title">{{ 'customer.account.title' | t }} details for {{ customer.first_name }}</h1>
+        <h1 class="customer__title">{{ section.settings.title }}</h1>
 
         {% comment %}
           <a href="{{ routes.account_logout_url }}" class="block text-black hover:text-primary">
@@ -180,6 +180,12 @@
 {
   "name": "t:sections.main-account.name",
   "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "default": "My Account",
+      "label": "Page Title"
+    },
     {
       "type": "header",
       "content": "t:sections.all.padding.section_padding_heading"
