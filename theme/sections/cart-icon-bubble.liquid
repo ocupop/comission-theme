@@ -1,28 +1,11 @@
-{% comment %}
-  {% if cart == empty %}
-    <span class="svg-wrapper">{{ 'icon-cart-empty.svg' | inline_asset_content }}</span>
-  {% else %}
-    <span class="svg-wrapper">{{ 'icon-cart.svg' | inline_asset_content }}</span>
-  {% endif %}
-
-  <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
-  {%- if cart != empty -%}
-    <div class="cart-count-bubble">
-      {%- if cart.item_count < 100 -%}
-        <span aria-hidden="true">{{ cart.item_count }}</span>
-      {%- endif -%}
-      <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
-    </div>
-  {%- endif -%}
-{% endcomment %}
-
 <button
   type="button"
   data-drawer-target="CartDrawer"
   data-drawer-show="CartDrawer"
   data-drawer-placement="right"
   aria-controls="CartDrawer"
-  class="flex items-center justify-center w-8 h-8 bg-red z-100 absolute top-0 right-0"
+  class="relative flex items-center justify-center "
+  id="cart-icon-bubble"
 >
   {%- liquid
     if cart == empty
@@ -31,9 +14,9 @@
       render 'icons', name: 'cart'
     endif
   -%}
-  <span class="invisible">{{ 'templates.cart.cart' | t }}</span>
+  <span class="hidden">{{ 'templates.cart.cart' | t }}</span>
   {%- if cart != empty -%}
-    <div class="absolute top-0 flex items-center justify-center w-4 h-4 px-2 pb-px text-sm subpixel-antialiased font-medium leading-none text-center text-white rounded-full -right-1 lg:relative lg:top-auto lg:right-auto bg-primary lg:text-base lg:h-5 lg:w-5">
+    <div class="absolute -top-1 flex items-center justify-center w-4 h-4 px-2 pb-px text-sm subpixel-antialiased font-medium leading-none text-center text-white rounded-full right-0 bg-primary lg:-ml-2 lg:relative lg:top-auto lg:right-auto lg:text-base lg:h-5 lg:w-5">
       {%- if cart.item_count < 100 -%}
         <span aria-hidden="true">{{ cart.item_count }}</span>
       {%- endif -%}

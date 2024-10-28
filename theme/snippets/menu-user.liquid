@@ -2,11 +2,11 @@
 {% comment %}
   {% render 'header-search', input_id: 'Search-In-Modal' %}
 {% endcomment %}
-<menu class="flex items-center justify-center gap-x-8">
+<menu class="flex items-center justify-center mr-2">
   {%- if shop.customer_accounts_enabled -%}
     <a
       href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
-      class="relative flex items-center justify-center w-8 h-8"
+      class="relative w-8 h-8 flex *:items-center justify-center"
     >
       {%- if section.settings.enable_customer_avatar -%}
         <account-icon>
@@ -19,7 +19,7 @@
       {%- else -%}
         {% render 'icons', name: 'user' %}
       {%- endif -%}
-      <span class="invisible">
+      <span class="visually-hidden">
         {%- liquid
           if customer
             echo 'customer.account_fallback' | t
@@ -45,7 +45,7 @@
       data-drawer-show="CartDrawer"
       data-drawer-placement="right"
       aria-controls="CartDrawer"
-      class="flex items-center justify-center w-8 h-8 bg-red z-100 absolute top-0 right-0"
+      class="relative flex items-center justify-center "
       id="cart-icon-bubble"
     >
       {%- liquid
@@ -55,9 +55,9 @@
           render 'icons', name: 'cart'
         endif
       -%}
-      <span class="invisible">{{ 'templates.cart.cart' | t }}</span>
+      <span class="hidden">{{ 'templates.cart.cart' | t }}</span>
       {%- if cart != empty -%}
-        <div class="absolute top-0 flex items-center justify-center w-4 h-4 px-2 pb-px text-sm subpixel-antialiased font-medium leading-none text-center text-white rounded-full -right-1 lg:relative lg:top-auto lg:right-auto bg-primary lg:text-base lg:h-5 lg:w-5">
+        <div class="absolute -top-1 flex items-center justify-center w-4 h-4 px-2 pb-px text-sm subpixel-antialiased font-medium leading-none text-center text-white rounded-full right-0 bg-primary lg:-ml-2 lg:relative lg:top-auto lg:right-auto lg:text-base lg:h-5 lg:w-5">
           {%- if cart.item_count < 100 -%}
             <span aria-hidden="true">{{ cart.item_count }}</span>
           {%- endif -%}
