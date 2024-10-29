@@ -325,3 +325,9 @@ product-form .tooltip {
     border-bottom: 12px solid black;
   }
 }
+.shopify-policy__container{
+  @apply mt-12;
+}
+.shopify-policy__title{
+  @apply mb-8;
+}

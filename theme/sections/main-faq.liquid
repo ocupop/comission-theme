@@ -13,7 +13,8 @@
 {%- endstyle -%}
 
 <div class="container section-{{ section.id }}-padding">
-  <h1 class="mb-8">{{ section.settings.title }}</h1>
+  <h1 class="mb-8">{{ page.title }}</h1>
+  <div class="mb-8">{{ page.content }}</div>
   <div id="accordion-collapse" data-accordion="collapse">
     {%- for block in section.blocks -%}
       {%- case block.type -%}
@@ -61,12 +62,6 @@
   "tag": "section",
   "class": "section",
   "settings": [
-    {
-      "type": "text",
-      "id": "title",
-      "default": "FAQ",
-      "label": "Page Title"
-    },
     {
       "type": "header",
       "content": "t:sections.all.padding.section_padding_heading"

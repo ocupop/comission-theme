@@ -1,0 +1,52 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-jobs",
+      "blocks": {
+        "jobs_BTM6tQ": {
+          "type": "jobs",
+          "settings": {
+            "title": "Job Title 1",
+            "description": "Enter the job desccription here"
+          }
+        },
+        "jobs_JdjwDj": {
+          "type": "jobs",
+          "settings": {
+            "title": "Job Title 2",
+            "description": "Enter the job desccription here"
+          }
+        },
+        "jobs_aCptKc": {
+          "type": "jobs",
+          "settings": {
+            "title": "Job Title 3",
+            "description": "Enter the job desccription here"
+          }
+        }
+      },
+      "block_order": [
+        "jobs_BTM6tQ",
+        "jobs_JdjwDj",
+        "jobs_aCptKc"
+      ],
+      "settings": {
+        "no_jobs_copy": "<p>Sorry, there are currently no open job positions avaialble. Please check back again soon.</p>",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
