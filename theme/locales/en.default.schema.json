@@ -128,10 +128,19 @@
           "label": "Solid button background"
         },
         "button_label": {
-          "label": "Solid button label"
+          "label": "Solid button text color"
+        },
+        "button_outline": {
+          "label": "Button outline color"
+        },
+        "secondary_button_background": {
+          "label": "Secondary Button background color"
         },
         "secondary_button_label": {
-          "label": "Outline button"
+          "label": "Secondary Button text color"
+        },
+        "secondary_button_outline": {
+          "label": "Secondary button outline color"
         },
         "shadow": {
           "label": "Shadow"

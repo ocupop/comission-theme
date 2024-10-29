@@ -1,14 +1,18 @@
 <section
-  class="relative py-10 bg-center bg-cover lg:py-20"
-  style="background-image:url('{{ section.settings.background_image | image_url: width: 1500 }}')">
+  class="relative py-10 bg-center bg-cover lg:py-20 {{  section.settings.color_scheme | prepend: 'color-' }}"
+  {% if section.settings.background_image != blank %}
+    style="background-image:url('{{ section.settings.background_image | image_url: width: 1500 }}')"
+  {% endif %}
+>
   {%- if section.settings.background_image != blank -%}
     <div class="absolute top-0 left-0 z-0 w-full h-full bg-black/60"></div>
   {%- endif -%}
   <div class="container relative">
     <div class="flex items-center justify-center text-center animate-slide animate-delay">
       <a
-        class="p-4 text-3xl text-white border border-white lg:text-4xl md:p-8 lg:py-12 lg:px-20"
-        href="{{ section.settings.button_link }}">
+        class="btn {{ section.settings.button_style }} p-4 text-3xl lg:text-4xl md:p-8 lg:py-12 lg:px-20"
+        href="{{ section.settings.button_link }}"
+      >
         {{ section.settings.button_label }}
       </a>
     </div>
@@ -20,6 +24,28 @@
   "tag": "section",
   "class": "cta",
   "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color Scheme",
+      "default": "scheme-2"
+    },
+    {
+      "type": "radio",
+      "id": "button_style",
+      "label": "Button Style",
+      "default": "btn-secondary",
+      "options": [
+        {
+          "value": "btn-primary",
+          "label": "Primary"
+        },
+        {
+          "value": "btn-secondary",
+          "label": "Secondary"
+        }
+      ]
+    },
     {
       "type": "image_picker",
       "id": "background_image",

@@ -1,0 +1,44 @@
+/* Tokens */
+:root {
+  --golden-ratio: 1.618;
+  --golden-ratio-inverse: 0.618;
+
+  --color-primary: 55 55 243;
+  --color-secondary: 91 33 182;
+  --color-accent: 217 70 239;
+  --color-success: 16 185 129;
+  --color-info: 6 182 212;
+  --color-warning: 251 150 0;
+  --color-danger: 191 72 0;
+
+  --font-size-display: 3rem;
+  /* text-5xl */
+  --font-size-heading: 1.85rem;
+  /* text-2xl */
+  --font-size-lead: 1.5rem;
+  /* text-2xl */
+  --font-size-body: 1.25rem;
+  /* text-xl */
+  --font-size-small: 0.875rem;
+  /* text-sm */
+
+  --height-header: 3rem;
+  --screen-height: 100vh;
+
+  --color-shop-pay: #5a31f4;
+  --shop-pay-button--width: 100%;
+  /* Sets the width for the shop-pay-button web component */
+
+  /* media queries for responsive design */
+  @media (min-width: 1024px) {
+    --height-header: 6rem;
+  }
+
+  @media (min-width: 1280px) {
+    --height-header: 6rem;
+  }
+
+  @supports (height: 100lvh) {
+    --screen-height: 100lvh;
+  }
+}

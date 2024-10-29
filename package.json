@@ -9,7 +9,7 @@
     "dev": "yarn tw & yarn --cwd theme start",
     "scripts:watch": "rollup -c --watch",
     "scripts:build": "rollup -c",
-    "tw": "npx tailwindcss -i ./styles/index.css -o ./theme/assets/base.css --watch",
+    "tw": "postcss ./styles/index.css --output ./theme/assets/base.css --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -37,6 +37,9 @@
     "babel-loader": "^8.2.5",
     "fluid-tailwind": "^1.0.3",
     "lottie-react": "^2.4.0",
+    "postcss": "^8.4.47",
+    "postcss-cli": "^11.0.0",
+    "postcss-import": "^14.0.2",
     "rollup": "^2.79.1"
   }
 }

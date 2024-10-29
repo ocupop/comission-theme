@@ -7,7 +7,7 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
-{
+ {
   "current": {
     "logo": "shopify://shop_images/comission-color-logo-nav_61503bee-b993-4e65-a093-1eaaa196760c.png",
     "logo_width": 300,
@@ -148,7 +148,10 @@
           "text": "#000000",
           "button": "#3737f3",
           "button_label": "#ffffff",
-          "secondary_button_label": "#efefef",
+          "button_outline": "rgba(0,0,0,0)",
+          "secondary_button_label": "#121212",
+          "secondary_button_background": "rgba(0,0,0,0)",
+          "secondary_button_outline": "#121212",
           "shadow": "#121212"
         }
       },
@@ -159,7 +162,10 @@
           "text": "#ffffff",
           "button": "#3737f3",
           "button_label": "#ffffff",
+          "button_outline": "rgba(0,0,0,0)",
           "secondary_button_label": "#efefef",
+          "secondary_button_background": "rgba(0,0,0,0)",
+          "secondary_button_outline": "#ffffff",
           "shadow": "#121212"
         }
       }

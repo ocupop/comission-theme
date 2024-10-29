@@ -1,0 +1,29 @@
+
+
+small {
+  @apply text-sm;
+}
+
+.rte {
+  @apply text-body;
+
+  p {
+    @apply mb-8;
+  }
+}
+
+.visually-hidden{
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+@supports (font: -apple-system-body) and (-webkit-appearance: none) {
+  img[loading="lazy"] {
+    clip-path: inset(0.6px);
+  }
+}

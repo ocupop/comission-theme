@@ -1,0 +1,73 @@
+@layer base {
+  * {
+    font-variant-ligatures: none;
+  }
+
+  html,
+  body {
+    @apply font-light;
+    font-size: 100%;
+  }
+
+  body {
+    @apply antialiased;
+  }
+
+  html {
+    scroll-padding-top: 10rem;
+    scroll-behavior: smooth;
+  }
+
+  p {
+    @apply mb-4;
+  }
+
+
+
+
+}
+/* .color-scheme-1 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
+.color-scheme-2 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+} */
+
+[class*="color-scheme-"]{
+  background: rgb(var(--color-background));
+  background: var(--gradient-background);
+  background-attachment: fixed;
+  color: rgba(var(--color-foreground), 1);
+
+  .button--secondary,
+  .button--tertiary {
+    --color-button: var(--color-secondary-button);
+    --color-button-text: var(--color-secondary-button-text);
+  }
+  a{
+    color: rgb(var(--color-link));
+  }
+  .btn{
+    background: rgb(var(--color-button));
+    color: rgb(var(--color-button-text));
+    border-width:var(--button-border-width, 0);
+    border-style:solid;
+    border-color:var(--color-button-outline);
+  }
+  .btn.btn-secondary{
+    background: rgb(var(--color-secondary-button));
+    color: rgb(var(--color-secondary-button-text));
+    border-width:var(--button-secondary-border-width, 0);
+    border-style:solid;
+    border-color:var(--color-secondary-button-outline);
+  }
+
+
+}

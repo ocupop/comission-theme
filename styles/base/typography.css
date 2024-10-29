@@ -1,0 +1,36 @@
+
+h1,
+.h1,
+.text-display {
+  @apply text-6xl lg:text-7xl;
+  @apply mb-4 font-light;
+}
+
+h2,
+.h2 .text-heading {
+  @apply text-4xl mb-4;
+}
+
+h3,
+.h3 {
+  @apply text-3xl;
+  @apply mb-4;
+}
+
+h4,
+.h4,
+.text-lead {
+  @apply text-2xl mb-3;
+}
+
+h5,
+.h5,
+.text-body {
+  @apply text-xl;
+}
+
+h6,
+.h6,
+.text-fineprint {
+  @apply text-base;
+}
