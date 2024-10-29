@@ -6,16 +6,16 @@
   <div class="block w-full lg:flex lg:justify-between">
     <div class="block lg:w-1/3">
       <div class="w-60">
-        {%- if section.settings.logo != blank -%}
+        {%- if settings.brand_image != blank -%}
           <a href="{{ routes.root_url }}" class="block">
-            {{ section.settings.logo | image_url: width: 230 | image_tag: class: 'w-full', alt: shop.name }}
+            {{ settings.brand_image | image_url: width: '100%' | image_tag: class: 'w-full', alt: shop.name }}
           </a>
         {%- else -%}
           <p class="h2">{{ shop.name }}</p>
         {%- endif -%}
         {%- if section.settings.show_social -%}
           <div class="mt-6 lg:mt-16">
-            {%- render 'menu-social' class: 'size-10' -%}
+            {%- render 'menu-social', class: 'size-10' -%}
           </div>
         {%- endif -%}
       </div>
@@ -27,14 +27,13 @@
             {%- if block.settings.heading != blank -%}
               <h2 class="text-lg font-bold">{{- block.settings.heading -}}</h2>
             {%- endif -%}
-            {%-  render 'menu-footer', menu: block.settings.menu -%}
+            {%- render 'menu-footer', menu: block.settings.menu -%}
           </div>
         {%- endfor -%}
       </div>
     </div>
   </div>
 </div>
-
 
 {% schema %}
 {
@@ -64,11 +63,6 @@
     }
   ],
   "settings": [
-    {
-      "type": "image_picker",
-      "id": "logo",
-      "label": "Brand Logo"
-    },
     {
       "type": "header",
       "content": "t:sections.footer.settings.header__1.content",
