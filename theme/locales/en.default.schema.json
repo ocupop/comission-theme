@@ -1026,6 +1026,55 @@
         "name": "Section with image borders"
       }
     },
+    "image-bar": {
+      "name": "Image Bar",
+      "blocks": {
+        "image": {
+          "name": "Image",
+          "settings": {
+            "image": {
+              "label": "Image"
+            },
+            "link": {
+              "label": "Link (Optional)"
+            }
+          }
+        }
+      },
+      "presets": {
+        "name": "Image Bar"
+      }
+    },
+    "image-with-text-grid": {
+      "name": "Image with Text Grid",
+      "settings": {
+        "title": {
+          "label": "Section Title",
+          "default": "Features"
+        }
+      },
+      "blocks": {
+        "feature": {
+          "name": "Feature",
+          "settings": {
+            "image": {
+              "label": "Image"
+            },
+            "title": {
+              "label": "Feature Title",
+              "default": "Feature Title"
+            },
+            "description": {
+              "label": "Feature Description",
+              "default": "Feature description goes here."
+            }
+          }
+        }
+      },
+      "presets": {
+        "name": "Image with Text Grid"
+      }
+    },
     "main-account": {
       "name": "Account"
     },

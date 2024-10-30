@@ -23,31 +23,31 @@
 
 {% schema %}
 {
-  "name": "Image Bar",
+  "name": "t:sections.image-bar.name",
   "tag": "section",
   "class": "section",
   "max_blocks": 3,
   "blocks": [
     {
       "type": "image",
-      "name": "Image",
+      "name": "t:sections.image-bar.blocks.image.name",
       "settings": [
         {
           "type": "image_picker",
           "id": "image",
-          "label": "Image"
+          "label": "t:sections.image-bar.blocks.image.settings.image.label"
         },
         {
           "type": "url",
           "id": "link",
-          "label": "Link (Optional)"
+          "label": "t:sections.image-bar.blocks.image.settings.link.label"
         }
       ]
     }
   ],
   "presets": [
     {
-      "name": "Image Bar",
+      "name": "t:sections.image-bar.presets.name",
       "blocks": [
         {
           "type": "image"

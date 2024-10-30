@@ -28,45 +28,45 @@
 
 {% schema %}
 {
-  "name": "Image with Text Grid",
+  "name": "t:sections.image-with-text-grid.name",
   "tag": "section",
   "class": "section",
   "settings": [
     {
       "type": "text",
       "id": "title",
-      "label": "Section Title",
-      "default": "Features"
+      "label": "t:sections.image-with-text-grid.settings.title.label",
+      "default": "t:sections.image-with-text-grid.settings.title.default"
     }
   ],
   "blocks": [
     {
       "type": "feature",
-      "name": "Feature",
+      "name": "t:sections.image-with-text-grid.blocks.feature.name",
       "settings": [
         {
           "type": "image_picker",
           "id": "image",
-          "label": "Image"
+          "label": "t:sections.image-with-text-grid.blocks.feature.settings.image.label"
         },
         {
           "type": "text",
           "id": "title",
-          "label": "Feature Title",
-          "default": "Feature Title"
+          "label": "t:sections.image-with-text-grid.blocks.feature.settings.title.label",
+          "default": "t:sections.image-with-text-grid.blocks.feature.settings.title.default"
         },
         {
           "type": "textarea",
           "id": "description",
-          "label": "Feature Description",
-          "default": "Feature description goes here."
+          "label": "t:sections.image-with-text-grid.blocks.feature.settings.description.label",
+          "default": "t:sections.image-with-text-grid.blocks.feature.settings.description.default"
         }
       ]
     }
   ],
   "presets": [
     {
-      "name": "Image with Text Grid",
+      "name": "t:sections.image-with-text-grid.presets.name",
       "blocks": [
         {
           "type": "feature"
