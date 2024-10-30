@@ -8,10 +8,12 @@ import './checkout-disclaimer.js';
 import { HowItWorksAnimation } from './components/Animations';
 import DABSelector from './components/DABSelector';
 import HelloWorld from './components/HelloWorld';
+import Certificate from './components/Certificate';
 
 const COMPONENTS = {
   HelloWorld,
   DABSelector,
+  Certificate,
   HowItWorksAnimation,
 };
 

@@ -17,6 +17,7 @@
   "dependencies": {
     "@tailwindcss/container-queries": "^0.1.1",
     "@tailwindcss/typography": "^0.5.14",
+    "date-fns": "^4.1.0",
     "flowbite": "^2.5.1",
     "html-react-parser": "^4.0.0",
     "prop-types": "^15.8.1",

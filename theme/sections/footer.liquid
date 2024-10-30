@@ -8,7 +8,7 @@
       <div class="w-60">
         {%- if settings.brand_image != blank -%}
           <a href="{{ routes.root_url }}" class="block">
-            {{ settings.brand_image | image_url: width: '100%' | image_tag: class: 'w-full', alt: shop.name }}
+            {{ settings.brand_image | image_url: width: '300' | image_tag: class: 'w-full', alt: shop.name }}
           </a>
         {%- else -%}
           <p class="h2">{{ shop.name }}</p>

@@ -1,0 +1,236 @@
+{%- capture contentForQuerystring -%}{{ content_for_header }}{%- endcapture -%}
+{% comment %} Use string splitting to pull the value from content_for_header and apply some string clean up {% endcomment %}
+{%- assign pageUrl = contentForQuerystring
+  | split: '"pageurl":"'
+  | last
+  | split: '"'
+  | first
+  | split: '.myshopify.com'
+  | last
+  | replace: '\/', '/'
+  | replace: '%20', ' '
+  | replace: '\u0026', '&'
+-%}
+
+{%- assign pageQuerystring = pageUrl | split: '?' | last -%}
+{%- assign queryArray = pageQuerystring | split: '&' -%}
+
+{% for item in queryArray %}
+  {%- assign keyValue = item | split: '=' -%}
+  {% if keyValue[0] == 'id' %}
+    {% assign idArr = keyValue[1] | split: '-' %}
+    {% assign productId = idArr[0] | plus: 0 %}
+    {% assign position = idArr[1] %}
+  {% endif %}
+{%- endfor -%}
+
+<!-- FOR DEVELOPMENT -->
+{% comment %}
+  {% assign productId = 7464738947251 %}
+  {% assign position = 4663 %}
+{% endcomment %}
+
+{% for p in collections.all.products %}
+  {% if productId == p.id %}
+    {% assign product = p %}
+  {% endif %}
+{% endfor %}
+
+{% unless product %}
+  <h1>Product Not Found</h1>
+{% endunless %}
+
+{% assign product_meta = product.metafields.comission %}
+{% unless product_meta.tiles %}
+  <h1>No Sold Tiles for this product!</h1>
+{% endunless %}
+
+{% assign artist_id = product.metafields.comission.artist | split: '/' | last | plus: 0 %}
+
+{% assign museum_id = product.metafields.comission.institution | split: '/' | last | plus: 0 %}
+
+{% for coll in collections %}
+  {% if artist_id == coll.id %}
+    {% assign artist = coll %}
+  {% endif %}
+
+  {% if museum_id == coll.id %}
+    {% assign museum = coll %}
+  {% endif %}
+{% endfor -%}
+
+<!-- BEGIN CERTIFICATE -->
+<div
+  class="__react-component responsive"
+  data-component="Certificate"
+  data-position="{{ position }}"
+  data-product="{{ product | json | replace: "'", "&apos;" | escape }}"
+  data-productmetafields="{{ product_meta | json | replace: "'", "&apos;" | escape }}"
+  {% comment %}
+    data-cart='{{ cart.items | json | replace: "'", "&apos;" | escape }}'
+    data-variants='{{ variants | replace: "'", "&apos;" | escape }}'
+  {% endcomment %}
+  data-museum="{{ museum | json | replace: "'", "&apos;" | escape }}"
+  data-artist="{{ artist | json | replace: "'", "&apos;" | escape }}"
+  data-museumattributes="{{ museum.metafields.comission.museumAttributes | replace: "'", "&apos;" | escape }}"
+></div>
+
+{% comment %}
+  <div className="flex flex-col certificate" id="certificate">
+    <header className="flex items-center justify-between">
+      <img className="max-w-full logo" src="/images/comission-color-logo-nav.png"  alt="Comission Logo" />
+      <h1 className="font-bold">Certificate of Authenticity</h1>
+    </header>
+
+    <main className="flex flex-1">
+      <div className="leftcol">
+        <h2 className="font-bold title">{{product.title}}</h2>
+        {% if artist %}
+          <h3 className="artist"><a href='/collections/{{artist.handle}}'>{{artist.title}}</a></h3>
+        {% endif %}
+        <div className="relative w-full" id="crosshairs">
+          <img className='w-full' src="{{product.featured_image | image_url}}" alt="{{product.media[0].alt}}" />
+          {% comment %} {(product.rows && product.cols && tile?.position) &&
+            <ImageCrosshairs animate={false} className="max-w-full" cols={product.cols.value} rows={product.rows.value} position={tile.position} />
+          } {% endcomment %}
+        </div>
+      </div>
+      <div className="flex flex-col rightcol">
+  {% comment %}
+        <div className="dab-image">
+          { tile?.tilePath ?
+            <div className="col-span-2 lg:col-span-3">
+              <img src={tile.tilePath} className="w-full shadow-lg tile-image " id="DAB" alt="DAB" />
+            </div>
+          :
+            <div className="p-5 border">{/* This box will help us identify at a glace if the tile path is missing. */}</div>
+          }
+        </div> {% endcomment %}
+
+        <ul className="flex flex-col justify-between flex-1 list-none attributes-list">
+
+
+          <!-- Dab # -->
+          {% comment %} {tile?.position &&
+            <li>
+              <label>DAB #</label>
+              <div className="value">{tile.position}</div>
+            </li>
+          } {% endcomment %}
+
+          <!--  Collector -->
+          {% comment %} {tile?.order?.customer &&
+            <li>
+              <label>Collector</label>
+              <div className="value">{tile.order.customer.firstname} {tile.order.customer.lastname}</div>
+            </li>
+          } {% endcomment %}
+
+          <!-- Membership Active -->
+          {% if product_meta?.startDate and product_meta?.endDate %}
+            <li>
+              <label>Membership Active</label>
+              {% comment %} <div className="value">{format(parseISO(product_meta.startDate), "MM/dd/yyyy")} - {format(parseISO(product_meta.endDate), "MM/dd/yyyy")}</div> {% endcomment %}
+            </li>
+          {% endif %}
+
+          <!-- Artist -->
+          {% if artist %}
+            <li>
+              <label>Artist</label>
+              <div className="value"><a href="collections/{{artist.handle}}">{{artist.title}}</a></div>
+            </li>
+          {% endif %}
+
+          <!-- Year  -->
+          {% if product?.year %}
+            <li>
+              <label>Year</label>
+              <div className="value">{{product.year.value}}</div>
+            </li>
+          {% endif %}
+
+          <!-- Medium   -->
+          {% if product.medium %}
+            <li>
+              <label>Medium</label>
+              <div className="value">{{product_meta.medium}}</div>
+            </li>
+          {% endif %}
+
+          <!-- Museum  -->
+          {% if museum %}
+            <li>
+              <label>On View</label>
+              <div className="value"><a href="collections/{{museum.handle}}">{{museum.title}}</a></div>
+            </li>
+          {% endif %}
+
+          <!-- Location  -->
+          {% if museumAttributes.city and museumAttributes.state %}
+            <li>
+              <label>Location</label>
+              <div className="value">{{museumAttributes.city}}, {{museumAttributes.state}}</div>
+            </li>
+          {% endif %}
+
+          <!-- Museum Logo and note  -->
+          <li className="mb-0 museum-note">
+            {% if museum?.logo?.reference?.image %}
+              <label><img src="{{museum.logo.reference.image.url}}" alt="{{museum.title}}" /></label>
+            {% endif %}
+            {% if product?.note %}
+              <div className="value">
+                {{product.note.value}}
+              </div>
+            {% endif %}
+          </li>
+
+          <!-- Print PDF Button  -->
+          {% comment %} { tile?.certificate &&
+            <div className="mt-6 print-btn">
+              <a href={tile.certificate} className="inline-block px-4 py-2 text-xl text-white bg-primary">Download Certificate</a>
+            </div>
+          } {% endcomment %}
+
+        </ul>
+      </div>
+    </main>
+
+  </div>
+  <!-- END CERTIFICATE -->
+{% endcomment %}
+
+{% schema %}
+{
+  "name": "t:sections.main-page.name",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ]
+}
+{% endschema %}

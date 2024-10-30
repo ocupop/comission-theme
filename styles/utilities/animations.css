@@ -1,3 +1,46 @@
+
+@keyframes animateTarget {
+  0% {transform: scale(0);opacity:0;}
+  50% {transform: scale(1);opacity:1;}
+  100% {transform: scale(1);opacity:.7;}
+}
+@keyframes growHorizontal {
+  from {transform: scaleX(0);}
+  to {transform: scaleX(1);}
+}
+
+@keyframes growVertical {
+  from {transform: scaleY(0);}
+  to {transform: scaleY(1);}
+}
+.variantIndicator-growright{
+  transform-origin: center left;
+  animation-name: growHorizontal;
+  animation-duration: 2s;
+}
+.variantIndicator-growleft{
+  transform-origin: center right;
+  animation-name: growHorizontal;
+  animation-duration: 2s;
+}
+.variantIndicator-growdown{
+  transform-origin: center top;
+  animation-name: growVertical;
+  animation-duration: 2s;
+}
+.variantIndicator-growup{
+  transform-origin: center bottom;
+  animation-name: growVertical;
+  animation-duration: 2s;
+}
+.variantIndicator-target{
+  transform-origin: center center;
+  animation-fill-mode: forwards;
+  animation-name: animateTarget;
+  animation-duration: 2s;
+}
+
+
 /* @keyframes fadeInAnimation {
   0% {
     opacity: 0;

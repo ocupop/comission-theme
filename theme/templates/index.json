@@ -48,7 +48,7 @@
     "cta-collect": {
       "type": "cta",
       "settings": {
-        "color_scheme": "color-scheme-2",
+        "color_scheme": "scheme-2",
         "button_style": "btn-secondary",
         "background_image": "shopify://shop_images/comission-homepage-painting-background-image.jpg",
         "button_label": "See all available artwork",
@@ -135,6 +135,8 @@
     "cta-experience": {
       "type": "cta",
       "settings": {
+        "color_scheme": "",
+        "button_style": "btn-secondary",
         "background_image": "shopify://shop_images/comission-homepage-background-03.jpg",
         "button_label": "Explore the features",
         "button_link": "https://www.comission.art/collections/all"
@@ -153,6 +155,8 @@
     "cta-foster": {
       "type": "cta",
       "settings": {
+        "color_scheme": "",
+        "button_style": "btn-secondary",
         "background_image": "shopify://shop_images/comission-homepage-background-04.jpg",
         "button_label": "Learn about our mission",
         "button_link": "https://www.comission.art/collections/all"
@@ -169,6 +173,8 @@
     "cta-connect": {
       "type": "cta",
       "settings": {
+        "color_scheme": "scheme-2",
+        "button_style": "btn-secondary",
         "button_label": "Explore our Artwork",
         "button_link": "https://www.comission.art/collections/all"
       }

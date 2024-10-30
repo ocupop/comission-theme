@@ -7,11 +7,25 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
- {
+{
   "current": {
     "logo": "shopify://shop_images/comission-color-logo-nav_61503bee-b993-4e65-a093-1eaaa196760c.png",
     "logo_width": 300,
     "favicon": "shopify://shop_images/favicon.svg",
+    "brand_image": "shopify://shop_images/comission-blue-logo.svg",
+    "social_facebook_link": "http://www.facebook.com/GetCoMission/",
+    "social_instagram_link": "https://www.instagram.com/CoMission.art",
+    "social_youtube_link": "",
+    "social_tiktok_link": "",
+    "social_twitter_link": "https://www.twitter.com/CoMission_Art",
+    "social_snapchat_link": "",
+    "social_pinterest_link": "",
+    "social_tumblr_link": "",
+    "social_vimeo_link": "",
+    "cart_type": "drawer",
+    "show_vendor": false,
+    "show_cart_note": false,
+    "cart_drawer_collection": "",
     "type_header_font": "sans-serif",
     "heading_scale": 100,
     "type_body_font": "sans-serif",
@@ -105,24 +119,10 @@
     "badge_corner_radius": 40,
     "sale_badge_color_scheme": "scheme-1",
     "sold_out_badge_color_scheme": "scheme-3",
-    "brand_image": "shopify://shop_images/comission-blue-logo.svg",
-    "social_facebook_link": "http://www.facebook.com/GetCoMission/",
-    "social_instagram_link": "https://www.instagram.com/CoMission.art",
-    "social_youtube_link": "",
-    "social_tiktok_link": "",
-    "social_twitter_link": "https://www.twitter.com/CoMission_Art",
-    "social_snapchat_link": "",
-    "social_pinterest_link": "",
-    "social_tumblr_link": "",
-    "social_vimeo_link": "",
     "predictive_search_enabled": true,
     "predictive_search_show_vendor": false,
     "predictive_search_show_price": false,
     "currency_code_enabled": true,
-    "cart_type": "drawer",
-    "show_vendor": false,
-    "show_cart_note": false,
-    "cart_drawer_collection": "",
     "sections": {
       "main-password-header": {
         "type": "main-password-header",
@@ -164,6 +164,20 @@
           "button_label": "#ffffff",
           "button_outline": "rgba(0,0,0,0)",
           "secondary_button_label": "#efefef",
+          "secondary_button_background": "rgba(0,0,0,0)",
+          "secondary_button_outline": "#ffffff",
+          "shadow": "#121212"
+        }
+      },
+      "scheme-a6ea2ccf-b13d-422d-87d3-1c1ea50a524b": {
+        "settings": {
+          "background": "#3737f3",
+          "background_gradient": "",
+          "text": "#ffffff",
+          "button": "#ffffff",
+          "button_label": "#000000",
+          "button_outline": "rgba(0,0,0,0)",
+          "secondary_button_label": "#ffffff",
           "secondary_button_background": "rgba(0,0,0,0)",
           "secondary_button_outline": "#ffffff",
           "shadow": "#121212"

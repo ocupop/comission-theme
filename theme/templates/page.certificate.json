@@ -1,0 +1,13 @@
+
+{
+  "layout": "certificate",
+  "sections": {
+    "certificate": {
+      "type": "certificate",
+      "settings": {}
+    }
+  },
+  "order": [
+    "certificate"
+  ]
+}

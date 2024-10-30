@@ -7,7 +7,7 @@ const themeMidColor = colors.gray;
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: {
-    files: ['./**/*.{liquid, json}', './node_modules/flowbite/**/*.js', './scripts/*.{js, jsx}'],
+    files: ['./**/*.{liquid, json}', './node_modules/flowbite/**/*.js', './scripts/**/*.{js, jsx}'],
     extract,
   },
   safelist: ['underline', { pattern: /pt-+/ }, { pattern: /pb-+/ }],

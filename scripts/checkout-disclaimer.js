@@ -17,7 +17,7 @@ function setSubmitDiabledState(state) {
 }
 // check initial state of checkbox (sometimes is defaulst to checked if the user uses the browser back button)
 
-setSubmitDiabledState(checkboxes[0].checked);
+setSubmitDiabledState(checkboxes[0]?.checked);
 
 const modalLinks = document.querySelectorAll('.modal-link');
 
