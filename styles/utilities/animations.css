@@ -34,6 +34,7 @@
   animation-duration: 2s;
 }
 .variantIndicator-target{
+  background-color:red;
   transform-origin: center center;
   animation-fill-mode: forwards;
   animation-name: animateTarget;

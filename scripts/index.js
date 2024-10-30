@@ -9,11 +9,13 @@ import { HowItWorksAnimation } from './components/Animations';
 import DABSelector from './components/DABSelector';
 import HelloWorld from './components/HelloWorld';
 import Certificate from './components/Certificate';
+import ImageCrosshairs from './components/ImageCrosshairs.jsx';
 
 const COMPONENTS = {
   HelloWorld,
   DABSelector,
   Certificate,
+  ImageCrosshairs,
   HowItWorksAnimation,
 };
 
