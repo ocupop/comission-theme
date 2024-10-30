@@ -1,0 +1,65 @@
+<section class="image-bar">
+  <div class="grid-cols-3 gap-4 md:grid">
+    {% for block in section.blocks %}
+      {% if block.settings.image != blank %}
+        <div
+          class="aspect-[4/3] bg-cover bg-center mb-3 md:mb-0"
+          style="background-image: url('{{ block.settings.image | image_url: width: 800 }}');"
+        >
+          {% if block.settings.link != blank %}
+            <a
+              href="{{ block.settings.link }}"
+              class="block w-full h-full"
+              aria-label="{{ block.settings.image.alt | escape }}"
+            ></a>
+          {% endif %}
+        </div>
+      {% else %}
+        <div class="aspect-[4/3] bg-cover bg-center mb-3 md:mb-0 bg-gray-200"></div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Image Bar",
+  "tag": "section",
+  "class": "section",
+  "max_blocks": 3,
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link (Optional)"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image Bar",
+      "blocks": [
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -35,27 +35,73 @@
         "image": "shopify://shop_images/comission-howitworks-hero-01.jpg",
         "order": "order-last",
         "layout": "layout_1",
-        "color_scheme": "scheme-1"
+        "color_scheme": "scheme-1",
+        "padding_top": 52,
+        "padding_bottom": 52
       }
     },
     "how-it-works-animation": {
       "type": "how-it-works-animation",
       "settings": {
-        "copy": "<h3>Importing the work</h3><p>We upload an ultra-high resolution digital scan of the artwork onto CoMission’s proprietary platform, and convert it in to unique Digital Art Blocks (DAB’s) which are then listed for sale on the CoMission marketplace.</p><h3>Beautiful pieces of the whole, made available for purchase</h3><p>With the purchase of a DAB, users acquire a fixed-period membership in the artwork. This gives them the ability to enjoy the complete artwork, and the individual piece they choose as their DAB is their unique membership card, personalized with their details.</p><h3>Connecting with your artwork</h3><p>In conjunction with the museum or artist, we put together a selection of unique features that are included with each artwork. The full list is available <a href='/features'>here</a>, while each artwork listing notes the specific features that come with that artwork.</p><h3>Congrats, you’re supporting your cause</h3><p>Each DAB purchased is a charitable donation, and is tax deductible within the guidelines of U.S. law. Following your purchase, you’ll receive the receipt needed to claim it on your taxes.</p><h3>Let’s protect our cultural heritage</h3><p>We believe great art should always be available to the public, and not sold in to private collections — that is why CoMission collectors acquire a membership in each piece. These DABs and their associated memberships are not intended for resale by the collector, and don’t include any legal ownership to the artwork or the copyright, ensuring that the art can be appreciated by the public for years to come.</p>"
+        "copy": "<h3>Importing the work</h3><p>We upload an ultra-high resolution digital scan of the artwork onto CoMission’s proprietary platform, and convert it in to unique Digital Art Blocks (DAB’s) which are then listed for sale on the CoMission marketplace.</p><h3>Beautiful pieces of the whole, made available for purchase</h3><p>With the purchase of a DAB, users acquire a fixed-period membership in the artwork. This gives them the ability to enjoy the complete artwork, and the individual piece they choose as their DAB is their unique membership card, personalized with their details.</p><h3>Connecting with your artwork</h3><p>In conjunction with the museum or artist, we put together a selection of unique features that are included with each artwork. The full list is available <a href='/features'>here</a>, while each artwork listing notes the specific features that come with that artwork.</p><h3>Congrats, you’re supporting your cause</h3><p>Each DAB purchased is a charitable donation, and is tax deductible within the guidelines of U.S. law. Following your purchase, you’ll receive the receipt needed to claim it on your taxes.</p><h3>Let’s protect our cultural heritage</h3><p>We believe great art should always be available to the public, and not sold in to private collections — that is why CoMission collectors acquire a membership in each piece. These DABs and their associated memberships are not intended for resale by the collector, and don’t include any legal ownership to the artwork or the copyright, ensuring that the art can be appreciated by the public for years to come.</p>",
+        "color_scheme": ""
       }
     },
     "cta": {
       "type": "cta",
       "settings": {
+        "color_scheme": "",
+        "button_style": "btn-secondary",
         "background_image": "shopify://shop_images/comission-homepage-background-02.jpg",
-        "button_label": "See how it works",
-        "button_link": "https://www.comission.art/pages/how-it-works"
+        "button_label": "See FAQs",
+        "button_link": "shopify://pages/faq"
+      }
+    },
+    "image_borders_dnHe7V": {
+      "type": "image-borders",
+      "blocks": {
+        "heading_TAJj9R": {
+          "type": "heading",
+          "settings": {
+            "heading": "Experience v Investment",
+            "heading_size": "text-heading"
+          }
+        },
+        "copy_G6QfrQ": {
+          "type": "copy",
+          "settings": {
+            "copy": "<p>Unlike other companies who are commoditizing art as just another asset class for investment, CoMission is focused on enhancing the experience of art, the education, and the discourse, and providing much needed funding for the causes impacting our world.</p><p>We’re using the amazing artworks in our collection to create community, a shared love of art, and greater public access to the work.</p><p>This is how we democratize access to these great works, with the purchase of a DAB being a fraction of the cost to acquire them, giving you all the fun and access, without the costs of ownership.</p>",
+            "text_style": "text-default"
+          }
+        },
+        "button_group_aYRYPq": {
+          "type": "button_group",
+          "settings": {
+            "button_label_1": "Explore our Artwork",
+            "button_link_1": "shopify://collections/featured-art",
+            "outline_button_1": false,
+            "button_label_2": "Button label",
+            "button_link_2": "",
+            "outline_button_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_TAJj9R",
+        "copy_G6QfrQ",
+        "button_group_aYRYPq"
+      ],
+      "settings": {
+        "image_1": "shopify://shop_images/comission-painting-howitworks-cta-01.jpg",
+        "image_2": "shopify://shop_images/comission-anitabrind-painting.jpg",
+        "color_scheme": "scheme-2"
       }
     }
   },
   "order": [
     "image-with-text-0",
     "how-it-works-animation",
-    "cta"
+    "cta",
+    "image_borders_dnHe7V"
   ]
 }

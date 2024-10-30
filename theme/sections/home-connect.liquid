@@ -1,12 +1,14 @@
 {% render 'section-header',
   title: section.settings.title,
   subtitle: section.settings.subtitle,
-  class: 'text-center mx-auto text-3xl lg:text-4xl',
+  class: 'text-center mx-auto text-3xl lg:text-4xl py-5',
   color_scheme: section.settings.color_scheme
 %}
 <div class="color-{{ section.settings.color_scheme }}">
   <div class="container">
-    {% render 'menu-social' %}
+    <div class="flex items-center justify-center mb-10">
+      {% render 'menu-social' %}
+    </div>
   </div>
 </div>
 

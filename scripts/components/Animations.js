@@ -1,12 +1,11 @@
-// import Lottie from 'lottie-react';
+import Lottie from 'lottie-react';
 import React from 'react';
-// import animation from './lottie/how-it-works-animation.json';
+import animation from '../lottie/how-it-works-animation.json';
 
 export function HowItWorksAnimation() {
   return (
     <>
-      LOTTIE ANIMATION...
-      {/* <Lottie animationData={animation} loop={true} /> */}
+      <Lottie animationData={animation} loop={true} />
     </>
   );
 }

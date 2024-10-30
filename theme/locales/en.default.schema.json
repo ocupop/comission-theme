@@ -953,6 +953,79 @@
         "name": "Text with image"
       }
     },
+    "image-borders": {
+      "name": "Section with image borders",
+      "settings": {
+        "border_image_left": {
+          "label": "Border Image Left"
+        },
+        "border_image_right": {
+          "label": "Border Image Right"
+        },
+        "color_scheme": {
+          "label": "Color scheme",
+          "options_1": {
+            "label": "Light",
+            "value": "scheme-1"
+          },
+          "options_2": {
+            "label": "Dark",
+            "value": "scheme-2"
+          }
+        }
+      },
+      "blocks": {
+        "image1": {
+          "name": "Image Left",
+          "settings": {
+            "image": {
+              "label": "Image Left"
+            }
+          }
+        },
+        "image2": {
+          "name": "Image Right",
+          "settings": {
+            "image": {
+              "label": "Image Right"
+            }
+          }
+        },
+        "heading": {
+          "name": "Heading",
+          "settings": {
+            "label": "Heading",
+            "default": "Semantic Heading"
+          }
+        },
+        "copy": {
+          "name": "Copy",
+          "settings": {
+            "label": "Copy",
+            "default": "<p>Enter content blocks to describe your artwork, product, artist, or insitutional cause.<\/p>"
+          }
+        },
+        "button_group": {
+          "name": "Button Group",
+          "settings": {
+            "button_label": {
+              "label": "Button label",
+              "info": "Leave the label blank to hide the button.",
+              "default": "Button label"
+            },
+            "button_link": {
+              "label": "Button link"
+            },
+            "outline_button": {
+              "label": "Use outline button style"
+            }
+          }
+        }
+      },
+      "presets": {
+        "name": "Section with image borders"
+      }
+    },
     "main-account": {
       "name": "Account"
     },

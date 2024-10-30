@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "image-with-text": {
@@ -13,7 +22,7 @@
         "copy": {
           "type": "copy",
           "settings": {
-            "copy": "<p>We have created a new and unique doorway into the fine art world. Now you can connect with your art wherever and whenever you choose, share it with your friends, and connect with your tribe; those who have a shared love and passion for the art and causes that you do.<\/p>",
+            "copy": "<p>We have created a new and unique doorway into the fine art world. Now you can connect with your art wherever and whenever you choose, share it with your friends, and connect with your tribe; those who have a shared love and passion for the art and causes that you do.</p>",
             "text_style": "text-default"
           }
         }
@@ -23,14 +32,220 @@
         "copy"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/comission-benefits-hero-01-graphics.png",
+        "image": "shopify://shop_images/comission-benefits-hero-01-graphics.png",
         "order": "order-last",
         "layout": "layout_3",
+        "color_scheme": "scheme-2",
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    },
+    "image_with_text_dKdUjj": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_YNGdm3": {
+          "type": "heading",
+          "settings": {
+            "heading": "",
+            "heading_size": "text-heading"
+          }
+        },
+        "copy_JMbnPY": {
+          "type": "copy",
+          "settings": {
+            "copy": "<p>Each DAB of a CoMission’ed artwork comes with a selection of unique features, which will include some or all of those listed below. Each artwork listing details the specific features that come with that piece.</p>",
+            "text_style": "text-default"
+          }
+        },
+        "button_group_JtcXQy": {
+          "type": "button_group",
+          "settings": {
+            "button_label_1": "Button label",
+            "button_link_1": "",
+            "outline_button_1": false,
+            "button_label_2": "Button label",
+            "button_link_2": "",
+            "outline_button_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_YNGdm3",
+        "copy_JMbnPY",
+        "button_group_JtcXQy"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/comission-illustration-phonedoor.svg",
+        "order": "order-first",
+        "layout": "layout_1",
+        "color_scheme": "scheme-2",
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    },
+    "image_with_text_grid_LMKaB4": {
+      "type": "image-with-text-grid",
+      "blocks": {
+        "feature_nFgYBd": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify://shop_images/comission-illustration-benefit-certificate-02_b5759e37-3f68-4367-bce6-172a04b6d490.svg",
+            "title": "Collectors Certificate",
+            "description": "Your DAB comes with a personal certificate for you to brag about with your friends or display in your home or office. Or whip it out at the museum for that perfect selfie in front of your artwork."
+          }
+        },
+        "feature_iVib67": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify://shop_images/comission-illustration-benefit-virtuallyamazing_c0aa67d7-6adf-4026-8130-c6294dc301ae.svg",
+            "title": "Virtual Gallery",
+            "description": "Use your DAB’s to create your own virtual gallery in the metaverse. You build it, curate it, hang it and then invite your friends to view your own personal collection of the worlds finest art."
+          }
+        },
+        "feature_rTUnfA": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify://shop_images/comission-illustration-benefit-sharetoscreen_a8b180c2-4621-4259-95da-3e9820c657d9.svg",
+            "title": "Stream to your Screen",
+            "description": "Stream your artwork to your own smart screen at home, and enjoy it in your own space and your own time. And what a cool conversation starter next time you’ve got friends round."
+          }
+        },
+        "feature_MMUtra": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify://shop_images/comission-illustration-benefit-forthewall_bb647c7e-5ad1-4b59-aa56-9d2779bbe318.svg",
+            "title": "Augmented Reality",
+            "description": "AR effects to project your digital art in to your real world, and create your own content."
+          }
+        }
+      },
+      "block_order": [
+        "feature_nFgYBd",
+        "feature_iVib67",
+        "feature_rTUnfA",
+        "feature_MMUtra"
+      ],
+      "settings": {
+        "title": "Features"
+      }
+    },
+    "image_with_text_grid_rBeNHe": {
+      "type": "image-with-text-grid",
+      "blocks": {
+        "feature_xFem6P": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify://shop_images/comission-illustration-benefit-exclusivemuseumnight_2b1133d1-fad7-4bb4-9479-2314ac359ca2.svg",
+            "title": "Exclusive Museum Perks",
+            "description": "Special member only nights, exclusive access and content."
+          }
+        },
+        "feature_UR3zpe": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify://shop_images/comission-illustration-benefits-icon_2d65b734-35eb-434b-ab8f-3256cf3c26e7.svg",
+            "title": "Connect with the Artist",
+            "description": "Exclusive meet and greet opportunity, in person and virtually."
+          }
+        },
+        "feature_fEybjA": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify://shop_images/comission-illustration-benefit-metaverse-meet-ups_8a622e76-24e5-479f-b9b9-3ab9aeaa5139.svg",
+            "title": "Virtual meetups",
+            "description": "Meet your tribe online in community groups and metaverse meetups."
+          }
+        }
+      },
+      "block_order": [
+        "feature_xFem6P",
+        "feature_UR3zpe",
+        "feature_fEybjA"
+      ],
+      "settings": {
+        "title": "Community and connection"
+      }
+    },
+    "image_bar_hxPgrh": {
+      "type": "image-bar",
+      "blocks": {
+        "image_yEtxVf": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/comission-homepage-pressarticle-05.jpg",
+            "link": ""
+          }
+        },
+        "image_4CfbTw": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/comission-benefits-carousel-01.jpg",
+            "link": ""
+          }
+        },
+        "image_aA7GNY": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/comission-benefits-hero-01.jpg",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_yEtxVf",
+        "image_4CfbTw",
+        "image_aA7GNY"
+      ],
+      "settings": {
+      }
+    },
+    "image_borders_j6GQKx": {
+      "type": "image-borders",
+      "blocks": {
+        "heading_4D3m4Y": {
+          "type": "heading",
+          "settings": {
+            "heading": "Semantic Heading",
+            "heading_size": "text-heading"
+          }
+        },
+        "copy_mx7Mii": {
+          "type": "copy",
+          "settings": {
+            "copy": "<p>Enter content blocks to describe your artwork, product, artist, or insitutional cause.</p>",
+            "text_style": "text-default"
+          }
+        },
+        "button_group_BbXazc": {
+          "type": "button_group",
+          "settings": {
+            "button_label_1": "Explore Our Artwork",
+            "button_link_1": "shopify://collections/featured-art",
+            "outline_button_1": false,
+            "button_label_2": "Button label",
+            "button_link_2": "",
+            "outline_button_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_4D3m4Y",
+        "copy_mx7Mii",
+        "button_group_BbXazc"
+      ],
+      "settings": {
+        "image_1": "shopify://shop_images/comission-benefits-cta-01.jpg",
+        "image_2": "shopify://shop_images/comission-benefits-cta-02.jpg",
         "color_scheme": "scheme-2"
       }
     }
   },
   "order": [
-    "image-with-text"
+    "image-with-text",
+    "image_with_text_dKdUjj",
+    "image_with_text_grid_LMKaB4",
+    "image_with_text_grid_rBeNHe",
+    "image_bar_hxPgrh",
+    "image_borders_j6GQKx"
   ]
 }
