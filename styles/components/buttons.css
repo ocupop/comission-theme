@@ -1,0 +1,25 @@
+@layer components {
+  .btn {
+    /* @apply inline-block w-auto px-6 py-3 text-center text-white bg-black ; */
+    @apply block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 whitespace-nowrap;
+  }
+
+  .btn-primary {
+    @apply text-white bg-primary;
+  }
+
+  .btn-secondary {
+    @apply text-white bg-secondary;
+  }
+
+  .btn-outline {
+    @apply text-white bg-transparent border border-white;
+  }
+
+}
+
+a,
+input,
+button {
+  @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2;
+}

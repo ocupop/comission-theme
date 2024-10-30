@@ -1,0 +1,99 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+ {
+  "sections": {
+    "main": {
+      "type": "main-faq",
+      "blocks": {
+        "faqs_8WPdcy": {
+          "type": "faqs",
+          "settings": {
+            "question": "What is a DAB?",
+            "answer": "A DAB is a Digital Art Block, which gives you a time limited membership in a particular artwork, a set of cool digital features, and your own unique square of it, for the period of your membership."
+          }
+        },
+        "faqs_QiWCW9": {
+          "type": "faqs",
+          "settings": {
+            "question": "How unique is my DAB, can someone else own it?",
+            "answer": "Your DAB is totally unique to you for the period of the membership, and no-one else will have the same piece. Your DAB will carry your name and unique collector number."
+          }
+        },
+        "faqs_Vgt6Mw": {
+          "type": "faqs",
+          "settings": {
+            "question": "Do I own the artwork I have bought a CoMission membership in?",
+            "answer": "No, the membership you acquire in the artwork when you purchase your DAB does not give you any ownership in the physical piece, nor does it give you any ownership of the intellectual property or copyright."
+          }
+        },
+        "faqs_qfNGEj": {
+          "type": "faqs",
+          "settings": {
+            "question": "Do I have access to the copyright to make copies of the artwork I bought a CoMission membership in?",
+            "answer": "You are allowed to print your DAB certificate as many times as you like, or to post it on your own personal social media accounts. If the membership comes with Augmented Reality functionality you have the right to create your own content (pictures & videos) using Instagram or TikTok and post that on your personal social media accounts too. Other than that, you do not have any rights to reproduce or copy the artwork, and any breach of this would contravene the rights of the copyright holder."
+          }
+        },
+        "faqs_qKzVeH": {
+          "type": "faqs",
+          "settings": {
+            "question": "Am I allowed to resell my DAB?",
+            "answer": "Your DAB is yours alone for the period of your membership. We don’t provide a method to resell it, or to change the ownership details on your certificate and our website. CoMission is focused on combining the enjoyment and appreciation of the artwork with the social impact of supporting a cause, and therefore does not treat our art as an asset class to speculate in."
+          }
+        },
+        "faqs_pxENg4": {
+          "type": "faqs",
+          "settings": {
+            "question": "Is my CoMission purchase tax deductible?",
+            "answer": "Your CoMission purchase is a donation to a 501(c)3 tax-exempt organization and your donation is tax deductible within the guidelines in U.S. law. To claim a donation as a deduction on your U.S. taxes, please keep the email receipt we send to you, upon the successful completion of your purchase, as your official record."
+          }
+        },
+        "faqs_aEBUBj": {
+          "type": "faqs",
+          "settings": {
+            "question": "Does my membership in the painting also give me membership of the museum?",
+            "answer": "Not necessarily. The specific features you get with your DAB are listed on the artwork page of our website, and on your purchase receipt. If the museum decided to include a membership to the museum as one of the benefits, this will be listed on the individual artwork page."
+          }
+        },
+        "faqs_LBMgtk": {
+          "type": "faqs",
+          "settings": {
+            "question": "What happens after my membership in the artwork expires?",
+            "answer": "Hopefully you will have an attachment to your DAB, and want to continue to have that piece listed under your name, and continue to support its’ cause. If that is the case you will be able to renew your membership, and maintain that piece as your own."
+          }
+        },
+        "faqs_tjt7WQ": {
+          "type": "faqs",
+          "settings": {
+            "question": "What is a CoMissionary?",
+            "answer": "We refer to anyone who has purchased an artwork on our platform as a CoMissionary. They have a special place in our hearts for supporting our mission of using the power of art to improve society, hence why we have a special name for them."
+          }
+        }
+      },
+      "block_order": [
+        "faqs_8WPdcy",
+        "faqs_QiWCW9",
+        "faqs_Vgt6Mw",
+        "faqs_qfNGEj",
+        "faqs_qKzVeH",
+        "faqs_pxENg4",
+        "faqs_aEBUBj",
+        "faqs_LBMgtk",
+        "faqs_tjt7WQ"
+      ],
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

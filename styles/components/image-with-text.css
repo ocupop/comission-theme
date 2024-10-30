@@ -1,0 +1,13 @@
+@layer components {
+  .image-with-text {
+
+    /* @apply relative w-full h-full; */
+    .image-with-text__textcolumn {
+      /* @apply relative flex-1 w-full h-full; */
+    }
+
+    .image-with-text__imagecolumn {
+      /* @apply relative flex-none w-full h-full; */
+    }
+  }
+}

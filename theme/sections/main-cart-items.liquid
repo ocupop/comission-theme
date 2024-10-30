@@ -37,18 +37,18 @@
               </caption>
               <thead class="tablet:hidden">
                 <tr class="bg-gray-200">
-                  <th class=" p-2" scope="col">
+                  <th class="text-left p-2" scope="col">
                     {{ 'sections.cart.headings.product' | t }}
                   </th>
 
-                  <th class="p-2" colspan="1" scope="col">Details</th>
+                  <th class="text-left p-2" colspan="1" scope="col">Details</th>
 
-                  <th class="p-2" colspan="1" scope="col">
+                  <th class="text-left p-2" colspan="1" scope="col">
                     {{ 'sections.cart.headings.price' | t }}
                   </th>
 
                   <th
-                    class="p-2 cart-items__heading--wide cart-items__heading--quantity small-hide caption-with-letter-spacing"
+                    class="text-left p-2 cart-items__heading--wide cart-items__heading--quantity small-hide caption-with-letter-spacing"
                     colspan="1"
                     scope="col"
                   >
@@ -217,9 +217,8 @@
                                 </button>
                               {% else %}
                                 <input
-                                  class="quantity__input w-6 p-0 text-xs opacity-30"
                                   data-quantity-variant-id="{{ item.variant.id }}"
-                                  type="text"
+                                  type="hidden"
                                   name="updates[]"
                                   value="{{ item.quantity }}"
                                   {% # theme-check-disable %}
@@ -229,7 +228,6 @@
                                   {% if item.variant.quantity_rule.max != null %}
                                     max="{{ item.variant.quantity_rule.max }}"
                                   {% endif %}
-                                  step="{{ item.variant.quantity_rule.increment }}"
                                   {% # theme-check-enable %}
                                   aria-label="{{ 'products.product.quantity.input_label' | t: product: item.product.title | escape }}"
                                   id="Quantity-{{ item.index | plus: 1 }}"

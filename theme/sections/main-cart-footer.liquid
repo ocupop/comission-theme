@@ -106,15 +106,12 @@
             {%- else -%}
               {% unless cart == empty %}
                 <div {{ block.shopify_attributes }} class="text-right">
-                  <div class="disclaimer text-xs mb-4">
-                    <input type="checkbox" id="agree" name="agree" required class="mr-3">I have read and agree to
-                    Comission's Privacy Policy and Terms of Service
-                  </div>
+                  {% render 'disclaimer' %}
 
                   <button
                     type="submit"
                     id="checkout"
-                    class="cart__checkout-button button btn btn-primary inline-block disabled:bg-gray-300"
+                    class="requires-disclaimer-input btn inline-block disabled:bg-gray-300"
                     name="checkout"
                     disabled
                     form="cart"
@@ -123,20 +120,6 @@
                   </button>
                 </div>
               {% endunless %}
-
-              <script>
-                const checkbox = document.getElementById('agree');
-                const submitButton = document.getElementById('checkout');
-                if (checkbox && submitButton) {
-                  function setSubmitDiabledState(checkbox) {
-                    submitButton.disabled = !checkbox.checked;
-                  }
-                  checkbox.addEventListener('click', function () {
-                    setSubmitDiabledState(this);
-                  });
-                  setSubmitDiabledState(checkbox);
-                }
-              </script>
 
               {%- if additional_checkout_buttons -%}
                 <div class="cart__dynamic-checkout-buttons additional-checkout-buttons">

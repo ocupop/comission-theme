@@ -48,6 +48,8 @@
     "cta-collect": {
       "type": "cta",
       "settings": {
+        "color_scheme": "color-scheme-2",
+        "button_style": "btn-secondary",
         "background_image": "shopify://shop_images/comission-homepage-painting-background-image.jpg",
         "button_label": "See all available artwork",
         "button_link": "https://www.comission.art/collections/all"

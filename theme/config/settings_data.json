@@ -1,8 +1,17 @@
-{
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+ {
   "current": {
-    "logo": "shopify:\/\/shop_images\/comission-color-logo-nav_61503bee-b993-4e65-a093-1eaaa196760c.png",
+    "logo": "shopify://shop_images/comission-color-logo-nav_61503bee-b993-4e65-a093-1eaaa196760c.png",
     "logo_width": 300,
-    "favicon": "shopify:\/\/shop_images\/favicon.svg",
+    "favicon": "shopify://shop_images/favicon.svg",
     "type_header_font": "sans-serif",
     "heading_scale": 100,
     "type_body_font": "sans-serif",
@@ -14,8 +23,8 @@
     "buttons_border_thickness": 1,
     "buttons_border_opacity": 100,
     "buttons_radius": 0,
-    "buttons_shadow_opacity": 0,
-    "buttons_shadow_horizontal_offset": 0,
+    "buttons_shadow_opacity": 50,
+    "buttons_shadow_horizontal_offset": 4,
     "buttons_shadow_vertical_offset": 4,
     "buttons_shadow_blur": 5,
     "variant_pills_border_thickness": 1,
@@ -96,11 +105,12 @@
     "badge_corner_radius": 40,
     "sale_badge_color_scheme": "scheme-1",
     "sold_out_badge_color_scheme": "scheme-3",
-    "social_facebook_link": "",
-    "social_instagram_link": "",
+    "brand_image": "shopify://shop_images/comission-blue-logo.svg",
+    "social_facebook_link": "http://www.facebook.com/GetCoMission/",
+    "social_instagram_link": "https://www.instagram.com/CoMission.art",
     "social_youtube_link": "",
     "social_tiktok_link": "",
-    "social_twitter_link": "",
+    "social_twitter_link": "https://www.twitter.com/CoMission_Art",
     "social_snapchat_link": "",
     "social_pinterest_link": "",
     "social_tumblr_link": "",
@@ -133,12 +143,15 @@
     "color_schemes": {
       "scheme-1": {
         "settings": {
-          "background": "#FFFFFF",
+          "background": "#ffffff",
           "background_gradient": "",
           "text": "#000000",
           "button": "#3737f3",
-          "button_label": "#FFFFFF",
-          "secondary_button_label": "#EFEFEF",
+          "button_label": "#ffffff",
+          "button_outline": "rgba(0,0,0,0)",
+          "secondary_button_label": "#121212",
+          "secondary_button_background": "rgba(0,0,0,0)",
+          "secondary_button_outline": "#121212",
           "shadow": "#121212"
         }
       },
@@ -146,10 +159,13 @@
         "settings": {
           "background": "#000000",
           "background_gradient": "",
-          "text": "#FFFFFF",
+          "text": "#ffffff",
           "button": "#3737f3",
-          "button_label": "#FFFFFF",
-          "secondary_button_label": "#EFEFEF",
+          "button_label": "#ffffff",
+          "button_outline": "rgba(0,0,0,0)",
+          "secondary_button_label": "#efefef",
+          "secondary_button_background": "rgba(0,0,0,0)",
+          "secondary_button_outline": "#ffffff",
           "shadow": "#121212"
         }
       }
