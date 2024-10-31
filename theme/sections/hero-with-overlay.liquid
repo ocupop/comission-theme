@@ -1,0 +1,77 @@
+<section
+  class="bg-black pt-20 lg:pt-48 pb-20 text-white bg-cover bg-center relative"
+  style="background-image: url('{{ section.settings.background_image | image_url: width: 1500 }}');"
+>
+  <div class="bg-dark/50  absolute top-0 left-0 z-0 w-full h-full"></div>
+  <div class="relative z-10">
+    <div class="container">
+      <div class="pt-14 pb-14 lg:pb-32 animate-slide">
+        <h1 class="text-6xl lg:text-7xl font-light mb-4">{{ section.settings.heading }}</h1>
+        <p class="text-4xl mt-3">{{ section.settings.subheading }}</p>
+      </div>
+      <div class="text-center animate-slide">
+        <p class="text-3xl mb-4">{{ section.settings.cta_text }}</p>
+        <a href="{{ section.settings.cta_link }}">
+          <img
+            class="mx-auto"
+            src="{{ section.settings.arrow_image | image_url: width: 60 }}"
+            width="60"
+            height="60"
+            alt="arrow"
+            loading="lazy"
+            decoding="async"
+          >
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero with Overlay",
+  "tag": "section",
+  "class": "hero-with-overlay",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Become a partner museum"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "New experiences for your patrons near and far"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA Text",
+      "default": "Learn about the CoMission Process"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA Link"
+    },
+    {
+      "type": "image_picker",
+      "id": "arrow_image",
+      "label": "Arrow Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero with Overlay",
+      "category": "Hero"
+    }
+  ]
+}
+{% endschema %}

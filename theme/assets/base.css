@@ -2679,6 +2679,19 @@ product-form .tooltip.hover-tooltip:before {
 .bg-white\/50 {
   background-color: rgb(255 255 255 / 0.5);
 }
+.bg-dark {
+  --tw-bg-opacity: 1;
+  background-color: rgb(31 41 55 / var(--tw-bg-opacity));
+}
+.bg-dark\/70 {
+  background-color: rgb(31 41 55 / 0.7);
+}
+.bg-dark\/50 {
+  background-color: rgb(31 41 55 / 0.5);
+}
+.bg-dark\/40 {
+  background-color: rgb(31 41 55 / 0.4);
+}
 .bg-opacity-50 {
   --tw-bg-opacity: 0.5;
 }
@@ -3047,6 +3060,10 @@ product-form .tooltip.hover-tooltip:before {
   font-size: 2.25rem;
   line-height: 2.5rem;
 }
+.text-6xl {
+  font-size: 3.75rem;
+  line-height: 1;
+}
 .text-\[1\.3em\] {
   font-size: 1.3em;
 }
@@ -3096,6 +3113,9 @@ product-form .tooltip.hover-tooltip:before {
 }
 .font-bold {
   font-weight: 700;
+}
+.font-light {
+  font-weight: 300;
 }
 .font-medium {
   font-weight: 500;
@@ -3470,10 +3490,9 @@ product-form .tooltip.hover-tooltip:before {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 } */
-[class*="color-scheme-"]{
+[class*="color-scheme-"] {
   background: rgb(var(--color-background));
   background: var(--gradient-background);
-  background-attachment: fixed;
   color: rgba(var(--color-foreground), 1);
 
 
@@ -3483,22 +3502,22 @@ product-form .tooltip.hover-tooltip:before {
     --color-button: var(--color-secondary-button);
     --color-button-text: var(--color-secondary-button-text);
   }
-[class*="color-scheme-"] a{
+[class*="color-scheme-"] a {
     color: rgb(var(--color-link));
   }
-[class*="color-scheme-"] .btn{
+[class*="color-scheme-"] .btn {
     background: rgb(var(--color-button));
     color: rgb(var(--color-button-text));
-    border-width:var(--button-border-width, 0);
-    border-style:solid;
-    border-color:var(--color-button-outline);
+    border-width: var(--button-border-width, 0);
+    border-style: solid;
+    border-color: var(--color-button-outline);
   }
-[class*="color-scheme-"] .btn.btn-secondary{
+[class*="color-scheme-"] .btn.btn-secondary {
     background: rgb(var(--color-secondary-button));
     color: rgb(var(--color-secondary-button-text));
-    border-width:var(--button-secondary-border-width, 0);
-    border-style:solid;
-    border-color:var(--color-secondary-button-outline);
+    border-width: var(--button-secondary-border-width, 0);
+    border-style: solid;
+    border-color: var(--color-secondary-button-outline);
   }
 h1,
 .h1,
@@ -4230,6 +4249,10 @@ small {
     padding-top: 5rem;
   }
 
+  .lg\:pt-48 {
+    padding-top: 12rem;
+  }
+
   .lg\:text-center {
     text-align: center;
   }
@@ -4246,6 +4269,11 @@ small {
 
   .lg\:text-5xl {
     font-size: 3rem;
+    line-height: 1;
+  }
+
+  .lg\:text-7xl {
+    font-size: 4.5rem;
     line-height: 1;
   }
 

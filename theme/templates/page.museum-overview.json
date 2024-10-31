@@ -9,6 +9,17 @@
  */
 {
   "sections": {
+    "hero-with-overlay": {
+      "type": "hero-with-overlay",
+      "settings": {
+        "background_image": "shopify://shop_images/comission-museumhomepage-backgroundhero-01.jpg",
+        "heading": "Become a partner museum",
+        "subheading": "New experiences for your patrons near and far",
+        "cta_text": "Learn about the CoMission Process",
+        "cta_link": "shopify://pages/contact-us",
+        "arrow_image": "shopify://shop_images/comission-downarrow-explore.png"
+      }
+    },
     "rich_text_athy7h": {
       "type": "rich-text",
       "blocks": {
@@ -187,24 +198,14 @@
         "image_2": "shopify://shop_images/comission-painting-museumpartners-cta-02.jpg",
         "color_scheme": "scheme-2"
       }
-    },
-    "cta": {
-      "type": "cta",
-      "settings": {
-        "color_scheme": "",
-        "button_style": "btn-secondary",
-        "background_image": "shopify://shop_images/comission-homepage-painting-background-image.jpg",
-        "button_label": "See how it works",
-        "button_link": "https://www.comission.art/pages/how-it-works"
-      }
     }
   },
   "order": [
+    "hero-with-overlay",
     "rich_text_athy7h",
     "image-with-text-2",
     "image_with_text_pznmLm",
     "image_with_text_kAaYU9",
-    "image_borders_XXqTbA",
-    "cta"
+    "image_borders_XXqTbA"
   ]
 }
