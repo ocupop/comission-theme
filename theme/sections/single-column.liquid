@@ -1,0 +1,83 @@
+<section class="single-column-section" id="{{ section.id }}">
+  <div class="container">
+    <div class="mx-auto my-20 animate-slide text-{{ section.settings.text_alignment }} {% if section.settings.full_width %}w-full{% else %}lg:w-2/3 xl:w-1/2{% endif %}">
+      {% if section.settings.title != blank %}
+        <h2 class="text-3xl font-bold mb-4">{{ section.settings.title }}</h2>
+      {% endif %}
+
+      {% if section.settings.body != blank %}
+        <div class="rte mb-6">{{ section.settings.body }}</div>
+      {% endif %}
+
+      {% if section.settings.button_label != blank and section.settings.button_link != blank %}
+        <a href="{{ section.settings.button_link }}" class="btn btn-primary">
+          {{ section.settings.button_label }}
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Single Column",
+  "tag": "section",
+  "class": "single-column-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Your Title Here"
+    },
+    {
+      "type": "richtext",
+      "id": "body",
+      "label": "Body Copy",
+      "default": "<p>Your content goes here. You can add paragraphs, lists, and other HTML elements.</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text Alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Full Width",
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "Single Column",
+      "category": "Text"
+    }
+  ]
+}
+{% endschema %}
