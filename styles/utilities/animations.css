@@ -1,40 +1,66 @@
-
 @keyframes animateTarget {
-  0% {transform: scale(0);opacity:0;}
-  50% {transform: scale(1);opacity:1;}
-  100% {transform: scale(1);opacity:.7;}
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: .7;
+  }
 }
+
 @keyframes growHorizontal {
-  from {transform: scaleX(0);}
-  to {transform: scaleX(1);}
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
 }
 
 @keyframes growVertical {
-  from {transform: scaleY(0);}
-  to {transform: scaleY(1);}
+  from {
+    transform: scaleY(0);
+  }
+
+  to {
+    transform: scaleY(1);
+  }
 }
-.variantIndicator-growright{
+
+.variantIndicator-growright {
   transform-origin: center left;
   animation-name: growHorizontal;
   animation-duration: 2s;
 }
-.variantIndicator-growleft{
+
+.variantIndicator-growleft {
   transform-origin: center right;
   animation-name: growHorizontal;
   animation-duration: 2s;
 }
-.variantIndicator-growdown{
+
+.variantIndicator-growdown {
   transform-origin: center top;
   animation-name: growVertical;
   animation-duration: 2s;
 }
-.variantIndicator-growup{
+
+.variantIndicator-growup {
   transform-origin: center bottom;
   animation-name: growVertical;
   animation-duration: 2s;
 }
-.variantIndicator-target{
-  background-color:red;
+
+.variantIndicator-target {
+  background-color: red;
   transform-origin: center center;
   animation-fill-mode: forwards;
   animation-name: animateTarget;
@@ -51,3 +77,147 @@
     opacity: 1;
   }
 } */
+@tailwind utilities;
+
+@keyframes spinner {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+@keyframes cardSlideIn {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 5%, 0);
+    visibility: visible;
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@layer utilities {
+  .spinner {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    /* background: radial-gradient(farthest-side,#3737F3 94%,#0000) top/5px 5px no-repeat,
+          conic-gradient(#0000 30%,#3737F3);
+    -webkit-mask: radial-gradient(farthest-side,#0000 calc(100% - 5px),#000 0); */
+    background-image: url("/svg/comission-spinner-01.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    animation: spinner 2s infinite linear;
+  }
+
+  .animate-fadein {
+    animation: fadeIn;
+    animation-duration: 0.8s;
+    animation-fill-mode: both;
+  }
+
+  .animate-slideup {
+    animation: slideUp;
+    animation-duration: 0.8s;
+    animation-fill-mode: both;
+  }
+
+  .animate-slideleft {
+    animation: slideLeft;
+    animation-duration: 0.8s;
+    animation-fill-mode: both;
+  }
+
+  .animate-slideright {
+    animation: slideRight;
+    animation-duration: 0.8s;
+    animation-fill-mode: both;
+  }
+
+  .animate-slide {
+    animation: cardSlideIn;
+    animation-duration: 0.8s;
+    animation-fill-mode: both;
+  }
+
+  .animate-slide:nth-of-type(2) {
+    animation-delay: 0.1s;
+  }
+
+  .animate-slide:nth-of-type(3) {
+    animation-delay: 0.2s;
+  }
+
+  .animate-slide:nth-of-type(4) {
+    animation-delay: 0.3s;
+  }
+
+  .animate-slide:nth-of-type(5) {
+    animation-delay: 0.4s;
+  }
+
+  .animate-slide:nth-of-type(6) {
+    animation-delay: 0.5s;
+  }
+
+  .animate-delay {
+    animation-delay: 0.3s;
+  }
+
+  .animate-delay-mid {
+    animation-delay: 0.6s;
+  }
+
+  .animate-delay-long {
+    animation-delay: 0.9s;
+  }
+}

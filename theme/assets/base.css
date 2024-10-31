@@ -1710,6 +1710,286 @@ product-form .tooltip.hover-tooltip:before {
   align-items: center;
   justify-content: center;
 }
+@tailwind utilities;
+/* Tokens */
+:root {
+  --golden-ratio: 1.618;
+  --golden-ratio-inverse: 0.618;
+
+  --color-primary: 55 55 243;
+  --color-secondary: 91 33 182;
+  --color-accent: 217 70 239;
+  --color-success: 16 185 129;
+  --color-info: 6 182 212;
+  --color-warning: 251 150 0;
+  --color-danger: 191 72 0;
+
+  --font-size-display: 3rem;
+  /* text-5xl */
+  --font-size-heading: 1.85rem;
+  /* text-2xl */
+  --font-size-lead: 1.5rem;
+  /* text-2xl */
+  --font-size-body: 1.25rem;
+  /* text-xl */
+  --font-size-small: 0.875rem;
+  /* text-sm */
+
+  --height-header: 3rem;
+  --screen-height: 100vh;
+
+  --color-shop-pay: #5a31f4;
+  --shop-pay-button--width: 100%;
+}
+/* Sets the width for the shop-pay-button web component */
+/* media queries for responsive design */
+@media (min-width: 1024px) {
+:root {
+    --height-header: 6rem
+}
+  }
+@media (min-width: 1280px) {
+:root {
+    --height-header: 6rem
+}
+  }
+@supports (height: 100lvh) {
+:root {
+    --screen-height: 100lvh
+}
+  }
+/* .color-scheme-1 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
+.color-scheme-2 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+} */
+[class*="color-scheme-"] {
+  background: rgb(var(--color-background));
+  background: var(--gradient-background);
+  color: rgba(var(--color-foreground), 1);
+
+
+}
+[class*="color-scheme-"] .button--secondary,
+  [class*="color-scheme-"] .button--tertiary {
+    --color-button: var(--color-secondary-button);
+    --color-button-text: var(--color-secondary-button-text);
+  }
+[class*="color-scheme-"] a {
+    color: rgb(var(--color-link));
+  }
+[class*="color-scheme-"] .btn {
+    background: rgb(var(--color-button));
+    color: rgb(var(--color-button-text));
+    border-width: var(--button-border-width, 0);
+    border-style: solid;
+    border-color: var(--color-button-outline);
+  }
+[class*="color-scheme-"] .btn.btn-secondary {
+    background: rgb(var(--color-secondary-button));
+    color: rgb(var(--color-secondary-button-text));
+    border-width: var(--button-secondary-border-width, 0);
+    border-style: solid;
+    border-color: var(--color-secondary-button-outline);
+  }
+h1,
+.h1,
+.text-display {
+  font-size: 3.75rem;
+  line-height: 1;
+}
+@media (min-width: 64rem) {
+
+  h1,
+.h1,
+.text-display {
+    font-size: 4.5rem;
+    line-height: 1;
+  }
+}
+h1,
+.h1,
+.text-display {
+  margin-bottom: 1rem;
+  font-weight: 300;
+}
+h2,
+.h2 .text-heading {
+  margin-bottom: 1rem;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+h3,
+.h3 {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  margin-bottom: 1rem;
+}
+h4,
+.h4,
+.text-lead {
+  margin-bottom: 0.75rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+h5,
+.h5,
+.text-body {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+h6,
+.h6,
+.text-fineprint {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+/* @import './base/layout.css'; */
+a:focus-visible,
+input:focus-visible,
+button:focus-visible {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-offset-width: 2px;
+}
+.section-header {
+  position: relative;
+  height: 5rem;
+  width: 100%;
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+.section-header h2 {
+  position: absolute;
+  top: -1rem;
+  font-size: 4.5rem;
+  line-height: 1;
+  font-weight: 400;
+}
+@media (min-width: 64rem) {
+
+  .section-header h2 {
+    top: -2rem;
+    font-size: 6rem;
+    line-height: 1;
+  }
+}
+.shopify-policy__container {
+  margin-top: 3rem;
+}
+.shopify-policy__title {
+  margin-bottom: 2rem;
+}
+small {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+.rte {
+  font-size: var(--font-size-body);
+  line-height: 1.5;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+.rte p {
+  margin-bottom: 2rem;
+}
+.visually-hidden{
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+@supports (font: -apple-system-body) and (-webkit-appearance: none) {
+  img[loading="lazy"] {
+    clip-path: inset(0.6px);
+  }
+}
+@keyframes animateTarget {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: .7;
+  }
+}
+@keyframes growHorizontal {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
+@keyframes growVertical {
+  from {
+    transform: scaleY(0);
+  }
+
+  to {
+    transform: scaleY(1);
+  }
+}
+.variantIndicator-growright {
+  transform-origin: center left;
+  animation-name: growHorizontal;
+  animation-duration: 2s;
+}
+.variantIndicator-growleft {
+  transform-origin: center right;
+  animation-name: growHorizontal;
+  animation-duration: 2s;
+}
+.variantIndicator-growdown {
+  transform-origin: center top;
+  animation-name: growVertical;
+  animation-duration: 2s;
+}
+.variantIndicator-growup {
+  transform-origin: center bottom;
+  animation-name: growVertical;
+  animation-duration: 2s;
+}
+.variantIndicator-target {
+  background-color: red;
+  transform-origin: center center;
+  animation-fill-mode: forwards;
+  animation-name: animateTarget;
+  animation-duration: 2s;
+}
+/* @keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+} */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -1810,21 +2090,6 @@ product-form .tooltip.hover-tooltip:before {
 }
 .z-50 {
   z-index: 50;
-}
-.z-\[100\] {
-  z-index: 100;
-}
-.z-\[75\] {
-  z-index: 75;
-}
-.z-\[49\] {
-  z-index: 49;
-}
-.z-\[50\] {
-  z-index: 50;
-}
-.z-\[40\] {
-  z-index: 40;
 }
 .order-first {
   order: -9999;
@@ -3133,6 +3398,14 @@ product-form .tooltip.hover-tooltip:before {
   font-size: 0.75rem;
   line-height: 1rem;
 }
+.text-7xl {
+  font-size: 4.5rem;
+  line-height: 1;
+}
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
 .font-bold {
   font-weight: 700;
 }
@@ -3456,264 +3729,124 @@ product-form .tooltip.hover-tooltip:before {
 .\~pb-9 /* error - Missing end value */ {}
 .\~pb-96 /* error - Missing end value */ {}
 .\~pb-px /* error - Missing end value */ {}
-/* Tokens */
-:root {
-  --golden-ratio: 1.618;
-  --golden-ratio-inverse: 0.618;
+.spinner {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    /* background: radial-gradient(farthest-side,#3737F3 94%,#0000) top/5px 5px no-repeat,
+          conic-gradient(#0000 30%,#3737F3);
+    -webkit-mask: radial-gradient(farthest-side,#0000 calc(100% - 5px),#000 0); */
+    background-image: url("/svg/comission-spinner-01.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    animation: spinner 2s infinite linear;
+  }
+.animate-fadein {
+    animation: fadeIn;
+    animation-duration: 0.8s;
+    animation-fill-mode: both;
+  }
+.animate-slideup {
+    animation: slideUp;
+    animation-duration: 0.8s;
+    animation-fill-mode: both;
+  }
+.animate-slideleft {
+    animation: slideLeft;
+    animation-duration: 0.8s;
+    animation-fill-mode: both;
+  }
+.animate-slideright {
+    animation: slideRight;
+    animation-duration: 0.8s;
+    animation-fill-mode: both;
+  }
+.animate-slide {
+    animation: cardSlideIn;
+    animation-duration: 0.8s;
+    animation-fill-mode: both;
+  }
+.animate-slide:nth-of-type(2) {
+    animation-delay: 0.1s;
+  }
+.animate-slide:nth-of-type(3) {
+    animation-delay: 0.2s;
+  }
+.animate-slide:nth-of-type(4) {
+    animation-delay: 0.3s;
+  }
+.animate-slide:nth-of-type(5) {
+    animation-delay: 0.4s;
+  }
+.animate-slide:nth-of-type(6) {
+    animation-delay: 0.5s;
+  }
+.animate-delay {
+    animation-delay: 0.3s;
+  }
+.animate-delay-mid {
+    animation-delay: 0.6s;
+  }
+@keyframes spinner {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+@keyframes cardSlideIn {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 5%, 0);
+    visibility: visible;
+  }
 
-  --color-primary: 55 55 243;
-  --color-secondary: 91 33 182;
-  --color-accent: 217 70 239;
-  --color-success: 16 185 129;
-  --color-info: 6 182 212;
-  --color-warning: 251 150 0;
-  --color-danger: 191 72 0;
-
-  --font-size-display: 3rem;
-  /* text-5xl */
-  --font-size-heading: 1.85rem;
-  /* text-2xl */
-  --font-size-lead: 1.5rem;
-  /* text-2xl */
-  --font-size-body: 1.25rem;
-  /* text-xl */
-  --font-size-small: 0.875rem;
-  /* text-sm */
-
-  --height-header: 3rem;
-  --screen-height: 100vh;
-
-  --color-shop-pay: #5a31f4;
-  --shop-pay-button--width: 100%;
-}
-/* Sets the width for the shop-pay-button web component */
-/* media queries for responsive design */
-@media (min-width: 1024px) {
-:root {
-    --height-header: 6rem
-}
-  }
-@media (min-width: 1280px) {
-:root {
-    --height-header: 6rem
-}
-  }
-@supports (height: 100lvh) {
-:root {
-    --screen-height: 100lvh
-}
-  }
-/* .color-scheme-1 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
-}
-
-.color-scheme-2 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-} */
-[class*="color-scheme-"] {
-  background: rgb(var(--color-background));
-  background: var(--gradient-background);
-  color: rgba(var(--color-foreground), 1);
-
-
-}
-[class*="color-scheme-"] .button--secondary,
-  [class*="color-scheme-"] .button--tertiary {
-    --color-button: var(--color-secondary-button);
-    --color-button-text: var(--color-secondary-button-text);
-  }
-[class*="color-scheme-"] a {
-    color: rgb(var(--color-link));
-  }
-[class*="color-scheme-"] .btn {
-    background: rgb(var(--color-button));
-    color: rgb(var(--color-button-text));
-    border-width: var(--button-border-width, 0);
-    border-style: solid;
-    border-color: var(--color-button-outline);
-  }
-[class*="color-scheme-"] .btn.btn-secondary {
-    background: rgb(var(--color-secondary-button));
-    color: rgb(var(--color-secondary-button-text));
-    border-width: var(--button-secondary-border-width, 0);
-    border-style: solid;
-    border-color: var(--color-secondary-button-outline);
-  }
-h1,
-.h1,
-.text-display {
-  font-size: 3.75rem;
-  line-height: 1;
-}
-@media (min-width: 64rem) {
-
-  h1,
-.h1,
-.text-display {
-    font-size: 4.5rem;
-    line-height: 1;
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
   }
 }
-h1,
-.h1,
-.text-display {
-  margin-bottom: 1rem;
-  font-weight: 300;
-}
-h2,
-.h2 .text-heading {
-  margin-bottom: 1rem;
-  font-size: 2.25rem;
-  line-height: 2.5rem;
-}
-h3,
-.h3 {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-  margin-bottom: 1rem;
-}
-h4,
-.h4,
-.text-lead {
-  margin-bottom: 0.75rem;
-  font-size: 1.5rem;
-  line-height: 2rem;
-}
-h5,
-.h5,
-.text-body {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-}
-h6,
-.h6,
-.text-fineprint {
-  font-size: 1rem;
-  line-height: 1.5rem;
-}
-/* @import './base/layout.css'; */
-a:focus-visible,
-input:focus-visible,
-button:focus-visible {
-  outline: 2px solid transparent;
-  outline-offset: 2px;
-  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
-  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
-  --tw-ring-offset-width: 2px;
-}
-.section-header {
-  position: relative;
-  height: 5rem;
-  width: 100%;
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-.section-header h2 {
-  position: absolute;
-  top: -1rem;
-  font-size: 4.5rem;
-  line-height: 1;
-  font-weight: 400;
-}
-@media (min-width: 64rem) {
-
-  .section-header h2 {
-    top: -2rem;
-    font-size: 6rem;
-    line-height: 1;
-  }
-}
-.shopify-policy__container {
-  margin-top: 3rem;
-}
-.shopify-policy__title {
-  margin-bottom: 2rem;
-}
-small {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-}
-.rte {
-  font-size: var(--font-size-body);
-  line-height: 1.5;
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-}
-.rte p {
-  margin-bottom: 2rem;
-}
-.visually-hidden{
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-}
-@supports (font: -apple-system-body) and (-webkit-appearance: none) {
-  img[loading="lazy"] {
-    clip-path: inset(0.6px);
-  }
-}
-@keyframes animateTarget {
-  0% {transform: scale(0);opacity:0;}
-  50% {transform: scale(1);opacity:1;}
-  100% {transform: scale(1);opacity:.7;}
-}
-@keyframes growHorizontal {
-  from {transform: scaleX(0);}
-  to {transform: scaleX(1);}
-}
-@keyframes growVertical {
-  from {transform: scaleY(0);}
-  to {transform: scaleY(1);}
-}
-.variantIndicator-growright{
-  transform-origin: center left;
-  animation-name: growHorizontal;
-  animation-duration: 2s;
-}
-.variantIndicator-growleft{
-  transform-origin: center right;
-  animation-name: growHorizontal;
-  animation-duration: 2s;
-}
-.variantIndicator-growdown{
-  transform-origin: center top;
-  animation-name: growVertical;
-  animation-duration: 2s;
-}
-.variantIndicator-growup{
-  transform-origin: center bottom;
-  animation-name: growVertical;
-  animation-duration: 2s;
-}
-.variantIndicator-target{
-  background-color:red;
-  transform-origin: center center;
-  animation-fill-mode: forwards;
-  animation-name: animateTarget;
-  animation-duration: 2s;
-}
-/* @keyframes fadeInAnimation {
-  0% {
+@keyframes fadeIn {
+  from {
     opacity: 0;
   }
 
-  100% {
+  to {
     opacity: 1;
   }
-} */
+}
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 .last\:bg-primary:last-child {
   --tw-bg-opacity: 1;
   background-color: rgb(var(--color-primary) / var(--tw-bg-opacity));
@@ -4083,16 +4216,12 @@ small {
     right: auto;
   }
 
-  .lg\:top-\[75px\] {
-    top: 75px;
+  .lg\:top-0 {
+    top: 0px;
   }
 
   .lg\:top-auto {
     top: auto;
-  }
-
-  .lg\:top-0 {
-    top: 0px;
   }
 
   .lg\:order-1 {
@@ -4345,6 +4474,21 @@ small {
     line-height: 1.5rem;
   }
 
+  .lg\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
+  .lg\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .lg\:text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
   .lg\:text-white {
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -4367,6 +4511,31 @@ small {
   .xl\:text-5xl {
     font-size: 3rem;
     line-height: 1;
+  }
+
+  .xl\:text-8xl {
+    font-size: 6rem;
+    line-height: 1;
+  }
+
+  .xl\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
+  .xl\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+
+  .xl\:text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .xl\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
   }
 }
 @media (max-width: 48rem) {

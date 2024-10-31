@@ -56,7 +56,10 @@
                 {{ block.settings.heading }}
               </h2>
             {%- when 'copy' -%}
-              <div class="image-with-text__copy rte {{ block.settings.text_style }}" {{ block.shopify_attributes }}>
+              <div
+                class="image-with-text__copy rte animate-slide animate-delay {{ block.settings.text_style }}"
+                {{ block.shopify_attributes }}
+              >
                 {{ block.settings.copy }}
               </div>
             {%- when 'button_group' -%}

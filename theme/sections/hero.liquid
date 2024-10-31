@@ -14,20 +14,20 @@
 >
   <div class="bg-black/50 pt-10 lg:pt-20">
     <div class="container z-10">
-      <div class="items-end justify-between lg:flex">
+      <div class="items-end justify-between lg:flex gap-20">
         <div class="pb-10 pt-14 lg:w-3/4 xl:w-3/5">
           {%- for block in section.blocks -%}
             {%- case block.type -%}
               {%- when 'heading' -%}
                 <h2
-                  class="{{ block.settings.heading_size }} animate-slideup"
+                  class="{% case block.settings.heading_size %}{% when 'text-fineprint' %} text-xs lg:text-sm xl:text-base {% when 'text-body' %} text-base lg:text-lg xl:text-xl {% when 'text-lead' %} text-xl lg:text-2xl xl:text-3xl {% when 'text-heading' %} text-2xl lg:text-3xl xl:text-4xl {% when 'display' %}text-7xl xl:text-8xl{% endcase %} {{ block.settings.heading_size }} font-light animate-slideup"
                   {{ block.shopify_attributes }}
                 >
                   {{ block.settings.heading }}
                 </h2>
               {%- when 'text' -%}
                 <div
-                  class="{{ block.settings.text_style }}"
+                  class="{{ block.settings.text_style }} text-2xl animate-slideup animate-delay"
                   {{ block.shopify_attributes }}
                 >
                   <p>{{ block.settings.text }}</p>
@@ -52,7 +52,7 @@
                   {%- if block.settings.button_label_2 != blank -%}
                     <a
                       {% if block.settings.button_link_2 == blank %}
-                        role="link" aria-disabled="true"
+                        ro text-6xl lg:tele="link" aria-disabled="true"
                       {% else %}
                         href="{{ block.settings.button_link_2 }}"
                       {% endif %}
