@@ -8,21 +8,13 @@ import React from 'react';
  */
 
  export default function ImageCrosshairs({rows,cols,position,animate=true}){
-  console.log(rows,cols,position)
   const zeroPos = position-1 // position adjusted to start at 0 instead of 1
-  console.log('a')
   const positionRow = Math.floor(zeroPos / cols) + 1
-  console.log('b')
   const positionColumn = (zeroPos % cols) + 1
-  console.log('c')
   const dabWidth = (100 / cols)
-  console.log('e')
   const dabHeight = (100 / rows)
-  console.log('e')
   const dabXpos = dabWidth * (positionColumn - 1)
-  console.log('f')
   const dabYpos = dabHeight * (positionRow - 1)
-  console.log('g')
   return (
     <>
       <div className={`variantIndicator absolute top-0 left-0 w-full h-full ${animate && 'animated'}`}>

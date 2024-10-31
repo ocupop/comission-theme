@@ -35,13 +35,6 @@ export default function DABSelector(props) {
   if (!rows || !cols) return; // in case we have a malformed product, just skip this component
 
   useEffect(() => {
-    // console.log('MUSEUM', museum);
-    // console.log('ARTIST', artist);
-    // console.log('PRODUCT', product);
-    // console.log('VARIANTS', variants);
-    // console.log('CART', cartItems);
-    // console.log('MUSEUM ATTRUBUTES', museumAttributes);
-
     // loop through all of the variant "tiles" metafields, and create an object assigning each tile dbId to a variantId
     let tileVariantLookup = {};
     // = JSON.parse(product.tiles)
@@ -102,12 +95,10 @@ export default function DABSelector(props) {
 
   const clickedWindow = (event) => {
     if (typeof window !== 'undefined') {
-      console.log('clickedWindow');
       //     const xpos = event.clientX - (event.currentTarget.parentNode.parentNode.offsetLeft + 24); // 24 = the modal window padding
       //     const ypos = event.clientY - (event.currentTarget.parentNode.parentNode.offsetTop + 24); // 24 = the modal window padding
       //     const xPercent = xpos / event.currentTarget.offsetWidth;
       //     const yPercent = ypos / event.currentTarget.offsetHeight;
-
       //     setTooltipOrientation({
       //       x: xPercent < 0.1 ? 'right' : xPercent > 0.9 ? 'left' : 'center',
       //       y: yPercent > 0.6 ? 'top' : 'bottom',
@@ -131,8 +122,12 @@ export default function DABSelector(props) {
         absoluteY: event.clientY,
         x: xScrollAmount,
         y: yScrollAmount,
-        tooltipXpos: xPercent < 0.1 ? 'right' : xPercent > 0.9 ? 'left' : 'center',
-        tooltipYpos: yPercent > 0.6 ? 'top' : 'bottom',
+
+        imageX: selectedTiles.length > 0 ? coords.imageX : xScrollAmount,
+        imageY: selectedTiles.length > 0 ? coords.imageY : yScrollAmount,
+
+        tooltipXAnchorPos: xPercent < 0.1 ? 'right' : xPercent > 0.9 ? 'left' : 'center',
+        tooltipYAnchorPos: yPercent > 0.6 ? 'top' : 'bottom',
       });
     }
   };
@@ -146,6 +141,7 @@ export default function DABSelector(props) {
   };
   const toggleTile = (tile, pos) => {
     if (selectedTiles.findIndex((object) => object.position === tile.position) > -1) {
+      setTooltipHovered(false);
       // only splice array when item is found
       setSelectedTiles(selectedTiles.filter((data) => data.position != tile.position));
     } else {
@@ -197,7 +193,7 @@ export default function DABSelector(props) {
     if (tile.isInCart) {
       return (
         <div className="text-xs">
-          Already in <Link to="/cart">your cart</Link>
+          Already in <a href="/cart">your cart</a>
         </div>
       );
     }
@@ -281,8 +277,8 @@ export default function DABSelector(props) {
             style={{
               maxHeight: '100vh',
               transform: isHovering ? `scale(${zoom})` : `scale(1)`,
-              top: isHovering ? coords.y + 'px' : 0,
-              left: isHovering ? coords.x + 'px' : 0,
+              top: isHovering ? coords.imageY + 'px' : 0,
+              left: isHovering ? coords.imageX + 'px' : 0,
             }}
           >
             <img
@@ -341,6 +337,23 @@ export default function DABSelector(props) {
                     className={`tooltip origin-top shadow-lg absolute bg-white p-2 left-1/2 text-left z-50 ${tooltipOrientation.x} ${tooltipOrientation.y}`}
                   >
                     {getToolTipContent(tile)}
+                    <div
+                      className="absolute top-0 right-0 bg-gray-500 text-white p-1 rounded-full hover:bg-red-500 w-5 h-5 -m-2"
+                      onClick={(e) => toggleTile(tile, coords.pos)}
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        class="w-full h-full"
+                      >
+                        <path
+                          fill="currentColor"
+                          d="M5.47 5.47a.75.75 0 0 1 1.06 0L12 10.94l5.47-5.47a.75.75 0 1 1 1.06 1.06L13.06 12l5.47 5.47a.75.75 0 1 1-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 0 1-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 0 1 0-1.06Z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                    </div>
                   </div>
                 );
               })}
