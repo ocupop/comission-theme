@@ -45,6 +45,13 @@
         "color_scheme": "scheme-1"
       }
     },
+    "featured_product": {
+      "type": "featured-product",
+      "settings": {
+        "title": "Featured Artwork",
+        "product": "free"
+      }
+    },
     "cta-collect": {
       "type": "cta",
       "settings": {
@@ -184,6 +191,7 @@
   "order": [
     "hero",
     "home-collect",
+    "featured_product",
     "cta-collect",
     "home-experience",
     "cta-experience",

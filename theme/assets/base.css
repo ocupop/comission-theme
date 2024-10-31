@@ -1864,6 +1864,10 @@ product-form .tooltip.hover-tooltip:before {
   margin-left: auto;
   margin-right: auto;
 }
+.my-20 {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
 .my-4 {
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -1875,10 +1879,6 @@ product-form .tooltip.hover-tooltip:before {
 .my-6 {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
-}
-.my-20 {
-  margin-top: 5rem;
-  margin-bottom: 5rem;
 }
 .\!mb-0 {
   margin-bottom: 0px !important;
@@ -1915,6 +1915,9 @@ product-form .tooltip.hover-tooltip:before {
 }
 .mb-4 {
   margin-bottom: 1rem;
+}
+.mb-6 {
+  margin-bottom: 1.5rem;
 }
 .mb-8 {
   margin-bottom: 2rem;
@@ -1969,12 +1972,6 @@ product-form .tooltip.hover-tooltip:before {
 }
 .mt-\[2em\] {
   margin-top: 2em;
-}
-.mb-6 {
-  margin-bottom: 1.5rem;
-}
-.mb-5 {
-  margin-bottom: 1.25rem;
 }
 .block {
   display: block;
@@ -2041,6 +2038,9 @@ product-form .tooltip.hover-tooltip:before {
 .h-\[17em\] {
   height: 17em;
 }
+.h-\[60\%\] {
+  height: 60%;
+}
 .h-\[calc\(100\%-1rem\)\] {
   height: calc(100% - 1rem);
 }
@@ -2055,9 +2055,6 @@ product-form .tooltip.hover-tooltip:before {
 }
 .h-screen {
   height: var(--screen-height, 100vh);
-}
-.h-\[60\%\] {
-  height: 60%;
 }
 .max-h-full {
   max-height: 100%;
@@ -2728,6 +2725,9 @@ product-form .tooltip.hover-tooltip:before {
 .p-1 {
   padding: 0.25rem;
 }
+.p-10 {
+  padding: 2.5rem;
+}
 .p-2 {
   padding: 0.5rem;
 }
@@ -2742,9 +2742,6 @@ product-form .tooltip.hover-tooltip:before {
 }
 .p-8 {
   padding: 2rem;
-}
-.p-10 {
-  padding: 2.5rem;
 }
 .px-0 {
   padding-left: 0px;
@@ -2790,6 +2787,10 @@ product-form .tooltip.hover-tooltip:before {
   padding-top: 5rem;
   padding-bottom: 5rem;
 }
+.py-24 {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
 .py-3 {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
@@ -2801,10 +2802,6 @@ product-form .tooltip.hover-tooltip:before {
 .py-6 {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
-}
-.py-24 {
-  padding-top: 6rem;
-  padding-bottom: 6rem;
 }
 .pb-0 {
   padding-bottom: 0px;
@@ -3135,10 +3132,6 @@ product-form .tooltip.hover-tooltip:before {
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
-}
-.text-5xl {
-  font-size: 3rem;
-  line-height: 1;
 }
 .font-bold {
   font-weight: 700;
@@ -4074,14 +4067,6 @@ small {
     position: relative;
   }
 
-  .lg\:right-auto {
-    right: auto;
-  }
-
-  .lg\:top-auto {
-    top: auto;
-  }
-
   .lg\:bottom-auto {
     bottom: auto;
   }
@@ -4094,8 +4079,16 @@ small {
     right: 0px;
   }
 
+  .lg\:right-auto {
+    right: auto;
+  }
+
   .lg\:top-\[75px\] {
     top: 75px;
+  }
+
+  .lg\:top-auto {
+    top: auto;
   }
 
   .lg\:top-0 {
@@ -4227,12 +4220,12 @@ small {
     width: 20rem;
   }
 
-  .lg\:w-full {
-    width: 100%;
-  }
-
   .lg\:w-\[60\%\] {
     width: 60%;
+  }
+
+  .lg\:w-full {
+    width: 100%;
   }
 
   .lg\:max-w-\[50\%\] {
@@ -4241,6 +4234,10 @@ small {
 
   .lg\:grid-cols-10 {
     grid-template-columns: repeat(10, minmax(0, 1fr));
+  }
+
+  .lg\:grid-cols-12 {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
   }
 
   .lg\:grid-cols-2 {
@@ -4261,10 +4258,6 @@ small {
 
   .lg\:grid-cols-7 {
     grid-template-columns: repeat(7, minmax(0, 1fr));
-  }
-
-  .lg\:grid-cols-12 {
-    grid-template-columns: repeat(12, minmax(0, 1fr));
   }
 
   .lg\:justify-center {
