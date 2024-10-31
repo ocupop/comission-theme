@@ -1832,6 +1832,9 @@ product-form .tooltip.hover-tooltip:before {
 .col-span-7 {
   grid-column: span 7 / span 7;
 }
+.-m-2 {
+  margin: -0.5rem;
+}
 .mx-2 {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
@@ -2516,6 +2519,9 @@ product-form .tooltip.hover-tooltip:before {
 .rounded-lg {
   border-radius: 0.5rem;
 }
+.rounded {
+  border-radius: 0.25rem;
+}
 .rounded-e-lg {
   border-start-end-radius: 0.5rem;
   border-end-end-radius: 0.5rem;
@@ -2653,6 +2659,10 @@ product-form .tooltip.hover-tooltip:before {
 }
 .bg-white\/50 {
   background-color: rgb(255 255 255 / 0.5);
+}
+.bg-gray-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(107 114 128 / var(--tw-bg-opacity));
 }
 .bg-opacity-50 {
   --tw-bg-opacity: 0.5;
@@ -3687,6 +3697,11 @@ small {
   .hover\:bg-white:hover {
     --tw-bg-opacity: 1;
     background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  }
+
+  .hover\:bg-red-500:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(240 82 82 / var(--tw-bg-opacity));
   }
 
   .hover\:text-blue-600:hover {
