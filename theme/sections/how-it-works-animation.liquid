@@ -1,21 +1,22 @@
 {% liquid
-  assign wrapper_class = 'items-center grid-cols-12 gap-20 lg:grid'
-  assign text_column_class = 'image-with-text__textcolumn col-span-7 px-3'
-  assign image_column_class = 'image-with-text__imagecolumn col-span-5'
+  assign wrapper_class = 'grid-cols-12 gap-10 lg:grid'
+  assign text_column_class = 'image-with-text__textcolumn col-span-9 px-3'
+  assign image_column_class = 'image-with-text__imagecolumn col-span-3'
 %}
 
 <div class="color-{{ section.settings.color_scheme }}">
   <div class="container">
     <div class="{{ wrapper_class }}">
       <div class="{{ image_column_class }}">
-        <div class="__react-component" data-component="HowItWorksAnimation"></div>
+        <div class="sticky mb-10 top-40">
+          <div class="__react-component" data-component="HowItWorksAnimation"></div>
+        </div>
       </div>
       <div class="{{ text_column_class }}">
         {% if section.settings.copy != blank %}
           {{ section.settings.copy }}
         {% endif %}
       </div>
-
     </div>
   </div>
 </div>

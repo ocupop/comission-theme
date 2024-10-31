@@ -1787,6 +1787,9 @@ product-form .tooltip.hover-tooltip:before {
 .top-2\.5 {
   top: 0.625rem;
 }
+.top-40 {
+  top: 10rem;
+}
 .isolate {
   isolation: isolate;
 }
@@ -1831,6 +1834,9 @@ product-form .tooltip.hover-tooltip:before {
 }
 .col-span-7 {
   grid-column: span 7 / span 7;
+}
+.col-span-9 {
+  grid-column: span 9 / span 9;
 }
 .-m-2 {
   margin: -0.5rem;
@@ -1881,6 +1887,9 @@ product-form .tooltip.hover-tooltip:before {
 }
 .mb-20 {
   margin-bottom: 5rem;
+}
+.mb-3 {
+  margin-bottom: 0.75rem;
 }
 .mb-32 {
   margin-bottom: 8rem;
@@ -1971,6 +1980,9 @@ product-form .tooltip.hover-tooltip:before {
 }
 .aspect-\[2\/1\] {
   aspect-ratio: 2/1;
+}
+.aspect-\[4\/3\] {
+  aspect-ratio: 4/3;
 }
 .size-10 {
   width: 2.5rem;
@@ -2414,6 +2426,9 @@ product-form .tooltip.hover-tooltip:before {
 .grid-cols-12 {
   grid-template-columns: repeat(12, minmax(0, 1fr));
 }
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
 .grid-cols-4 {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
@@ -2449,6 +2464,9 @@ product-form .tooltip.hover-tooltip:before {
 }
 .justify-between {
   justify-content: space-between;
+}
+.gap-10 {
+  gap: 2.5rem;
 }
 .gap-2 {
   gap: 0.5rem;
@@ -2518,9 +2536,6 @@ product-form .tooltip.hover-tooltip:before {
 }
 .rounded-lg {
   border-radius: 0.5rem;
-}
-.rounded {
-  border-radius: 0.25rem;
 }
 .rounded-e-lg {
   border-start-end-radius: 0.5rem;
@@ -2639,6 +2654,10 @@ product-form .tooltip.hover-tooltip:before {
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
 }
+.bg-gray-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(107 114 128 / var(--tw-bg-opacity));
+}
 .bg-gray-800 {
   --tw-bg-opacity: 1;
   background-color: rgb(31 41 55 / var(--tw-bg-opacity));
@@ -2659,10 +2678,6 @@ product-form .tooltip.hover-tooltip:before {
 }
 .bg-white\/50 {
   background-color: rgb(255 255 255 / 0.5);
-}
-.bg-gray-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(107 114 128 / var(--tw-bg-opacity));
 }
 .bg-opacity-50 {
   --tw-bg-opacity: 0.5;
@@ -2717,6 +2732,10 @@ product-form .tooltip.hover-tooltip:before {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
 }
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
 .py-10 {
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
@@ -2740,6 +2759,14 @@ product-form .tooltip.hover-tooltip:before {
 .py-3 {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
+}
+.py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+.py-6 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 .pb-0 {
   padding-bottom: 0px;
@@ -3015,6 +3042,10 @@ product-form .tooltip.hover-tooltip:before {
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
+}
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
 }
 .text-\[1\.3em\] {
   font-size: 1.3em;
@@ -3694,14 +3725,14 @@ small {
     background-color: rgb(var(--color-primary) / 0.8);
   }
 
-  .hover\:bg-white:hover {
-    --tw-bg-opacity: 1;
-    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-  }
-
   .hover\:bg-red-500:hover {
     --tw-bg-opacity: 1;
     background-color: rgb(240 82 82 / var(--tw-bg-opacity));
+  }
+
+  .hover\:bg-white:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   }
 
   .hover\:text-blue-600:hover {
@@ -3928,6 +3959,10 @@ small {
     grid-column: span 2 / span 2;
   }
 
+  .md\:mb-0 {
+    margin-bottom: 0px;
+  }
+
   .md\:ml-0 {
     margin-left: 0px;
   }
@@ -3938,6 +3973,10 @@ small {
 
   .md\:mt-14 {
     margin-top: 3.5rem;
+  }
+
+  .md\:grid {
+    display: grid;
   }
 
   .md\:w-1\/2 {
@@ -3998,8 +4037,20 @@ small {
     order: 3;
   }
 
+  .lg\:col-span-2 {
+    grid-column: span 2 / span 2;
+  }
+
   .lg\:col-span-3 {
     grid-column: span 3 / span 3;
+  }
+
+  .lg\:col-span-4 {
+    grid-column: span 4 / span 4;
+  }
+
+  .lg\:col-start-3 {
+    grid-column-start: 3;
   }
 
   .lg\:mx-auto {
@@ -4117,6 +4168,10 @@ small {
 
   .lg\:grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .lg\:grid-cols-6 {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
   }
 
   .lg\:grid-cols-7 {

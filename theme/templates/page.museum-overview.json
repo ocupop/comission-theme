@@ -1,0 +1,210 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "rich_text_athy7h": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_VKjDWK": {
+          "type": "heading",
+          "settings": {
+            "heading": "Created for you",
+            "heading_size": "text-heading"
+          }
+        },
+        "text_braQQW": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Comission was created to inspire a new generation of art lovers, who forge deeper connections with our partner museums and artists. And through this we develop a new fundraising model in support of the arts, and a healthy robust pipeline of future philanthropic donors.</p><p>Whether you want to CoMission on object or a whole collection,<a href=\"https://comission.art/how-it-works\">click here</a>to learn about the uniqure CoMission process.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_VKjDWK",
+        "text_braQQW"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": false,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "image-with-text-2": {
+      "type": "image-with-text",
+      "blocks": {
+        "copy": {
+          "type": "copy",
+          "settings": {
+            "copy": "<h3>Connect - Community - Cause</h3><ul><li>Connect with your audience where they are, as we create a digital gateway to the physical masterpieces hanging in your museums.</li><li>Benefit from having a niche group of customers that you can program around, and build community with, in person and online.</li><li>Elevate the relationship with your audience, and develop lifelong connections, by giving them a sense of art ownership without the complexities and cost of ownership.</li></ul>",
+            "text_style": "text-default"
+          }
+        }
+      },
+      "block_order": [
+        "copy"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/comission-museum-landingpage-01.jpg",
+        "order": "order-first",
+        "layout": "layout_1",
+        "color_scheme": "scheme-1",
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    },
+    "image_with_text_pznmLm": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_XdGe9T": {
+          "type": "heading",
+          "settings": {
+            "heading": "Benefits",
+            "heading_size": "text-heading"
+          }
+        },
+        "copy_hfNGQJ": {
+          "type": "copy",
+          "settings": {
+            "copy": "<ul><li>Future proof your efforts. To compete for the limited attention of consumers, it’s crucial you have a seat at the table in terms of the new technologies which are altering the course of audience engagement and cultural consumption.</li><li>Whether you believe Web3 and the metaverse is something for today or something for the future, CoMission gives you a product for it. And if you think it’s all a load of overblown hype, it’s not cost you anything to have something ready in case it ever becomes a thing.</li><li>You retain 100% ownership of every aspect of your artwork. You don’t have to sell any asset, whether in physical or digital form.</li><li>Insanely valuable free marketing through the social media activity of all our CoMissionaires.</li></ul>",
+            "text_style": "text-default"
+          }
+        },
+        "button_group_3mJeen": {
+          "type": "button_group",
+          "settings": {
+            "button_label_1": "Explore Features",
+            "button_link_1": "shopify://pages/features",
+            "outline_button_1": false,
+            "button_label_2": "Button label",
+            "button_link_2": "",
+            "outline_button_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_XdGe9T",
+        "copy_hfNGQJ",
+        "button_group_3mJeen"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/comission-benefits-hero-01.jpg",
+        "order": "order-first",
+        "layout": "layout_1",
+        "color_scheme": "",
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    },
+    "image_with_text_kAaYU9": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_ERDMtY": {
+          "type": "heading",
+          "settings": {
+            "heading": "Revenue",
+            "heading_size": "text-heading"
+          }
+        },
+        "copy_4HynTX": {
+          "type": "copy",
+          "settings": {
+            "copy": "<p></p><ul><li>CoMission provides a brand new source of unrestricted funds and, with each CoMissioned artwork being available on our website, a global audience to fundraise from.</li><li>With 71% of millennials having bought art for their home in 2021 this opens up a huge opportunity, and a segment of their household budget to potentially benefit from, other than the previous pots reserved for charitable giving and cultural visits.</li></ul>",
+            "text_style": "text-default"
+          }
+        },
+        "button_group_YnwJ3V": {
+          "type": "button_group",
+          "settings": {
+            "button_label_1": "Button label",
+            "button_link_1": "",
+            "outline_button_1": false,
+            "button_label_2": "Button label",
+            "button_link_2": "",
+            "outline_button_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_ERDMtY",
+        "copy_4HynTX",
+        "button_group_YnwJ3V"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/comission-museum-landingpage-03.jpg",
+        "order": "order-first",
+        "layout": "layout_1",
+        "color_scheme": "",
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    },
+    "image_borders_XXqTbA": {
+      "type": "image-borders",
+      "blocks": {
+        "heading_FaERLx": {
+          "type": "heading",
+          "settings": {
+            "heading": "A true partner",
+            "heading_size": "text-heading"
+          }
+        },
+        "copy_TRwyqR": {
+          "type": "copy",
+          "settings": {
+            "copy": "<p>We started CoMission with the knowledge that the average museum is not blessed with deep pockets to fund innovation, the technological knowledge and skillset to develop it, or the spare human capacity to execute on such a project. That is why our business model provides a full turnkey solution, with zero investment and up front costs for the museum.</p>",
+            "text_style": "text-default"
+          }
+        },
+        "button_group_786LTH": {
+          "type": "button_group",
+          "settings": {
+            "button_label_1": "Start a Conversation",
+            "button_link_1": "shopify://pages/contact-us",
+            "outline_button_1": false,
+            "button_label_2": "Button label",
+            "button_link_2": "",
+            "outline_button_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_FaERLx",
+        "copy_TRwyqR",
+        "button_group_786LTH"
+      ],
+      "settings": {
+        "image_1": "shopify://shop_images/comission-painting-museumpartners-cta-01.jpg",
+        "image_2": "shopify://shop_images/comission-painting-museumpartners-cta-02.jpg",
+        "color_scheme": "scheme-2"
+      }
+    },
+    "cta": {
+      "type": "cta",
+      "settings": {
+        "color_scheme": "",
+        "button_style": "btn-secondary",
+        "background_image": "shopify://shop_images/comission-homepage-painting-background-image.jpg",
+        "button_label": "See how it works",
+        "button_link": "https://www.comission.art/pages/how-it-works"
+      }
+    }
+  },
+  "order": [
+    "rich_text_athy7h",
+    "image-with-text-2",
+    "image_with_text_pznmLm",
+    "image_with_text_kAaYU9",
+    "image_borders_XXqTbA",
+    "cta"
+  ]
+}
