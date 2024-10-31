@@ -163,14 +163,6 @@
         }
       }
     },
-    "brand_image": {
-      "name": "Brand Image",
-      "settings": {
-        "brand_image": {
-          "label": "Brand Image"
-        }
-      }
-    },
     "brand_information": {
       "name": "Brand information",
       "settings": {

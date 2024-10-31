@@ -34,16 +34,6 @@
     ]
   },
   {
-    "name": "t:settings_schema.brand_image.name",
-    "settings": [
-      {
-        "type": "image_picker",
-        "id": "brand_image",
-        "label": "t:settings_schema.brand_image.settings.logo_image.label"
-      }
-    ]
-  },
-  {
     "name": "t:settings_schema.colors.name",
     "settings": [
       {
