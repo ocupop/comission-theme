@@ -21,9 +21,9 @@
       </div>
     </div>
     <div class="block mt-6 lg:w-2/3 lg:mt-0">
-      <div class="lg:grid grid-cols-{{ menublocks.size }} items-start justify-end w-full">
+      <div class="md:grid grid-cols-{{ menublocks.size }} items-start justify-end w-full">
         {%- for block in menublocks -%}
-          <div class="gap-4 lg:grid">
+          <div class="gap-4 lg:grid mb-3 lg:mb-0">
             {%- if block.settings.heading != blank -%}
               <h2 class="text-lg font-bold">{{- block.settings.heading -}}</h2>
             {%- endif -%}
