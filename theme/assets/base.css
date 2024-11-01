@@ -3182,6 +3182,9 @@ small {
 .pb-screen {
   padding-bottom: var(--screen-height, 100vh);
 }
+.pl-2 {
+  padding-left: 0.5rem;
+}
 .pl-\[0\.7em\] {
   padding-left: 0.7em;
 }
@@ -3319,12 +3322,6 @@ small {
 }
 .pt-screen {
   padding-top: var(--screen-height, 100vh);
-}
-.pl-2 {
-  padding-left: 0.5rem;
-}
-.pl-3 {
-  padding-left: 0.75rem;
 }
 .text-left {
   text-align: left;
