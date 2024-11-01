@@ -1,0 +1,101 @@
+{%- liquid
+  assign museumAtts = museum.metafields.comission
+  if artist
+    assign artistBy = artist.title | prepend: 'by '
+  endif
+  assign url = product.handle | prepend: 'https://www.comission.art/products/'
+
+  assign istagram_url = item.product.metafields.comission.tiles | split: 'productId'
+%}
+{%- capture twitter_text -%}
+  Check out the piece of "{{product.title}}" {{artistBy}} I’ve just bought @CoMission_Art. DAB #{{position}} now has my name on it and {{museumAtts.twitter}} has a donation in my name.
+{%- endcapture -%}
+{%- capture instagram_text -%}
+  Check out the piece of "{{product.title}}" {{artistBy}} I’ve just bought @CoMission.Art. DAB #{{position}} now has my name on it and {{museumAtts.instagram}}  has a donation in my name
+{%- endcapture -%}
+
+<div class="flex items-center gap-4 text-sm">
+  <span>Share your artwork with your community!</span>
+  <div class="flex gap-4 text-sm items-center">
+    <button
+      data-modal-target="instagram-modal"
+      data-modal-toggle="instagram-modal"
+    >
+      {% render 'icons', name: 'instagram' %}
+    </button>
+
+    <a
+      href="https://twitter.com/share?text={{ twitter_text| escape }}&url={{ url| escape }}"
+      class="flex modal-link"
+      data-width="548"
+      data-height="500"
+    >
+      {% render 'icons', name: 'twitter' %}
+    </a>
+
+    <a
+      href="https://www.facebook.com/sharer/sharer.php?u={{ url| escape }}"
+      class="flex modal-link"
+      data-width="548"
+      data-height="500"
+    >
+      {% render 'icons', name: 'facebook' %}
+    </a>
+  </div>
+</div>
+
+<!-- Instagram modal -->
+<div
+  id="instagram-modal"
+  tabindex="-1"
+  aria-hidden="true"
+  class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full"
+>
+  <div class="relative p-4 w-full max-w-2xl max-h-full">
+    <!-- Modal content -->
+    <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+      <!-- Modal header -->
+      <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+        <h2 class="text-xl font-bold m-0">Post to Instagram</h2>
+        <button
+          type="button"
+          class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+          data-modal-hide="instagram-modal"
+        >
+          <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+          </svg>
+          <span class="sr-only">Close modal</span>
+        </button>
+      </div>
+      <!-- Modal body -->
+      <div class="p-4 md:p-5 space-y-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
+          <div class="leftcol">
+            <ol class="list-disc ml-4 mb-4">
+              <li class="mb-2">
+                Download the image
+                <a href="{{image | image_url}}" class="text-primary underline underline" target="_blank">here</a>
+              </li>
+              <li class="mb-2">Post image to Instagram</li>
+              <li class="mb-2">Brag about your CoMission art!</li>
+            </ol>
+            <div class="text-dark">
+              <p class="mb-2">Here's an example of copy:</p>
+              <p>{{ instagram_text }}</p>
+            </div>
+          </div>
+          <div class="rightcol">
+            <img
+              width="500"
+              height="500"
+              class="m-auto w-full cover max-w-xs"
+              alt="My DAB"
+              src="{{image | image_url}}"
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
