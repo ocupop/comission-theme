@@ -1504,12 +1504,6 @@ product-form .tooltip.hover-tooltip:before {
     padding: 0.75rem;
   }
 }
-@media (min-width: 80rem) {
-
-  .menu-primary li .nav-link {
-    padding: 1.25rem;
-  }
-}
 .menu-primary li .nav-link:before {
         content: "";
         display: block;
@@ -3325,6 +3319,12 @@ small {
 }
 .pt-screen {
   padding-top: var(--screen-height, 100vh);
+}
+.pl-2 {
+  padding-left: 0.5rem;
+}
+.pl-3 {
+  padding-left: 0.75rem;
 }
 .text-left {
   text-align: left;

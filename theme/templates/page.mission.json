@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "image-with-text-0": {
@@ -13,7 +22,7 @@
         "copy": {
           "type": "copy",
           "settings": {
-            "copy": "<h3>To use the power of art to improve society, and make it accessible to all<\/h3><p>We believe art has the power to tell stories. To transcend barriers of gender, race, class and politics. To transform the ways in which we connect to one another and experience culture. To inspire us to make a social impact in our world.<\/p><p>Yet despite all the power art has to provoke, to connect, and to heal, it is often bound by the spaces and galleries in which it is displayed – museums and galleries that are increasingly subject to financial strain.<\/p><p>That’s why we created CoMission - to break those geographic, spatial and financial boundaries, and to bring the experience of art — of viewing, exploring and collecting — to people everywhere.<\/p><p>Through this we generate a new source of income – for the Artist, the social cause that inspires them, and the institution that displays their physical work. We would love to have you join us.<\/p>",
+            "copy": "<h3>To use the power of art to improve society, and make it accessible to all</h3><p>We believe art has the power to tell stories. To transcend barriers of gender, race, class and politics. To transform the ways in which we connect to one another and experience culture. To inspire us to make a social impact in our world.</p><p>Yet despite all the power art has to provoke, to connect, and to heal, it is often bound by the spaces and galleries in which it is displayed – museums and galleries that are increasingly subject to financial strain.</p><p>That’s why we created CoMission - to break those geographic, spatial and financial boundaries, and to bring the experience of art — of viewing, exploring and collecting — to people everywhere.</p><p>Through this we generate a new source of income – for the Artist, the social cause that inspires them, and the institution that displays their physical work. We would love to have you join us.</p>",
             "text_style": "text-default"
           }
         }
@@ -23,18 +32,22 @@
         "copy"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/comission-mission-hero-01.jpg",
+        "image": "shopify://shop_images/comission-mission-hero-01.jpg",
         "order": "order-last",
         "layout": "layout_1",
-        "color_scheme": "scheme-1"
+        "color_scheme": "scheme-1",
+        "padding_top": 52,
+        "padding_bottom": 52
       }
     },
     "cta": {
       "type": "cta",
       "settings": {
-        "background_image": "shopify:\/\/shop_images\/comission-mission-background-02.jpg",
+        "color_scheme": "",
+        "button_style": "btn-secondary",
+        "background_image": "shopify://shop_images/comission-mission-background-02.jpg",
         "button_label": "See how it works",
-        "button_link": "https:\/\/www.comission.art\/pages\/how-it-works"
+        "button_link": "shopify://pages/how-it-works"
       }
     },
     "image-with-text-1": {
@@ -50,7 +63,7 @@
         "copy": {
           "type": "copy",
           "settings": {
-            "copy": "<p>At the risk of sounding boastful, we’re on a mission to change the cultural landscape by creating a brand new gateway to fine art. We’re challenging the norms of connection, consumption, engagement, communication and funding. And by purchasing a Digital Art Block (DAB) from the CoMission Collection and becoming a CoMissionary, you are playing a powerful role in the art people value, and how they experience and fund it for years to come.<\/p>",
+            "copy": "<p>At the risk of sounding boastful, we’re on a mission to change the cultural landscape by creating a brand new gateway to fine art. We’re challenging the norms of connection, consumption, engagement, communication and funding. And by purchasing a Digital Art Block (DAB) from the CoMission Collection and becoming a CoMissionary, you are playing a powerful role in the art people value, and how they experience and fund it for years to come.</p>",
             "text_style": "text-default"
           }
         },
@@ -58,7 +71,7 @@
           "type": "button_group",
           "settings": {
             "button_label_1": "Explore our artwork",
-            "button_link_1": "https:\/\/www.comission.art\/collections\/all",
+            "button_link_1": "https://www.comission.art/collections/all",
             "outline_button_1": false,
             "button_label_2": "Button label",
             "button_link_2": "",
@@ -72,10 +85,12 @@
         "button_group"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/comission-mission-cta-01.jpg",
+        "image": "shopify://shop_images/comission-mission-cta-01.jpg",
         "order": "order-last",
         "layout": "layout_3",
-        "color_scheme": "scheme-2"
+        "color_scheme": "scheme-2",
+        "padding_top": 52,
+        "padding_bottom": 52
       }
     }
   },

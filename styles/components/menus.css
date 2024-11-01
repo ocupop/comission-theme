@@ -1,4 +1,5 @@
 @layer components {
+
   /* Menus */
   .menu-top {
     @apply flex justify-end w-full h-full px-10 text-white bg-black;
@@ -14,7 +15,7 @@
         position: relative;
         font-weight: 200;
         text-decoration: none;
-        @apply flex items-center h-full text-lg lg:p-3 xl:p-5;
+        @apply flex items-center h-full text-lg lg:p-3;
 
       }
 
