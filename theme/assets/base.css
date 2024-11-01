@@ -1943,10 +1943,13 @@ h5,
   line-height: 1.75rem;
 }
 h6,
-.h6,
-.text-fineprint {
+.h6 {
   font-size: 1rem;
   line-height: 1.5rem;
+}
+.text-fineprint {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 /* @import './base/layout.css'; */
 a:focus-visible,
@@ -4886,10 +4889,6 @@ small {
 
   .md\:mt-14 {
     margin-top: 3.5rem;
-  }
-
-  .md\:flex {
-    display: flex;
   }
 
   .md\:grid {

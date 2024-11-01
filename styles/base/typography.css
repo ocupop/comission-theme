@@ -29,7 +29,10 @@ h5,
 }
 
 h6,
-.h6,
-.text-fineprint {
+.h6 {
   @apply text-base;
+}
+
+.text-fineprint {
+  @apply text-sm;
 }
