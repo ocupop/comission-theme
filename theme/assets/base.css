@@ -4996,6 +4996,10 @@ small {
     margin-top: 4rem;
   }
 
+  .lg\:mb-10 {
+    margin-bottom: 2.5rem;
+  }
+
   .lg\:block {
     display: block;
   }
@@ -5110,6 +5114,10 @@ small {
 
   .lg\:gap-40 {
     gap: 10rem;
+  }
+
+  .lg\:gap-20 {
+    gap: 5rem;
   }
 
   .lg\:bg-black {
