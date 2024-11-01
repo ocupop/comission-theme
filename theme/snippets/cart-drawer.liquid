@@ -43,7 +43,7 @@
 <cart-drawer>
   <div
     id="CartDrawer"
-    class="drawer drawer-right{% if cart == empty %} is-empty{% endif %}"
+    class="drawer drawer-right p-6 {% if cart == empty %} is-empty{% endif %}"
   >
     <button type="button" class="drawer__close z-10" data-drawer-hide="CartDrawer" aria-controls="CartDrawer">
       {%- render 'icons', name: 'close' %}
@@ -57,30 +57,29 @@
       aria-label="{{ 'sections.cart.title' | t }}"
       tabindex="-1"
     >
-      {%- if cart == empty -%}
-        <!-- Drawer Empty -->
-        <div class="drawer__inner-empty color-{{ settings.cart_color_scheme }}">
-          <h3>{{ 'sections.cart.empty' | t }}</h3>
-          {% comment %}
-            <button
-              type="button"
-              class="drawer__close"
-              data-drawer-hide="CartDrawer"
-              aria-controls="CartDrawer"
-            >
-              {%- render 'icons', name: 'close' %}
-              <span class="sr-only">Close menu</span>
-            </button>
-          {% endcomment %}
-        </div>
-        <a href="{{ routes.all_products_collection_url }}" class="button">
-          {{ 'general.continue_shopping' | t }}
-        </a>
-      {%- endif -%}
-
       <!-- Drawer Header -->
       <div class="drawer__header">
         <h3>{{ 'sections.cart.title' | t }}</h3>
+        {%- if cart == empty -%}
+          <!-- Drawer Empty -->
+          <div class="drawer__inner-empty color-{{ settings.cart_color_scheme }}">
+            <h6 class="mb-2">{{ 'sections.cart.empty' | t }}</h6>
+            {% comment %}
+              <button
+                type="button"
+                class="drawer__close"
+                data-drawer-hide="CartDrawer"
+                aria-controls="CartDrawer"
+              >
+                {%- render 'icons', name: 'close' %}
+                <span class="sr-only">Close menu</span>
+              </button>
+            {% endcomment %}
+          </div>
+          <a href="{{ routes.all_products_collection_url }}" class="btn btn-primary">
+            {{ 'general.continue_shopping' | t }}
+          </a>
+        {%- endif -%}
         {% comment %}
           <button
             type="button"
@@ -98,7 +97,7 @@
       {%- render 'cart-drawer-items', cart: cart %}
 
       <!-- Drawer Footer -->
-      <div class="drawer__footer">
+      <div class="drawer__footer mt-3">
         {%- if settings.show_cart_note -%}
           <details id="Details-CartDrawer">
             <summary>
@@ -138,7 +137,7 @@
           </div>
 
           <div role="status">
-            <h2>{{ 'sections.cart.estimated_total' | t }}</h2>
+            <h4>{{ 'sections.cart.estimated_total' | t }}</h4>
             <p>{{ cart.total_price | money_with_currency }}</p>
           </div>
 
