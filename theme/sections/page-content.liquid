@@ -1,0 +1,112 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="section-{{ section.id }}-padding">
+  <div class="container">
+    <div class="{{section.max_width}} {{ section.settings.text_size }}">
+      {{ page.content }}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Page content",
+  "tag": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "select",
+      "id": "text_size",
+      "default": "text-body",
+      "label": "Text Size",
+      "options": [
+        {
+          "value": "text-fineprint",
+          "label": "Small"
+        },
+        {
+          "value": "text-body",
+          "label": "Default"
+        },
+        {
+          "value": "text-lead",
+          "label": "Large"
+        },
+        {
+          "value": "text-heading",
+          "label": "X-Large"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "max_width",
+      "default": "max-w-lg",
+      "label": "Max Width",
+      "options": [
+        {
+          "value": "max-w-md",
+          "label": "Medium"
+        },
+        {
+          "value": "max-w-lg",
+          "label": "Large"
+        },
+        {
+          "value": "max-w-xl",
+          "label": "Extra Large"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 52
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 52
+    }
+  ],
+
+  "presets": [
+    {
+      "name": "Page Content",
+      "blocks": []
+    }
+  ]
+}
+{% endschema %}
