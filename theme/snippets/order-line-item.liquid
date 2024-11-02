@@ -1,0 +1,186 @@
+{%- liquid
+  assign artist_id = item.product.metafields.comission.artist | split: '/' | last | plus: 0
+  assign museum_id = item.product.metafields.comission.institution | split: '/' | last | plus: 0
+  assign soldtiles = item.product.metafields.comission.tiles | split: 'productId'
+  for coll in collections
+    if artist_id == coll.id
+      assign artist = coll
+    endif
+
+    if museum_id == coll.id
+      assign museum = coll
+    endif
+  endfor
+
+  for t in soldtiles
+    if t contains item.id
+      assign tile_array = t | split: ','
+      for ta in tile_array
+        if ta contains 'certificate'
+          assign certificate = ta | replace: '"', '' | replace: 'certificate', '' | replace: ':http', 'http'
+        endif
+        if ta contains 'crosshairsImage'
+          assign crosshairs_image = ta | replace: '"', '' | replace: 'crosshairsImage', '' | replace: ':http', 'http'
+        endif
+        if ta contains 'tilePath'
+          assign tile_path = ta | replace: '"', '' | replace: 'tilePath', '' | replace: ':http', 'http'
+        endif
+      endfor
+    endif
+  endfor
+
+  if crosshairs_image
+    assign social_media_image = crosshairs_image
+  elsif tile_path
+    assign social_media_image = tile_path
+  else
+    assign social_media_image = item.product.featured_image.src
+  endif
+%}
+
+<div class="grid gap-4 md:gap-10 md:grid-cols-3 lg:gap-20">
+  <div class="card-image position-relative relative">
+    <div class="relative">
+      <img
+        src="{{ item.product.featured_image.src | image_url: width: 533 }}"
+        class="fadeIn cover"
+        alt="{{ item.product.featured_image.alt | escape }}"
+        width="448"
+        height="448"
+      >
+
+      <div
+        class="__react-component"
+        data-component="ImageCrosshairs"
+        data-animate="true"
+        data-cols="{{ item.product.metafields.comission.cols }}"
+        data-rows="{{ item.product.metafields.comission.rows }}"
+        data-position="{{ item.properties.position }}"
+      ></div>
+    </div>
+  </div>
+
+  <div class="flex-col justify-center text-left md:col-span-2">
+    <h3 class="text-2xl font-medium mb-0">
+      <a href="/products/{{ item.product.handle }}">{{ item.product.title }}</a>
+    </h3>
+
+    {% if artist %}
+      <a href="/collections/{{ artist.handle }}">
+        <h4 class="mb-3 text-xl font-light">{{ artist.title }}</h4>
+      </a>
+    {% endif %}
+
+    <dl class="grid mb-3 text-dark text-sm gap-x-12 gap-y-2" style="grid-template-columns: auto 1fr;">
+      {% if item.properties.position %}
+        <dt class="uppercase ">Unique DAB #</dt>
+        <dd>{{ item.properties.position }}</dd>
+      {% endif %}
+
+      {% if item.product.metafields.comission.startDate and item.product.metafields.comission.endDate %}
+        <dt class="uppercase">Membership Active</dt>
+        <dd>
+          {{ item.product.metafields.comission.startDate | date: '%b %d, %Y' }} to
+          {{ item.product.metafields.comission.endDate | date: '%b %d, %Y' }}
+        </dd>
+      {% endif %}
+
+      {% if order.name %}
+        <dt class="uppercase">Order ID</dt>
+        <dd>{{ order.name }}</dd>
+      {% endif %}
+
+      {% if order.created_at %}
+        <dt class="uppercase">Order Date</dt>
+        <dd>{{ order.created_at | date: '%b %d, %Y' }}</dd>
+      {% endif %}
+    </dl>
+
+    {% if certificate %}
+      <div class="mb-8">
+        <a
+          href="/pages/certificate?id={{item.product.id}}-{{item.properties.position }}"
+          class="flex text-xl font-normal text-primary hover:text-black modal-link"
+          data-width="965"
+          data-height="800"
+        >
+          View Certificate
+          {% render 'icons', name: 'arrow-right' %}
+        </a>
+        <a
+          href="{{ certificate }}"
+          class="flex w-auto text-xl font-normal text-primary hover:text-black"
+          target="_blank"
+        >
+          Download Certificate PDF
+          {% render 'icons', name: 'arrow-right' %}
+        </a>
+      </div>
+    {% endif %}
+    <hr class="my-2">
+    <div class="flex flex-col md:flex-row gap-12 text-base">
+      <div>
+        <h4 class="font-medium text-base">AR Filters</h4>
+        <p class="">
+          Instagram:
+          <a
+            href="https://www.instagram.com/ar/834804298668862/"
+            title="Instagram Filter"
+            class="underline text-primary"
+          >
+            Download Filter
+          </a>
+          <br>
+          TikTok:
+          <a href="https://www.tiktok.com/t/ZPRKyUAyC/ " title="TikTok Filter" class="underline text-primary">
+            Download Filter
+          </a>
+        </p>
+      </div>
+      <div>
+        <h4 class="font-medium text-base">Virtual Gallery</h4>
+
+        <a
+          href="/pages/virtual-gallery-instructions"
+          title="Setup Instructions"
+          class="underline text-primary"
+        >
+          Setup Instructions
+        </a>
+        <br>
+        <a
+          href="{{ item.product.featured_image.src | image_url }}"
+          title="Download Artwork File"
+          class="underline text-primary"
+          download
+        >
+          Download Artwork File
+        </a>
+      </div>
+    </div>
+
+    <hr class="my-2">
+
+    {% render 'social-share-dab',
+      product: item.product,
+      artist: artist,
+      museum: museum,
+      position: item.properties.position,
+      image: social_media_image
+    %}
+
+    {% comment %}
+      <div>
+         <p>
+          <Link
+            class="font-bold text-primary"
+            to={`/account/orders/${legacyOrderId}`}
+          >
+            See Details
+            <Image src={`/svg/comission-arrow-white.svg`} width="20" height="20" class="inline-block ml-2" alt=">" />
+          </Link>
+        </p>
+      </div>
+    {% endcomment %}
+  </div>
+</div>

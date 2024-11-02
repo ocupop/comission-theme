@@ -17,7 +17,7 @@
 
 @import './pages/home.css';
 @import './pages/policies.css';
-@import './pages/customer.css';
+/* @import './pages/customer.css'; */
 
 @import './utilities/utils.css';
 @import './utilities/animations.css';
