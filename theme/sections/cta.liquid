@@ -14,6 +14,9 @@
         href="{{ section.settings.button_link }}"
       >
         {{ section.settings.button_label }}
+        {% if section.settings.button_style == 'btn-text' %}
+          {% render 'icons', name: 'arrow-right' %}
+        {% endif %}
       </a>
     </div>
   </div>
@@ -43,6 +46,10 @@
         {
           "value": "btn-secondary",
           "label": "Secondary"
+        },
+        {
+          "value": "btn-text",
+          "label": "Text"
         }
       ]
     },

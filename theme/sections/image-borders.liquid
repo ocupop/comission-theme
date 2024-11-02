@@ -39,6 +39,9 @@
                 {{ block.shopify_attributes }}
               >
                 {{ block.settings.button_label_1 | escape }}
+                {% if block.settings.button_style == 'btn-text' %}
+                  {% render 'icons', name: 'arrow-right' %}
+                {% endif %}
               </a>
             {%- endif -%}
         {%- endcase -%}
@@ -212,6 +215,10 @@
             {
               "value": "btn-secondary",
               "label": "Secondary"
+            },
+            {
+              "value": "btn-text",
+              "label": "Text"
             }
           ]
         }

@@ -1862,11 +1862,13 @@ product-form .tooltip.hover-tooltip:before {
   }
 [class*="color-scheme-"] .btn.btn-text {
     color: rgb(var(--text-only-button-color));
-    display: flex;
     border-style: none;
     background-color: transparent;
     padding: 0px;
   }
+[class*="color-scheme-"] .btn.btn-text .icon{
+      vertical-align: text-bottom;
+    }
 h1,
 .h1,
 .text-display {
