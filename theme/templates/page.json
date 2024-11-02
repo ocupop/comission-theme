@@ -12,17 +12,18 @@
     "title1": {
       "type": "page-title",
       "settings": {
+        "heading_size": "text-display",
         "padding_top": 56,
-        "padding_bottom": 16,
-        "heading_size": "text-display"
+        "padding_bottom": 16
       }
     },
     "content1": {
       "type": "page-content",
       "settings": {
+        "text_size": "text-body",
+        "max_width": "max-w-2xl",
         "padding_top": 0,
-        "padding_bottom": 56,
-        "text_size": "text-display"
+        "padding_bottom": 56
       }
     }
   },

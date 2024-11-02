@@ -14,7 +14,7 @@
 
 <div class="section-{{ section.id }}-padding">
   <div class="container">
-    <div class="{{section.max_width}} {{ section.settings.text_size }}">
+    <div class="{{section.settings.max_width}} {{ section.settings.text_size }}">
       {{ page.content }}
     </div>
   </div>
@@ -63,16 +63,16 @@
       "label": "Max Width",
       "options": [
         {
-          "value": "max-w-md",
-          "label": "Medium"
-        },
-        {
           "value": "max-w-lg",
-          "label": "Large"
+          "label": "Narrow"
         },
         {
-          "value": "max-w-xl",
-          "label": "Extra Large"
+          "value": "max-w-2xl",
+          "label": "Wide"
+        },
+        {
+          "value": "max-w-full",
+          "label": "Full"
         }
       ]
     },
