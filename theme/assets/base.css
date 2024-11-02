@@ -1687,14 +1687,6 @@ product-form .tooltip.hover-tooltip:before {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
-.btn-outline {
-  border-width: 1px;
-  --tw-border-opacity: 1;
-  border-color: rgb(255 255 255 / var(--tw-border-opacity));
-  background-color: transparent;
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-}
 .icon {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
@@ -1867,6 +1859,13 @@ product-form .tooltip.hover-tooltip:before {
     border-width: var(--button-secondary-border-width, 0);
     border-style: solid;
     border-color: var(--color-secondary-button-outline);
+  }
+[class*="color-scheme-"] .btn.btn-text {
+    color: rgb(var(--text-only-button-color));
+    display: flex;
+    border-style: none;
+    background-color: transparent;
+    padding: 0px;
   }
 h1,
 .h1,
@@ -3177,10 +3176,6 @@ small {
 .px-5 {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
-}
-.px-8 {
-  padding-left: 2rem;
-  padding-right: 2rem;
 }
 .py-10 {
   padding-top: 2.5rem;

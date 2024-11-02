@@ -63,17 +63,20 @@
                 {{ block.settings.copy }}
               </div>
             {%- when 'button_group' -%}
-              {%- if block.settings.button_label != blank -%}
+              {%- if block.settings.button_label_1 != blank -%}
                 <a
-                  {% if block.settings.button_link == blank %}
+                  {% if block.settings.button_link_1 == blank %}
                     role="link" aria-disabled="true"
                   {% else %}
-                    href="{{ block.settings.button_link }}"
+                    href="{{ block.settings.button_link_1 }}"
                   {% endif %}
-                  class="btn{% if block.settings.outline_button %} btn-outline{% else %} btn-primary{% endif %} my-5 mr-5"
+                  class="btn {{ block.settings.button_style }} text-2xl inline-block my-5 mr-5 py-5 px-5"
                   {{ block.shopify_attributes }}
                 >
-                  {{ block.settings.button_label | escape }}
+                  {{ block.settings.button_label_1 | escape }}
+                  {% if block.settings.button_style == 'btn-text' %}
+                    {% render 'icons', name: 'arrow-right' %}
+                  {% endif %}
                 </a>
               {%- endif -%}
           {%- endcase -%}
@@ -271,28 +274,24 @@
           "label": "t:sections.image-with-text.blocks.button_group.settings.button_link.label"
         },
         {
-          "type": "checkbox",
-          "id": "outline_button_1",
-          "default": false,
-          "label": "t:sections.image-with-text.blocks.button_group.settings.outline_button.label"
-        },
-        {
-          "type": "text",
-          "id": "button_label_2",
-          "default": "t:sections.image-with-text.blocks.button_group.settings.button_label.default",
-          "label": "t:sections.image-with-text.blocks.button_group.settings.button_label.label",
-          "info": "t:sections.image-with-text.blocks.button_group.settings.button_label.info"
-        },
-        {
-          "type": "url",
-          "id": "button_link_2",
-          "label": "t:sections.image-with-text.blocks.button_group.settings.button_link.label"
-        },
-        {
-          "type": "checkbox",
-          "id": "outline_button_2",
-          "default": false,
-          "label": "t:sections.image-with-text.blocks.button_group.settings.outline_button.label"
+          "type": "radio",
+          "id": "button_style",
+          "label": "Button Style",
+          "default": "btn-secondary",
+          "options": [
+            {
+              "value": "btn-primary",
+              "label": "Primary"
+            },
+            {
+              "value": "btn-secondary",
+              "label": "Secondary"
+            },
+            {
+              "value": "btn-text",
+              "label": "Text"
+            }
+          ]
         }
       ]
     }

@@ -54,6 +54,37 @@
         "padding_bottom": 52
       }
     },
+    "image_with_text_kAaYU9": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_ERDMtY": {
+          "type": "heading",
+          "settings": {
+            "heading": "Revenue",
+            "heading_size": "text-heading"
+          }
+        },
+        "copy_4HynTX": {
+          "type": "copy",
+          "settings": {
+            "copy": "<p></p><ul><li>CoMission provides a brand new source of unrestricted funds and, with each CoMissioned artwork being available on our website, a global audience to fundraise from.</li><li>With 71% of millennials having bought art for their home in 2021 this opens up a huge opportunity, and a segment of their household budget to potentially benefit from, other than the previous pots reserved for charitable giving and cultural visits.</li></ul>",
+            "text_style": "text-default"
+          }
+        }
+      },
+      "block_order": [
+        "heading_ERDMtY",
+        "copy_4HynTX"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/comission-museum-landingpage-03.jpg",
+        "order": "order-first",
+        "layout": "layout_1",
+        "color_scheme": "",
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    },
     "image_with_text_pznmLm": {
       "type": "image-with-text",
       "blocks": {
@@ -76,10 +107,7 @@
           "settings": {
             "button_label_1": "Explore Features",
             "button_link_1": "shopify://pages/features",
-            "outline_button_1": false,
-            "button_label_2": "Button label",
-            "button_link_2": "",
-            "outline_button_2": false
+            "button_style": "btn-text"
           }
         }
       },
@@ -92,50 +120,7 @@
         "image": "shopify://shop_images/comission-benefits-hero-01.jpg",
         "order": "order-first",
         "layout": "layout_1",
-        "color_scheme": "",
-        "padding_top": 52,
-        "padding_bottom": 52
-      }
-    },
-    "image_with_text_kAaYU9": {
-      "type": "image-with-text",
-      "blocks": {
-        "heading_ERDMtY": {
-          "type": "heading",
-          "settings": {
-            "heading": "Revenue",
-            "heading_size": "text-heading"
-          }
-        },
-        "copy_4HynTX": {
-          "type": "copy",
-          "settings": {
-            "copy": "<p></p><ul><li>CoMission provides a brand new source of unrestricted funds and, with each CoMissioned artwork being available on our website, a global audience to fundraise from.</li><li>With 71% of millennials having bought art for their home in 2021 this opens up a huge opportunity, and a segment of their household budget to potentially benefit from, other than the previous pots reserved for charitable giving and cultural visits.</li></ul>",
-            "text_style": "text-default"
-          }
-        },
-        "button_group_YnwJ3V": {
-          "type": "button_group",
-          "settings": {
-            "button_label_1": "Button label",
-            "button_link_1": "",
-            "outline_button_1": false,
-            "button_label_2": "Button label",
-            "button_link_2": "",
-            "outline_button_2": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_ERDMtY",
-        "copy_4HynTX",
-        "button_group_YnwJ3V"
-      ],
-      "settings": {
-        "image": "shopify://shop_images/comission-museum-landingpage-03.jpg",
-        "order": "order-first",
-        "layout": "layout_1",
-        "color_scheme": "",
+        "color_scheme": "scheme-1",
         "padding_top": 52,
         "padding_bottom": 52
       }
@@ -162,10 +147,7 @@
           "settings": {
             "button_label_1": "Start a Conversation",
             "button_link_1": "shopify://pages/contact-us",
-            "outline_button_1": false,
-            "button_label_2": "Button label",
-            "button_link_2": "",
-            "outline_button_2": false
+            "button_style": "btn-primary"
           }
         }
       },
@@ -185,8 +167,8 @@
     "hero-with-overlay",
     "single_column_DrfPRY",
     "image-with-text-2",
-    "image_with_text_pznmLm",
     "image_with_text_kAaYU9",
+    "image_with_text_pznmLm",
     "image_borders_XXqTbA"
   ]
 }

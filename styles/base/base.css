@@ -71,6 +71,10 @@
     border-style: solid;
     border-color: var(--color-secondary-button-outline);
   }
+  .btn.btn-text {
+    color: rgb(var(--text-only-button-color));
+    @apply flex p-0 border-none bg-transparent;
+  }
 
 
 }

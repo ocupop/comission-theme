@@ -61,11 +61,7 @@
           "type": "button_group",
           "settings": {
             "button_label_1": "Button label",
-            "button_link_1": "",
-            "outline_button_1": false,
-            "button_label_2": "Button label",
-            "button_link_2": "",
-            "outline_button_2": false
+            "button_link_1": ""
           }
         }
       },
@@ -221,10 +217,7 @@
           "settings": {
             "button_label_1": "Explore Our Artwork",
             "button_link_1": "shopify://collections/featured-art",
-            "outline_button_1": false,
-            "button_label_2": "Button label",
-            "button_link_2": "",
-            "outline_button_2": false
+            "button_style": "btn-primary"
           }
         }
       },

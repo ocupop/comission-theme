@@ -94,6 +94,12 @@
           },
           {
             "type": "color",
+            "id": "text_button_label",
+            "label": "Plain Text Button Color",
+            "default": "#3737f3"
+          },
+          {
+            "type": "color",
             "id": "shadow",
             "label": "t:settings_schema.colors.settings.shadow.label",
             "default": "#121212"

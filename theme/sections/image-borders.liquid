@@ -13,7 +13,7 @@
         style="background-image: url({{ section.settings.image_1 | image_url: width: 300 }});"
       ></div>
     </div>
-    <div class="w-11/12 p-5 text-center text-white lg:w-1/2">
+    <div class="w-11/12 p-5 text-center  lg:w-1/2">
       {%- for block in section.blocks -%}
         {% case block.type %}
           {%- when 'heading' -%}
@@ -35,7 +35,7 @@
                 {% else %}
                   href="{{ block.settings.button_link_1 }}"
                 {% endif %}
-                class="btn{% if block.settings.outline_button_1 %} btn-outline{% else %} btn-primary px-8 py-6 text-2xl inline-block{% endif %} my-5 mr-5 py-5 px-5"
+                class="btn {{block.settings.button_style}} text-2xl inline-block my-5 mr-5 py-5 px-5"
                 {{ block.shopify_attributes }}
               >
                 {{ block.settings.button_label_1 | escape }}
@@ -85,25 +85,25 @@
   "blocks": [
     {
       "type": "image1",
-      "name": "t:sections.image-borders.blocks.border_image_left.name",
+      "name": "t:sections.image-borders.settings.border_image_left.label",
       "limit": 1,
       "settings": [
         {
           "type": "image_picker",
           "id": "image1",
-          "label": "t:sections.image-borders.blocks.border_image_left.settings.image.label"
+          "label": "Image"
         }
       ]
     },
     {
       "type": "image2",
-      "name": "t:sections.image-borders.blocks.border_image_right.name",
+      "name": "t:sections.image-borders.settings.border_image_right.label",
       "limit": 1,
       "settings": [
         {
           "type": "image_picker",
           "id": "image2",
-          "label": "t:sections.image-borders.blocks.border_image_right.settings.image.label"
+          "label": "Image"
         }
       ]
     },
@@ -198,29 +198,22 @@
           "id": "button_link_1",
           "label": "t:sections.image-borders.blocks.button_group.settings.button_link.label"
         },
+
         {
-          "type": "checkbox",
-          "id": "outline_button_1",
-          "default": false,
-          "label": "t:sections.image-borders.blocks.button_group.settings.outline_button.label"
-        },
-        {
-          "type": "text",
-          "id": "button_label_2",
-          "default": "t:sections.image-borders.blocks.button_group.settings.button_label.default",
-          "label": "t:sections.image-borders.blocks.button_group.settings.button_label.label",
-          "info": "t:sections.image-borders.blocks.button_group.settings.button_label.info"
-        },
-        {
-          "type": "url",
-          "id": "button_link_2",
-          "label": "t:sections.image-borders.blocks.button_group.settings.button_link.label"
-        },
-        {
-          "type": "checkbox",
-          "id": "outline_button_2",
-          "default": false,
-          "label": "t:sections.image-borders.blocks.button_group.settings.outline_button.label"
+          "type": "radio",
+          "id": "button_style",
+          "label": "Button Style",
+          "default": "btn-secondary",
+          "options": [
+            {
+              "value": "btn-primary",
+              "label": "Primary"
+            },
+            {
+              "value": "btn-secondary",
+              "label": "Secondary"
+            }
+          ]
         }
       ]
     }
