@@ -38,14 +38,6 @@
   endif
 %}
 
-{% comment %}
-  <b>certificate:</b> {{ certificate -}}
-  <br>
-  <b>crosshairs_image:</b> {{ crosshairs_image -}}
-  <br>
-  <b>tile_path:</b> {{ tile_path -}}
-{% endcomment %}
-
 <div class="grid gap-4 md:gap-10 md:grid-cols-3 lg:gap-20">
   <div class="card-image position-relative relative">
     <div class="relative">
@@ -156,7 +148,12 @@
           Setup Instructions
         </a>
         <br>
-        <a href="{{image}}" title="Download Artwork File" class="underline text-primary" download>
+        <a
+          href="{{ item.product.featured_image.src | image_url }}"
+          title="Download Artwork File"
+          class="underline text-primary"
+          download
+        >
           Download Artwork File
         </a>
       </div>
