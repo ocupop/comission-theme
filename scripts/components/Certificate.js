@@ -81,7 +81,7 @@ export default function Certificate(props) {
             <div className="dab-image">
               {tile?.tilePath ? (
                 <div className="col-span-2 lg:col-span-3">
-                  <img src={tile.tilePath} className="shadow-lg tile-image h-[17em] w-auto" id="DAB" alt="DAB" />
+                  <img src={tile.tilePath} className="tile-image h-[17em] w-auto" id="DAB" alt="DAB" />
                 </div>
               ) : (
                 <div className="p-5 border">
