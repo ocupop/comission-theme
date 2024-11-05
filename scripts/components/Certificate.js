@@ -11,7 +11,7 @@ export default function Certificate(props) {
   const museumAttributes = props.museumattributes ? JSON.parse(decodeURIComponent(props.museumattributes)) : {};
 
   const { featured_image, media, title } = product;
-  const { rows, cols, year, medium, startDate, endDate, tiles = [] } = metafields;
+  const { rows, cols, year, medium, startDate, endDate, note, tiles = [] } = metafields;
 
   const tile = tiles.find((tile) => tile.position === parseInt(position));
   if (!tile) {
@@ -22,7 +22,7 @@ export default function Certificate(props) {
     { label: 'DAB #', value: tile?.position ? tile?.position : null },
     {
       label: 'Collector',
-      value: tile?.order?.customer ? tile.order.customer.firstname + ' ' + tile.order.customer.lastname : v,
+      value: tile?.order?.customer ? tile.order.customer.firstname + ' ' + tile.order.customer.lastname : null,
     },
     {
       label: 'Membership Active',
@@ -39,7 +39,7 @@ export default function Certificate(props) {
     {
       label: museum?.title,
       img: museum?.image.src,
-      value: metafields?.note ? <div className="value max-w-[15em]">{metafields?.note}</div> : null,
+      value: note ? <div className="value max-w-[15em]">{note}</div> : null,
     },
   ];
   return (

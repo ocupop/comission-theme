@@ -5,8 +5,15 @@
   endif
   assign url = product.handle | prepend: 'https://www.comission.art/products/'
 
-  assign istagram_url = item.product.metafields.comission.tiles | split: 'productId'
+  assign instagram_url = item.product.metafields.comission.tiles | split: 'productId'
+
+  if crosshairs_image
+    assign display_image = crosshairs_image
+  elsif tile_path
+    assign display_image = source_image
+  endif
 %}
+
 {%- capture twitter_text -%}
   Check out the piece of "{{product.title}}" {{artistBy}} I’ve just bought @CoMission_Art. DAB #{{position}} now has my name on it and {{museumAtts.twitter}} has a donation in my name.
 {%- endcapture -%}
@@ -16,8 +23,9 @@
 
 <div class="flex items-center gap-4 text-sm">
   <span>Share your artwork with your community!</span>
-  <div class="flex gap-4 text-sm items-center">
+  <div class="flex gap-2 text-sm items-center">
     <button
+      class="flex"
       data-modal-target="instagram-modal"
       data-modal-toggle="instagram-modal"
     >
@@ -74,8 +82,7 @@
           <div class="leftcol">
             <ol class="list-disc ml-4 mb-4">
               <li class="mb-2">
-                Download the image
-                <a href="{{image | image_url}}" class="text-primary underline underline" target="_blank">here</a>
+                Download the <a href="{{crosshairs_image}}" class="text-primary underline" target="_blank">image</a>
               </li>
               <li class="mb-2">Post image to Instagram</li>
               <li class="mb-2">Brag about your CoMission art!</li>
@@ -91,7 +98,7 @@
               height="500"
               class="m-auto w-full cover max-w-xs"
               alt="My DAB"
-              src="{{image | image_url}}"
+              src="{{display_image}}"
             >
           </div>
         </div>

@@ -23,40 +23,78 @@
           assign crosshairs_image = ta | replace: '"', '' | replace: 'crosshairsImage', '' | replace: ':http', 'http'
         endif
         if ta contains 'tilePath'
-          assign tile_path = ta | replace: '"', '' | replace: 'tilePath', '' | replace: ':http', 'http'
+          assign tile_image = ta | replace: '"', '' | replace: 'tilePath', '' | replace: ':http', 'http'
         endif
       endfor
     endif
   endfor
-
-  if crosshairs_image
-    assign social_media_image = crosshairs_image
-  elsif tile_path
-    assign social_media_image = tile_path
-  else
-    assign social_media_image = item.product.featured_image.src
-  endif
 %}
 
-<div class="grid gap-4 md:gap-10 md:grid-cols-3 lg:gap-20">
-  <div class="card-image position-relative relative">
-    <div class="relative">
-      <img
-        src="{{ item.product.featured_image.src | image_url: width: 533 }}"
-        class="fadeIn cover"
-        alt="{{ item.product.featured_image.alt | escape }}"
-        width="448"
-        height="448"
-      >
-
-      <div
-        class="__react-component"
-        data-component="ImageCrosshairs"
-        data-animate="true"
-        data-cols="{{ item.product.metafields.comission.cols }}"
-        data-rows="{{ item.product.metafields.comission.rows }}"
-        data-position="{{ item.properties.position }}"
-      ></div>
+{% for t in soldtiles %}
+  {% if t contains item.id %}
+    {% assign tile_array = t | split: ',' %}
+    {% for ta in tile_array %}
+      {% if ta contains 'certificate' %}
+        {% assign certificate = ta | replace: '"certificate":"', '' | replace: '""', '' %}
+      {% endif %}
+      {% if ta contains 'crosshairsImage' %}
+        {% assign crosshairs_image = ta
+          | replace: '"', ''
+          | replace: 'crosshairsImage', ''
+          | replace: ':http', 'http'
+        %}
+      {% endif %}
+      {% if ta contains 'tilePath' %}
+        {% assign tile_image = ta | replace: '"', '' | replace: 'tilePath', '' | replace: ':http', 'http' %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+{% endfor %}
+<div class="grid gap-4 md:gap-10 md:grid-cols-3 lg:gap-20 border shadow-md  p-4 py-6 md:p-8 lg:p-12 ">
+  <div class="card-image relative">
+    <div class="max-w-[448px] ">
+      {% comment %}
+        {% if crosshairs_image %}
+          <img
+            src="{{ crosshairs_image }}"
+            class="fadeIn cover"
+            alt="{{ item.product.featured_image.alt | escape }}"
+            width="448"
+            height="448"
+          >
+        {% else %}
+      {% endcomment %}
+      <div class="relative">
+        <img
+          src="{{ item.product.featured_image.src | image_url: width: 533 }}"
+          class="fadeIn cover"
+          alt="{{ item.product.featured_image.alt | escape }}"
+          width="448"
+          height="448"
+        >
+        <div
+          class="__react-component"
+          data-component="ImageCrosshairs"
+          data-animate="true"
+          data-cols="{{ item.product.metafields.comission.cols }}"
+          data-rows="{{ item.product.metafields.comission.rows }}"
+          data-position="{{ item.properties.position }}"
+        ></div>
+      </div>
+      {% comment %} {% endif %} {% endcomment %}
+      {% if tile_image %}
+        <div class="flex justify-center items-center gap-8 p-4 border border-gray-300 mt-4 bg-gray-100">
+          <div class="text-lg">Your Digital Art Block:</div>
+          <img
+            src="{{ tile_image }}"
+            class="fadeIn max-w-[150px] shadow-lg"
+            alt="DAB Number {{ item.properties.position }}"
+            width="auto"
+            height="auto"
+            style="max-width: 150px"
+          >
+        </div>
+      {% endif %}
     </div>
   </div>
 
@@ -118,7 +156,7 @@
       </div>
     {% endif %}
     <hr class="my-2">
-    <div class="flex flex-col md:flex-row gap-12 text-base">
+    <div class="flex flex-col md:flex-row gap-x-12 gap-y-6 text-base">
       <div>
         <h4 class="font-medium text-base">AR Filters</h4>
         <p class="">
@@ -166,7 +204,9 @@
       artist: artist,
       museum: museum,
       position: item.properties.position,
-      image: social_media_image
+      crosshairs_image: crosshairs_image,
+      tile_image: tile_image,
+      source_image: source_image
     %}
 
     {% comment %}
