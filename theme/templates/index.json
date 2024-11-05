@@ -25,11 +25,47 @@
             "text": "Collect todays’ contemporary masterpieces, connect with them in your own time and space, and support the causes you care about.",
             "text_style": "body"
           }
+        },
+        "feature_item_qinnKX": {
+          "type": "feature_item",
+          "settings": {
+            "title": "Collect",
+            "description": "Classic artworks for your screens and spaces",
+            "link": "#collect"
+          }
+        },
+        "feature_item_3WU8bW": {
+          "type": "feature_item",
+          "settings": {
+            "title": "Experience",
+            "description": "Exclusive features for CoMission collectors",
+            "link": "#experience"
+          }
+        },
+        "feature_item_6cteht": {
+          "type": "feature_item",
+          "settings": {
+            "title": "Foster",
+            "description": "Make a social impact",
+            "link": "#foster"
+          }
+        },
+        "feature_item_jQy4Lw": {
+          "type": "feature_item",
+          "settings": {
+            "title": "Connect",
+            "description": "A growing community",
+            "link": "#connect"
+          }
         }
       },
       "block_order": [
         "heading",
-        "text"
+        "text",
+        "feature_item_qinnKX",
+        "feature_item_3WU8bW",
+        "feature_item_6cteht",
+        "feature_item_jQy4Lw"
       ],
       "settings": {
         "background_image": "shopify://shop_images/comission-homepage-painting-background-image.jpg",
