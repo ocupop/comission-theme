@@ -14,9 +14,6 @@ export default function Certificate(props) {
   const { rows, cols, year, medium, startDate, endDate, note, tiles = [] } = metafields;
 
   const tile = tiles.find((tile) => tile.position === parseInt(position));
-  if (!tile) {
-    return <h3>Tile has not been sold</h3>;
-  }
 
   const dabDetails = [
     { label: 'DAB #', value: tile?.position ? tile?.position : null },
@@ -85,7 +82,7 @@ export default function Certificate(props) {
                 </div>
               ) : (
                 <div className="p-5 border">
-                  {/* This box will help us identify at a glace if the tile path is missing. */}
+                  <h3 className="m-0">Tile image not yet available</h3>
                 </div>
               )}
             </div>
