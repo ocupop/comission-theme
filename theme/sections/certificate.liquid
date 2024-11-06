@@ -84,7 +84,7 @@
   data-productmetafields="{{ product_meta | json | replace: "'", "&apos;" | escape }}"
   data-museum="{{ museum | json | replace: "'", "&apos;" | escape }}"
   data-artist="{{ artist | json | replace: "'", "&apos;" | escape }}"
-  data-museumattributes="{{ museum.metafields.comission.museumAttributes | replace: "'", "&apos;" | escape }}"
+  data-location="{{ museum.metafields.comission.location | replace: "'", "&apos;" | escape }}"
 ></div>
 
 {% schema %}
