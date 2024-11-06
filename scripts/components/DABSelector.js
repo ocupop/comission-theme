@@ -153,20 +153,6 @@ export default function DABSelector(props) {
   const purchaseTile = async (e, tile) => {
     const attributes = {
       position: tile.position.toString(),
-      // {key:"_tile_id",value:tile.id},
-      _product_id: id.toString().replace(/\D/g, ''),
-      _handle: handle,
-      _startdate: startDate || 'none',
-      _enddate: endDate || 'none',
-      _museum_name: museum ? museum.title : '',
-      _museum_handle: museum ? museum.handle : '',
-      _museum_id: museum ? museum.id.toString().replace(/\D/g, '') : '',
-      _museum_location:
-        museumAttributes?.city && museumAttributes?.state ? `${museumAttributes.city}, ${museumAttributes.state}` : '',
-      _museum_corporatename: museumAttributes?.corporateName ? museumAttributes.corporateName : '',
-      _museum_taxid: museumAttributes?.taxId ? museumAttributes.taxId : '',
-      _artist_name: artist ? artist.title : '',
-      _artist_handle: artist ? artist.handle : '',
     };
 
     let formData = {

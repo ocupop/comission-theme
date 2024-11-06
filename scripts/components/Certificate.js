@@ -3,7 +3,7 @@ import { format, parseISO } from 'date-fns';
 import ImageCrosshairs from './ImageCrosshairs.jsx';
 
 export default function Certificate(props) {
-  const position = props.position;
+  const position = parseInt(props.position);
   const product = JSON.parse(decodeURIComponent(props.product));
   const metafields = props.productmetafields ? JSON.parse(decodeURIComponent(props.productmetafields)) : {};
   const artist = props.artist ? JSON.parse(decodeURIComponent(props.artist)) : {};
@@ -11,15 +11,30 @@ export default function Certificate(props) {
   const museumAttributes = props.museumattributes ? JSON.parse(decodeURIComponent(props.museumattributes)) : {};
 
   const { featured_image, media, title } = product;
-  const { rows, cols, year, medium, startDate, endDate, note, tiles = [] } = metafields;
+  const { rows, cols, year, medium, startDate, endDate, note } = metafields;
 
-  const tile = tiles.find((tile) => tile.position === parseInt(position));
+  const tile =
+    !props.tilepath || !props.collector ? metafields?.tiles?.find((tile) => tile.position === position) : null;
+
+  // tilePath and collector are passed in from props. If props do not exist, extract from product metafields based on the position.
+  // (This allows us to generate an image BEFORE metafields are updated to include this data)
+  const tilePath = props.tilepath
+    ? `https://storage.googleapis.com/comission-application.appspot.com/${props.tilepath}`
+    : tile?.tilePath;
+  const collector = props.collector
+    ? decodeURIComponent(props.collector)
+    : tile?.order?.customer
+    ? tile.order.customer.firstname + ' ' + tile.order.customer.lastname
+    : null;
+
+  console.log('collector:: ', collector);
+  console.log('tilePath:: ', tilePath);
 
   const dabDetails = [
-    { label: 'DAB #', value: tile?.position ? tile?.position : null },
+    { label: 'DAB #', value: position ? position : null },
     {
       label: 'Collector',
-      value: tile?.order?.customer ? tile.order.customer.firstname + ' ' + tile.order.customer.lastname : null,
+      value: collector,
     },
     {
       label: 'Membership Active',
@@ -68,17 +83,17 @@ export default function Certificate(props) {
             )}
             <div className="relative w-full mt-[2em]" id="crosshairs">
               <img className="w-full" src={featured_image} alt={media[0].alt} />
-              {rows && cols && tile?.position && (
-                <ImageCrosshairs animate={false} cols={cols} rows={rows} position={tile.position} />
+              {rows && cols && position && (
+                <ImageCrosshairs animate={false} cols={cols} rows={rows} position={position} />
               )}
             </div>
           </div>
 
           <div className="flex flex-col rightcol pl-[4em] pt-[2.1em] w-[43%]">
             <div className="dab-image">
-              {tile?.tilePath ? (
+              {tilePath ? (
                 <div className="col-span-2 lg:col-span-3">
-                  <img src={tile.tilePath} className="tile-image h-[17em] w-auto" id="DAB" alt="DAB" />
+                  <img src={tilePath} className="tile-image h-[17em] w-auto" id="DAB" alt="DAB" />
                 </div>
               ) : (
                 <div className="p-5 border">
@@ -100,17 +115,6 @@ export default function Certificate(props) {
                     <div className="value w-[70%] text-[1.3em] font-semibold tracking-wider">{item.value}</div>
                   </li>
                 ))}
-
-              {/* Print PDF Button */}
-              {/*
-              {tile?.certificate && (
-                <div className="mt-6 print-btn">
-                  <a href={tile.certificate} className="inline-block px-4 py-2 text-xl text-white bg-primary">
-                    Download Certificate
-                  </a>
-                </div>
-              )}
-              */}
             </ul>
           </div>
         </main>

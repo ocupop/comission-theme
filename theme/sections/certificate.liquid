@@ -17,10 +17,18 @@
 
 {% for item in queryArray %}
   {%- assign keyValue = item | split: '=' -%}
-  {% if keyValue[0] == 'id' %}
-    {% assign idArr = keyValue[1] | split: '-' %}
-    {% assign productId = idArr[0] | plus: 0 %}
-    {% assign position = idArr[1] %}
+
+  {% if keyValue[0] == 'product' %}
+    {% assign productId = keyValue[1] | plus: 0 %}
+  {% endif %}
+  {% if keyValue[0] == 'dab' %}
+    {% assign position = keyValue[1] %}
+  {% endif %}
+  {% if keyValue[0] == 'collector' %}
+    {% assign collector = keyValue[1] %}
+  {% endif %}
+  {% if keyValue[0] == 'tile' %}
+    {% assign tile = keyValue[1] %}
   {% endif %}
 {%- endfor -%}
 
@@ -41,9 +49,11 @@
 {% endunless %}
 
 {% assign product_meta = product.metafields.comission %}
-{% unless product_meta.tiles %}
-  <h1>No Sold Tiles for this product!</h1>
-{% endunless %}
+{% comment %}
+  {% unless product_meta.tiles %}
+    <h1>No Sold Tiles for this product!</h1>
+  {% endunless %}
+{% endcomment %}
 
 {% assign artist_id = product_meta.artist | split: '/' | last | plus: 0 %}
 
@@ -64,12 +74,14 @@
   class="__react-component responsive"
   data-component="Certificate"
   data-position="{{ position }}"
+  {% comment %}
+    "collector" and "tilepath" is optional. if it does not exist, it will be extracted from the product metafields
+  {% endcomment %}
+  data-collector="{{ collector | replace: "'", "&apos;" | replace: "+", " " | escape }}"
+  data-tilepath="{{ tile | escape }}"
+
   data-product="{{ product | json | replace: "'", "&apos;" | escape }}"
   data-productmetafields="{{ product_meta | json | replace: "'", "&apos;" | escape }}"
-  {% comment %}
-    data-cart='{{ cart.items | json | replace: "'", "&apos;" | escape }}'
-    data-variants='{{ variants | replace: "'", "&apos;" | escape }}'
-  {% endcomment %}
   data-museum="{{ museum | json | replace: "'", "&apos;" | escape }}"
   data-artist="{{ artist | json | replace: "'", "&apos;" | escape }}"
   data-museumattributes="{{ museum.metafields.comission.museumAttributes | replace: "'", "&apos;" | escape }}"

@@ -137,7 +137,7 @@
     {% if certificate %}
       <div class="mb-8">
         <a
-          href="/pages/certificate?id={{item.product.id}}-{{item.properties.position }}"
+          href="/pages/certificate?product={{item.product.id}}&dab={{item.properties.position }}"
           class="flex text-xl font-normal text-primary hover:text-black modal-link"
           data-width="965"
           data-height="800"
@@ -154,6 +154,8 @@
           {% render 'icons', name: 'arrow-right' %}
         </a>
       </div>
+    {% else %}
+      <div class="text-lg border my-4 p-4">Your DAB certificate is being processed, please check back shortly.</div>
     {% endif %}
     <hr class="my-2">
     <div class="flex flex-col md:flex-row gap-x-12 gap-y-6 text-base">
