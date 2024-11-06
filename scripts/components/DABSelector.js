@@ -8,11 +8,8 @@ export default function DABSelector(props) {
   const product = JSON.parse(decodeURIComponent(props.product));
   const metafields = JSON.parse(decodeURIComponent(props.productmetafields));
   const variants = JSON.parse(decodeURIComponent(props.variants));
-  const artist = JSON.parse(decodeURIComponent(props.artist));
-  const museum = JSON.parse(decodeURIComponent(props.museum));
-  const museumAttributes = JSON.parse(decodeURIComponent(props.museumattributes));
   const cartItems = JSON.parse(decodeURIComponent(props.cart));
-  const { id, handle } = product;
+  const { id } = product;
   const { rows, cols, unavailable, startDate, endDate, tiles: initialTiles = [] } = metafields;
 
   //  const {linesAdd, lines} = useCart();
@@ -153,20 +150,6 @@ export default function DABSelector(props) {
   const purchaseTile = async (e, tile) => {
     const attributes = {
       position: tile.position.toString(),
-      // {key:"_tile_id",value:tile.id},
-      _product_id: id.toString().replace(/\D/g, ''),
-      _handle: handle,
-      _startdate: startDate || 'none',
-      _enddate: endDate || 'none',
-      _museum_name: museum ? museum.title : '',
-      _museum_handle: museum ? museum.handle : '',
-      _museum_id: museum ? museum.id.toString().replace(/\D/g, '') : '',
-      _museum_location:
-        museumAttributes?.city && museumAttributes?.state ? `${museumAttributes.city}, ${museumAttributes.state}` : '',
-      _museum_corporatename: museumAttributes?.corporateName ? museumAttributes.corporateName : '',
-      _museum_taxid: museumAttributes?.taxId ? museumAttributes.taxId : '',
-      _artist_name: artist ? artist.title : '',
-      _artist_handle: artist ? artist.handle : '',
     };
 
     let formData = {

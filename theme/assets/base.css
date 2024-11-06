@@ -2513,11 +2513,17 @@ small {
 .max-w-4xl {
   max-width: 56rem;
 }
+.max-w-\[150px\] {
+  max-width: 150px;
+}
 .max-w-\[15em\] {
   max-width: 15em;
 }
 .max-w-\[200px\] {
   max-width: 200px;
+}
+.max-w-\[448px\] {
+  max-width: 448px;
 }
 .max-w-full {
   max-width: 100%;
@@ -2884,9 +2890,6 @@ small {
 .gap-10 {
   gap: 2.5rem;
 }
-.gap-12 {
-  gap: 3rem;
-}
 .gap-2 {
   gap: 0.5rem;
 }
@@ -2912,11 +2915,14 @@ small {
   -moz-column-gap: 3rem;
        column-gap: 3rem;
 }
+.gap-y-12 {
+  row-gap: 3rem;
+}
 .gap-y-2 {
   row-gap: 0.5rem;
 }
-.gap-y-20 {
-  row-gap: 5rem;
+.gap-y-6 {
+  row-gap: 1.5rem;
 }
 .space-x-2 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;

@@ -16,8 +16,8 @@
   {% if customer %}
     <div class="customer account">
       <h2>My CoMission Collection</h2>
-      <div class="mt-6 border shadow-md flex flex-col gap-y-20 p-4 py-6 md:p-8 lg:p-12 ">
-        {% assign tiles = item.product.metafields.comission.tiles | split: 'productId' %}
+      <div class="mt-6 flex flex-col gap-y-12">
+        {% comment %} {% assign tiles = item.product.metafields.comission.tiles | split: 'productId' %} {% endcomment %}
         {% paginate customer.orders by 20 %}
           {%- if customer.orders.size > 0 -%}
             {%- for order in customer.orders -%}
