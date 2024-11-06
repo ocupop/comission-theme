@@ -8,8 +8,8 @@ export default function Certificate(props) {
   const metafields = props.productmetafields ? JSON.parse(decodeURIComponent(props.productmetafields)) : {};
   const artist = props.artist ? JSON.parse(decodeURIComponent(props.artist)) : {};
   const museum = props.museum ? JSON.parse(decodeURIComponent(props.museum)) : {};
-  const museumAttributes = props.museumattributes ? JSON.parse(decodeURIComponent(props.museumattributes)) : {};
-
+  const location = props.location ? decodeURIComponent(props.location) : null;
+  console.log('location,', location);
   const { featured_image, media, title } = product;
   const { rows, cols, year, medium, startDate, endDate, note } = metafields;
 
@@ -43,11 +43,12 @@ export default function Certificate(props) {
           ? format(parseISO(startDate), 'MM/dd/yyyy') + ' - ' + format(parseISO(endDate), 'MM/dd/yyyy')
           : null,
     },
+
     { label: 'Artist', value: artist?.title },
     { label: 'Year', value: year },
     { label: 'Medium', value: medium },
     { label: 'On View', value: museum?.title },
-    { label: 'Location', value: museumAttributes ? museumAttributes?.city + ', ' + museumAttributes?.state : null },
+    { label: 'Location', value: location },
     {
       label: museum?.title,
       img: museum?.image.src,

@@ -14,10 +14,6 @@
 -%}
 
 {% capture variants %}[{% for variant in product.variants %}{"id": "{{ variant.id }}","price": "{{ variant.price | divided_by: 100 }}","title": "{{ variant.title }}","tiles": "{{ variant.metafields.comission.tiles }}"}{% unless forloop.last %},{% endunless %}{% endfor %}]{% endcapture %}
-{% comment %}
-  {% capture museum %}{"id": "123456789012345","handle": "museum-handle","title": "Museum Title","museumAttributes": "xxx"}{% endcapture %}
-  {% capture artist %}{"handle": "artist-handle","title": "Artist Title"}{% endcapture %}
-{% endcomment %}
 
 {% assign artist_id = product.metafields.comission.artist | split: '/' | last | plus: 0 %}
 {% assign museum_id = product.metafields.comission.institution | split: '/' | last | plus: 0 %}
@@ -139,7 +135,7 @@
             data-museum='{{ museum | json | replace: "'", "&apos;" | escape }}'
             data-artist='{{ artist | json | replace: "'", "&apos;" | escape }}'
             data-productmetafields='{{ meta | json | replace: "'", "&apos;" | escape }}'
-            data-museumattributes='{{ museum.metafields.comission.museumAttributes | replace: "'", "&apos;" | escape }}'></div>
+            ></div>
         {%- endform -%}
       </product-form>
     </div>

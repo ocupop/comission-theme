@@ -8,11 +8,8 @@ export default function DABSelector(props) {
   const product = JSON.parse(decodeURIComponent(props.product));
   const metafields = JSON.parse(decodeURIComponent(props.productmetafields));
   const variants = JSON.parse(decodeURIComponent(props.variants));
-  const artist = JSON.parse(decodeURIComponent(props.artist));
-  const museum = JSON.parse(decodeURIComponent(props.museum));
-  const museumAttributes = JSON.parse(decodeURIComponent(props.museumattributes));
   const cartItems = JSON.parse(decodeURIComponent(props.cart));
-  const { id, handle } = product;
+  const { id } = product;
   const { rows, cols, unavailable, startDate, endDate, tiles: initialTiles = [] } = metafields;
 
   //  const {linesAdd, lines} = useCart();
