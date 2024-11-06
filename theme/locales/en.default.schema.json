@@ -779,6 +779,20 @@
               "label": "Use outline button style"
             }
           }
+        },
+        "feature_item": {
+          "name": "Feature Item",
+          "settings": {
+            "title": {
+              "label": "Title"
+            },
+            "description": {
+              "label": "Description"
+            },
+            "link": {
+              "label": "Link"
+            }
+          }
         }
       },
       "presets": {
@@ -1938,7 +1952,15 @@
       }
     },
     "page": {
-      "name": "Page"
+      "name": "Page",
+      "settings": {
+        "page": {
+          "label": "Page"
+        }
+      },
+      "presets": {
+        "name": "Page"
+      }
     },
     "rich-text": {
       "name": "Rich text",
