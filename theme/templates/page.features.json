@@ -56,19 +56,11 @@
             "copy": "<p>Each DAB of a CoMission’ed artwork comes with a selection of unique features, which will include some or all of those listed below. Each artwork listing details the specific features that come with that piece.</p>",
             "text_style": "text-default"
           }
-        },
-        "button_group_JtcXQy": {
-          "type": "button_group",
-          "settings": {
-            "button_label_1": "Button label",
-            "button_link_1": ""
-          }
         }
       },
       "block_order": [
         "heading_YNGdm3",
-        "copy_JMbnPY",
-        "button_group_JtcXQy"
+        "copy_JMbnPY"
       ],
       "settings": {
         "image": "shopify://shop_images/comission-illustration-phonedoor.svg",
@@ -198,20 +190,6 @@
     "image_borders_j6GQKx": {
       "type": "image-borders",
       "blocks": {
-        "heading_4D3m4Y": {
-          "type": "heading",
-          "settings": {
-            "heading": "Semantic Heading",
-            "heading_size": "text-heading"
-          }
-        },
-        "copy_mx7Mii": {
-          "type": "copy",
-          "settings": {
-            "copy": "<p>Enter content blocks to describe your artwork, product, artist, or insitutional cause.</p>",
-            "text_style": "text-default"
-          }
-        },
         "button_group_BbXazc": {
           "type": "button_group",
           "settings": {
@@ -222,8 +200,6 @@
         }
       },
       "block_order": [
-        "heading_4D3m4Y",
-        "copy_mx7Mii",
         "button_group_BbXazc"
       ],
       "settings": {
