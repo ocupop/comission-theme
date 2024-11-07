@@ -71,7 +71,8 @@
           "type": "button_group",
           "settings": {
             "button_label_1": "Explore our artwork",
-            "button_link_1": "https://www.comission.art/collections/all"
+            "button_link_1": "shopify://collections/featured-art",
+            "button_style": "btn-secondary"
           }
         }
       },
