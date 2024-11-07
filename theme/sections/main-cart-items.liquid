@@ -56,9 +56,24 @@
                   </th>
                 </tr>
               </thead>
-
               <tbody class="tablet:block">
                 {%- for item in cart.items -%}
+                  {% assign product = all_products[item.product.handle] %}
+                  {% assign artist_id = product.metafields.comission.artist
+                    | replace: 'gid://shopify/Collection/', ''
+                  %}
+                  {% for coll in collections %}
+                    {% if artist_id contains coll.id %}
+                      {% assign artist = coll %}
+                    {% endif %}
+                  {% endfor -%}
+                  {% assign rows = product.metafields.comission.rows %}
+                  {% assign cols = product.metafields.comission.cols %}
+
+                  {% assign zeropos = item.properties.position | minus: 1 %}
+                  {% assign position_row = zeropos | divided_by: cols | floor | plus: 1 %}
+                  {% assign position_col = zeropos | modulo: cols | plus: 1 %}
+
                   <tr class="cart-item tablet:block" id="CartItem-{{ item.index | plus: 1 }}">
                     <td class="cart-item__media md:w-1/2 pt-4 tablet:block">
                       <div class="flex flex-col md:flex-row items-center gap-4">
@@ -78,42 +93,37 @@
                               class="__react-component"
                               data-component="ImageCrosshairs"
                               data-animate="true"
-                              data-cols="{{ all_products[item.properties._handle].metafields.comission.cols }}"
-                              data-rows="{{ all_products[item.properties._handle].metafields.comission.rows }}"
+                              data-cols="{{ cols }}"
+                              data-rows="{{ rows }}"
                               data-position="{{ item.properties.position }}"
                             ></div>
                           </div>
                         {% endif %}
 
-                        <div class="product-title text-center md:text-left">
+                        <div class="product-title text-center md:text-left w-full md:w-1/2">
                           {%- if settings.show_vendor -%}
                             <p class="caption-with-letter-spacing">{{ item.product.vendor }}</p>
                           {%- endif -%}
                           <a href="{{ item.url }}" class="cart-item__name h4 break font-bold">
                             {{- item.product.title | escape -}}
                           </a>
-                          <div>by {{ collections[item.properties._artist_handle].title }}</div>
+                          <div class="font-medium">by {{ artist.title }}</div>
+                          <div>{{ product.metafields.comission.medium }}</div>
+                          <div>{{ product.metafields.comission.year }}</div>
                         </div>
                       </div>
                     </td>
                     <td class="cart-item__dab-details tablet:block">
-                      <dl>
-                        <dt class="font-bold">Unique Dab:</dt>
-                        <dd>
-                          #{{ item.properties.position }}
-                          <span class="text-xs text-gray-600"
-                            >(Row {{ all_products[item.properties._handle].metafields.comission.rows }}, Column
-                            {{ all_products[item.properties._handle].metafields.comission.cols }})</span
-                          >
-                        </dd>
-
-                        <dt class="font-bold mt-3">Membership Active:</dt>
-                        <dd>{{ item.properties._startdate }} - {{ item.properties._enddate }}</dd>
-                      </dl>
+                      <div class=" ">Unique Dab: #{{ item.properties.position }}</div>
+                      <!--
+                        <div class="text-xs text-gray-600 mt-1">(Row {{ position_row }}, Column {{ position_col }})</div>
+                      -->
+                      <div class="text-xs text-gray-600 mt-2">
+                        Membership Expires: {{ product.metafields.comission.endDate | date: '%b %d, %Y' }}
+                      </div>
                     </td>
 
                     <td class="cart-item__totals right small-hide tablet:block">
-                      {%- render 'loading-spinner' -%}
                       <div class="cart-item__price-wrapper">
                         {%- if item.original_line_price != item.final_line_price -%}
                           <dl class="cart-item__discounted-prices">
@@ -256,6 +266,7 @@
                               {% render 'icons', name: 'trash', class: 'size-6' %}
                             </a>
                           </cart-remove-button>
+                          {%- render 'loading-spinner' -%}
                         </div>
 
                         <div class="cart-item__error" id="Line-item-error-{{ item.index | plus: 1 }}" role="alert">
