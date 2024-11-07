@@ -8,19 +8,25 @@
 <div class="grid gap-2 mb-2">
   <h2 class="mb-0 leading-tight h4">{{ artist.title }}</h2>
   <p>
-    {%- if meta.year -%}<span>{{ meta.year }}</span><br/>{%- endif -%}
-    {%- if meta.medium -%}<span>{{ meta.medium }}</span>{%- endif -%}
+    {% if show_year and meta.year -%}
+      <span>{{ meta.year }}</span><br>
+    {%- endif -%}
+    {%- if show_medium and meta.medium -%}
+      <span>{{ meta.medium }}</span>
+    {%- endif -%}
   </p>
   {% comment %} <p class="w-full text-fineprint">{{ meta |  json }}</p> {% endcomment %}
-  <p>
-
-  </p>
+  <p></p>
   <p class="text-body">
-    <strong>{{ institution.title }}</strong><br/>
+    <strong>{{ institution.title }}</strong><br>
     <span class="text-muted">{{ institution.metafields.comission.location }}</span>
   </p>
   <p>
-    <strong>{{ sold }} of {{ dabs }} DABs available</strong><br/>
-    <span class="text-muted">Membership Expires: {{ membership_end }}</span>
+    {% if show_available %}
+      <strong>{{ sold }} of {{ dabs }} DABs available</strong><br>
+    {% endif %}
+    {% if show_expiration %}
+      <span class="text-muted">Membership Expires: {{ membership_end }}</span>
+    {% endif %}
   </p>
 </div>
