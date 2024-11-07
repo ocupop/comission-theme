@@ -2355,6 +2355,9 @@ small {
 .mt-\[2em\] {
   margin-top: 2em;
 }
+.mt-10 {
+  margin-top: 2.5rem;
+}
 .block {
   display: block;
 }
@@ -3481,6 +3484,12 @@ small {
 }
 .pt-screen {
   padding-top: var(--screen-height, 100vh);
+}
+.pr-4 {
+  padding-right: 1rem;
+}
+.pr-10 {
+  padding-right: 2.5rem;
 }
 .text-left {
   text-align: left;
@@ -4620,6 +4629,10 @@ small {
 
   .lg\:pt-48 {
     padding-top: 12rem;
+  }
+
+  .lg\:pr-10 {
+    padding-right: 2.5rem;
   }
 
   .lg\:text-center {

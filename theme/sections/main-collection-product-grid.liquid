@@ -1,9 +1,11 @@
-{% comment %} {%- if section.settings.quick_add == 'bulk' -%}
-  <script src="{{ 'quick-add-bulk.js' | asset_url }}" defer="defer"></script>
-  <script src="{{ 'quantity-popover.js' | asset_url }}" defer="defer"></script>
-  <script src="{{ 'price-per-item.js' | asset_url }}" defer="defer"></script>
-  <script src="{{ 'quick-order-list.js' | asset_url }}" defer="defer"></script>
-{%- endif -%} {% endcomment %}
+{% comment %}
+  {%- if section.settings.quick_add == 'bulk' -%}
+    <script src="{{ 'quick-add-bulk.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'quantity-popover.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'price-per-item.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'quick-order-list.js' | asset_url }}" defer="defer"></script>
+  {%- endif -%}
+{% endcomment %}
 
 {%- style -%}
   .section-{{ section.id }}-padding {
@@ -18,12 +20,10 @@
     }
   }
 {%- endstyle -%}
-{% comment %}
-  {%- render 'section-header',
-    title: 'Collect'
-    color_scheme: section.settings.color_scheme
-  %}
-{% endcomment %}
+
+<div class="bg-black pt-4 mt-20 mb-10">
+  {%- render 'section-header', title: 'Collect', color_scheme: section.settings.color_scheme %}
+</div>
 
 <div class="section-{{ section.id }}-padding color-{{ section.settings.color_scheme }}">
   <div class="container">
