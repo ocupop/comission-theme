@@ -2355,12 +2355,6 @@ small {
 .mt-\[2em\] {
   margin-top: 2em;
 }
-.mb-5 {
-  margin-bottom: 1.25rem;
-}
-.ml-10 {
-  margin-left: 2.5rem;
-}
 .block {
   display: block;
 }
@@ -3350,6 +3344,9 @@ small {
 .pl-2 {
   padding-left: 0.5rem;
 }
+.pl-8 {
+  padding-left: 2rem;
+}
 .pl-\[0\.7em\] {
   padding-left: 0.7em;
 }
@@ -3490,15 +3487,6 @@ small {
 }
 .pt-screen {
   padding-top: var(--screen-height, 100vh);
-}
-.pl-10 {
-  padding-left: 2.5rem;
-}
-.pl-5 {
-  padding-left: 1.25rem;
-}
-.pl-8 {
-  padding-left: 2rem;
 }
 .text-left {
   text-align: left;
@@ -4011,9 +3999,6 @@ small {
     opacity: 1;
     transform: translateX(0);
   }
-}
-.last\:mb-10:last-child {
-  margin-bottom: 2.5rem;
 }
 .last\:bg-primary:last-child {
   --tw-bg-opacity: 1;
