@@ -12,6 +12,8 @@
     "template": {
       "type": "template-contact",
       "settings": {
+        "title": "Contact Us",
+        "content": "<p>We'd love to hear from you. Just send us a message, and we'll respond within 24 hours.</p>"
       }
     }
   },
