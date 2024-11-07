@@ -2911,6 +2911,9 @@ small {
 .gap-px {
   gap: 1px;
 }
+.gap-12 {
+  gap: 3rem;
+}
 .gap-x-12 {
   -moz-column-gap: 3rem;
        column-gap: 3rem;
@@ -2923,6 +2926,9 @@ small {
 }
 .gap-y-6 {
   row-gap: 1.5rem;
+}
+.gap-y-20 {
+  row-gap: 5rem;
 }
 .space-x-2 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
