@@ -152,7 +152,6 @@
           "secondary_button_label": "#121212",
           "secondary_button_background": "",
           "secondary_button_outline": "#ffffff",
-          "text_button_label": "#3737f3",
           "shadow": "#121212"
         }
       },
@@ -167,7 +166,6 @@
           "secondary_button_label": "#efefef",
           "secondary_button_background": "",
           "secondary_button_outline": "#ffffff",
-          "text_button_label": "#FFFFFF",
           "shadow": "#121212"
         }
       },
@@ -182,7 +180,6 @@
           "secondary_button_label": "#ffffff",
           "secondary_button_background": "",
           "secondary_button_outline": "#ffffff",
-          "text_button_label": "#ffffff",
           "shadow": "#121212"
         }
       }

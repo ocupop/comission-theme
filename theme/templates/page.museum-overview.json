@@ -106,8 +106,7 @@
           "type": "button_group",
           "settings": {
             "button_label_1": "Explore Features",
-            "button_link_1": "shopify://pages/features",
-            "button_style": "btn-text"
+            "button_link_1": "shopify://pages/features"
           }
         }
       },
@@ -146,8 +145,7 @@
           "type": "button_group",
           "settings": {
             "button_label_1": "Start a Conversation",
-            "button_link_1": "shopify://pages/contact-us",
-            "button_style": "btn-primary"
+            "button_link_1": "shopify://pages/contact-us"
           }
         }
       },

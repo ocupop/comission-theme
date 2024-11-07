@@ -943,7 +943,18 @@
           "name": "Copy",
           "settings": {
             "label": "Copy",
-            "default": "<p>Enter content blocks to describe your artwork, product, artist, or insitutional cause.<\/p>"
+            "text_style": {
+              "label": "Text style",
+              "options__1": {
+                "label": "Default"
+              },
+              "options__2": {
+                "label": "Uppercase"
+              },
+              "options__3": {
+                "label": "Highlight"
+              }
+            }
           }
         },
         "button_group": {
@@ -1016,7 +1027,18 @@
           "name": "Copy",
           "settings": {
             "label": "Copy",
-            "default": "<p>Enter content blocks to describe your artwork, product, artist, or insitutional cause.<\/p>"
+            "text_style": {
+              "label": "Text style",
+              "options__1": {
+                "label": "Default"
+              },
+              "options__2": {
+                "label": "Uppercase"
+              },
+              "options__3": {
+                "label": "Highlight"
+              }
+            }
           }
         },
         "button_group": {
