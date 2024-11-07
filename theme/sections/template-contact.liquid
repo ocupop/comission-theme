@@ -3,8 +3,8 @@
     <div class="grid lg:grid-cols-12">
       <div class="lg:col-span-4">
         <div class="p-10 bg-white z-30 relative">
-          <h1 class="text-3xl font-bold mb-4">{{ page.title }}</h1>
-          {{ page.content }}
+          <h1 class="text-3xl font-bold mb-4">{{ section.settings.title }}</h1>
+          {{ section.settings.content }}
         </div>
       </div>
       <div class="lg:col-span-8">
@@ -106,3 +106,30 @@
     style="background-image: url({{ 'comission-painting-museumpartners-cta-contact.jpg' | asset_url }});"
   ></div>
 </section>
+
+{% schema %}
+{
+  "name": "Contact Content",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Contact Us"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Content",
+      "default": "<p>We'd love to hear from you! Please fill out the form below.</p>"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Contact Content"
+    }
+  ]
+}
+{% endschema %}
