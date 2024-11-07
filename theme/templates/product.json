@@ -1,28 +1,37 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
       "type": "main-product",
       "blocks": {
-        "buy_buttons": {
-          "type": "buy_buttons",
-          "settings": {
-          }
-        },
         "note": {
           "type": "text",
           "settings": {
-            "text": "<h4><strong>Collect your DAB and support its cause.<\/strong><\/h4><p>{{ product.metafields.comission.note.value }}<\/p>"
+            "text": "Collect your DAB and support its cause.",
+            "text_style": "body"
           }
         }
       },
       "block_order": [
-        "buy_buttons",
         "note"
       ],
       "settings": {
+        "show_year": true,
+        "show_medium": true,
+        "show_available": true,
+        "show_expiration": true,
+        "dab_button_label": "Select your DAB",
+        "show_starting_price": true,
         "padding_top": 6,
-        "padding_bottom": 6,
-        "color_scheme": "scheme-1"
+        "padding_bottom": 6
       }
     }
   },

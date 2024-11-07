@@ -1,5 +1,5 @@
 {%- liquid
-  assign section_color_scheme = 'color-' | append: section.settings.color_scheme
+  assign section_color_scheme = 'color-scheme-1'
   assign section_padding_top = 'pt-' | append: section.settings.padding_top
   assign section_padding_bottom = 'pb-' | append: section.settings.padding_bottom
   assign artist = product.metafields.comission.artist
@@ -47,17 +47,18 @@
       <div class="">
         {% comment %} {%- assign product_form_id = 'product-form-' | append: section.id -%} {% endcomment %}
         <h1 class="font-normal h3">{{ product.title | escape }}</h1>
-        {% render 'art-meta', meta: product.metafields.comission %}
-        {%- render 'dab-selector', product: product, product_form_id: product_form_id, section_id: section.id -%}
-
-        <small class="text-sm">DAB's starting from: {{ product.price | money_with_currency }}</small>
-
+        {% render 'art-meta', meta: product.metafields.comission, show_expiration: section.settings.show_expiration, show_medium: section.settings.show_medium, show_available: section.settings.show_available, show_year: section.settings.show_year  %}
+        {%- render 'dab-selector', product: product, product_form_id: product_form_id, section_id: section.id, button_label: section.settings.dab_button_label -%}
+        {%  if section.settings.show_starting_price %}
+          <small class="text-sm">DAB's starting from: {{ product.price | money_with_currency }}</small>
+        {% endif %}
         <div class="my-5">
           {%- for block in section.blocks -%}
             {%- case block.type -%}
               {%- when 'text' -%}
                 <div class="rte">
-                  {{ block.settings.text }}
+                  <h4>{{ block.settings.text }}</h4>
+                  <p>{{ product.metafields.comission.note.value }}</p>
                 </div>
             {%- endcase -%}
           {%- endfor -%}
@@ -232,11 +233,42 @@
     }
   ],
   "settings": [
+
     {
-      "type": "color_scheme",
-      "id": "color_scheme",
-      "label": "t:sections.all.colors.label",
-      "default": "scheme-1"
+      "type": "checkbox",
+      "id": "show_year",
+      "label": "Show Year",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_medium",
+      "label": "Show medium",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_available",
+      "label": "Show available dabs",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_expiration",
+      "label": "Show DAB Expiration on the page",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "dab_button_label",
+      "label": "DAB Selector Button label",
+      "default": "Select your DAB"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_starting_price",
+      "label": "Show DAB Starting Price",
+      "default": true
     },
     {
       "type": "header",
