@@ -16,22 +16,9 @@
       "settings": {
         "menu": "main-menu"
       }
-    },
-    "announcement-bar": {
-      "type": "announcement-bar",
-      "disabled": true,
-      "settings": {
-        "color_scheme": "",
-        "enable_sticky": true,
-        "autoplay": true,
-        "cycle_speed": 5,
-        "desktop_font_size": 11,
-        "mobile_font_size": 10
-      }
     }
   },
   "order": [
-    "header",
-    "announcement-bar"
+    "header"
   ]
 }
