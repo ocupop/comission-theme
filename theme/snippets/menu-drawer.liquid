@@ -3,7 +3,7 @@
   data-drawer-target="menu-drawer"
   data-drawer-show="menu-drawer"
 >
-  {% render 'icons' name: 'menu' %}
+  {% render 'icons', name: 'menu' %}
 </button>
 
 <div
@@ -11,8 +11,13 @@
   data-drawer="menu-drawer"
   class="fixed top-0 left-0 z-40 w-full h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-white"
 >
-  <button type="button" data-drawer-hide="menu-drawer" aria-controls="menu-drawer" class="text-sm w-8 h-8 absolute top-2.5 end-2.5 flex items-center justify-center" >
-    {% render 'icons' name: 'close' %}
+  <button
+    type="button"
+    data-drawer-hide="menu-drawer"
+    aria-controls="menu-drawer"
+    class="text-sm w-8 h-8 absolute top-2.5 end-2.5 flex items-center justify-center"
+  >
+    {% render 'icons', name: 'close' %}
     <span class="sr-only">Close menu</span>
   </button>
   <div class="h-full">
@@ -20,13 +25,13 @@
     <ul class="mx-2 my-6 space-y-2">
       {%- for link in section.settings.menu.links -%}
         <li class="hover:bg-gray-100 last:hover:bg-primary last:bg-primary last:text-white">
-          {% comment %} {%- if link.links != blank -%}
-            <button class="nav-link animate-slideright">
+          {%- if link.links != blank -%}
+            <button class="block px-4 py-2 animate-slideright">
               {{ link.title | escape }}
             </button>
-            <ul class="dropdown-menu group-hover:block" role="list" tabindex="-1">
+            <ul class="dropdown-menu group-hover:block pl-8 pb-2" role="list" tabindex="-1">
               {%- for childlink in link.links -%}
-                <li>
+                <li class="my-4">
                   {%- if childlink.links == blank -%}
                     <a
                       href="{{ childlink.url }}"
@@ -42,16 +47,16 @@
               {%- endfor -%}
             </ul>
           {%- else -%}
-          {%- endif -%} {% endcomment %}
-          <a
-            href="{{ link.url }}"
-            class=" block px-4 py-2 animate-slideright{% if link.current %} active{% endif %}"
-            {% if link.current %}
-              aria-current="page"
-            {% endif %}
-          >
-            {{ link.title | escape }}
-          </a>
+            <a
+              href="{{ link.url }}"
+              class=" block px-4 py-2 animate-slideright{% if link.current %} active{% endif %}"
+              {% if link.current %}
+                aria-current="page"
+              {% endif %}
+            >
+              {{ link.title | escape }}
+            </a>
+          {%- endif -%}
         </li>
       {%- endfor -%}
     </ul>
