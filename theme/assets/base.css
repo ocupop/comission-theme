@@ -3344,6 +3344,9 @@ small {
 .pl-2 {
   padding-left: 0.5rem;
 }
+.pl-8 {
+  padding-left: 2rem;
+}
 .pl-\[0\.7em\] {
   padding-left: 0.7em;
 }
@@ -3484,9 +3487,6 @@ small {
 }
 .pt-screen {
   padding-top: var(--screen-height, 100vh);
-}
-.pl-8 {
-  padding-left: 2rem;
 }
 .text-left {
   text-align: left;
