@@ -159,24 +159,27 @@
     {% endif %}
     <hr class="my-2">
     <div class="flex flex-col md:flex-row gap-x-12 gap-y-6 text-base">
-      <div>
-        <h4 class="font-medium text-base">AR Filters</h4>
-        <p class="">
-          Instagram:
-          <a
-            href="https://www.instagram.com/ar/834804298668862/"
-            title="Instagram Filter"
-            class="underline text-primary"
-          >
-            Download Filter
-          </a>
-          <br>
-          TikTok:
-          <a href="https://www.tiktok.com/t/ZPRKyUAyC/ " title="TikTok Filter" class="underline text-primary">
-            Download Filter
-          </a>
-        </p>
-      </div>
+      {% if item.product.metafields.comission.ar_filters %}
+        <div>
+          <h4 class="font-medium text-base">AR Filters</h4>
+          <div>
+            {% for f in item.product.metafields.comission.ar_filters.value -%}
+              <div>
+                <span>{{ f.name }}:</span>
+                <a
+                  href="{{ f.url }}"
+                  title="Instagram Filter"
+                  class="underline text-primary"
+                  target="_blank"
+                >
+                  {{ f.link_label }}
+                </a>
+              </div>
+            {%- endfor %}
+          </div>
+        </div>
+      {% endif %}
+
       <div>
         <h4 class="font-medium text-base">Virtual Gallery</h4>
 
@@ -199,7 +202,7 @@
       </div>
     </div>
 
-    <hr class="my-2">
+    <hr class="my-4">
 
     {% render 'social-share-dab',
       product: item.product,
