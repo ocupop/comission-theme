@@ -729,6 +729,24 @@
             "heading": {
               "label": "Heading",
               "default": "Image banner"
+            },
+            "heading_size": {
+              "label": "Heading size",
+              "options__1": {
+                "label": "Extra Small"
+              },
+              "options__2": {
+                "label": "Small"
+              },
+              "options__3": {
+                "label": "Medium"
+              },
+              "options__4": {
+                "label": "Large"
+              },
+              "options__5": {
+              "label": "Extra Large"
+              }
             }
           }
         },
