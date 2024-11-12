@@ -349,7 +349,7 @@ export default function DABSelector(props) {
 }
 
 function Dab({ tile, isSelected, isInactive, onClick, onHover }) {
-  let tileClass = 'dab relative hover:outline hover:outline-1 cursor-pointer ';
+  let tileClass = 'dab relative hover:outline hover:outline-1 cursor-pointer outline outline-1 outline-black ';
   if (isSelected) tileClass += 'selected z-30 border-2 border-grey';
   if (tile.orderNumber) {
     tileClass += 'hover:outline-red-600 bg-black bg-opacity-50 opacity-50 hover:z-10 '; // purchased
