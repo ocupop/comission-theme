@@ -3056,6 +3056,14 @@ small {
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
+.border-red-400 {
+  --tw-border-opacity: 1;
+  border-color: rgb(249 128 128 / var(--tw-border-opacity));
+}
+.border-red-600 {
+  --tw-border-opacity: 1;
+  border-color: rgb(224 36 36 / var(--tw-border-opacity));
+}
 .border-b-black {
   --tw-border-opacity: 1;
   border-bottom-color: rgb(0 0 0 / var(--tw-border-opacity));
@@ -3709,6 +3717,15 @@ small {
 }
 .outline {
   outline-style: solid;
+}
+.outline-2 {
+  outline-width: 2px;
+}
+.outline-1 {
+  outline-width: 1px;
+}
+.outline-black {
+  outline-color: #000000;
 }
 .blur {
   --tw-blur: blur(8px);
