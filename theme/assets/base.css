@@ -3056,14 +3056,6 @@ small {
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
-.border-red-400 {
-  --tw-border-opacity: 1;
-  border-color: rgb(249 128 128 / var(--tw-border-opacity));
-}
-.border-red-600 {
-  --tw-border-opacity: 1;
-  border-color: rgb(224 36 36 / var(--tw-border-opacity));
-}
 .border-b-black {
   --tw-border-opacity: 1;
   border-bottom-color: rgb(0 0 0 / var(--tw-border-opacity));
@@ -3352,6 +3344,9 @@ small {
 .pl-2 {
   padding-left: 0.5rem;
 }
+.pl-8 {
+  padding-left: 2rem;
+}
 .pl-\[0\.7em\] {
   padding-left: 0.7em;
 }
@@ -3360,6 +3355,9 @@ small {
 }
 .pl-\[4em\] {
   padding-left: 4em;
+}
+.pr-10 {
+  padding-right: 2.5rem;
 }
 .pr-6 {
   padding-right: 1.5rem;
@@ -3489,12 +3487,6 @@ small {
 }
 .pt-screen {
   padding-top: var(--screen-height, 100vh);
-}
-.pr-10 {
-  padding-right: 2.5rem;
-}
-.pl-8 {
-  padding-left: 2rem;
 }
 .text-left {
   text-align: left;
@@ -3718,9 +3710,6 @@ small {
 .outline {
   outline-style: solid;
 }
-.outline-2 {
-  outline-width: 2px;
-}
 .outline-1 {
   outline-width: 1px;
 }
@@ -3912,16 +3901,6 @@ small {
 .\~pb-9 /* error - Missing end value */ {}
 .\~pb-96 /* error - Missing end value */ {}
 .\~pb-px /* error - Missing end value */ {}
-.spinner {
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    background-image: url("/svg/comission-spinner-01.svg");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: contain;
-    animation: spinner 2s infinite linear;
-  }
 .animate-fadein {
     animation: fadeIn;
     animation-duration: 0.8s;
@@ -4637,16 +4616,16 @@ small {
     padding-bottom: 8rem;
   }
 
+  .lg\:pr-10 {
+    padding-right: 2.5rem;
+  }
+
   .lg\:pt-20 {
     padding-top: 5rem;
   }
 
   .lg\:pt-48 {
     padding-top: 12rem;
-  }
-
-  .lg\:pr-10 {
-    padding-right: 2.5rem;
   }
 
   .lg\:text-center {
