@@ -6,19 +6,20 @@ h1,
 }
 
 h2,
-.h2 .text-heading {
+.h2 .text-heading,
+.text-heading {
   @apply text-3xl md:text-4xl mb-4;
 }
 
 h3,
-.h3 {
+.h3,
+.text-lead {
   @apply text-2xl md:text-3xl;
   @apply mb-4;
 }
 
 h4,
-.h4,
-.text-lead {
+.h4 {
   @apply text-2xl mb-3;
 }
 

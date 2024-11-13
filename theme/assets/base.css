@@ -1866,7 +1866,7 @@ product-form .tooltip.hover-tooltip:before {
     background-color: transparent;
     padding: 0px;
   }
-[class*="color-scheme-"] .btn.btn-text .icon{
+[class*="color-scheme-"] .btn.btn-text .icon {
       vertical-align: text-bottom;
     }
 h1,
@@ -1900,7 +1900,8 @@ h1,
   font-weight: 300;
 }
 h2,
-.h2 .text-heading {
+.h2 .text-heading,
+.text-heading {
   margin-bottom: 1rem;
   font-size: 1.875rem;
   line-height: 2.25rem;
@@ -1908,31 +1909,34 @@ h2,
 @media (min-width: 48rem) {
 
   h2,
-.h2 .text-heading {
+.h2 .text-heading,
+.text-heading {
     font-size: 2.25rem;
     line-height: 2.5rem;
   }
 }
 h3,
-.h3 {
+.h3,
+.text-lead {
   font-size: 1.5rem;
   line-height: 2rem;
 }
 @media (min-width: 48rem) {
 
   h3,
-.h3 {
+.h3,
+.text-lead {
     font-size: 1.875rem;
     line-height: 2.25rem;
   }
 }
 h3,
-.h3 {
+.h3,
+.text-lead {
   margin-bottom: 1rem;
 }
 h4,
-.h4,
-.text-lead {
+.h4 {
   margin-bottom: 0.75rem;
   font-size: 1.5rem;
   line-height: 2rem;
@@ -3547,14 +3551,6 @@ small {
 .text-body {
   font-size: var(--font-size-body);
   line-height: 1.5;
-}
-.text-display {
-  font-size: var(--font-size-display);
-  line-height: 1.1;
-}
-.text-heading {
-  font-size: var(--font-size-heading);
-  line-height: 1.25;
 }
 .text-lead {
   font-size: var(--font-size-lead);
