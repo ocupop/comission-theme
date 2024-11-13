@@ -16,7 +16,7 @@
           "type": "heading",
           "settings": {
             "heading": "Our Mission",
-            "heading_size": "h1"
+            "heading_size": "text-display"
           }
         },
         "copy": {
@@ -57,7 +57,7 @@
           "type": "heading",
           "settings": {
             "heading": "Become a CoMissionary, enjoy the Art experience, and effect change in our world.",
-            "heading_size": "h3"
+            "heading_size": "text-heading"
           }
         },
         "copy": {

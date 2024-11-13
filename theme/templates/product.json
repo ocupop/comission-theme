@@ -33,9 +33,76 @@
         "padding_top": 6,
         "padding_bottom": 6
       }
+    },
+    "features": {
+      "type": "product-features",
+      "blocks": {
+        "block1": {
+          "type": "feature",
+          "settings": {
+            "title": "Collector's Certificate",
+            "image": "shopify://shop_images/comission-illustration-benefit-certificate-02.svg",
+            "alt": "Collector's Certificate"
+          }
+        },
+        "block2": {
+          "type": "feature",
+          "settings": {
+            "title": "Virtual Gallery",
+            "image": "shopify://shop_images/comission-illustration-benefit-virtuallyamazing.svg",
+            "alt": "Virtual Gallery"
+          }
+        },
+        "block4": {
+          "type": "feature",
+          "settings": {
+            "title": "Augmented Reality",
+            "image": "shopify://shop_images/comission-illustration-benefit-forthewall.svg",
+            "alt": "Augmented Reality"
+          }
+        },
+        "block6": {
+          "type": "feature",
+          "settings": {
+            "title": "Connect with the Artist",
+            "image": "shopify://shop_images/comission-illustration-benefits-icon.svg",
+            "alt": "Connect with the Artist"
+          }
+        },
+        "block7": {
+          "type": "feature",
+          "settings": {
+            "title": "Virtual Meetups",
+            "image": "shopify://shop_images/comission-illustration-benefit-metaverse-meet-ups.svg",
+            "alt": "Virtual Meetups"
+          }
+        }
+      },
+      "block_order": [
+        "block1",
+        "block2",
+        "block4",
+        "block6",
+        "block7"
+      ],
+      "settings": {
+        "title": "Features to enrich your art experience",
+        "subtitle": "This artwork unlocks the following features:",
+        "color_scheme": "scheme-2"
+      }
+    },
+    "about": {
+      "type": "product-about",
+      "custom_css": [],
+      "settings": {
+        "title": "About the artwork",
+        "color_scheme": "scheme-1"
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "features",
+    "about"
   ]
 }
