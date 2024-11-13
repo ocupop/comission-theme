@@ -2025,6 +2025,9 @@ button:focus-visible {
   text-align: left;
   margin-bottom: 2rem;
 }
+.shopify-challenge__container {
+  @appy mt-24 mb-24;
+}
 /* THIS CSS COPIED DIRECTLY FROM THE DAWN THEME. It could definately use some cleanup. ~pstroot */
 .customer:not(.account):not(.order) {
   margin: 0 auto;
