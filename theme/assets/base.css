@@ -2012,6 +2012,19 @@ button:focus-visible {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
+.form__message svg {
+  display: inline-block;
+  width: 1.5rem;
+}
+.errors ul {
+  list-style-type: disc;
+}
+.customer ul {
+  line-height: calc(1 + 0.6 / var(--font-body-scale));
+  padding-left: 1.8rem;
+  text-align: left;
+  margin-bottom: 2rem;
+}
 /* THIS CSS COPIED DIRECTLY FROM THE DAWN THEME. It could definately use some cleanup. ~pstroot */
 .customer:not(.account):not(.order) {
   margin: 0 auto;
@@ -2030,12 +2043,6 @@ button:focus-visible {
 }
 .customer form {
   margin-top: 4rem;
-}
-.customer ul {
-  line-height: calc(1 + 0.6 / var(--font-body-scale));
-  padding-left: 4.4rem;
-  text-align: left;
-  margin-bottom: 4rem;
 }
 .customer ul a {
   display: inline;
@@ -2300,12 +2307,10 @@ button:focus-visible {
 /* Login */
 .login a {
   display: block;
-  margin: 0 auto;
   width: -moz-fit-content;
   width: fit-content;
 }
 .login a[href='#recover'] {
-  margin-left: 0;
   margin-right: 0;
 }
 .login .field+a {
@@ -2893,6 +2898,10 @@ small {
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
+}
+.my-10 {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
 }
 .my-2 {
   margin-top: 0.5rem;
@@ -3769,6 +3778,10 @@ small {
 }
 .bg-gray-900\/50 {
   background-color: rgb(17 24 39 / 0.5);
+}
+.bg-mid {
+  --tw-bg-opacity: 1;
+  background-color: rgb(156 163 175 / var(--tw-bg-opacity));
 }
 .bg-primary {
   --tw-bg-opacity: 1;

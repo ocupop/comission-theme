@@ -1,11 +1,26 @@
 .field input {
   @apply w-full h-16;
-
 }
 
 .customer button {
   margin: 2rem 0 1.5rem;
   @apply bg-primary text-white px-6 py-3;
+}
+
+.form__message svg {
+  @apply w-6 inline-block;
+
+}
+
+.errors ul {
+  @apply list-disc;
+}
+
+.customer ul {
+  line-height: calc(1 + 0.6 / var(--font-body-scale));
+  padding-left: 1.8rem;
+  text-align: left;
+  margin-bottom: 2rem;
 }
 
 /* THIS CSS COPIED DIRECTLY FROM THE DAWN THEME. It could definately use some cleanup. ~pstroot */
@@ -29,15 +44,6 @@
 
 .customer form {
   margin-top: 4rem;
-}
-
-
-
-.customer ul {
-  line-height: calc(1 + 0.6 / var(--font-body-scale));
-  padding-left: 4.4rem;
-  text-align: left;
-  margin-bottom: 4rem;
 }
 
 .customer ul a {
@@ -344,12 +350,10 @@
 /* Login */
 .login a {
   display: block;
-  margin: 0 auto;
   width: fit-content;
 }
 
 .login a[href='#recover'] {
-  margin-left: 0;
   margin-right: 0;
 }
 

@@ -17,9 +17,9 @@
 {%- endif -%}
 
 <div class="customer login section-{{ section.id }}-padding">
-  <h1 id="recover" tabindex="-1">
+  <h2 id="recover" tabindex="-1">
     {{ 'customer.recover_password.title' | t }}
-  </h1>
+  </h2>
   <div>
     <p>
       {{ 'customer.recover_password.subtext' | t }}
@@ -69,9 +69,9 @@
     {%- endform -%}
   </div>
 
-  <h1 id="login" tabindex="-1">
+  <h2 id="login" tabindex="-1">
     {{ 'customer.login_page.title' | t }}
-  </h1>
+  </h2>
   <div>
     {%- if recover_success == true -%}
       <h3 class="form__message" tabindex="-1" autofocus>
@@ -146,7 +146,7 @@
           </label>
         </div>
 
-        <a href="#recover">
+        <a href="#recover" class="ml-auto text-primary">
           {{ 'customer.login_page.forgot_password' | t }}
         </a>
       {%- endif -%}
@@ -154,10 +154,13 @@
       <button>
         {{ 'customer.login_page.sign_in' | t }}
       </button>
-
-      <a href="{{ routes.account_register_url }}">
-        {{ 'customer.login_page.create_account' | t }}
-      </a>
+      <hr class="my-10">
+      <div>
+        <p>Don't have an account?</p>
+        <a href="{{ routes.account_register_url }}" class="btn bg-mid inline-block">
+          {{ 'customer.login_page.create_account' | t }}
+        </a>
+      </div>
     {%- endform -%}
   </div>
 
