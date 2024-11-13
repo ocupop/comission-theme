@@ -20,7 +20,7 @@
             {%- case block.type -%}
               {%- when 'heading' -%}
                 <h2
-                  class="{% case block.settings.heading_size %}{% when 'text-fineprint' %} text-xs lg:text-sm xl:text-base {% when 'text-body' %} text-base lg:text-lg xl:text-xl {% when 'text-lead' %} text-xl lg:text-2xl xl:text-3xl {% when 'text-heading' %} text-2xl lg:text-3xl xl:text-4xl {% when 'text-display' %}text-7xl xl:text-8xl{% endcase %} {{ block.settings.heading_size }} font-light animate-slideup"
+                  class="{% case block.settings.heading_size %}{% when 'text-fineprint' %} text-xs lg:text-sm xl:text-base {% when 'text-body' %} text-base lg:text-lg xl:text-xl {% when 'text-lead' %} text-xl lg:text-2xl xl:text-3xl {% when 'text-heading' %} text-2xl lg:text-3xl xl:text-4xl {% when 'display' %}text-7xl xl:text-8xl{% endcase %} {{ block.settings.heading_size }} font-light animate-slideup"
                   {{ block.shopify_attributes }} 
                 >
                   {{ block.settings.heading }}

@@ -74,8 +74,6 @@ module.exports = {
         serif: ['"IBMPlexSerif"', 'Palatino', 'ui-serif'],
       },
       fontSize: {
-        display: ['var(--font-size-display)', '1.1'],
-        heading: ['var(--font-size-heading)', '1.25'],
         lead: ['var(--font-size-lead)', '1.333'],
         body: ['var(--font-size-body)', '1.5'],
         small: ['var(--font-size-small)', '1.333'],
