@@ -1,0 +1,80 @@
+<div class="color-{{ section.settings.color_scheme }}">
+  <div class="container py-16">
+    <h2 class="text-5xl">{{ section.settings.title }}</h2>
+    {% if section.settings.subtitle %}
+      <h3 class="text-3xl {{ class | default: 'mb-10 text-lead lg:max-w-[50%]' }}">{{ section.settings.subtitle }}</h3>
+    {% endif %}
+
+    <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3 pt-8">
+      {% for block in section.blocks %}
+        <div class="flex flex-row gap-6 items-center  text-center lg:block text-light">
+          <div class="flex col-span-1 items-center lg:justify-center">
+            <img
+              class="lg:mx-auto"
+              src="{{ block.settings.image | image_url }}"
+              width="60"
+              height="50"
+              alt="{{ block.settings.alt }}"
+              loading="lazy"
+              decoding="async"
+            >
+          </div>
+          <div class="col-span-3 text-left lg:text-center">
+            <p class="my-4 text-lg leading-none ">{{ block.settings.title }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Product Features",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "default": "t:sections.home-collect.settings.title.default",
+      "label": "t:sections.home-collect.settings.title.label"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "default": "t:sections.home-collect.settings.subtitle.default",
+      "label": "t:sections.home-collect.settings.subtitle.label"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Feature Name"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "alt",
+          "label": "Image alt text"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
