@@ -10,10 +10,12 @@
         <img src="{{ section.settings.image | image_url: width: 1000 }}" alt="">
       </div>
       <div class="text-body">
-        {{ section.settings.description }}
+        {{ section.settings.description | newline_to_br }}
       </div>
     </div>
-
+    <h3 class="lg:text-center text-2xl lg:text-3xl text-light mb-10">
+      {{ section.settings.feature_grid_heading }}
+    </h3>
     {% render 'feature-grid' %}
   </div>
 </div>
@@ -46,6 +48,12 @@
       "id": "description",
       "default": "t:sections.home-experience.settings.text.default",
       "label": "t:sections.home-experience.settings.text.label"
+    },
+    {
+      "type": "text",
+      "id": "feature_grid_heading",
+      "default": "Each artwork includes a selection of these features:",
+      "label": "Feature Grid Heading"
     },
     {
       "type": "color_scheme",
