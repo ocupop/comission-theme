@@ -4250,6 +4250,9 @@ small {
 .pt-screen {
   padding-top: var(--screen-height, 100vh);
 }
+.pr-20 {
+  padding-right: 5rem;
+}
 .text-left {
   text-align: left;
 }
@@ -5391,6 +5394,10 @@ small {
 
   .lg\:pt-48 {
     padding-top: 12rem;
+  }
+
+  .lg\:pr-20 {
+    padding-right: 5rem;
   }
 
   .lg\:text-center {

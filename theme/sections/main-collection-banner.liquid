@@ -3,7 +3,7 @@
     <div class="lg:flex">
       {%- if section.settings.show_collection_image and collection.image -%}
         <div class="w-1/2 lg:w-1/3 mb-10 lg:mb-0">
-          <div class="collection-hero__image-container media gradient pr-10">
+          <div class="collection-hero__image-container media gradient lg:px-20">
             <img
               srcset="
                 {%- if collection.image.width >= 165 -%}{{ collection.image | image_url: width: 165 }} 165w,{%- endif -%}
@@ -24,9 +24,9 @@
         </div>
       {%- endif -%}
       <div class="lg:w-2/3">
-        <h1>{{ page_title }}</h1>
+        <h1 class="text-5xl">{{ page_title }}</h1>
         {%- if section.settings.show_collection_description -%}
-          <div class="text-lead">{{ collection.description }}</div>
+          <div class="rte">{{ collection.description }}</div>
         {%- endif -%}
       </div>
     </div>
