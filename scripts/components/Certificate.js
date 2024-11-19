@@ -72,6 +72,13 @@ export default function Certificate(props) {
           <h1 className="font-bold mb-0 text-[3em] mt-[0.1em] leading-[1.5] tracking-wider">
             Certificate of Authenticity
           </h1>
+          <a
+            href={`/pages/certificate-pdf?product=${product.id}&dab=${position}`}
+            class="print-btn btn btn-primary hidden"
+            target="_blank"
+          >
+            Print Certificate
+          </a>
         </header>
 
         <main className="flex flex-1">
@@ -109,7 +116,7 @@ export default function Certificate(props) {
               {dabDetails
                 .filter((item) => item.value)
                 .map((item) => (
-                  <li key={item.label}>
+                  <li key={item.label} className="flex leading-[1.2] mb-0">
                     <label className="uppercase text-[#171717] mr-[1em] w-[30%]">
                       {item.img ? <img src={item.img} alt={item.label} /> : item.label}
                     </label>

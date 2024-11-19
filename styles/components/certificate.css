@@ -1,0 +1,81 @@
+#MainContent{
+  .certificate-component{
+    @apply w-full;
+    header h1, main h2{
+      @apply leading-[1];
+    }
+    .restrict-height{
+      @apply max-w-full pb-0;
+    }
+    .print-btn{
+      @apply block;
+    }
+    .certificate header img{
+      @apply hidden;
+    }
+
+    .restrict-height{
+      @apply h-auto;
+    }
+    .certificate{
+      @apply relative h-auto;
+    }
+    main{
+      .rightcol{
+        li{
+          @apply mb-4;
+        }
+      }
+    }
+
+    @media (max-width: 900px){
+      .restrict-height{
+        @apply p-0;
+      }
+      .certificate{
+        @apply  px-6 py-4;
+        @apply text-base;
+      }
+      main{
+        @apply block;
+        .leftcol, .rightcol{
+          @apply w-full;
+        }
+        .leftcol{
+          @apply border-0 pr-0;
+          img{
+            @apply max-w-full w-auto max-h-[32rem];
+          }
+        }
+        .rightcol{
+          @apply pl-0;
+          /* li{
+            div{
+              @apply max-w-full w-auto;
+            }
+          } */
+        }
+        .dab-image img{
+          @apply h-auto max-h-[17rem];
+        }
+      }
+    }
+
+    @media (max-width: 480px){
+      main{
+        .rightcol{
+          @apply pl-0;
+          li{
+            @apply block;
+            > *{
+              @apply w-full;
+            }
+            div{
+              @apply max-w-full w-auto;
+            }
+          }
+        }
+      }
+    }
+  }
+}

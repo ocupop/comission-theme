@@ -1,6 +1,5 @@
 
 {
-  "layout": "certificate",
   "sections": {
     "certificate": {
       "type": "certificate",
