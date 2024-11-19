@@ -1,15 +1,4 @@
 
-#certificate .attributes-list li{
-  display:flex;
-  line-height: 1.2;
-  margin-bottom:0;
-}
-#certificate .attributes-list li label{
-
-}
-#certificate .attributes-list li .value{
-
-}
 
 @font-face {
   font-family: 'Helvetica Neue';
