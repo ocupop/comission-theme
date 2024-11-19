@@ -4118,9 +4118,6 @@ small {
 .pl-\[4em\] {
   padding-left: 4em;
 }
-.pr-10 {
-  padding-right: 2.5rem;
-}
 .pr-6 {
   padding-right: 1.5rem;
 }
@@ -4249,9 +4246,6 @@ small {
 }
 .pt-screen {
   padding-top: var(--screen-height, 100vh);
-}
-.pr-20 {
-  padding-right: 5rem;
 }
 .text-left {
   text-align: left;
@@ -5394,10 +5388,6 @@ small {
 
   .lg\:pt-48 {
     padding-top: 12rem;
-  }
-
-  .lg\:pr-20 {
-    padding-right: 5rem;
   }
 
   .lg\:text-center {
