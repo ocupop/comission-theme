@@ -1967,6 +1967,87 @@ button:focus-visible {
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
   --tw-ring-offset-width: 2px;
 }
+#MainContent .certificate-component {
+  width: 100%;
+}
+#MainContent .certificate-component header h1, #MainContent .certificate-component main h2 {
+  line-height: 1;
+}
+#MainContent .certificate-component .restrict-height {
+  max-width: 100%;
+  padding-bottom: 0px;
+}
+#MainContent .certificate-component .print-btn {
+  display: block;
+}
+#MainContent .certificate-component .certificate header img {
+  display: none;
+}
+#MainContent .certificate-component .restrict-height {
+  height: auto;
+}
+#MainContent .certificate-component .certificate {
+  position: relative;
+  height: auto;
+}
+#MainContent .certificate-component main .rightcol li {
+  margin-bottom: 1rem;
+}
+@media (max-width: 900px){
+      #MainContent .certificate-component .restrict-height {
+    padding: 0px;
+  }
+      #MainContent .certificate-component .certificate {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+      #MainContent .certificate-component main {
+    display: block;
+  }
+        #MainContent .certificate-component main .leftcol, #MainContent .certificate-component main .rightcol {
+    width: 100%;
+  }
+        #MainContent .certificate-component main .leftcol {
+    border-width: 0px;
+    padding-right: 0px;
+  }
+          #MainContent .certificate-component main .leftcol img {
+    max-height: 32rem;
+    width: auto;
+    max-width: 100%;
+  }
+        #MainContent .certificate-component main .rightcol {
+    padding-left: 0px;
+          /* li{
+            div{
+              @apply max-w-full w-auto;
+            }
+          } */
+  }
+        #MainContent .certificate-component main .dab-image img {
+    height: auto;
+    max-height: 17rem;
+  }
+    }
+@media (max-width: 480px){
+        #MainContent .certificate-component main .rightcol {
+    padding-left: 0px;
+  }
+          #MainContent .certificate-component main .rightcol li {
+    display: block;
+  }
+            #MainContent .certificate-component main .rightcol li > * {
+    width: 100%;
+  }
+            #MainContent .certificate-component main .rightcol li div {
+    width: auto;
+    max-width: 100%;
+  }
+    }
 .section-header {
   position: relative;
   height: 5rem;
@@ -4274,6 +4355,9 @@ small {
 }
 .leading-9 {
   line-height: 2.25rem;
+}
+.leading-\[1\.2\] {
+  line-height: 1.2;
 }
 .leading-\[1\.5\] {
   line-height: 1.5;
