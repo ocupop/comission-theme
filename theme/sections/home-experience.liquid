@@ -1,11 +1,13 @@
 {% render 'section-header',
   title: section.settings.title,
   subtitle: section.settings.subtitle,
-  color_scheme: section.settings.color_scheme
+  color_scheme: section.settings.color_scheme,
+  class: 'mb-0',
+  container_padding_class: 'py-5'
 %}
 <div class="color-{{ section.settings.color_scheme }}">
   <div class="container">
-    <div class="grid items-center grid-cols-1 gap-10 py-10 lg:py-20 lg:grid-cols-2 lg:gap-40">
+    <div class="grid items-center grid-cols-1 gap-10 py-10 lg:pb-20 lg:grid-cols-2 lg:gap-40">
       <div>
         <img src="{{ section.settings.image | image_url: width: 1000 }}" alt="">
       </div>

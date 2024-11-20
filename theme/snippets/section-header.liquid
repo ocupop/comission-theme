@@ -5,7 +5,7 @@
 </header>
 {% if subtitle %}
   <div class="color-{{ color_scheme }}">
-    <div class="container py-10">
+    <div class="container {{ container_padding_class | default: 'py-10' }}">
       <p class="text-2xl {{ class | default: 'mb-10 text-lead lg:max-w-[50%]' }}">{{ subtitle }}</p>
     </div>
   </div>
