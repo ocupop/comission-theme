@@ -12,6 +12,12 @@
     }
   }
 
+  ol {
+    li {
+      @apply mb-4;
+    }
+  }
+
   tr,
   td {
     border: 1px solid;

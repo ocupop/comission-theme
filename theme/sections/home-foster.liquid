@@ -2,11 +2,12 @@
   title: section.settings.title,
   subtitle: section.settings.subtitle,
   color_scheme: section.settings.color_scheme,
-  class: 'text-3xl lg:text-5xl font-normal lg:text-center mb-0 lg:mb-10'
+  class: 'text-3xl lg:text-5xl font-normal lg:text-center mb-0',
+  container_padding_class: 'pt-10 pb-5'
 %}
 <div class="color-{{ section.settings.color_scheme }}">
   <div class="container">
-    <div class="grid items-center py-10 lg:grid-cols-3 gap-10 lg:gap-30">
+    <div class="grid items-center py-10 lg:grid-cols-3 gap-10 lg:gap-24">
       <div class="col-span-1">
         <img
           src="{{ section.settings.image | image_url: width: 400 }}"
