@@ -1,7 +1,29 @@
-
-.shopify-policy__container{
+.shopify-policy__container {
   @apply mt-12;
+  @apply lg:w-1/2;
+
+  ul {
+    @apply list-disc;
+    @apply ml-8;
+    @apply mb-8;
+
+    li {
+      @apply mb-4;
+    }
+  }
+
+  tr,
+  td {
+    border: 1px solid;
+    padding: 1rem;
+    font-size: 1rem;
+  }
+
+  strong {
+    @apply font-bold;
+  }
 }
-.shopify-policy__title{
+
+.shopify-policy__title {
   @apply mb-8;
 }

@@ -2075,6 +2075,29 @@ button:focus-visible {
 .shopify-policy__container {
   margin-top: 3rem;
 }
+@media (min-width: 64rem) {
+
+  .shopify-policy__container {
+    width: 50%;
+  }
+}
+.shopify-policy__container ul {
+  list-style-type: disc;
+  margin-left: 2rem;
+  margin-bottom: 2rem;
+}
+.shopify-policy__container ul li {
+  margin-bottom: 1rem;
+}
+.shopify-policy__container tr,
+  .shopify-policy__container td {
+    border: 1px solid;
+    padding: 1rem;
+    font-size: 1rem;
+  }
+.shopify-policy__container strong {
+  font-weight: 700;
+}
 .shopify-policy__title {
   margin-bottom: 2rem;
 }
