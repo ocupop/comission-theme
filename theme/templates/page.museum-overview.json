@@ -24,7 +24,7 @@
       "type": "single-column",
       "settings": {
         "title": "Created for you",
-        "body": "<p>Comission was created to inspire a new generation of art lovers, who forge deeper connections with our partner museums and artists. And through this we develop a new fundraising model in support of the arts, and a healthy robust pipeline of future philanthropic donors.</p><p>Whether you want to CoMission on object or a whole collection,<a href=\"https://comission.art/how-it-works\">click here</a>to learn about the uniqure CoMission process.</p>",
+        "body": "<p>Comission was created to inspire a new generation of art lovers, who forge deeper connections with our partner museums and artists. And through this we develop a new fundraising model in support of the arts, and a healthy robust pipeline of future philanthropic donors.</p><p>Whether you want to CoMission on object or a whole collection, <a href=\"https://comission.art/how-it-works\">click here </a>to learn about the unique CoMission process.</p>",
         "button_label": "",
         "button_link": "",
         "text_alignment": "center",
@@ -67,7 +67,7 @@
         "copy_4HynTX": {
           "type": "copy",
           "settings": {
-            "copy": "<p></p><ul><li>CoMission provides a brand new source of unrestricted funds and, with each CoMissioned artwork being available on our website, a global audience to fundraise from.</li><li>With 71% of millennials having bought art for their home in 2021 this opens up a huge opportunity, and a segment of their household budget to potentially benefit from, other than the previous pots reserved for charitable giving and cultural visits.</li></ul>",
+            "copy": "<p></p><ul><li>CoMission provides a brand new source of unrestricted funds and, with each CoMissioned artwork being available on our website, a global audience to fundraise from.</li></ul><p></p><ul><li>With 71% of millennials having bought art for their home in 2021 this opens up a huge opportunity, and a segment of their household budget to potentially benefit from, other than the previous pots reserved for charitable giving and cultural visits.</li></ul>",
             "text_style": "text-default"
           }
         }
@@ -106,7 +106,8 @@
           "type": "button_group",
           "settings": {
             "button_label_1": "Explore Features",
-            "button_link_1": "shopify://pages/features"
+            "button_link_1": "shopify://pages/features",
+            "button_style": "btn-secondary"
           }
         }
       },
@@ -145,7 +146,8 @@
           "type": "button_group",
           "settings": {
             "button_label_1": "Start a Conversation",
-            "button_link_1": "shopify://pages/contact-us"
+            "button_link_1": "shopify://pages/contact-us",
+            "button_style": "btn-secondary"
           }
         }
       },
