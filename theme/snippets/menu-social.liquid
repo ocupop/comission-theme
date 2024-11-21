@@ -1,11 +1,22 @@
 <div class="flex lg:justify-center">
-  <a href="{{settings.social_instagram_link}}" class="inline-block mr-5 lg:mr-3" target="_blank" rel="noreferrer">
-    {% render 'icons', name: 'instagram', class: class %}
-  </a>
-  <a href="{{settings.social_twitter_link}}" class="mr-5 lg:mr-3" target="_blank" rel="noreferrer">
-    {% render 'icons', name: 'twitter', class: class %}
-  </a>
-  <a href="{{settings.social_facebook_link}}" class="mr-5 lg:mr-3" target="_blank" rel="noreferrer">
-    {% render 'icons', name: 'facebook', class: class %}
-  </a>
+  {% if settings.social_instagram_link != '' %}
+    <a href="{{settings.social_instagram_link}}" class="inline-block mr-5 lg:mr-3" target="_blank" rel="noreferrer">
+      {% render 'icons', name: 'instagram', class: class %}
+    </a>
+  {% endif %}
+  {% if settings.social_twitter_link != '' %}
+    <a href="{{settings.social_twitter_link}}" class="mr-5 lg:mr-3" target="_blank" rel="noreferrer">
+      {% render 'icons', name: 'x', class: class %}
+    </a>
+  {% endif %}
+  {% if settings.social_facebook_link != '' %}
+    <a href="{{settings.social_facebook_link}}" class="mr-5 lg:mr-3" target="_blank" rel="noreferrer">
+      {% render 'icons', name: 'facebook', class: class %}
+    </a>
+  {% endif %}
+  {% if settings.social_tiktok_link != '' %}
+    <a href="{{settings.social_tiktok_link}}" class="mr-5 lg:mr-3" target="_blank" rel="noreferrer">
+      {% render 'icons', name: 'tiktok', class: class %}
+    </a>
+  {% endif %}
 </div>

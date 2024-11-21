@@ -9,11 +9,13 @@
 
   if crosshairs_image
     assign display_image = crosshairs_image
-  elsif tile_path
-    assign display_image = source_image
+  elsif tile_image
+    assign display_image = tile_image
   endif
 %}
-
+{%- capture certificate_url -%}
+  https://www.comission.art/pages/certificate-pdf?product={{product.id}}&dab={{ position }}
+{%- endcapture -%}
 {%- capture twitter_text -%}
   Check out the piece of "{{product.title}}" {{artistBy}} I’ve just bought @CoMission_Art. DAB #{{position}} now has my name on it{% if museumAtts.twitter %} and {{museumAtts.twitter}} has a donation in my name{% endif %}.
 {%- endcapture -%}
@@ -25,7 +27,7 @@
   <span>Share your artwork with your community!</span>
   <div class="flex gap-2 text-sm items-center">
     <button
-      class="flex"
+      class="flex !bg-transparent !m-0 !p-0"
       data-modal-target="instagram-modal"
       data-modal-toggle="instagram-modal"
     >
@@ -42,7 +44,7 @@
     </a>
 
     <a
-      href="https://www.facebook.com/sharer/sharer.php?u={{ url| escape }}"
+      href="https://www.facebook.com/sharer/sharer.php?u={{ certificate_url | escape }}"
       class="flex modal-link"
       data-width="548"
       data-height="500"
@@ -67,7 +69,7 @@
         <h2 class="text-xl font-bold m-0">Post to Instagram</h2>
         <button
           type="button"
-          class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+          class="!m-0 !p-0 !text-gray-400 !bg-transparent hover:!bg-gray-200 hover:!text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
           data-modal-hide="instagram-modal"
         >
           <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
@@ -88,8 +90,8 @@
               <li class="mb-2">Brag about your CoMission art!</li>
             </ol>
             <div class="text-dark">
-              <p class="mb-2">Here's an example of copy:</p>
-              <p>{{ instagram_text }}</p>
+              <div class="mb-2">Here's an example of copy:</div>
+              <div class="text-base">{{ instagram_text }}</div>
             </div>
           </div>
           <div class="rightcol">
