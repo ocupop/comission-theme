@@ -43,6 +43,9 @@
           | replace: 'crosshairsImage', ''
           | replace: ':http', 'http'
         %}
+        {% if crosshairs_image contains 'null' %}
+          {% assign crosshairs_image = null %}
+        {% endif %}
       {% endif %}
       {% if ta contains 'tilePath' %}
         {% assign tile_image = ta | replace: '"', '' | replace: 'tilePath', '' | replace: ':http', 'http' %}
@@ -137,7 +140,7 @@
     {% if certificate %}
       <div class="mb-8">
         <a
-          href="/pages/certificate?product={{item.product.id}}&dab={{item.properties.position }}"
+          href="/pages/certificate-pdf?product={{item.product.id}}&dab={{item.properties.position }}"
           class="flex text-xl font-normal text-primary hover:text-black modal-link"
           data-width="965"
           data-height="800"
