@@ -16,7 +16,7 @@
     "social_facebook_link": "http://www.facebook.com/GetCoMission/",
     "social_instagram_link": "https://www.instagram.com/CoMission.art",
     "social_youtube_link": "",
-    "social_tiktok_link": "https://tiktok.com/comission.art3",
+    "social_tiktok_link": "",
     "social_twitter_link": "https://www.twitter.com/CoMission_Art",
     "social_snapchat_link": "",
     "social_pinterest_link": "",
@@ -165,7 +165,7 @@
           "secondary_button_label": "#efefef",
           "secondary_button_background": "",
           "secondary_button_outline": "#ffffff",
-          "text_button_label": "#ffffff",
+          "text_button_label": "#FFFFFF",
           "shadow": "#121212"
         }
       },
