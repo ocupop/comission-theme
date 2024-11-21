@@ -61,15 +61,17 @@
             <a
               href="{{ routes.account_register_url }}"
               class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-              >Create Account</a
             >
+              {{- 'customer.login_page.create_account' | t -}}
+            </a>
           </li>
           <li>
             <a
               href="{{ routes.account_login_url }}"
               class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-              >Sign in</a
             >
+              {{- 'customer.login_page.sign_in' | t -}}
+            </a>
           </li>
         {% endif %}
       </ul>
