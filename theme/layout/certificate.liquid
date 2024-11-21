@@ -13,6 +13,7 @@
   if product
     assign page_title = page_title | replace: '[position]', position | replace: '[artist]', artist.title | replace: '[artwork]', product.title | replace: '[museum]', museum.title
     assign page_description = page_description | replace: '[position]', position | replace: '[artist]', artist.title | replace: '[artwork]', product.title | replace: '[museum]', museum.title
+    assign page_image = product.featured_image
   endif
 %}
 <!doctype html>
@@ -36,7 +37,7 @@
       {{ page_title }}
       {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
     </title>
-    {% render 'meta-tags', page_title: page_title, page_description: page_description %}
+    {% render 'meta-tags', page_title: page_title, page_description: page_description, page_image: page_image %}
     <script src="{{ 'comission.js' | asset_url }}" defer="defer" type="module"></script>
 
     {{ content_for_header }}

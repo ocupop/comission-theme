@@ -13,14 +13,12 @@
     assign display_image = tile_image
   endif
 %}
-{%- capture certificate_url -%}
-  https://www.comission.art/pages/certificate-pdf?product={{product.id}}&dab={{ position }}
-{%- endcapture -%}
+
 {%- capture twitter_text -%}
-  Check out the piece of "{{product.title}}" {{artistBy}} I’ve just bought @CoMission_Art. DAB #{{position}} now has my name on it{% if museumAtts.twitter %} and {{museumAtts.twitter}} has a donation in my name{% endif %}.
+  Check out the piece of "{{product.title}}" by {{artistBy}} I’ve just bought from @CoMission_Art. DAB #{{position}} now has my name on it.
 {%- endcapture -%}
 {%- capture instagram_text -%}
-  Check out the piece of "{{product.title}}" {{artistBy}} I’ve just bought @CoMission.Art. DAB #{{position}} now has my name on it{% if museumAtts.instagram %} and {{museumAtts.instagram}} has a donation in my name{% endif %}.
+  Check out the piece of "{{product.title}}" by {{artistBy}} I’ve just bought from @CoMission.Art. DAB #{{position}} now has my name on it.
 {%- endcapture -%}
 
 <div class="flex items-center gap-4 text-sm">
@@ -44,7 +42,7 @@
     </a>
 
     <a
-      href="https://www.facebook.com/sharer/sharer.php?u={{ certificate_url | escape }}"
+      href="https://www.facebook.com/sharer/sharer.php?u={{ 'https://www.comission.art/products/' | append: product.handle | escape }}"
       class="flex modal-link"
       data-width="548"
       data-height="500"
