@@ -13,6 +13,7 @@
   if product
     assign page_title = page_title | replace: '[position]', position | replace: '[artist]', artist.title | replace: '[artwork]', product.title | replace: '[museum]', museum.title
     assign page_description = page_description | replace: '[position]', position | replace: '[artist]', artist.title | replace: '[artwork]', product.title | replace: '[museum]', museum.title
+    assign page_image = product.featured_image
   endif
 %}
 <!doctype html>
@@ -46,7 +47,7 @@
       >
     {% endif %}
 
-    {% render 'meta-tags', page_title: page_title, page_description: page_description %}
+    {% render 'meta-tags', page_title: page_title, page_description: page_description, page_image: page_image %}
 
     <script src="{{ 'constants.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'pubsub.js' | asset_url }}" defer="defer"></script>
