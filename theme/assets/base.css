@@ -4989,6 +4989,10 @@ small {
   --tw-bg-opacity: 1;
   background-color: rgb(209 213 219 / var(--tw-bg-opacity));
 }
+.disabled\:bg-mid:disabled {
+  --tw-bg-opacity: 1;
+  background-color: rgb(156 163 175 / var(--tw-bg-opacity));
+}
 @media (hover: hover) and (pointer: fine) {
 
   .group:hover .group-hover\:block {
