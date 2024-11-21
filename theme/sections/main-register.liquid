@@ -24,7 +24,7 @@
   <h2>
     {{ 'customer.register.title' | t }}
   </h2>
-  {%- form 'create_customer', novalidate: 'novalidate' -%}
+  {%- form 'create_customer' -%}
     {%- if form.errors -%}
       <h2 class="form__message" tabindex="-1" autofocus>
         <svg aria-hidden="true" focusable="false">
@@ -32,8 +32,11 @@
         </svg>
         {{ 'templates.contact.form.error_heading' | t }}
       </h2>
+      <div>form.errors: {{ form.errors | json }}</div>
       <ul>
         {%- for field in form.errors -%}
+          <li>JSON: {{ field | json }}</li>
+          <li>FIELD: {{ field }}</li>
           <li>
             {%- if field == 'form' -%}
               {{ form.errors.messages[field] }}
@@ -89,6 +92,7 @@
         autocapitalize="off"
         autocomplete="email"
         aria-required="true"
+        required
         {% if form.errors contains 'email' %}
           aria-invalid="true"
           aria-describedby="RegisterForm-email-error"
@@ -114,6 +118,7 @@
         name="customer[password]"
         id="RegisterForm-password"
         aria-required="true"
+        required
         {% if form.errors contains 'password' %}
           aria-invalid="true"
           aria-describedby="RegisterForm-password-error"
