@@ -3006,6 +3006,9 @@ small {
 .m-auto {
   margin: auto;
 }
+.m-4 {
+  margin: 1rem;
+}
 .mx-2 {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
@@ -3918,6 +3921,10 @@ small {
 .bg-white\/50 {
   background-color: rgb(255 255 255 / 0.5);
 }
+.bg-mid-dark {
+  --tw-bg-opacity: 1;
+  background-color: rgb(75 85 99 / var(--tw-bg-opacity));
+}
 .bg-opacity-50 {
   --tw-bg-opacity: 0.5;
 }
@@ -4375,6 +4382,9 @@ small {
 .font-semibold {
   font-weight: 600;
 }
+.font-thin {
+  font-weight: 100;
+}
 .uppercase {
   text-transform: uppercase;
 }
@@ -4471,6 +4481,10 @@ small {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+.text-mid-dark {
+  --tw-text-opacity: 1;
+  color: rgb(75 85 99 / var(--tw-text-opacity));
 }
 .underline {
   text-decoration-line: underline;
@@ -4874,6 +4888,16 @@ small {
   .hover\:bg-white:hover {
     --tw-bg-opacity: 1;
     background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  }
+
+  .hover\:bg-accent:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(var(--color-accent) / var(--tw-bg-opacity));
+  }
+
+  .hover\:bg-primary:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(var(--color-primary) / var(--tw-bg-opacity));
   }
 
   .hover\:\!text-gray-900:hover {
