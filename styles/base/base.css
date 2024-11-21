@@ -21,7 +21,9 @@
   p {
     @apply mb-4;
   }
-
+  .colored-links a{
+    @apply text-primary underline;
+  }
 
 
 

@@ -985,6 +985,11 @@ input:checked + .toggle-bg {
   p {
   margin-bottom: 1rem;
 }
+  .colored-links a {
+  --tw-text-opacity: 1;
+  color: rgb(var(--color-primary) / var(--tw-text-opacity));
+  text-decoration-line: underline;
+}
 .container {
   width: 100%;
   margin-right: auto;
