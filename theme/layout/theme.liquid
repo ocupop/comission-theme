@@ -1,3 +1,20 @@
+{%- liquid
+  include 'get-certificate-data'
+  #  "get-certificate-data" defines the following liquid variables IF a product id and position were passed in from the querystring:
+  #  - productId
+  #  - product
+  #  - position
+  #  - collector
+  #  - tile
+  #  - product_meta
+  #  - artist
+  #  - museum
+
+  if product
+    assign page_title = page_title | replace: '[position]', position | replace: '[artist]', artist.title | replace: '[artwork]', product.title | replace: '[museum]', museum.title
+    assign page_description = page_description | replace: '[position]', position | replace: '[artist]', artist.title | replace: '[artwork]', product.title | replace: '[museum]', museum.title
+  endif
+%}
 <!doctype html>
 <html class="js" lang="{{ request.locale.iso_code }}">
   <head>
@@ -23,10 +40,13 @@
     </title>
 
     {% if page_description %}
-      <meta name="description" content="{{ page_description | escape }}">
+      <meta
+        name="description"
+        content="{{ page_description | escape }}"
+      >
     {% endif %}
 
-    {% render 'meta-tags' %}
+    {% render 'meta-tags', page_title: page_title, page_description: page_description %}
 
     <script src="{{ 'constants.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'pubsub.js' | asset_url }}" defer="defer"></script>
