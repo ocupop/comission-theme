@@ -157,14 +157,15 @@
           {{ 'customer.login_page.forgot_password' | t }}
         </a>
       {%- endif -%}
+      <div class="flex justify-between mt-6">
+        <button class="" style="margin:0;">
+          {{ 'customer.login_page.sign_in' | t }}
+        </button>
 
-      <button>
-        {{ 'customer.login_page.sign_in' | t }}
-      </button>
-
-      <a href="{{ routes.account_register_url }}">
-        {{ 'customer.login_page.create_account' | t }}
-      </a>
+        <a href="{{ routes.account_register_url }}" class="btn bg-mid-dark hover:bg-primary text-base font-light">
+          {{ 'customer.login_page.create_account' | t }}
+        </a>
+      </div>
     {%- endform -%}
   </div>
 
