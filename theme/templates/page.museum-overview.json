@@ -24,7 +24,7 @@
       "type": "single-column",
       "settings": {
         "title": "Created for you",
-        "body": "<p>Comission was created to inspire a new generation of art lovers, who forge deeper connections with our partner museums and artists. And through this we develop a new fundraising model in support of the arts, and a healthy robust pipeline of future philanthropic donors.</p><p>Whether you want to CoMission on object or a whole collection, <a href=\"https://comission.art/how-it-works\">click here </a>to learn about the unique CoMission process.</p>",
+        "body": "<p>Comission was created to inspire a new generation of art lovers, who forge deeper connections with our partner museums and artists. And through this we develop a new fundraising model in support of the arts, and a healthy robust pipeline of future philanthropic donors.</p><p>Whether you want to CoMission an object or a whole collection, learn about the <a href=\"https://comission.art/how-it-works\" title=\"http://comission.art/pages/how-it-works\">unique CoMission process</a>.</p>",
         "button_label": "",
         "button_link": "",
         "text_alignment": "center",
@@ -98,7 +98,7 @@
         "copy_hfNGQJ": {
           "type": "copy",
           "settings": {
-            "copy": "<ul><li>Future proof your efforts. To compete for the limited attention of consumers, it’s crucial you have a seat at the table in terms of the new technologies which are altering the course of audience engagement and cultural consumption.</li><li>Whether you believe Web3 and the metaverse is something for today or something for the future, CoMission gives you a product for it. And if you think it’s all a load of overblown hype, it’s not cost you anything to have something ready in case it ever becomes a thing.</li><li>You retain 100% ownership of every aspect of your artwork. You don’t have to sell any asset, whether in physical or digital form.</li><li>Insanely valuable free marketing through the social media activity of all our CoMissionaires.</li></ul>",
+            "copy": "<ul><li>Future proof your efforts. To compete for the limited attention of consumers, it’s crucial you have a seat at the table in terms of the new technologies which are altering the course of audience engagement and cultural consumption.</li><li>Whether you believe Web3 and the metaverse is something for today or something for the future, CoMission gives you a product for it. And if you think it’s all a load of overblown hype, it’s not cost you anything to have something ready in case it ever becomes a thing.</li><li>You retain 100% ownership of every aspect of your artwork. You don’t have to sell any asset, whether in physical or digital form.</li><li>Insanely valuable free marketing through the social media activity of all our CoMissionaries.</li></ul>",
             "text_style": "text-default"
           }
         },
@@ -138,7 +138,7 @@
         "copy_TRwyqR": {
           "type": "copy",
           "settings": {
-            "copy": "<p>We started CoMission with the knowledge that the average museum is not blessed with deep pockets to fund innovation, the technological knowledge and skillset to develop it, or the spare human capacity to execute on such a project. That is why our business model provides a full turnkey solution, with zero investment and up front costs for the museum.</p>",
+            "copy": "<p>We started CoMission with the knowledge that the average museum is not blessed with deep pockets to fund innovation, the technological knowledge and skillset to develop it, or the spare human capacity to execute on such a project. That is why our business model provides a full turnkey solution, with zero investment or up front costs for the museum.</p>",
             "text_style": "text-default"
           }
         },
