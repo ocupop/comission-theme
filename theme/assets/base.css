@@ -1692,6 +1692,10 @@ product-form .tooltip.hover-tooltip:before {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
+button:disabled {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(156 163 175 / var(--tw-bg-opacity)) !important;
+}
 .icon {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
