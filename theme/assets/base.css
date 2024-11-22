@@ -2969,6 +2969,21 @@ small {
 .top-40 {
   top: 10rem;
 }
+.-bottom-10 {
+  bottom: -2.5rem;
+}
+.top-20 {
+  top: 5rem;
+}
+.bottom-20 {
+  bottom: 5rem;
+}
+.-bottom-20 {
+  bottom: -5rem;
+}
+.-bottom-12 {
+  bottom: -3rem;
+}
 .isolate {
   isolation: isolate;
 }
@@ -3248,6 +3263,18 @@ small {
 }
 .h-screen {
   height: var(--screen-height, 100vh);
+}
+.h-96 {
+  height: 24rem;
+}
+.h-\[300px\] {
+  height: 300px;
+}
+.h-\[400px\] {
+  height: 400px;
+}
+.h-\[500px\] {
+  height: 500px;
 }
 .max-h-full {
   max-height: 100%;
@@ -5302,6 +5329,18 @@ small {
     top: auto;
   }
 
+  .lg\:-bottom-12 {
+    bottom: -3rem;
+  }
+
+  .lg\:-bottom-5 {
+    bottom: -1.25rem;
+  }
+
+  .lg\:-bottom-10 {
+    bottom: -2.5rem;
+  }
+
   .lg\:order-1 {
     order: 1;
   }
@@ -5399,6 +5438,18 @@ small {
     height: 100%;
   }
 
+  .lg\:h-\[500px\] {
+    height: 500px;
+  }
+
+  .lg\:h-\[300px\] {
+    height: 300px;
+  }
+
+  .lg\:h-\[350px\] {
+    height: 350px;
+  }
+
   .lg\:w-1\/2 {
     width: 50%;
   }
@@ -5475,6 +5526,10 @@ small {
     flex-direction: row;
   }
 
+  .lg\:items-center {
+    align-items: center;
+  }
+
   .lg\:justify-center {
     justify-content: center;
   }
@@ -5525,6 +5580,11 @@ small {
   .lg\:py-20 {
     padding-top: 5rem;
     padding-bottom: 5rem;
+  }
+
+  .lg\:px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   .lg\:pb-0 {
