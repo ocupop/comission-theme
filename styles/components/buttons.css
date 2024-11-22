@@ -15,6 +15,9 @@
   .btn-outline {
     @apply text-white bg-transparent border border-white;
   }
+  button:disabled{
+    @apply !bg-mid;
+  }
 
 }
 

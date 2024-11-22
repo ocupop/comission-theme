@@ -20,7 +20,6 @@ function setSubmitDiabledState(state) {
 setSubmitDiabledState(checkboxes[0]?.checked);
 
 const modalLinks = document.querySelectorAll('.modal-link');
-console.log('FOUND MODAL LINKS: ', modalLinks);
 modalLinks.forEach((link) => {
   link.addEventListener('click', function (e) {
     e.preventDefault();
