@@ -19,13 +19,15 @@
 {% for item in museumAttsArray %}
   {%- assign keyValue = item | split: ':' -%}
   {% if keyValue[0] contains 'twitter' %}
-    {% assign twitter = keyValue[1] | replace: '"', '' | replace: '}', '' %}
+    {% comment %} {% assign twitter = keyValue[1] | replace: '"', '' | replace: '}', '' %} {% endcomment %}
+    {% assign twitter = '@WellspringATL @TheKingCenter @TheAshleyBella' %}
   {% endif %}
   {% if keyValue[0] contains 'facebook' %}
     {% assign facebook = keyValue[1] | replace: '"', '' | replace: '}', '' %}
   {% endif %}
   {% if keyValue[0] contains 'instagram' %}
-    {% assign instagram = keyValue[1] | replace: '"', '' | replace: '}', '' %}
+    {% comment %} {% assign instagram = keyValue[1] | replace: '"', '' | replace: '}', '' %} {% endcomment %}
+    {% assign instagram = '@WellspringLiving @TheKingCenter @TheAshleyBella' %}
   {% endif %}
   {% if keyValue[0] contains 'corporateName' %}
     {% assign corporate_name = keyValue[1] | replace: '"', '' | replace: '}', '' %}
@@ -33,10 +35,10 @@
 {%- endfor -%}
 
 {%- capture twitter_text -%}
-  Check out the piece of "{{product.title}}" {{artistBy}} I’ve just bought from @CoMission_Art. DAB %23{{position}} now has my name on it{% if twitter != "" %} and {{ twitter }} has a donation in my name{% endif %}.
+  Check out the piece of "{{product.title}}" {{artistBy}} I’ve just bought from @CoMission_Art. DAB %23{{position}} now has my name on it{% if twitter != "" %} and {{ twitter }} has a donation in my name{% endif %}. %23artforgood
 {%- endcapture -%}
 {%- capture instagram_text -%}
-  Check out the piece of "{{product.title}}" {{artistBy}} I’ve just bought from @CoMission.Art. DAB #{{position}} now has my name on it {% if instagram != "" %} and {{ instagram }} has a donation in my name{% endif %}.
+  Check out the piece of "{{product.title}}" {{artistBy}} I’ve just bought from @CoMission.Art. DAB #{{position}} now has my name on it {% if instagram != "" %} and {{ instagram }} has a donation in my name{% endif %}. #artforgood
 {%- endcapture -%}
 
 <div class="flex items-center gap-4 text-sm">
