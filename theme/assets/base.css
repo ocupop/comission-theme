@@ -2921,6 +2921,12 @@ small {
 .inset-0 {
   inset: 0px;
 }
+.-bottom-10 {
+  bottom: -2.5rem;
+}
+.-bottom-12 {
+  bottom: -3rem;
+}
 .-right-1 {
   right: -0.25rem;
 }
@@ -2929,9 +2935,6 @@ small {
 }
 .bottom-0 {
   bottom: 0px;
-}
-.bottom-5 {
-  bottom: 1.25rem;
 }
 .bottom-\[60px\] {
   bottom: 60px;
@@ -2968,21 +2971,6 @@ small {
 }
 .top-40 {
   top: 10rem;
-}
-.-bottom-10 {
-  bottom: -2.5rem;
-}
-.top-20 {
-  top: 5rem;
-}
-.bottom-20 {
-  bottom: 5rem;
-}
-.-bottom-20 {
-  bottom: -5rem;
-}
-.-bottom-12 {
-  bottom: -3rem;
 }
 .isolate {
   isolation: isolate;
@@ -3231,9 +3219,6 @@ small {
 .h-5 {
   height: 1.25rem;
 }
-.h-56 {
-  height: 14rem;
-}
 .h-6 {
   height: 1.5rem;
 }
@@ -3245,6 +3230,9 @@ small {
 }
 .h-\[17em\] {
   height: 17em;
+}
+.h-\[500px\] {
+  height: 500px;
 }
 .h-\[60\%\] {
   height: 60%;
@@ -3263,18 +3251,6 @@ small {
 }
 .h-screen {
   height: var(--screen-height, 100vh);
-}
-.h-96 {
-  height: 24rem;
-}
-.h-\[300px\] {
-  height: 300px;
-}
-.h-\[400px\] {
-  height: 400px;
-}
-.h-\[500px\] {
-  height: 500px;
 }
 .max-h-full {
   max-height: 100%;
@@ -5250,10 +5226,6 @@ small {
     display: grid;
   }
 
-  .md\:h-96 {
-    height: 24rem;
-  }
-
   .md\:w-1\/2 {
     width: 50%;
   }
@@ -5305,6 +5277,10 @@ small {
     position: relative;
   }
 
+  .lg\:-bottom-5 {
+    bottom: -1.25rem;
+  }
+
   .lg\:bottom-auto {
     bottom: auto;
   }
@@ -5327,18 +5303,6 @@ small {
 
   .lg\:top-auto {
     top: auto;
-  }
-
-  .lg\:-bottom-12 {
-    bottom: -3rem;
-  }
-
-  .lg\:-bottom-5 {
-    bottom: -1.25rem;
-  }
-
-  .lg\:-bottom-10 {
-    bottom: -2.5rem;
   }
 
   .lg\:order-1 {
@@ -5430,24 +5394,16 @@ small {
     height: 1.25rem;
   }
 
+  .lg\:h-\[350px\] {
+    height: 350px;
+  }
+
   .lg\:h-auto {
     height: auto;
   }
 
   .lg\:h-full {
     height: 100%;
-  }
-
-  .lg\:h-\[500px\] {
-    height: 500px;
-  }
-
-  .lg\:h-\[300px\] {
-    height: 300px;
-  }
-
-  .lg\:h-\[350px\] {
-    height: 350px;
   }
 
   .lg\:w-1\/2 {
@@ -5572,6 +5528,11 @@ small {
     padding-right: 5rem;
   }
 
+  .lg\:px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
   .lg\:py-12 {
     padding-top: 3rem;
     padding-bottom: 3rem;
@@ -5580,11 +5541,6 @@ small {
   .lg\:py-20 {
     padding-top: 5rem;
     padding-bottom: 5rem;
-  }
-
-  .lg\:px-4 {
-    padding-left: 1rem;
-    padding-right: 1rem;
   }
 
   .lg\:pb-0 {

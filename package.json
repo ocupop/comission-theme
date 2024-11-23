@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "shopify theme dev --theme-editor-sync --environment development",
+    "start": "shopify theme dev --theme-editor-sync --environment production",
     "dev": "yarn tw & yarn --cwd theme start",
     "scripts:watch": "rollup -c --watch",
     "scripts:build": "rollup -c",

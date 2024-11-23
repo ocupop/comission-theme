@@ -223,31 +223,6 @@
         "button_label": "Explore our Artwork",
         "button_link": "shopify://collections/featured-art"
       }
-    },
-    "product_slider_9b39x3": {
-      "type": "product-slider",
-      "blocks": {
-        "product_rVVVLg": {
-          "type": "product",
-          "settings": {
-            "product": "village-is-family-testing"
-          }
-        },
-        "product_VV3d4T": {
-          "type": "product",
-          "settings": {
-            "product": "free"
-          }
-        }
-      },
-      "block_order": [
-        "product_rVVVLg",
-        "product_VV3d4T"
-      ],
-      "settings": {
-        "padding_top": 40,
-        "padding_bottom": 40
-      }
     }
   },
   "order": [
@@ -260,7 +235,6 @@
     "home-foster",
     "cta-foster",
     "home-connect",
-    "cta-connect",
-    "product_slider_9b39x3"
+    "cta-connect"
   ]
 }
